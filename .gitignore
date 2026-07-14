@@ -1,0 +1,7 @@
+.agents/
+.codex/
+.edge-headless-profile/
+tmp/
+artnelli-deploy.zip
+script.js
+styles.css
