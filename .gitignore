@@ -3,5 +3,6 @@
 .edge-headless-profile/
 tmp/
 artnelli-deploy.zip
+dist/
 script.js
 styles.css
