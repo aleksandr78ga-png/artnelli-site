@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nelli Garkusha — Couture Leotards for Rhythmic Gymnastics</title>
-<meta name="description" content="Custom competition leotards for rhythmic gymnastics, hand-embellished with crystals. Atelier Nelli Garkusha — worldwide delivery.">
+<meta name="description" content="Custom competition leotards and unitards for rhythmic gymnastics by Nelli Garkusha. Bespoke design and worldwide delivery.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nelli Garkusha — Couture Leotards for Rhythmic Gymnastics">
-<meta property="og:description" content="Купальники для художественной гимнастики ручной работы. Прототип сайта мастерской.">
+<meta property="og:description" content="Авторские купальники и комбинезоны для художественной гимнастики от Nelli Garkusha.">
 <meta property="og:image" content="https://artnelli.com/assets/site/hero.jpg">
 <meta property="og:url" content="https://artnelli.com/">
 <link rel="canonical" href="https://artnelli.com/">
@@ -60,7 +60,7 @@
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:0;overflow:hidden}
   .hero-media{position:absolute;inset:0}
-  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 22%;opacity:.5;filter:saturate(1.05)}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:.5;filter:saturate(1.05)}
   .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,9,.55) 0%,rgba(13,11,9,.15) 45%,var(--bg) 96%)}
   .hero-inner{position:relative;z-index:2;padding-top:120px}
   .hero-kicker{display:flex;gap:14px;align-items:center;margin-bottom:22px}
@@ -108,9 +108,9 @@
   .f-quote p{font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.65rem);line-height:1.4}
   .f-quote p i{font-family:var(--serif-it);color:var(--gold)}
 
-  /* ---------- fresh Instagram work ---------- */
-  #athletes{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .athlete-lead{max-width:46em;color:var(--ivory-dim);margin:-34px 0 42px}
+  /* ---------- work on athletes ---------- */
+  .athlete-showcase{margin-top:clamp(64px,9vw,120px);padding-top:clamp(44px,6vw,76px);border-top:1px solid var(--line)}
+  .athlete-lead{max-width:46em;color:var(--ivory-dim);margin:0 0 42px}
   .athlete-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
   .athlete-card{grid-column:span 4;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
   .athlete-card:first-child{grid-column:span 8}
@@ -169,12 +169,12 @@
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
   .about-grid .ph{position:relative}
-  .about-grid img{width:100%;height:560px;object-fit:cover}
+  .about-grid img{width:100%;height:560px;object-fit:cover;object-position:center 42%}
   .about-grid .ph::after{content:'';position:absolute;inset:16px;border:1px solid rgba(242,234,217,.25);pointer-events:none}
   .about-txt h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,3.2rem);margin:16px 0 24px}
   .about-txt h2 .name-accent{font-family:var(--serif);font-style:normal;color:var(--gold)}
   .about-txt p{color:var(--ivory-dim);margin-bottom:16px;max-width:36em}
-  .about-cta{margin-top:14px}
+  .about-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
 
   /* ---------- contact ---------- */
   #contact{text-align:center;padding-bottom:60px}
@@ -294,7 +294,6 @@
     <div class="brand">Nelli <b>Garkusha</b></div>
     <nav class="nav-links">
       <a href="#folio" data-i18n="nav_folio">Portfolio</a>
-      <a href="#athletes" data-i18n="nav_athletes">On athletes</a>
       <a href="#stock" data-i18n="nav_stock">In Stock</a>
       <a href="#order" data-i18n="nav_order">How to Order</a>
       <a href="#about" data-i18n="nav_about">Atelier</a>
@@ -308,14 +307,13 @@
 </header>
 
 <div class="hero">
-  <div class="hero-media"><img src="assets/site/hero.jpg" alt="Couture rhythmic gymnastics leotards by Nelli Garkusha"></div>
+  <div class="hero-media"><img src="assets/site/finland-team.jpg" alt="Finland national team in unitards created by Nelli Garkusha"></div>
   <div class="wrap hero-inner">
     <div class="hero-kicker mono" data-i18n="hero_kicker">Atelier · handmade · est. Tyumen</div>
-    <h1 data-i18n="hero_h1">Leotards as <span class="it">art.</span><br>Crystals set <span class="shine">by&nbsp;hand.</span></h1>
+    <h1 data-i18n="hero_h1">Leotards as <span class="it">art.</span></h1>
     <div class="hero-foot">
       <p class="hero-lead" data-i18n="hero_lead">Couture competition leotards for rhythmic gymnastics — designed from scratch for one gymnast, one routine, one unforgettable performance.</p>
       <div class="cta-row">
-        <a class="btn btn-solid" href="https://wa.me/79612064782" target="_blank" rel="noopener" data-i18n="hero_cta1">Start your design</a>
         <a class="btn btn-line" href="#stock" data-i18n="hero_cta2">Ready to ship</a>
       </div>
     </div>
@@ -325,7 +323,6 @@
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="mq-track">
     <span data-i18n="mq1">Handmade <i>couture</i></span>
-    <span data-i18n="mq2">Crystals <i>stone by stone</i></span>
     <span data-i18n="mq3">Worldwide <i>delivery</i></span>
     <span data-i18n="mq4">50K+ <i>community</i></span>
     <span data-i18n="mq5">One of <i>a kind</i></span>
@@ -335,7 +332,7 @@
 <section id="folio">
   <div class="wrap">
     <div class="sec-head rev">
-      <h2 data-i18n="folio_h2">On the <span class="it">competition</span> floor</h2>
+      <h2 data-i18n="folio_h2">On the competition floor — <span class="it">fresh work on athletes</span></h2>
       <div class="sec-num">(01) — <span data-i18n="folio_num">Portfolio</span></div>
     </div>
     <div class="folio">
@@ -355,17 +352,9 @@
         <div class="cap mono"><span data-i18n="folio_cap3">USA Gymnastics Acro</span><span data-i18n="folio_seas3">season 2026</span></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="athletes">
-  <div class="wrap">
-    <div class="sec-head rev">
-      <h2 data-i18n="athletes_h2">Fresh work <span class="it">on athletes</span></h2>
-      <div class="sec-num">Instagram — <span data-i18n="athletes_num">July 2026</span></div>
-    </div>
-    <p class="athlete-lead rev" data-i18n="athletes_lead">The newest finished costumes in motion — on national-team gymnasts and international competition floors.</p>
-    <div class="athlete-grid">
+    <div class="athlete-showcase">
+      <p class="athlete-lead rev" data-i18n="athletes_lead">The newest finished costumes in motion — on national-team gymnasts and international competition floors.</p>
+      <div class="athlete-grid">
       <a class="athlete-card rev" href="https://www.instagram.com/p/DasmQSaiLbW/" target="_blank" rel="noopener">
         <img src="assets/instagram/DasmQSaiLbW-1.webp" alt="Breanna Labadan at the 2026 Rhythmic Gymnastics World Cup in Milan">
         <div class="athlete-caption"><div><strong>Breanna Labadan</strong><span data-i18n="athlete_cap1">PH National Team · World Cup Milano 2026</span></div><span class="athlete-arrow">Instagram ↗</span></div>
@@ -386,6 +375,7 @@
         <img src="assets/instagram/DasmQSaiLbW-2.webp" alt="Breanna Labadan performing at the World Cup in Milan 2026">
         <div class="athlete-caption"><div><strong>World Cup Milano</strong><span data-i18n="athlete_cap5">Breanna Labadan · 2026</span></div><span class="athlete-arrow">Instagram ↗</span></div>
       </a>
+      </div>
     </div>
   </div>
 </section>
@@ -463,13 +453,17 @@
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="ph rev"><img src="assets/catalog/green-branches-1.webp" alt="Green Branches leotard handmade by Nelli Garkusha"></div>
+    <div class="ph rev"><img src="assets/site/nelli-garkusha.jpg" alt="Portrait of designer Nelli Garkusha"></div>
     <div class="about-txt rev">
       <div class="mono" data-i18n="about_eyebrow">(04) — The atelier</div>
       <h2>Nelli <span class="name-accent">Garkusha</span></h2>
       <p data-i18n="about_p1">An atelier of competition leotards for rhythmic gymnastics, aesthetic group gymnastics, acrobatics and figure skating, based in Tyumen, Russia.</p>
-      <p data-i18n="about_p2">Every piece is one of a kind: an original sketch, professional stretch fabrics and mesh, and crystals set by hand, stone by stone. Leotards by the atelier perform at national championships and international competitions.</p>
-      <div class="about-cta"><a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="noopener" data-i18n="about_cta">Follow on Instagram</a></div>
+      <p data-i18n="about_p2">Every piece is one of a kind: an original sketch, professional stretch fabrics and mesh. Leotards by the atelier perform at national championships and international competitions.</p>
+      <div class="about-cta">
+        <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="noopener" data-i18n="about_social_ig">Instagram</a>
+        <a class="btn btn-line" href="https://t.me/nelli_leotards" target="_blank" rel="noopener" data-i18n="about_social_tg">Telegram</a>
+        <a class="btn btn-line" href="https://vk.ru/leotards_nelli" target="_blank" rel="noopener" data-i18n="about_social_vk">VK</a>
+      </div>
     </div>
   </div>
 </section>
@@ -493,11 +487,11 @@
   <div class="wrap rev">
     <div class="mono" data-i18n="contact_eyebrow">(05) — Contact</div>
     <h2 data-i18n="contact_h2">Let's design <span class="it">yours</span></h2>
-    <p data-i18n="contact_p">Write to us in English or Russian — we answer every message personally.</p>
+    <p data-i18n="contact_p">Email or call us — you can also message us on WhatsApp or Telegram.</p>
     <div class="contact-row">
-      <a class="btn btn-solid" href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-solid" href="tel:+79612064782">+7 961 206-47-82</a>
+      <a class="btn btn-line" href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-line" href="https://t.me/NelliGarkusha" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="contact-emails mono" aria-label="Email">
       <a href="mailto:art.nelli81@gmail.com">art.nelli81@gmail.com</a>
@@ -533,17 +527,16 @@
 const i18n = {
   ru: {
     measure_eyebrow:'PDF-инструкции · пошагово', measure_h:'Как правильно снять мерки', measure_p:'Выберите инструкцию для девочки или мальчика. В PDF каждая мерка показана на схеме — точные размеры можно снять дома.', measure_girl:'Инструкция для девочки', measure_boy:'Инструкция для мальчика', measure_note:'PDF · откроется в новой вкладке',
-    nav_athletes:'На спортсменах',
     athletes_h2:'Свежие работы <span class="it">на спортсменах</span>', athletes_num:'июль 2026', athletes_lead:'Новые готовые костюмы в движении — на спортсменках национальных сборных и международных соревнованиях.',
     athlete_cap1:'Сборная Филиппин · Кубок мира, Милан 2026', athlete_cap2:'Создано с любовью · Франция × Израиль', athlete_cap3:'Соревновательная работа · Израиль', athlete_cap4:'Тысячи усилий · одно общее чувство', athlete_cap5:'Breanna Labadan · 2026',
     reviews_eyebrow:'Отзывы клиентов', reviews_h2:'Настоящие слова — <span class="it">в контексте</span>', reviews_source:'Спортсменки · родители · тренеры', reviews_body:'Свежие отзывы клиентов собраны в актуальных историях Instagram мастерской.', reviews_note:'Мы сохраняем автора, дату и полный текст сообщения, поэтому каждый отзыв можно проверить в первоисточнике.', reviews_cta:'Смотреть отзывы в Instagram',
     nav_folio:'Портфолио', nav_stock:'В наличии', nav_telegram:'Канал', nav_order:'Как заказать', nav_about:'Мастерская', nav_contact:'Контакты',
     hero_kicker:'Арт-мастерская · ручная работа · Тюмень',
-    hero_h1:'Купальник как <span class="it">искусство.</span><br>Кристаллы — <span class="shine">вручную.</span>',
+    hero_h1:'Купальник как <span class="it">искусство.</span>',
     hero_lead:'Купальники-кутюр для художественной гимнастики — создаются с нуля под одну гимнастку, одну программу, одно незабываемое выступление.',
-    hero_cta1:'Создать свой дизайн', hero_cta2:'В наличии',
-    mq1:'Ручная <i>работа</i>', mq2:'Кристаллы <i>камень за камнем</i>', mq3:'Доставка <i>по всему миру</i>', mq4:'50K+ <i>подписчиков</i>', mq5:'В единственном <i>экземпляре</i>',
-    folio_h2:'На <span class="it">соревновательном</span> ковре', folio_num:'Портфолио',
+    hero_cta2:'В наличии',
+    mq1:'Ручная <i>работа</i>', mq3:'Доставка <i>по всему миру</i>', mq4:'50K+ <i>подписчиков</i>', mq5:'В единственном <i>экземпляре</i>',
+    folio_h2:'На соревновательном ковре — <span class="it">свежие работы на спортсменах</span>', folio_num:'Портфолио',
     folio_cap1:'Breanna Labadan', folio_seas1:'Кубок мира, Милан 2026', folio_cap2:'Zoe', folio_seas2:'международные соревнования', folio_cap3:'USA Gymnastics Acro', folio_seas3:'сезон 2026',
     folio_quote:'Каждый купальник начинается с чистого листа — а заканчивает путь под софитами чемпионата. <i>Гимнастку запоминают. В этом и смысл.</i>',
     stock_h2:'Готовы <span class="it">к отправке</span>', stock_num:'В наличии',
@@ -563,9 +556,9 @@ const i18n = {
     step4_h:'Пошив и доставка', step4_p:'Купальник отшивается и вручную расшивается в мастерской, затем бережно упаковывается и едет к вам — в любую точку мира.',
     about_eyebrow:'(04) — Мастерская',
     about_p1:'Арт-мастерская купальников для художественной гимнастики, эстетической гимнастики, акробатики и фигурного катания. Тюмень, Россия.',
-    about_p2:'Каждое изделие уникально: авторский эскиз, профессиональные ткани и сетка, кристаллы, посаженные вручную — камень за камнем. Купальники мастерской выступают на чемпионатах России и международных стартах.',
-    about_cta:'Смотреть в Instagram',
-    contact_eyebrow:'(05) — Контакты', contact_h2:'Создадим <span class="it">ваш</span>', contact_p:'Пишите нам на русском или английском — отвечаем на каждое сообщение лично.',
+    about_p2:'Каждое изделие уникально: авторский эскиз, профессиональные ткани и сетка. Купальники мастерской выступают на чемпионатах России и международных стартах.',
+    about_social_ig:'Мы в Instagram', about_social_tg:'Мы в Telegram', about_social_vk:'Мы в VK',
+    contact_eyebrow:'(05) — Контакты', contact_h2:'Создадим <span class="it">ваш</span>', contact_p:'Пишите на почту или звоните — также можно связаться с нами в WhatsApp или Telegram.',
     foot_city:'Тюмень, Россия', foot_tag:'Купальники-кутюр для художественной гимнастики'
   },
   en: {}
