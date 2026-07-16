@@ -50,11 +50,9 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
   .brand{font-family:var(--mono);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase}
   .brand b{color:var(--gold);font-weight:400}
-  .nav-links{display:flex;gap:20px;align-items:center}
+  .nav-links{display:flex;gap:26px}
   .nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim);transition:color .2s}
   .nav-links a:hover{color:var(--gold)}
-  .nav-links a.nav-book{padding:9px 15px;border:1px solid var(--ivory);border-radius:99px;background:var(--ivory);color:var(--bg);transition:background .2s,border-color .2s}
-  .nav-links a.nav-book:hover{background:var(--gold);border-color:var(--gold);color:var(--bg)}
   .lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
   .lang-toggle button{border:0;background:transparent;padding:7px 14px;cursor:pointer;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--ivory-dim)}
   .lang-toggle button.active{background:var(--ivory);color:var(--bg)}
@@ -347,12 +345,11 @@
   <div class="wrap nav">
     <div class="brand">Nelli <b>Garkusha</b></div>
     <nav class="nav-links">
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
       <a href="#folio" data-i18n="nav_folio">Portfolio</a>
       <a href="#stock" data-i18n="nav_stock">In Stock</a>
       <a href="#order" data-i18n="nav_order">How to Order</a>
       <a href="#about" data-i18n="nav_about">Atelier</a>
-      <a class="nav-book" href="#brief" data-i18n="nav_book">Book tailoring</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="lang-toggle">
       <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
@@ -369,7 +366,6 @@
     <div class="hero-foot">
       <p class="hero-lead" data-i18n="hero_lead">Couture competition leotards for rhythmic gymnastics — designed from scratch for one gymnast, one routine, one unforgettable performance.</p>
       <div class="cta-row">
-        <a class="btn btn-solid" href="#brief" data-i18n="hero_cta1">Book tailoring</a>
         <a class="btn btn-line" href="#stock" data-i18n="hero_cta2">Ready to ship</a>
       </div>
     </div>
@@ -384,23 +380,6 @@
     <span data-i18n="mq5">One of <i>a kind</i></span>
   </div>
 </div>
-
-<section id="contact">
-  <div class="wrap rev">
-    <div class="mono" data-i18n="contact_eyebrow">Personal contact</div>
-    <h2 data-i18n="contact_h2">Let's design <span class="it">yours</span></h2>
-    <p data-i18n="contact_p">Email or call us — you can also message us on WhatsApp or Telegram.</p>
-    <div class="contact-row">
-      <a class="btn btn-solid" href="tel:+79612064782">+7 961 206-47-82</a>
-      <a class="btn btn-line" href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn btn-line" href="https://t.me/NelliGarkusha" target="_blank" rel="noopener">Telegram</a>
-    </div>
-    <div class="contact-emails mono" aria-label="Email">
-      <a href="mailto:art.nelli81@gmail.com">art.nelli81@gmail.com</a>
-      <a href="mailto:art.nelli@inbox.ru">art.nelli@inbox.ru</a>
-    </div>
-  </div>
-</section>
 
 <section id="folio">
   <div class="wrap">
@@ -637,6 +616,23 @@
     </div>
   </div>
 </section>
+<section id="contact">
+  <div class="wrap rev">
+    <div class="mono" data-i18n="contact_eyebrow">(05) — Contact</div>
+    <h2 data-i18n="contact_h2">Let's design <span class="it">yours</span></h2>
+    <p data-i18n="contact_p">Email or call us — you can also message us on WhatsApp or Telegram.</p>
+    <div class="contact-row">
+      <a class="btn btn-solid" href="tel:+79612064782">+7 961 206-47-82</a>
+      <a class="btn btn-line" href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-line" href="https://t.me/NelliGarkusha" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <div class="contact-emails mono" aria-label="Email">
+      <a href="mailto:art.nelli81@gmail.com">art.nelli81@gmail.com</a>
+      <a href="mailto:art.nelli@inbox.ru">art.nelli@inbox.ru</a>
+    </div>
+  </div>
+</section>
+
 <div class="mobile-contact" aria-label="Personal contact">
   <a href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
   <a href="https://t.me/NelliGarkusha" target="_blank" rel="noopener">Telegram</a>
@@ -676,11 +672,11 @@ const i18n = {
     athletes_h2:'Свежие работы <span class="it">на спортсменах</span>', athletes_num:'июль 2026', athletes_lead:'Новые готовые костюмы в движении — на спортсменках национальных сборных и международных соревнованиях.',
     athlete_cap1:'Сборная Филиппин · Кубок мира, Милан 2026', athlete_cap2:'Создано с любовью · Франция × Израиль', athlete_cap3:'Соревновательная работа · Израиль', athlete_cap4:'Тысячи усилий · одно общее чувство', athlete_cap5:'Breanna Labadan · 2026',
     reviews_eyebrow:'Отзывы клиентов', reviews_h2:'Настоящие слова — <span class="it">в контексте</span>', reviews_source:'Спортсменки · родители · тренеры', reviews_body:'Свежие отзывы клиентов собраны в актуальных историях Instagram мастерской.', reviews_note:'Мы сохраняем автора, дату и полный текст сообщения, поэтому каждый отзыв можно проверить в первоисточнике.', reviews_cta:'Смотреть отзывы в Instagram',
-    nav_folio:'Портфолио', nav_stock:'В наличии', nav_telegram:'Канал', nav_order:'Как заказать', nav_about:'Мастерская', nav_contact:'Контакты', nav_book:'Записаться на пошив',
+    nav_folio:'Портфолио', nav_stock:'В наличии', nav_telegram:'Канал', nav_order:'Как заказать', nav_about:'Мастерская', nav_contact:'Контакты',
     hero_kicker:'Арт-мастерская · ручная работа · Тюмень',
     hero_h1:'Купальник как <span class="it">искусство.</span>',
     hero_lead:'Купальники-кутюр для художественной гимнастики — создаются с нуля под одну гимнастку, одну программу, одно незабываемое выступление.',
-    hero_cta1:'Записаться на пошив', hero_cta2:'В наличии',
+    hero_cta2:'В наличии',
     mq1:'Ручная <i>работа</i>', mq3:'Доставка <i>по всему миру</i>', mq4:'50K+ <i>подписчиков</i>', mq5:'В единственном <i>экземпляре</i>',
     folio_h2:'На соревновательном ковре — <span class="it">свежие работы на спортсменах</span>', folio_num:'Портфолио',
     folio_cap1:'Breanna Labadan', folio_seas1:'Кубок мира, Милан 2026', folio_cap2:'Zoe', folio_seas2:'международные соревнования', folio_cap3:'USA Gymnastics Acro', folio_seas3:'сезон 2026',
@@ -704,7 +700,7 @@ const i18n = {
     about_p1:'Арт-мастерская купальников для художественной гимнастики, эстетической гимнастики, акробатики и фигурного катания. Тюмень, Россия.',
     about_p2:'Каждое изделие уникально: авторский эскиз, профессиональные ткани и сетка. Купальники мастерской выступают на чемпионатах России и международных стартах.',
     about_social_ig:'Мы в Instagram', about_social_tg:'Мы в Telegram', about_social_vk:'Мы в VK',
-    contact_eyebrow:'Личная связь', contact_h2:'Создадим <span class="it">ваш</span>', contact_p:'Пишите на почту или звоните — также можно связаться с нами в WhatsApp или Telegram.',
+    contact_eyebrow:'(05) — Контакты', contact_h2:'Создадим <span class="it">ваш</span>', contact_p:'Пишите на почту или звоните — также можно связаться с нами в WhatsApp или Telegram.',
     foot_city:'Тюмень, Россия', foot_tag:'Купальники-кутюр для художественной гимнастики'
   },
   en: {}
