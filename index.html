@@ -166,48 +166,6 @@
   .measure-actions .btn{text-align:center}
   .measure-note{margin-top:12px;color:var(--ivory-dim);font:300 .65rem/1.6 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:center}
 
-  /* ---------- quick brief ---------- */
-  #brief{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .brief-shell{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(38px,7vw,110px);align-items:start}
-  .brief-copy h2{font:400 clamp(2.1rem,5vw,4.2rem)/1.08 var(--serif);margin:18px 0 22px;max-width:9em}
-  .brief-copy h2 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
-  .brief-copy p{max-width:36em;color:var(--ivory-dim)}
-  .brief-points{display:grid;gap:14px;margin-top:34px}
-  .brief-point{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;color:var(--ivory-dim)}
-  .brief-point b{display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;color:var(--gold);font:400 .68rem var(--mono)}
-  .brief-form{border:1px solid var(--line);background:var(--bg);padding:clamp(24px,4vw,46px)}
-  .brief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-  .brief-field{display:flex;flex-direction:column;gap:9px;min-width:0}
-  .brief-field.full{grid-column:1/-1}
-  .brief-field label{font:300 .65rem var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ivory-dim)}
-  .brief-field input,.brief-field select,.brief-field textarea{width:100%;border:1px solid var(--line);border-radius:0;background:var(--bg-soft);color:var(--ivory);padding:14px;font:300 .94rem/1.5 var(--sans);outline:none;transition:border-color .2s}
-  .brief-field input,.brief-field select{height:52px}
-  .brief-field select{color-scheme:dark;cursor:pointer}
-  .brief-field textarea{min-height:118px;resize:vertical}
-  .brief-field input:focus,.brief-field select:focus,.brief-field textarea:focus{border-color:var(--gold)}
-  .brief-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-  .brief-actions .btn{cursor:pointer}
-  .brief-actions .btn-line{background:transparent}
-  .brief-field input{color-scheme:dark}
-  .brief-feedback{min-height:1.5em;margin-top:14px;color:var(--gold);font:300 .68rem var(--mono);letter-spacing:.08em}
-
-  /* ---------- faq ---------- */
-  #faq{border-top:1px solid var(--line)}
-  .faq-shell{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(38px,7vw,110px);align-items:start}
-  .faq-intro{position:sticky;top:110px}
-  .faq-intro h2{font:400 clamp(2rem,4vw,3.4rem)/1.1 var(--serif);margin:16px 0 18px}
-  .faq-intro h2 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
-  .faq-intro p{color:var(--ivory-dim);max-width:30em}
-  .faq-list{border-top:1px solid var(--line)}
-  .faq-list details{border-bottom:1px solid var(--line)}
-  .faq-list summary{list-style:none;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:26px 0;cursor:pointer;font:400 clamp(1.08rem,1.8vw,1.35rem)/1.35 var(--serif)}
-  .faq-list summary::-webkit-details-marker{display:none}
-  .faq-list summary::after{content:'+';color:var(--gold);font:300 1.6rem/1 var(--sans);transition:transform .25s}
-  .faq-list details[open] summary::after{transform:rotate(45deg)}
-  .faq-list details p{max-width:50em;padding:0 52px 26px 0;color:var(--ivory-dim)}
-
-  /* ---------- mobile personal contact ---------- */
-  .mobile-contact{display:none}
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
   .about-grid .ph{position:relative}
@@ -266,8 +224,6 @@
     .about-grid img{height:400px}
     .reviews-shell{grid-template-columns:1fr}
     .measure-guide{grid-template-columns:1fr}
-    .brief-shell,.faq-shell{grid-template-columns:1fr}
-    .faq-intro{position:static}
     section{padding:72px 0}
     .step{grid-template-columns:1fr;gap:12px}
   }
@@ -275,15 +231,7 @@
   @media(max-width:620px){
     .athlete-card,.athlete-card:first-child{grid-column:1/-1}
     .athlete-card img,.athlete-card:first-child img{height:480px}
-    .contact-emails{flex-direction:column;align-items:center}    .brief-grid{grid-template-columns:1fr}
-    .brief-field.full{grid-column:auto}
-    .brief-actions{display:grid;grid-template-columns:1fr}
-    .brief-actions .btn{text-align:center}
-    body{padding-bottom:72px}
-    .mobile-contact{position:fixed;z-index:80;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border:1px solid rgba(201,169,106,.42);background:rgba(13,11,9,.94);box-shadow:0 14px 44px rgba(0,0,0,.45);backdrop-filter:blur(14px)}
-    .mobile-contact a{display:flex;align-items:center;justify-content:center;min-height:46px;font:400 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase}
-    .mobile-contact a:first-child{background:var(--ivory);color:var(--bg)}
-    .mobile-contact a:last-child{border:1px solid var(--line);color:var(--ivory)}
+    .contact-emails{flex-direction:column;align-items:center}
   }
 
   /* ---------- native product catalog ---------- */
@@ -503,56 +451,6 @@
   </div>
 </section>
 
-<section id="brief">
-  <div class="wrap brief-shell">
-    <div class="brief-copy rev">
-      <div class="mono" data-i18n="brief_eyebrow">Quick request · 2 minutes</div>
-      <h2 data-i18n="brief_h2">Tell us the <span class="it">essentials</span></h2>
-      <p data-i18n="brief_p">No account or long questionnaire. Add what you already know and send a ready message directly to Nelli.</p>
-      <div class="brief-points">
-        <div class="brief-point"><b>01</b><span data-i18n="brief_point1">Choose the costume type and enter the gymnast’s height.</span></div>
-        <div class="brief-point"><b>02</b><span data-i18n="brief_point2">Add the competition date, city and any important wishes.</span></div>
-        <div class="brief-point"><b>03</b><span data-i18n="brief_point3">Continue the conversation personally in WhatsApp or Telegram.</span></div>
-      </div>
-    </div>
-    <form id="brief-form" class="brief-form rev">
-      <div class="brief-grid">
-        <div class="brief-field">
-          <label for="brief-type" data-i18n="brief_type_label">What do you need?</label>
-          <select id="brief-type">
-            <option data-i18n="brief_type_leotard">Custom leotard</option>
-            <option data-i18n="brief_type_dress">Dress</option>
-            <option data-i18n="brief_type_jumpsuit">Jumpsuit</option>
-            <option data-i18n="brief_type_team">Team set</option>
-            <option data-i18n="brief_type_ready">Ready-to-ship item</option>
-          </select>
-        </div>
-        <div class="brief-field">
-          <label for="brief-height" data-i18n="brief_height_label">Gymnast’s height, cm</label>
-          <input id="brief-height" type="text" inputmode="numeric" autocomplete="off">
-        </div>
-        <div class="brief-field">
-          <label for="brief-date" data-i18n="brief_date_label">Needed by</label>
-          <input id="brief-date" type="date">
-        </div>
-        <div class="brief-field">
-          <label for="brief-place" data-i18n="brief_place_label">Country / city</label>
-          <input id="brief-place" type="text" autocomplete="address-level2">
-        </div>
-        <div class="brief-field full">
-          <label for="brief-note" data-i18n="brief_note_label">Colours, music or other wishes</label>
-          <textarea id="brief-note"></textarea>
-        </div>
-      </div>
-      <div class="brief-actions">
-        <button class="btn btn-solid" type="submit" data-i18n="brief_whatsapp">Send in WhatsApp</button>
-        <button id="brief-copy" class="btn btn-line" type="button" data-i18n="brief_copy">Copy request</button>
-        <a class="btn btn-line" href="https://t.me/NelliGarkusha" target="_blank" rel="noopener" data-i18n="brief_telegram">Open Telegram</a>
-      </div>
-      <div id="brief-feedback" class="brief-feedback" aria-live="polite"></div>
-    </form>
-  </div>
-</section>
 <section id="about">
   <div class="wrap about-grid">
     <div class="ph rev"><img src="assets/site/nelli-garkusha.jpg" alt="Portrait of designer Nelli Garkusha"></div>
@@ -585,37 +483,6 @@
   </div>
 </section>
 
-<section id="faq">
-  <div class="wrap faq-shell">
-    <div class="faq-intro rev">
-      <div class="mono" data-i18n="faq_eyebrow">Useful before ordering</div>
-      <h2 data-i18n="faq_h2">A few clear <span class="it">answers</span></h2>
-      <p data-i18n="faq_intro">If your question is not here, write directly — we will help you choose the right format.</p>
-    </div>
-    <div class="faq-list rev">
-      <details open>
-        <summary data-i18n="faq_q1">How do I order a ready-to-ship item?</summary>
-        <p data-i18n="faq_a1">Open the product card and send its name or Telegram publication link. We will confirm availability, measurements and delivery.</p>
-      </details>
-      <details>
-        <summary data-i18n="faq_q2">How does a custom order begin?</summary>
-        <p data-i18n="faq_a2">Tell us the discipline, music, colours and deadline. We discuss the concept, confirm the design and measurements, and only then begin tailoring.</p>
-      </details>
-      <details>
-        <summary data-i18n="faq_q3">Can measurements be taken remotely?</summary>
-        <p data-i18n="faq_a3">Yes. Use the illustrated PDF guide on this page and send the measurements for confirmation before tailoring.</p>
-      </details>
-      <details>
-        <summary data-i18n="faq_q4">Do you create costumes for teams?</summary>
-        <p data-i18n="faq_a4">Yes. Tell us the number of athletes, discipline, event date and desired visual concept so we can discuss the project.</p>
-      </details>
-      <details>
-        <summary data-i18n="faq_q5">How are timelines and delivery calculated?</summary>
-        <p data-i18n="faq_a5">They depend on the costume, workload and destination. We confirm the schedule and delivery option individually before work begins.</p>
-      </details>
-    </div>
-  </div>
-</section>
 <section id="contact">
   <div class="wrap rev">
     <div class="mono" data-i18n="contact_eyebrow">(05) — Contact</div>
@@ -632,11 +499,6 @@
     </div>
   </div>
 </section>
-
-<div class="mobile-contact" aria-label="Personal contact">
-  <a href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
-  <a href="https://t.me/NelliGarkusha" target="_blank" rel="noopener">Telegram</a>
-</div>
 
 <footer>
   <div class="wrap foot-meta mono">
@@ -664,10 +526,6 @@
 <script src="catalog-data.js"></script><script>
 const i18n = {
   ru: {
-    brief_eyebrow:'Быстрый запрос · 2 минуты', brief_h2:'Расскажите <span class="it">самое главное</span>', brief_p:'Без регистрации и длинной анкеты. Укажите то, что уже знаете, и отправьте готовое сообщение лично Нелли.',
-    brief_point1:'Выберите тип костюма и укажите рост спортсменки.', brief_point2:'Добавьте дату выступления, город и важные пожелания.', brief_point3:'Продолжите личную переписку в WhatsApp или Telegram.',
-    brief_type_label:'Что вам нужно?', brief_type_leotard:'Купальник на заказ', brief_type_dress:'Платье', brief_type_jumpsuit:'Комбинезон', brief_type_team:'Комплект для команды', brief_type_ready:'Изделие в наличии', brief_height_label:'Рост спортсменки, см', brief_date_label:'К какой дате', brief_place_label:'Страна / город', brief_note_label:'Цвета, музыка или другие пожелания', brief_whatsapp:'Отправить в WhatsApp', brief_copy:'Скопировать запрос', brief_telegram:'Открыть Telegram',
-    faq_eyebrow:'Полезно до заказа', faq_h2:'Коротко о <span class="it">главном</span>', faq_intro:'Если вашего вопроса здесь нет, напишите лично — поможем выбрать подходящий формат.', faq_q1:'Как заказать изделие из наличия?', faq_a1:'Откройте карточку товара и пришлите его название или ссылку на публикацию в Telegram. Мы подтвердим наличие, мерки и доставку.', faq_q2:'С чего начинается индивидуальный заказ?', faq_a2:'Расскажите о дисциплине, музыке, цветах и сроке. Обсуждаем концепцию, согласовываем дизайн и мерки — и только потом начинаем пошив.', faq_q3:'Можно ли снять мерки дистанционно?', faq_a3:'Да. Используйте на этой странице PDF-инструкцию со схемами и отправьте мерки на проверку до начала пошива.', faq_q4:'Вы создаёте костюмы для команд?', faq_a4:'Да. Сообщите количество спортсменок, дисциплину, дату выступления и желаемую идею, чтобы мы могли обсудить проект.', faq_q5:'Как рассчитываются сроки и доставка?', faq_a5:'Они зависят от изделия, загрузки мастерской и города назначения. Срок и вариант доставки согласовываем индивидуально до начала работы.',
     measure_eyebrow:'PDF-инструкции · пошагово', measure_h:'Как правильно снять мерки', measure_p:'Выберите инструкцию для девочки или мальчика. В PDF каждая мерка показана на схеме — точные размеры можно снять дома.', measure_girl:'Инструкция для девочки', measure_boy:'Инструкция для мальчика', measure_note:'PDF · откроется в новой вкладке',
     athletes_h2:'Свежие работы <span class="it">на спортсменах</span>', athletes_num:'июль 2026', athletes_lead:'Новые готовые костюмы в движении — на спортсменках национальных сборных и международных соревнованиях.',
     athlete_cap1:'Сборная Филиппин · Кубок мира, Милан 2026', athlete_cap2:'Создано с любовью · Франция × Израиль', athlete_cap3:'Соревновательная работа · Израиль', athlete_cap4:'Тысячи усилий · одно общее чувство', athlete_cap5:'Breanna Labadan · 2026',
@@ -742,47 +600,6 @@ document.querySelectorAll('.rev').forEach(el => io.observe(el));
 document.getElementById('year').textContent = new Date().getFullYear();
 try { const saved = localStorage.getItem('ng-lang'); setLang(saved === 'en' ? 'en' : 'ru'); } catch(e) { setLang('ru'); }
 
-// Build a useful personal message without storing form data.
-const briefForm = document.getElementById('brief-form');
-const briefFeedback = document.getElementById('brief-feedback');
-function briefMessage(){
-  const labels = currentLang === 'en'
-    ? {title:'Hello! I would like to discuss an order.',type:'Item',height:'Gymnast height',date:'Needed by',place:'Country / city',note:'Wishes'}
-    : {title:'Здравствуйте! Хочу обсудить заказ.',type:'Изделие',height:'Рост спортсменки',date:'К какой дате',place:'Страна / город',note:'Пожелания'};
-  const values = {
-    type:document.getElementById('brief-type').selectedOptions[0].textContent.trim(),
-    height:document.getElementById('brief-height').value.trim(),
-    date:document.getElementById('brief-date').value,
-    place:document.getElementById('brief-place').value.trim(),
-    note:document.getElementById('brief-note').value.trim()
-  };
-  const lines = [labels.title, '', `${labels.type}: ${values.type}`];
-  if(values.height) lines.push(`${labels.height}: ${values.height} cm`);
-  if(values.date) lines.push(`${labels.date}: ${values.date}`);
-  if(values.place) lines.push(`${labels.place}: ${values.place}`);
-  if(values.note) lines.push(`${labels.note}: ${values.note}`);
-  return lines.join('\n');
-}
-briefForm.addEventListener('submit', event => {
-  event.preventDefault();
-  window.open(`https://wa.me/79612064782?text=${encodeURIComponent(briefMessage())}`, '_blank', 'noopener');
-});
-document.getElementById('brief-copy').addEventListener('click', async () => {
-  const message = briefMessage();
-  try {
-    await navigator.clipboard.writeText(message);
-  } catch(error) {
-    const helper = document.createElement('textarea');
-    helper.value = message;
-    helper.style.position = 'fixed';
-    helper.style.opacity = '0';
-    document.body.append(helper);
-    helper.select();
-    document.execCommand('copy');
-    helper.remove();
-  }
-  briefFeedback.textContent = currentLang === 'en' ? 'Request copied — paste it into Telegram.' : 'Запрос скопирован — вставьте его в Telegram.';
-});
 // Native catalog generated from the Telegram export.
 const catalogProducts = Array.isArray(window.NELLI_CATALOG) ? window.NELLI_CATALOG : [];
 const catalogGrid = document.getElementById('catalog-grid');
