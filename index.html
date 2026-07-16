@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nelli Garkusha — Couture Leotards for Rhythmic Gymnastics">
 <meta property="og:description" content="Авторские купальники и комбинезоны для художественной гимнастики от Nelli Garkusha.">
-<meta property="og:image" content="https://artnelli.com/assets/site/hero.jpg">
+<meta property="og:image" content="https://artnelli.com/assets/site/hero-video-fallback.jpg">
 <meta property="og:url" content="https://artnelli.com/">
 <link rel="canonical" href="https://artnelli.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,9 +50,11 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
   .brand{font-family:var(--mono);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase}
   .brand b{color:var(--gold);font-weight:400}
-  .nav-links{display:flex;gap:26px}
+  .nav-links{display:flex;gap:20px;align-items:center}
   .nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim);transition:color .2s}
   .nav-links a:hover{color:var(--gold)}
+  .nav-links a.nav-booking{padding:10px 14px;border:1px solid var(--gold);border-radius:99px;color:var(--ivory)}
+  .nav-links a.nav-booking:hover{background:var(--gold);color:var(--bg)}
   .lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
   .lang-toggle button{border:0;background:transparent;padding:7px 14px;cursor:pointer;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--ivory-dim)}
   .lang-toggle button.active{background:var(--ivory);color:var(--bg)}
@@ -60,8 +62,11 @@
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:0;overflow:hidden}
   .hero-media{position:absolute;inset:0}
-  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:.5;filter:saturate(1.05)}
-  .hero-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,9,.55) 0%,rgba(13,11,9,.15) 45%,var(--bg) 96%)}
+  .hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(1.05)}
+  .hero-media img{opacity:.5}
+  .hero-media video{position:absolute;z-index:1;inset:0;opacity:0;transition:opacity .8s ease}
+  .hero-media video.ready{opacity:.64}
+  .hero-media::after{content:'';position:absolute;z-index:2;inset:0;background:linear-gradient(180deg,rgba(13,11,9,.55) 0%,rgba(13,11,9,.15) 45%,var(--bg) 96%)}
   .hero-inner{position:relative;z-index:2;padding-top:120px}
   .hero-kicker{display:flex;gap:14px;align-items:center;margin-bottom:22px}
   .hero-kicker::before{content:'';width:44px;height:1px;background:var(--gold)}
@@ -93,35 +98,24 @@
   .sec-head h2 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
   .sec-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--ivory-dim)}
 
-  /* ---------- portfolio: broken editorial grid ---------- */
-  .folio{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:start}
-  .f-item{position:relative}
-  .f-item img{width:100%;object-fit:cover;object-position:center 12%;filter:saturate(1.02)}
-  .f-item .cap{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
-  .f-1{grid-column:1/7}
-  .f-1 img{height:640px}
-  .f-2{grid-column:7/13;margin-top:90px}
-  .f-2 img{height:430px}
-  .f-3{grid-column:8/13;margin-top:40px}
-  .f-3 img{height:380px}
-  .f-quote{grid-column:1/7;align-self:end;padding:0 8% 30px 0}
-  .f-quote p{font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.65rem);line-height:1.4}
-  .f-quote p i{font-family:var(--serif-it);color:var(--gold)}
-
-  /* ---------- work on athletes ---------- */
-  .athlete-showcase{margin-top:clamp(64px,9vw,120px);padding-top:clamp(44px,6vw,76px);border-top:1px solid var(--line)}
-  .athlete-lead{max-width:46em;color:var(--ivory-dim);margin:0 0 42px}
-  .athlete-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
-  .athlete-card{grid-column:span 4;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
-  .athlete-card:first-child{grid-column:span 8}
-  .athlete-card img{width:100%;height:440px;object-fit:cover;object-position:center 18%;transition:transform .8s cubic-bezier(.2,.6,.2,1),filter .4s}
-  .athlete-card:first-child img{height:620px}
-  .athlete-card:hover img{transform:scale(1.035);filter:saturate(1.08)}
-  .athlete-card::after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(8,7,6,.92));pointer-events:none}
-  .athlete-caption{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;align-items:end;gap:16px}
-  .athlete-caption strong{display:block;font:400 1.24rem var(--serif)}
-  .athlete-caption span{font:300 .62rem var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ivory-dim)}
-  .athlete-arrow{color:var(--gold)!important;font-size:.76rem!important;white-space:nowrap}
+  /* ---------- portfolio ---------- */
+  .portfolio-lead{max-width:46em;color:var(--ivory-dim);margin:-28px 0 42px}
+  .portfolio-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+  .portfolio-piece{grid-column:span 4;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg-soft)}
+  .portfolio-piece.wide{grid-column:span 8}
+  .portfolio-piece img{width:100%;height:520px;object-fit:cover;object-position:center 18%;transition:transform .8s cubic-bezier(.2,.6,.2,1),filter .4s}
+  .portfolio-piece.wide img{height:620px}
+  .portfolio-piece:hover img{transform:scale(1.035);filter:saturate(1.08)}
+  .portfolio-piece::after{content:'';position:absolute;inset:42% 0 0;background:linear-gradient(transparent,rgba(8,7,6,.94));pointer-events:none}
+  .portfolio-caption{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;align-items:end;gap:16px}
+  .portfolio-caption strong{display:block;font:400 1.24rem var(--serif)}
+  .portfolio-caption span{font:300 .62rem var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--ivory-dim)}
+  .portfolio-live{margin-top:20px}
+  .portfolio-instagram-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:clamp(70px,9vw,120px) 0 34px;padding-top:42px;border-top:1px solid var(--line)}
+  .portfolio-instagram-head h3{font:400 clamp(1.55rem,3vw,2.5rem)/1.15 var(--serif)}
+  .portfolio-instagram-head h3 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
+  .portfolio-instagram-head p{max-width:36em;color:var(--ivory-dim);text-align:right}
+  @media(max-width:620px){.portfolio-instagram-head{align-items:start;flex-direction:column}.portfolio-instagram-head p{text-align:left}}
 
   /* ---------- stock: horizontal snap ---------- */
   #stock{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -166,6 +160,44 @@
   .measure-actions .btn{text-align:center}
   .measure-note{margin-top:12px;color:var(--ivory-dim);font:300 .65rem/1.6 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:center}
 
+  /* ---------- tailoring booking ---------- */
+  #booking{background:var(--bg-soft);border-block:1px solid var(--line)}
+  .booking-shell{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);gap:clamp(34px,7vw,100px);align-items:start}
+  .booking-copy{position:sticky;top:110px}
+  .booking-copy h3{font:400 clamp(2rem,4vw,3.4rem)/1.08 var(--serif);margin:16px 0 24px}
+  .booking-copy h3 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
+  .booking-deposit{border-block:1px solid var(--line);padding:24px 0;margin:28px 0}
+  .booking-deposit strong{display:block;color:var(--gold);font:400 clamp(2rem,4vw,3rem) var(--serif)}
+  .booking-deposit p,.booking-copy>p{color:var(--ivory-dim)}
+  .booking-rules{display:grid;gap:13px;list-style:none;color:var(--ivory-dim)}
+  .booking-rules li{display:grid;grid-template-columns:24px 1fr;gap:10px}
+  .booking-rules li::before{content:'✦';color:var(--gold)}
+  .booking-form{border:1px solid var(--line);background:var(--bg);padding:clamp(24px,4vw,48px)}
+  .booking-form h3{font:400 clamp(1.6rem,3vw,2.4rem)/1.15 var(--serif);margin-bottom:12px}
+  .booking-form>p{color:var(--ivory-dim);margin-bottom:30px}
+  .booking-label{display:block;margin:26px 0 12px;color:var(--ivory-dim);font:300 .66rem var(--mono);letter-spacing:.13em;text-transform:uppercase}
+  .booking-months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .booking-month{position:relative;display:block;cursor:pointer}
+  .booking-month input{position:absolute;opacity:0;pointer-events:none}
+  .booking-month-card{min-height:118px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line);padding:17px;background:var(--bg-soft);transition:border-color .2s,background .2s}
+  .booking-month input:checked+.booking-month-card{border-color:var(--gold);background:rgba(201,169,106,.1)}
+  .booking-month input:focus-visible+.booking-month-card{outline:2px solid var(--ivory);outline-offset:2px}
+  .booking-month-card strong{font:400 1.05rem/1.25 var(--serif);text-transform:capitalize}
+  .booking-month-card span{color:var(--ivory-dim);font:300 .58rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+  .booking-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}
+  .booking-field{display:flex;flex-direction:column;gap:8px;color:var(--ivory-dim);font:300 .63rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+  .booking-field.full{grid-column:1/-1}
+  .booking-field input,.booking-field select,.booking-field textarea{width:100%;border:1px solid var(--line);border-radius:0;background:var(--bg-soft);color:var(--ivory);padding:13px 14px;font:300 .9rem var(--sans);outline:none;text-transform:none;letter-spacing:0;color-scheme:dark}
+  .booking-field input,.booking-field select{height:50px}
+  .booking-field textarea{min-height:118px;resize:vertical}
+  .booking-field input:focus,.booking-field select:focus,.booking-field textarea:focus{border-color:var(--gold)}
+  .booking-consent{display:flex;align-items:flex-start;gap:12px;margin:22px 0;color:var(--ivory-dim);font-size:.78rem}
+  .booking-consent input{margin-top:5px;accent-color:var(--gold)}
+  .booking-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .booking-actions .btn{cursor:pointer}
+  .booking-status{min-height:1.5em;margin-top:14px;color:var(--gold);font:300 .68rem var(--mono);letter-spacing:.08em}
+  @media(max-width:900px){.booking-shell{grid-template-columns:1fr}.booking-copy{position:static}.booking-months{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.booking-months,.booking-fields{grid-template-columns:1fr}.booking-field.full{grid-column:auto}.booking-actions .btn{width:100%;text-align:center}}
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
   .about-grid .ph{position:relative}
@@ -205,6 +237,7 @@
   @media (prefers-reduced-motion: reduce){
     .marquee-track{animation:none}
     .hero h1 .shine{animation:none}
+    .hero-media video{display:none}
     .rev{opacity:1;transform:none;transition:none}
   }
 
@@ -213,12 +246,8 @@
     .nav-links{display:none}
     .hero h1{font-size:clamp(2.3rem,11vw,4rem)}
     .hero-foot{flex-direction:column;align-items:flex-start}
-    .folio{grid-template-columns:1fr;gap:36px}
-    .f-1,.f-2,.f-3,.f-quote{grid-column:1/-1;margin-top:0}
-    .f-1 img,.f-2 img,.f-3 img{height:420px}
-    .f-quote{padding:6px 0 0}
-    .athlete-card,.athlete-card:first-child{grid-column:span 6}
-    .athlete-card img,.athlete-card:first-child img{height:460px}
+    .portfolio-piece,.portfolio-piece.wide{grid-column:span 6}
+    .portfolio-piece img,.portfolio-piece.wide img{height:500px}
     .telegram-grid{grid-template-columns:1fr}
     .about-grid{grid-template-columns:1fr}
     .about-grid img{height:400px}
@@ -229,8 +258,8 @@
   }
 
   @media(max-width:620px){
-    .athlete-card,.athlete-card:first-child{grid-column:1/-1}
-    .athlete-card img,.athlete-card:first-child img{height:480px}
+    .portfolio-piece,.portfolio-piece.wide{grid-column:1/-1}
+    .portfolio-piece img,.portfolio-piece.wide img{height:480px}
     .contact-emails{flex-direction:column;align-items:center}
   }
 
@@ -245,6 +274,8 @@
   .catalog-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
   .catalog-card{min-width:0;border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
   .catalog-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+  .catalog-card.is-sold .catalog-photo img{filter:grayscale(.78);opacity:.58}
+  .catalog-card.is-sold .catalog-price{color:var(--ivory-dim)}
   .catalog-photo{position:relative;display:block;width:100%;height:370px;overflow:hidden;border:0;background:var(--bg-soft);cursor:pointer;padding:0}
   .catalog-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transition:transform .7s cubic-bezier(.2,.6,.2,1)}
   .catalog-card:hover .catalog-photo img{transform:scale(1.035)}
@@ -293,10 +324,11 @@
   <div class="wrap nav">
     <div class="brand">Nelli <b>Garkusha</b></div>
     <nav class="nav-links">
+      <a href="#about" data-i18n="nav_about">Atelier</a>
       <a href="#folio" data-i18n="nav_folio">Portfolio</a>
       <a href="#stock" data-i18n="nav_stock">In Stock</a>
       <a href="#order" data-i18n="nav_order">How to Order</a>
-      <a href="#about" data-i18n="nav_about">Atelier</a>
+      <a class="nav-booking" href="#booking" data-i18n="nav_booking">Book tailoring</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="lang-toggle">
@@ -307,13 +339,19 @@
 </header>
 
 <div class="hero">
-  <div class="hero-media"><img src="assets/site/finland-team.jpg" alt="Finland national team in unitards created by Nelli Garkusha"></div>
+  <div class="hero-media">
+    <img src="assets/site/hero-video-fallback.jpg" alt="Purple couture leotard by Nelli Garkusha">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/site/hero-video-fallback.jpg" oncanplay="this.classList.add('ready')" aria-label="Couture leotard by Nelli Garkusha">
+      <source src="assets/site/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="wrap hero-inner">
     <div class="hero-kicker mono" data-i18n="hero_kicker">Atelier · handmade · est. Tyumen</div>
     <h1 data-i18n="hero_h1">Leotards as <span class="it">art.</span></h1>
     <div class="hero-foot">
-      <p class="hero-lead" data-i18n="hero_lead">Couture competition leotards for rhythmic gymnastics — designed from scratch for one gymnast, one routine, one unforgettable performance.</p>
+      <p class="hero-lead" data-i18n="hero_lead">Couture competition leotards for rhythmic gymnastics — designed for one gymnast, one routine, one unforgettable performance.</p>
       <div class="cta-row">
+        <a class="btn btn-solid" href="#booking" data-i18n="booking_cta">Book tailoring</a>
         <a class="btn btn-line" href="#stock" data-i18n="hero_cta2">Ready to ship</a>
       </div>
     </div>
@@ -324,59 +362,55 @@
   <div class="marquee-track" id="mq-track">
     <span data-i18n="mq1">Handmade <i>couture</i></span>
     <span data-i18n="mq3">Worldwide <i>delivery</i></span>
-    <span data-i18n="mq4">50K+ <i>community</i></span>
+    <span><b class="instagram-followers">70 002</b> <i data-i18n="mq4_label">community</i></span>
     <span data-i18n="mq5">One of <i>a kind</i></span>
   </div>
 </div>
 
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="ph rev"><img src="assets/site/nelli-garkusha.jpg" alt="Portrait of designer Nelli Garkusha"></div>
+    <div class="about-txt rev">
+      <div class="mono" data-i18n="about_eyebrow">The atelier</div>
+      <h2>Nelli <span class="name-accent">Garkusha</span></h2>
+      <p data-i18n="about_p1">An atelier of competition leotards for rhythmic gymnastics, aesthetic group gymnastics, acrobatics and figure skating, based in Tyumen, Russia.</p>
+      <p data-i18n="about_p2">Every piece is one of a kind: an original sketch, professional stretch fabrics and mesh. Leotards by the atelier perform at national championships and international competitions.</p>
+      <div class="about-cta">
+        <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="noopener" data-i18n="about_social_ig">Instagram</a>
+        <a class="btn btn-line" href="https://t.me/nelli_leotards" target="_blank" rel="noopener" data-i18n="about_social_tg">Telegram</a>
+        <a class="btn btn-line" href="https://vk.ru/leotards_nelli" target="_blank" rel="noopener" data-i18n="about_social_vk">VK</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section id="folio">
   <div class="wrap">
     <div class="sec-head rev">
-      <h2 data-i18n="folio_h2">On the competition floor — <span class="it">fresh work on athletes</span></h2>
+      <h2 data-i18n="folio_h2">Our work</h2>
       <div class="sec-num">(01) — <span data-i18n="folio_num">Portfolio</span></div>
     </div>
-    <div class="folio">
-      <div class="f-item f-1 rev">
-        <img src="assets/instagram/DasmQSaiLbW-1.webp" alt="Breanna Labadan at the World Cup in Milan 2026">
-        <div class="cap mono"><span data-i18n="folio_cap1">Breanna Labadan</span><span data-i18n="folio_seas1">World Cup Milano 2026</span></div>
-      </div>
-      <div class="f-item f-2 rev">
-        <img src="assets/instagram/DamjQ3vIvbv-1.webp" alt="Zoe in a custom competition leotard by Nelli Garkusha">
-        <div class="cap mono"><span data-i18n="folio_cap2">Zoe</span><span data-i18n="folio_seas2">international competition</span></div>
-      </div>
-      <div class="f-quote rev">
-        <p data-i18n="folio_quote">Every leotard begins as a blank sketch — and ends its journey under the spotlights of a championship. <i>The gymnast is remembered. That is the point.</i></p>
-      </div>
-      <div class="f-item f-3 rev">
-        <img src="assets/instagram/DaPSWRtopAR-1.webp" alt="USA Gymnastics Acro athletes in costumes by Nelli Garkusha">
-        <div class="cap mono"><span data-i18n="folio_cap3">USA Gymnastics Acro</span><span data-i18n="folio_seas3">season 2026</span></div>
-      </div>
+    <p class="portfolio-lead rev" data-i18n="portfolio_lead">Original costumes from our atelier featured in individual and group routines at Russian and international competitions.</p>
+    <div class="portfolio-gallery" id="portfolio-static-grid">
+      <figure class="portfolio-piece rev"><img src="assets/portfolio/portfolio-01.jpg" alt="Rhythmic gymnast from Finland performing with a ribbon" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_finland">Finland</strong><span data-i18n="portfolio_item1">Individual programme · ribbon</span></div></figcaption></figure>
+      <figure class="portfolio-piece wide rev"><img src="assets/portfolio/portfolio-02.jpg" alt="Rhythmic gymnast performing with a pink ribbon" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_rhythmics">Rhythmic gymnastics</strong><span data-i18n="portfolio_item2">Competition performance</span></div></figcaption></figure>
+      <figure class="portfolio-piece wide rev"><img src="assets/portfolio/portfolio-03.jpg" alt="Gymnast in a black, pink and silver team unitard" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_team">Team collection</strong><span data-i18n="portfolio_item3">Black · pink · silver</span></div></figcaption></figure>
+      <figure class="portfolio-piece rev"><img src="assets/portfolio/portfolio-04.jpg" alt="Gymnast in a gold, red and black team costume" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_team">Team collection</strong><span data-i18n="portfolio_item4">Gold · red · black</span></div></figcaption></figure>
+      <figure class="portfolio-piece rev"><img src="assets/portfolio/portfolio-05.jpg" alt="Gymnast performing in a black and orange unitard" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_team">Team collection</strong><span data-i18n="portfolio_item5">Fire concept · performance</span></div></figcaption></figure>
+      <figure class="portfolio-piece rev"><img src="assets/portfolio/portfolio-06.jpg" alt="Detail of the fire concept team unitard" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_team">Team collection</strong><span data-i18n="portfolio_item6">Fire concept · detail</span></div></figcaption></figure>
+      <figure class="portfolio-piece rev"><img src="assets/portfolio/portfolio-07.jpg" alt="Gymnastics team in floral competition costumes" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_team">Team collection</strong><span data-i18n="portfolio_item7">Floral concept · performance</span></div></figcaption></figure>
+      <figure class="portfolio-piece rev"><img src="assets/portfolio/portfolio-08.jpg" alt="Minetit team from Tampereen Sisu in competition unitards" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_minetit">Minetit</strong><span data-i18n="portfolio_item8">Tampereen Sisu · Finland</span></div></figcaption></figure>
+      <figure class="portfolio-piece wide rev"><img src="assets/portfolio/portfolio-09.jpg" alt="Finland national team in green competition unitards" loading="lazy"><figcaption class="portfolio-caption"><div><strong data-i18n="portfolio_finland_team">Finland national team</strong><span data-i18n="portfolio_item9">Group routine</span></div></figcaption></figure>
     </div>
-    <div class="athlete-showcase">
-      <p class="athlete-lead rev" data-i18n="athletes_lead">The newest finished costumes in motion — on national-team gymnasts and international competition floors.</p>
-      <div class="athlete-grid">
-      <a class="athlete-card rev" href="https://www.instagram.com/p/DasmQSaiLbW/" target="_blank" rel="noopener">
-        <img src="assets/instagram/DasmQSaiLbW-1.webp" alt="Breanna Labadan at the 2026 Rhythmic Gymnastics World Cup in Milan">
-        <div class="athlete-caption"><div><strong>Breanna Labadan</strong><span data-i18n="athlete_cap1">PH National Team · World Cup Milano 2026</span></div><span class="athlete-arrow">Instagram ↗</span></div>
-      </a>
-      <a class="athlete-card rev" href="https://www.instagram.com/p/DamjQ3vIvbv/" target="_blank" rel="noopener">
-        <img src="assets/instagram/DamjQ3vIvbv-1.webp" alt="Zoe in a custom Nelli Garkusha competition leotard">
-        <div class="athlete-caption"><div><strong>Zoe</strong><span data-i18n="athlete_cap2">Created with love · France × Israel</span></div><span class="athlete-arrow">Instagram ↗</span></div>
-      </a>
-      <a class="athlete-card rev" href="https://www.instagram.com/p/DaXGPinIOQQ/" target="_blank" rel="noopener">
-        <img src="assets/instagram/DaXGPinIOQQ-1.webp" alt="Mia Vinogradov in a Nelli Garkusha competition costume">
-        <div class="athlete-caption"><div><strong>Mia Vinogradov</strong><span data-i18n="athlete_cap3">Competition work · Israel</span></div><span class="athlete-arrow">Instagram ↗</span></div>
-      </a>
-      <a class="athlete-card rev" href="https://www.instagram.com/p/DaPSWRtopAR/" target="_blank" rel="noopener">
-        <img src="assets/instagram/DaPSWRtopAR-1.webp" alt="USA Gymnastics Acro athletes in costumes by Nelli Garkusha">
-        <div class="athlete-caption"><div><strong>USA Gymnastics Acro</strong><span data-i18n="athlete_cap4">Thousands of efforts · one shared feeling</span></div><span class="athlete-arrow">Instagram ↗</span></div>
-      </a>
-      <a class="athlete-card rev" href="https://www.instagram.com/p/DasmQSaiLbW/" target="_blank" rel="noopener">
-        <img src="assets/instagram/DasmQSaiLbW-2.webp" alt="Breanna Labadan performing at the World Cup in Milan 2026">
-        <div class="athlete-caption"><div><strong>World Cup Milano</strong><span data-i18n="athlete_cap5">Breanna Labadan · 2026</span></div><span class="athlete-arrow">Instagram ↗</span></div>
-      </a>
-      </div>
-    </div>
+<div class="portfolio-gallery" id="instagram-recent-grid">
+      <figure class="portfolio-piece wide rev" data-instagram-post="DauQ8ZYIlBL"><a href="https://www.instagram.com/p/DauQ8ZYIlBL/" target="_blank" rel="noopener"><img src="assets/instagram/DauQ8ZYIlBL-1.jpg" alt="Breanna Labadan, Philippine National Team" loading="lazy"><figcaption class="portfolio-caption"><div><strong>Breanna Labadan</strong><span data-i18n="instagram_item1">PH National Team · July 2026</span></div></figcaption></a></figure>
+      <figure class="portfolio-piece rev" data-instagram-post="DasmQSaiLbW"><a href="https://www.instagram.com/p/DasmQSaiLbW/" target="_blank" rel="noopener"><img src="assets/instagram/DasmQSaiLbW-1.webp" alt="Breanna Labadan at World Cup Milano 2026" loading="lazy"><figcaption class="portfolio-caption"><div><strong>Breanna Labadan</strong><span data-i18n="instagram_item2">World Cup Milano 2026</span></div></figcaption></a></figure>
+      <figure class="portfolio-piece rev" data-instagram-post="DasmQSaiLbW"><a href="https://www.instagram.com/p/DasmQSaiLbW/" target="_blank" rel="noopener"><img src="assets/instagram/DasmQSaiLbW-2.webp" alt="Breanna Labadan performing at World Cup Milano 2026" loading="lazy"><figcaption class="portfolio-caption"><div><strong>World Cup Milano</strong><span data-i18n="instagram_item3">Competition performance · 2026</span></div></figcaption></a></figure>
+      <figure class="portfolio-piece rev" data-instagram-post="DamjQ3vIvbv"><a href="https://www.instagram.com/p/DamjQ3vIvbv/" target="_blank" rel="noopener"><img src="assets/instagram/DamjQ3vIvbv-1.webp" alt="Zoe in a custom competition leotard by Nelli" loading="lazy"><figcaption class="portfolio-caption"><div><strong>Zoe</strong><span data-i18n="instagram_item4">France × Israel · custom work</span></div></figcaption></a></figure>
+      <figure class="portfolio-piece rev" data-instagram-post="DaXGPinIOQQ"><a href="https://www.instagram.com/p/DaXGPinIOQQ/" target="_blank" rel="noopener"><img src="assets/instagram/DaXGPinIOQQ-1.webp" alt="Mia Vinogradov in a Nelli competition costume" loading="lazy"><figcaption class="portfolio-caption"><div><strong>Mia Vinogradov</strong><span data-i18n="instagram_item5">Competition work · Israel</span></div></figcaption></a></figure>
+      <figure class="portfolio-piece wide rev" data-instagram-post="DaPSWRtopAR"><a href="https://www.instagram.com/p/DaPSWRtopAR/" target="_blank" rel="noopener"><img src="assets/instagram/DaPSWRtopAR-1.webp" alt="USA Gymnastics Acro athletes in costumes by Nelli" loading="lazy"><figcaption class="portfolio-caption"><div><strong>USA Gymnastics Acro</strong><span data-i18n="instagram_item6">Team performance · 2026</span></div></figcaption></a></figure>
+    </div>    <div class="portfolio-gallery portfolio-live" id="portfolio-live-grid" hidden></div>
   </div>
 </section>
 
@@ -451,23 +485,45 @@
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="ph rev"><img src="assets/site/nelli-garkusha.jpg" alt="Portrait of designer Nelli Garkusha"></div>
-    <div class="about-txt rev">
-      <div class="mono" data-i18n="about_eyebrow">(04) — The atelier</div>
-      <h2>Nelli <span class="name-accent">Garkusha</span></h2>
-      <p data-i18n="about_p1">An atelier of competition leotards for rhythmic gymnastics, aesthetic group gymnastics, acrobatics and figure skating, based in Tyumen, Russia.</p>
-      <p data-i18n="about_p2">Every piece is one of a kind: an original sketch, professional stretch fabrics and mesh. Leotards by the atelier perform at national championships and international competitions.</p>
-      <div class="about-cta">
-        <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="noopener" data-i18n="about_social_ig">Instagram</a>
-        <a class="btn btn-line" href="https://t.me/nelli_leotards" target="_blank" rel="noopener" data-i18n="about_social_tg">Telegram</a>
-        <a class="btn btn-line" href="https://vk.ru/leotards_nelli" target="_blank" rel="noopener" data-i18n="about_social_vk">VK</a>
+<section id="booking">
+  <div class="wrap">
+    <div class="sec-head rev">
+      <h2 data-i18n="booking_h2">Reserve a place for <span class="it">tailoring</span></h2>
+      <div class="sec-num">(04) — <span data-i18n="booking_num">Tailoring calendar</span></div>
+    </div>
+    <div class="booking-shell">
+      <div class="booking-copy rev">
+        <div class="mono" data-i18n="booking_deposit_label">Reservation deposit</div>
+        <h3 data-i18n="booking_copy_h">Your costume — <span class="it">in the atelier calendar</span></h3>
+        <p data-i18n="booking_copy_p">Choose a preferred month and send the request. Nelli will personally confirm the available date and timing.</p>
+        <div class="booking-deposit"><strong data-i18n="booking_deposit">15,000 RUB</strong><p data-i18n="booking_deposit_p">The 15,000 RUB deposit is paid when reserving a tailoring slot at the Nelli atelier and is fully included in the final costume price.</p></div>
+        <ul class="booking-rules">
+          <li data-i18n="booking_rule1">The deposit is non-refundable once work on your sketches has begun.</li>
+          <li data-i18n="booking_rule2">In the request, specify the discipline and desired completion date if there is an important competition.</li>
+          <li data-i18n="booking_rule3">The selected month is the month when the atelier starts working on the sketches.</li>
+          <li data-i18n="booking_rule4">After sketch approval and measurements, tailoring takes approximately 3–4 weeks.</li>
+          <li data-i18n="booking_rule5">Nelli will contact you personally in WhatsApp when it is time to begin the sketches.</li>
+        </ul>
       </div>
+      <form id="booking-form" class="booking-form rev">
+        <h3 data-i18n="booking_form_h">Tailoring request</h3><p data-i18n="booking_form_p">Fill in the key details. The message will open in your chosen personal messenger.</p>
+        <span class="booking-label" data-i18n="booking_month_label">Preferred tailoring month</span><div id="booking-months" class="booking-months"></div>
+        <div class="booking-fields">
+          <label class="booking-field"><span data-i18n="booking_name">Your name</span><input name="customer" required autocomplete="name" data-placeholder-en="Name" data-placeholder-ru="Имя"></label>
+          <label class="booking-field"><span data-i18n="booking_athlete">Athlete's name</span><input name="athlete" required data-placeholder-en="Athlete's name" data-placeholder-ru="Имя спортсменки"></label>
+          <label class="booking-field"><span data-i18n="booking_phone">Phone / messenger</span><input name="phone" required autocomplete="tel" inputmode="tel" data-placeholder-en="+1 000 000 0000" data-placeholder-ru="+7 000 000-00-00"></label>
+          <label class="booking-field"><span data-i18n="booking_city">City and country</span><input name="city" required autocomplete="address-level2" data-placeholder-en="City, country" data-placeholder-ru="Город, страна"></label>
+          <label class="booking-field"><span data-i18n="booking_discipline">Discipline</span><select name="discipline" required><option value="" data-i18n="booking_select">Select</option><option value="rhythmic" data-i18n="booking_rhythmic">Rhythmic gymnastics</option><option value="aesthetic" data-i18n="booking_aesthetic">Aesthetic group gymnastics</option><option value="acrobatics" data-i18n="booking_acrobatics">Acrobatics</option><option value="skating" data-i18n="booking_skating">Figure skating</option></select></label>
+          <label class="booking-field"><span data-i18n="booking_height">Athlete's height</span><input name="height" required inputmode="numeric" data-placeholder-en="Height, cm" data-placeholder-ru="Рост, см"></label>
+          <label class="booking-field full"><span data-i18n="booking_comment">Performance date, music and wishes</span><textarea name="comment" data-placeholder-en="Tell us about the routine, colours and deadline" data-placeholder-ru="Расскажите о программе, цветах и сроках"></textarea></label>
+        </div>
+        <label class="booking-consent"><input type="checkbox" name="consent" required><span data-i18n="booking_consent">I agree to send these details to Nelli in my chosen messenger.</span></label>
+        <div class="booking-actions"><button class="btn btn-solid" type="submit" data-i18n="booking_whatsapp">Send via WhatsApp</button><button id="booking-telegram" class="btn btn-line" type="button" data-i18n="booking_telegram">Send via Telegram</button></div>
+        <div id="booking-status" class="booking-status" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </div>
 </section>
-
 <section id="reviews">
   <div class="wrap reviews-shell">
     <div class="rev">
@@ -523,22 +579,24 @@
     </div>
   </div>
 </dialog>
-<script src="catalog-data.js"></script><script>
+<script src="catalog-data.js"></script><script src="/api/live-data.js" async onerror="window.NELLI_LIVE={}"></script><script>
 const i18n = {
   ru: {
     measure_eyebrow:'PDF-инструкции · пошагово', measure_h:'Как правильно снять мерки', measure_p:'Выберите инструкцию для девочки или мальчика. В PDF каждая мерка показана на схеме — точные размеры можно снять дома.', measure_girl:'Инструкция для девочки', measure_boy:'Инструкция для мальчика', measure_note:'PDF · откроется в новой вкладке',
     athletes_h2:'Свежие работы <span class="it">на спортсменах</span>', athletes_num:'июль 2026', athletes_lead:'Новые готовые костюмы в движении — на спортсменках национальных сборных и международных соревнованиях.',
     athlete_cap1:'Сборная Филиппин · Кубок мира, Милан 2026', athlete_cap2:'Создано с любовью · Франция × Израиль', athlete_cap3:'Соревновательная работа · Израиль', athlete_cap4:'Тысячи усилий · одно общее чувство', athlete_cap5:'Breanna Labadan · 2026',
     reviews_eyebrow:'Отзывы клиентов', reviews_h2:'Настоящие слова — <span class="it">в контексте</span>', reviews_source:'Спортсменки · родители · тренеры', reviews_body:'Свежие отзывы клиентов собраны в актуальных историях Instagram мастерской.', reviews_note:'Мы сохраняем автора, дату и полный текст сообщения, поэтому каждый отзыв можно проверить в первоисточнике.', reviews_cta:'Смотреть отзывы в Instagram',
-    nav_folio:'Портфолио', nav_stock:'В наличии', nav_telegram:'Канал', nav_order:'Как заказать', nav_about:'Мастерская', nav_contact:'Контакты',
+    nav_folio:'Портфолио', nav_stock:'В наличии', nav_telegram:'Канал', nav_order:'Как заказать', nav_booking:'Запись на пошив', nav_about:'Мастерская', nav_contact:'Контакты',
     hero_kicker:'Арт-мастерская · ручная работа · Тюмень',
     hero_h1:'Купальник как <span class="it">искусство.</span>',
-    hero_lead:'Купальники-кутюр для художественной гимнастики — создаются с нуля под одну гимнастку, одну программу, одно незабываемое выступление.',
-    hero_cta2:'В наличии',
-    mq1:'Ручная <i>работа</i>', mq3:'Доставка <i>по всему миру</i>', mq4:'50K+ <i>подписчиков</i>', mq5:'В единственном <i>экземпляре</i>',
-    folio_h2:'На соревновательном ковре — <span class="it">свежие работы на спортсменах</span>', folio_num:'Портфолио',
-    folio_cap1:'Breanna Labadan', folio_seas1:'Кубок мира, Милан 2026', folio_cap2:'Zoe', folio_seas2:'международные соревнования', folio_cap3:'USA Gymnastics Acro', folio_seas3:'сезон 2026',
-    folio_quote:'Каждый купальник начинается с чистого листа — а заканчивает путь под софитами чемпионата. <i>Гимнастку запоминают. В этом и смысл.</i>',
+    hero_lead:'Купальники-кутюр для художественной гимнастики — создаются под одну гимнастку, одну программу, одно незабываемое выступление.',
+    booking_cta:'Запись на пошив', hero_cta2:'В наличии',
+    mq1:'Ручная <i>работа</i>', mq3:'Доставка <i>по всему миру</i>', mq4_label:'подписчиков', mq5:'В единственном <i>экземпляре</i>',
+    folio_h2:'Наши работы', folio_num:'Портфолио',
+    portfolio_lead:'Авторские костюмы нашей мастерской в индивидуальных и групповых программах на российских и международных соревнованиях.',
+    portfolio_finland:'Финляндия', portfolio_rhythmics:'Художественная гимнастика', portfolio_team:'Командная коллекция', portfolio_minetit:'Minetit', portfolio_finland_team:'Сборная Финляндии',
+    portfolio_item1:'Индивидуальная программа · лента', portfolio_item2:'Соревновательное выступление', portfolio_item3:'Чёрный · розовый · серебро', portfolio_item4:'Золото · красный · чёрный', portfolio_item5:'Огненная коллекция · выступление', portfolio_item6:'Огненная коллекция · детали', portfolio_item7:'Цветочная коллекция · выступление', portfolio_item8:'Tampereen Sisu · Финляндия', portfolio_item9:'Групповая программа',
+     instagram_item1:'Сборная Филиппин · июль 2026', instagram_item2:'Кубок мира, Милан 2026', instagram_item3:'Соревновательное выступление · 2026', instagram_item4:'Франция × Израиль · индивидуальная работа', instagram_item5:'Соревновательная работа · Израиль', instagram_item6:'Командное выступление · 2026',
     stock_h2:'Готовы <span class="it">к отправке</span>', stock_num:'В наличии',
     rb_h:'Рост 150–165 см', rb_b:'ОГ 74–83 · ОТ 59–66 · ОБ 75–84',
     new_h:'Рост 145–155 см', new_b:'ОГ 68–78 · ОТ 56–64 · ОБ 70–80',
@@ -549,12 +607,12 @@ const i18n = {
     card_cta:'Узнать о купальнике', card_cta2:'Узнать о купальнике', card_cta3:'Узнать о купальнике', card_cta4:'Узнать о купальнике', card_cta5:'Узнать о купальнике',
     rail_hint:'листайте →',
     tg_h2:'Модели из <span class="it">Telegram-канала</span>', tg_num:'Карточки товаров', tg_p:'Шесть выбранных публикаций со всеми фотографиями, видео и оригинальными описаниями.', tg_product:'Актуальная модель', tg_open:'Открыть модель в Telegram ↗', tg_cta:'Открыть канал',
-    order_h2:'Как рождается <span class="it">ваш купальник</span>', order_num:'Индивидуальный пошив',
+    order_h2:'Как рождается <span class="it">ваш купальник</span>', order_num:'Индивидуальный пошив',    booking_h2:'Запись <span class="it">на пошив</span>', booking_num:'Календарь мастерской', booking_deposit_label:'Предоплата за бронирование', booking_copy_h:'Ваш костюм — <span class="it">в календаре мастерской</span>', booking_copy_p:'Выберите желаемый месяц и отправьте заявку. Нелли лично подтвердит свободную дату и сроки.', booking_deposit:'15 000 ₽', booking_deposit_p:'Предоплата 15 000 рублей вносится при записи на пошив в мастерской Nelli и полностью учитывается в итоговой стоимости костюма.', booking_rule1:'Предоплата не возвращается, если работа над эскизами уже началась.', booking_rule2:'В заявке укажите вид спорта и желаемую дату готовности, если впереди важные соревнования.', booking_rule3:'Выбранный месяц — это месяц, когда мастерская приступает к работе над эскизами.', booking_rule4:'После утверждения эскиза и снятия мерок пошив занимает около 3–4 недель.', booking_rule5:'Нелли лично свяжется с вами в WhatsApp, когда будет готова приступить к работе над эскизами.', booking_form_h:'Заявка на пошив', booking_form_p:'Заполните главное — сообщение откроется в выбранном личном мессенджере.', booking_month_label:'Желаемый месяц пошива', booking_slot_note:'Наличие подтверждает мастерская', booking_name:'Ваше имя', booking_athlete:'Имя спортсменки', booking_phone:'Телефон / мессенджер', booking_city:'Город и страна', booking_discipline:'Вид спорта', booking_height:'Рост спортсменки', booking_comment:'Дата выступления, музыка и пожелания', booking_select:'Выберите', booking_rhythmic:'Художественная гимнастика', booking_aesthetic:'Эстетическая гимнастика', booking_acrobatics:'Акробатика', booking_skating:'Фигурное катание', booking_consent:'Согласен(на) отправить эти данные Нелли в выбранном мессенджере.', booking_whatsapp:'Отправить в WhatsApp', booking_telegram:'Отправить в Telegram', booking_success:'Открываем личный чат с Нелли…',
     step1_h:'Расскажите идею', step1_p:'Напишите нам в WhatsApp или Telegram: музыка, настроение, любимые цвета — или просто ощущение. Мы предложим идеи.',
     step2_h:'Эскиз и ткани', step2_p:'Создаём уникальный эскиз, согласовываем палитру, ткани и работу с кристаллами до начала кроя.',
     step3_h:'Мерки дистанционно', step3_p:'Простая инструкция поможет снять мерки дома — посадка согласовывается до пошива.',
     step4_h:'Пошив и доставка', step4_p:'Купальник отшивается и вручную расшивается в мастерской, затем бережно упаковывается и едет к вам — в любую точку мира.',
-    about_eyebrow:'(04) — Мастерская',
+    about_eyebrow:'Мастерская',
     about_p1:'Арт-мастерская купальников для художественной гимнастики, эстетической гимнастики, акробатики и фигурного катания. Тюмень, Россия.',
     about_p2:'Каждое изделие уникально: авторский эскиз, профессиональные ткани и сетка. Купальники мастерской выступают на чемпионатах России и международных стартах.',
     about_social_ig:'Мы в Instagram', about_social_tg:'Мы в Telegram', about_social_vk:'Мы в VK',
@@ -575,6 +633,9 @@ function setLang(lang){
   });
   document.querySelectorAll('[data-href-en]').forEach(link => {
     link.href = currentLang === 'en' ? link.dataset.hrefEn : link.dataset.hrefRu;
+  });
+  document.querySelectorAll('[data-placeholder-en]').forEach(field => {
+    field.placeholder = currentLang === 'en' ? field.dataset.placeholderEn : field.dataset.placeholderRu;
   });
   document.documentElement.lang = currentLang;
   document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
@@ -601,7 +662,14 @@ document.getElementById('year').textContent = new Date().getFullYear();
 try { const saved = localStorage.getItem('ng-lang'); setLang(saved === 'en' ? 'en' : 'ru'); } catch(e) { setLang('ru'); }
 
 // Native catalog generated from the Telegram export.
-const catalogProducts = Array.isArray(window.NELLI_CATALOG) ? window.NELLI_CATALOG : [];
+let catalogProducts = (Array.isArray(window.NELLI_CATALOG) ? window.NELLI_CATALOG : []).map(product => ({
+  ...product,
+  specs: product.specs || {},
+  prices: Array.isArray(product.prices) ? product.prices : [],
+  photos: Array.isArray(product.photos) ? product.photos : [],
+  sold: product.sold === true || product.available === false,
+  available: product.available !== false && product.sold !== true
+}));
 const catalogGrid = document.getElementById('catalog-grid');
 const catalogSearch = document.getElementById('catalog-search');
 const catalogType = document.getElementById('catalog-type');
@@ -617,10 +685,10 @@ const typeLabels = {
 const conditionLabels = {ru:{new:'Новый',used:'Б/у'},en:{new:'New',used:'Pre-owned'}};
 const catalogUi = {
   ru:{
-    searchLabel:'Поиск',searchPlaceholder:'Название, рост или описание',typeLabel:'Тип',typeOptions:['Все товары','Купальники','Платья','Комбинезоны'],conditionLabel:'Состояние',conditionOptions:['Любое','Новые','Б/у'],sortLabel:'Сортировка',sortOptions:['Сначала новые','Сначала дешевле','Сначала дороже'],source:'Источник: Telegram ↗',more:'Показать ещё',details:'Подробнее',empty:'По вашему запросу ничего не найдено.',found:(shown,total)=>`Найдено: ${shown} из ${total}`,item:'Товар',priceRequest:'Цена по запросу',height:'Рост',noSpecs:'Параметры в описании',photo:n=>`${n} фото`,open:name=>`Открыть ${name}`,photoAlt:(name,n)=>`${name} — фото ${n}`,modalPhoto:n=>`Фото ${n}`,close:'Закрыть',previous:'Предыдущее фото',next:'Следующее фото',openTelegram:'Открыть в Telegram',ask:'Задать вопрос',spec:{chest:'Обхват груди',waist:'Обхват талии',hips:'Обхват бёдер',girth:'Дуга тела'}
+    searchLabel:'Поиск',searchPlaceholder:'Название, рост или описание',typeLabel:'Тип',typeOptions:['Все товары','Купальники','Платья','Комбинезоны'],conditionLabel:'Состояние',conditionOptions:['Любое','Новые','Б/у'],sortLabel:'Сортировка',sortOptions:['Сначала новые','Сначала дешевле','Сначала дороже'],source:'Источник: Telegram ↗',more:'Показать ещё',details:'Подробнее',empty:'По вашему запросу ничего не найдено.',found:(shown,total)=>`Найдено: ${shown} из ${total}`,item:'Товар',priceRequest:'Цена по запросу',height:'Рост',noSpecs:'Параметры в описании',photo:n=>`${n} фото`,open:name=>`Открыть ${name}`,photoAlt:(name,n)=>`${name} — фото ${n}`,modalPhoto:n=>`Фото ${n}`,close:'Закрыть',previous:'Предыдущее фото',next:'Следующее фото',openTelegram:'Открыть в Telegram',ask:'Задать вопрос',similar:'Подобрать похожий',sold:'Продано',spec:{chest:'Обхват груди',waist:'Обхват талии',hips:'Обхват бёдер',girth:'Дуга тела'}
   },
   en:{
-    searchLabel:'Search',searchPlaceholder:'Name, height or description',typeLabel:'Type',typeOptions:['All items','Leotards','Dresses','Jumpsuits'],conditionLabel:'Condition',conditionOptions:['Any','New','Pre-owned'],sortLabel:'Sort by',sortOptions:['Newest first','Lowest price','Highest price'],source:'Source: Telegram ↗',more:'Show more',details:'View details',empty:'No products match your search.',found:(shown,total)=>`Found: ${shown} of ${total}`,item:'Item',priceRequest:'Price on request',height:'Height',noSpecs:'See product details',photo:n=>`${n} ${n===1?'photo':'photos'}`,open:name=>`Open ${name}`,photoAlt:(name,n)=>`${name} — photo ${n}`,modalPhoto:n=>`Photo ${n}`,close:'Close',previous:'Previous photo',next:'Next photo',openTelegram:'Open in Telegram',ask:'Ask a question',spec:{chest:'Chest',waist:'Waist',hips:'Hips',girth:'Body girth'}
+    searchLabel:'Search',searchPlaceholder:'Name, height or description',typeLabel:'Type',typeOptions:['All items','Leotards','Dresses','Jumpsuits'],conditionLabel:'Condition',conditionOptions:['Any','New','Pre-owned'],sortLabel:'Sort by',sortOptions:['Newest first','Lowest price','Highest price'],source:'Source: Telegram ↗',more:'Show more',details:'View details',empty:'No products match your search.',found:(shown,total)=>`Found: ${shown} of ${total}`,item:'Item',priceRequest:'Price on request',height:'Height',noSpecs:'See product details',photo:n=>`${n} ${n===1?'photo':'photos'}`,open:name=>`Open ${name}`,photoAlt:(name,n)=>`${name} — photo ${n}`,modalPhoto:n=>`Photo ${n}`,close:'Close',previous:'Previous photo',next:'Next photo',openTelegram:'Open in Telegram',ask:'Ask a question',similar:'Ask about a similar item',sold:'Sold',spec:{chest:'Chest',waist:'Waist',hips:'Hips',girth:'Body girth'}
   }
 };
 let catalogLimit = 24;
@@ -632,6 +700,8 @@ function productName(product){return currentLang==='en' ? (product.nameEn||produ
 function productDescription(product){return currentLang==='en' ? (product.descriptionEn||product.description) : product.description;}
 function typeLabel(type){return typeLabels[currentLang][type]||ui().item;}
 function conditionLabel(condition){return conditionLabels[currentLang][condition]||'';}
+function productSold(product){return product.sold===true||product.available===false;}
+function normalizedProductName(value=''){return value.toLocaleLowerCase('ru').replace(/ё/g,'е').replace(/[^\p{L}\p{N}]+/gu,' ').trim();}
 function unit(){return currentLang==='en' ? ' cm' : ' см';}
 function updateCatalogChrome(){
   const t=ui();
@@ -647,10 +717,11 @@ function updateCatalogChrome(){
   document.getElementById('gallery-prev').setAttribute('aria-label',t.previous);
   document.getElementById('gallery-next').setAttribute('aria-label',t.next);
   document.getElementById('dialog-telegram').textContent=t.openTelegram;
-  document.querySelector('.dialog-actions .btn-line').textContent=t.ask;
+  document.querySelector('.dialog-actions .btn-line').textContent=activeProduct&&productSold(activeProduct)?t.similar:t.ask;
 }
 
 function money(product){
+  if(productSold(product)) return ui().sold;
   if(!product.prices.length) return ui().priceRequest;
   const values=[...product.prices].sort((a,b)=>a-b);
   const format=n=>currentLang==='en' ? new Intl.NumberFormat('en-US').format(n)+' RUB' : new Intl.NumberFormat('ru-RU').format(n)+' ₽';
@@ -684,11 +755,11 @@ function filteredProducts(){
 }
 function cardElement(product){
   const t=ui();const name=productName(product);
-  const card=document.createElement('article');card.className='catalog-card';
+  const card=document.createElement('article');card.className='catalog-card'+(productSold(product)?' is-sold':'');
   const photo=document.createElement('button');photo.className='catalog-photo';photo.type='button';photo.dataset.productId=product.id;photo.setAttribute('aria-label',t.open(name));
   const img=document.createElement('img');img.src=product.photos[0];img.alt=name;img.loading='lazy';img.decoding='async';photo.append(img);
   const badges=document.createElement('span');badges.className='catalog-badges';
-  const state=document.createElement('span');state.className='catalog-badge';state.textContent=conditionLabel(product.condition);
+  const state=document.createElement('span');state.className='catalog-badge';state.textContent=productSold(product)?t.sold:conditionLabel(product.condition);
   const total=document.createElement('span');total.className='catalog-badge';total.textContent=t.photo(product.photos.length);badges.append(state,total);photo.append(badges);card.append(photo);
   const body=document.createElement('div');body.className='catalog-card-body';
   const type=document.createElement('div');type.className='catalog-type';type.textContent=typeLabel(product.type);
@@ -714,12 +785,12 @@ function showActivePhoto(){
 function openProduct(id){
   const selected=catalogProducts.find(product=>product.id===Number(id));if(!selected)return;
   const preservePhoto=productDialog.open&&activeProduct&&activeProduct.id===selected.id;activeProduct=selected;if(!preservePhoto)activePhoto=0;
-  document.getElementById('dialog-type').textContent=typeLabel(activeProduct.type)+' · '+conditionLabel(activeProduct.condition);
+  document.getElementById('dialog-type').textContent=typeLabel(activeProduct.type)+' · '+(productSold(activeProduct)?ui().sold:conditionLabel(activeProduct.condition));
   document.getElementById('dialog-name').textContent=productName(activeProduct);document.getElementById('dialog-price').textContent=money(activeProduct);
   const specs=document.getElementById('dialog-specs');specs.replaceChildren();
   if(activeProduct.height)specs.append(modalSpec(ui().height,activeProduct.height+unit()));
   Object.entries(activeProduct.specs).forEach(([key,value])=>specs.append(modalSpec(ui().spec[key]||key,value+unit())));
-  document.getElementById('dialog-description').textContent=productDescription(activeProduct);document.getElementById('dialog-telegram').href=activeProduct.telegram;
+  document.getElementById('dialog-description').textContent=productDescription(activeProduct);document.getElementById('dialog-telegram').href=activeProduct.telegram;document.querySelector('.dialog-actions .btn-line').textContent=productSold(activeProduct)?ui().similar:ui().ask;
   const thumbs=document.getElementById('product-thumbs');thumbs.replaceChildren();activeProduct.photos.forEach((src,index)=>{const button=document.createElement('button');button.type='button';button.className='product-thumb';button.dataset.photoIndex=index;button.setAttribute('aria-label',ui().modalPhoto(index+1));const image=document.createElement('img');image.src=src;image.alt='';image.loading='lazy';button.append(image);thumbs.append(button);});
   showActivePhoto();if(!productDialog.open)productDialog.showModal();document.body.style.overflow='hidden';
 }
@@ -730,8 +801,99 @@ document.getElementById('product-thumbs').addEventListener('click',event=>{const
 document.getElementById('gallery-prev').addEventListener('click',()=>{activePhoto=(activePhoto-1+activeProduct.photos.length)%activeProduct.photos.length;showActivePhoto();});
 document.getElementById('gallery-next').addEventListener('click',()=>{activePhoto=(activePhoto+1)%activeProduct.photos.length;showActivePhoto();});
 productDialog.addEventListener('close',()=>{document.body.style.overflow='';});
-window.updateDynamicLanguage=()=>{updateCatalogChrome();renderCatalog();if(productDialog.open&&activeProduct)openProduct(activeProduct.id);};
+
+const bookingForm=document.getElementById('booking-form');
+const bookingMonths=document.getElementById('booking-months');
+const bookingStatus=document.getElementById('booking-status');
+function renderBookingMonths(){
+  if(!bookingMonths)return;
+  const selected=bookingForm.elements.month?.value||'';
+  const locale=currentLang==='en'?'en-US':'ru-RU';
+  bookingMonths.replaceChildren();
+  const start=new Date();start.setDate(1);
+  for(let index=0;index<6;index+=1){
+    const date=new Date(start.getFullYear(),start.getMonth()+index,1);
+    const value=date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0');
+    const label=document.createElement('label');label.className='booking-month';
+    const radio=document.createElement('input');radio.type='radio';radio.name='month';radio.value=value;radio.required=index===0;radio.checked=value===selected;
+    const card=document.createElement('span');card.className='booking-month-card';
+    const title=document.createElement('strong');title.textContent=new Intl.DateTimeFormat(locale,{month:'long',year:'numeric'}).format(date);
+    const note=document.createElement('span');note.textContent=currentLang==='en'?'Availability confirmed by the atelier':i18n.ru.booking_slot_note;
+    card.append(title,note);label.append(radio,card);bookingMonths.append(label);
+  }
+}
+function bookingMessage(){
+  const data=new FormData(bookingForm);
+  const discipline=bookingForm.elements.discipline.options[bookingForm.elements.discipline.selectedIndex]?.textContent||'';
+  const [year,month]=String(data.get('month')).split('-').map(Number);
+  const monthText=new Intl.DateTimeFormat(currentLang==='en'?'en-US':'ru-RU',{month:'long',year:'numeric'}).format(new Date(year,month-1,1));
+  const lines=currentLang==='en'?[`Tailoring request — ${monthText}`,`Customer: ${data.get('customer')}`,`Athlete: ${data.get('athlete')}`,`Phone / messenger: ${data.get('phone')}`,`City / country: ${data.get('city')}`,`Discipline: ${discipline}`,`Height: ${data.get('height')} cm`,`Performance and wishes: ${data.get('comment')||'—'}`]:[`Заявка на пошив — ${monthText}`,`Заказчик: ${data.get('customer')}`,`Спортсменка: ${data.get('athlete')}`,`Телефон / мессенджер: ${data.get('phone')}`,`Город / страна: ${data.get('city')}`,`Вид спорта: ${discipline}`,`Рост: ${data.get('height')} см`,`Выступление и пожелания: ${data.get('comment')||'—'}`];
+  return lines.join('\n');
+}
+function sendBooking(channel){
+  if(!bookingForm.reportValidity())return;
+  const message=encodeURIComponent(bookingMessage());
+  const url=channel==='telegram'?`https://t.me/NelliGarkusha?text=${message}`:`https://wa.me/79612064782?text=${message}`;
+  bookingStatus.textContent=currentLang==='en'?'Opening Nelli’s personal chat…':i18n.ru.booking_success;
+  window.open(url,'_blank','noopener');
+}
+bookingForm.addEventListener('submit',event=>{event.preventDefault();sendBooking('whatsapp');});
+document.getElementById('booking-telegram').addEventListener('click',()=>sendBooking('telegram'));
+renderBookingMonths();
+let liveFollowersCount = 70002;
+function updateFollowerCount(){
+  const nodes=document.querySelectorAll('.instagram-followers');
+  if(!nodes.length||!Number.isFinite(liveFollowersCount))return;
+  const locale=currentLang==='en'?'en-US':'ru-RU';
+  const exact=new Intl.NumberFormat(locale).format(liveFollowersCount);
+  nodes.forEach(node=>{node.textContent=exact;node.title=exact;});
+}
+function mergeTelegramLive(telegram){
+  if(!telegram)return;
+  (telegram.products||[]).forEach(incoming=>{
+    const existing=catalogProducts.find(item=>item.id===Number(incoming.id));
+    const normalized={...incoming,specs:incoming.specs||{},prices:Array.isArray(incoming.prices)?incoming.prices:[],photos:Array.isArray(incoming.photos)?incoming.photos:[],sold:incoming.sold===true||incoming.available===false,available:incoming.available!==false&&incoming.sold!==true};
+    if(existing){
+      const localPhotos=(existing.photos||[]).filter(src=>!/^https?:\/\//i.test(src));
+      Object.assign(existing,normalized,{photos:localPhotos.length?localPhotos:normalized.photos});
+    }else if(normalized.photos.length){catalogProducts.push(normalized);}
+  });
+  (telegram.statuses||[]).forEach(status=>{
+    let product=catalogProducts.find(item=>item.id===Number(status.id));
+    if(!product&&status.normalizedName){
+      product=catalogProducts.filter(item=>normalizedProductName(item.name)===status.normalizedName).sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id)[0];
+    }
+    if(product&&status.sold===true){product.sold=true;product.available=false;}
+  });
+}
+function renderLivePortfolio(media){
+  const grid=document.getElementById('portfolio-live-grid');
+  if(!grid)return;
+  const existingPosts=new Set([...document.querySelectorAll('#instagram-recent-grid a[href]')].map(link=>link.href.replace(/\/$/,'')));
+  const items=(media||[]).filter(item=>item.image&&item.permalink).filter(item=>!existingPosts.has(item.permalink.replace(/\/$/,'')));
+  grid.replaceChildren();
+  grid.hidden=!items.length;
+  items.forEach((item,index)=>{
+    const figure=document.createElement('figure');figure.className='portfolio-piece'+(index%5===0?' wide':'');
+    const link=document.createElement('a');link.href=item.permalink;link.target='_blank';link.rel='noopener';
+    const image=document.createElement('img');image.src=item.image;image.alt=item.caption||'Nelli Garkusha atelier work on an athlete';image.loading='lazy';image.decoding='async';
+    const caption=document.createElement('figcaption');caption.className='portfolio-caption';
+    const block=document.createElement('div');const title=document.createElement('strong');title.textContent='@art_nelli_leotards';const meta=document.createElement('span');meta.textContent=item.timestamp?new Date(item.timestamp).toLocaleDateString(currentLang==='en'?'en-GB':'ru-RU'):'';
+    block.append(title,meta);caption.append(block);link.append(image,caption);figure.append(link);grid.append(figure);
+  });
+}
+function applyLiveData(data){
+  if(!data)return;
+  if(Number.isFinite(data.instagram?.followersCount)){liveFollowersCount=Number(data.instagram.followersCount);updateFollowerCount();}
+  mergeTelegramLive(data.telegram);
+  renderLivePortfolio(data.instagram?.media||[]);
+  catalogLimit=24;renderCatalog();
+}
+window.addEventListener('nelli:live-data',event=>applyLiveData(event.detail));
+window.updateDynamicLanguage=()=>{updateFollowerCount();updateCatalogChrome();renderCatalog();renderBookingMonths();renderLivePortfolio(window.NELLI_LIVE?.instagram?.media||[]);if(productDialog.open&&activeProduct)openProduct(activeProduct.id);};
+updateFollowerCount();
 updateCatalogChrome();
-renderCatalog();</script>
+renderCatalog();
+if(window.NELLI_LIVE)applyLiveData(window.NELLI_LIVE);</script>
 </body>
 </html>
