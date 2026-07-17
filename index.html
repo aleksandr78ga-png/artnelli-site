@@ -9,7 +9,6 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nelli Garkusha — Couture Leotards for Rhythmic Gymnastics">
 <meta property="og:description" content="Авторские купальники и комбинезоны для художественной гимнастики от Nelli Garkusha.">
-<meta property="og:image" content="https://artnelli.com/assets/site/finland-team.jpg">
 <meta property="og:url" content="https://artnelli.com/">
 <link rel="canonical" href="https://artnelli.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,8 +52,6 @@
   .nav-links{display:flex;gap:20px;align-items:center}
   .nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim);transition:color .2s}
   .nav-links a:hover{color:var(--gold)}
-  .nav-links a.nav-booking{padding:10px 14px;border:1px solid var(--gold);border-radius:99px;color:var(--ivory)}
-  .nav-links a.nav-booking:hover{background:var(--gold);color:var(--bg)}
   .lang-toggle{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
   .lang-toggle button{border:0;background:transparent;padding:7px 14px;cursor:pointer;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--ivory-dim)}
   .lang-toggle button.active{background:var(--ivory);color:var(--bg)}
@@ -164,7 +161,9 @@
   .booking-copy{position:sticky;top:110px}
   .booking-copy h3{font:400 clamp(2rem,4vw,3.4rem)/1.08 var(--serif);margin:16px 0 24px}
   .booking-copy h3 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
-  .booking-deposit{border-block:1px solid var(--line);padding:24px 0;margin:28px 0}
+  .booking-notice{margin-top:30px;border:1px solid rgba(201,169,106,.72);background:linear-gradient(135deg,rgba(201,169,106,.15),rgba(201,169,106,.035));padding:clamp(24px,3vw,36px);box-shadow:inset 0 0 40px rgba(201,169,106,.045)}
+  .booking-notice-title{color:var(--gold);font:400 .7rem var(--mono);letter-spacing:.18em;text-transform:uppercase}
+  .booking-deposit{border-bottom:1px solid var(--line);padding:16px 0 22px;margin:0 0 24px}
   .booking-deposit strong{display:block;color:var(--gold);font:400 clamp(2rem,4vw,3rem) var(--serif)}
   .booking-deposit p,.booking-copy>p{color:var(--ivory-dim)}
   .booking-rules{display:grid;gap:13px;list-style:none;color:var(--ivory-dim)}
@@ -192,7 +191,7 @@
   .booking-consent{display:flex;align-items:flex-start;gap:12px;margin:22px 0;color:var(--ivory-dim);font-size:.78rem}
   .booking-consent input{margin-top:5px;accent-color:var(--gold)}
   .booking-actions{display:flex;gap:12px;flex-wrap:wrap}
-  .booking-actions .btn{cursor:pointer}
+  .booking-actions .btn{cursor:pointer;flex:1;text-align:center}
   .booking-status{min-height:1.5em;margin-top:14px;color:var(--gold);font:300 .68rem var(--mono);letter-spacing:.08em}
   @media(max-width:900px){.booking-shell{grid-template-columns:1fr}.booking-copy{position:static}.booking-months{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:620px){.booking-months,.booking-fields{grid-template-columns:1fr}.booking-field.full{grid-column:auto}.booking-actions .btn{width:100%;text-align:center}}
@@ -226,9 +225,9 @@
   .review-card .review-note{font:300 .86rem/1.7 var(--sans);color:var(--ivory-dim);margin-bottom:24px}
 
   /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);padding-top:46px;overflow:hidden}
+  footer{border-top:1px solid var(--line);padding:46px 0 24px;overflow:hidden}
   .foot-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:40px}
-  .wordmark{font-family:var(--serif);font-size:clamp(3rem,10.5vw,10rem);line-height:.78;white-space:nowrap;text-align:center;color:var(--ivory);opacity:.92;transform:translateY(18%)}
+  .wordmark{font-family:var(--serif);font-size:clamp(3rem,10.5vw,10rem);line-height:1.05;white-space:nowrap;text-align:center;color:var(--ivory);opacity:.92;padding:0 20px}
   .wordmark span{font-family:var(--serif);font-style:normal;color:var(--gold)}
 
   /* ---------- reduced motion ---------- */
@@ -326,7 +325,7 @@
       <a href="#folio" data-i18n="nav_folio">Portfolio</a>
       <a href="#stock" data-i18n="nav_stock">In Stock</a>
       <a href="#order" data-i18n="nav_order">How to Order</a>
-      <a class="nav-booking" href="#booking" data-i18n="nav_booking">Book tailoring</a>
+      <a href="#booking" data-i18n="nav_booking">Book tailoring</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="lang-toggle">
@@ -348,7 +347,7 @@
     <div class="hero-foot">
       <p class="hero-lead" data-i18n="hero_lead">Couture competition leotards for rhythmic gymnastics — designed for one gymnast, one routine, one unforgettable performance.</p>
       <div class="cta-row">
-        <a class="btn btn-solid" href="#booking" data-i18n="booking_cta">Book tailoring</a>
+        <a class="btn btn-line" href="#booking" data-i18n="booking_cta">Book tailoring</a>
         <a class="btn btn-line" href="#stock" data-i18n="hero_cta2">Ready to ship</a>
       </div>
     </div>
@@ -473,7 +472,7 @@
       </div>
       <div>
         <div class="measure-actions">
-          <a id="measure-girl" class="btn btn-solid" href="assets/guides/measurements-girl-en.pdf" data-href-en="assets/guides/measurements-girl-en.pdf" data-href-ru="assets/guides/measurements-girl-ru.pdf" target="_blank" rel="noopener" data-i18n="measure_girl">Guide for a girl</a>
+          <a id="measure-girl" class="btn btn-line" href="assets/guides/measurements-girl-en.pdf" data-href-en="assets/guides/measurements-girl-en.pdf" data-href-ru="assets/guides/measurements-girl-ru.pdf" target="_blank" rel="noopener" data-i18n="measure_girl">Guide for a girl</a>
           <a id="measure-boy" class="btn btn-line" href="assets/guides/measurements-boy-en.pdf" data-href-en="assets/guides/measurements-boy-en.pdf" data-href-ru="assets/guides/measurements-boy-ru.pdf" target="_blank" rel="noopener" data-i18n="measure_boy">Guide for a boy</a>
         </div>
         <div class="measure-note" data-i18n="measure_note">PDF · opens in a new tab</div>
@@ -493,14 +492,17 @@
         <div class="mono" data-i18n="booking_deposit_label">Reservation deposit</div>
         <h3 data-i18n="booking_copy_h">Your costume — <span class="it">in the atelier calendar</span></h3>
         <p data-i18n="booking_copy_p">Choose a preferred month and send the request. Nelli will personally confirm the available date and timing.</p>
-        <div class="booking-deposit"><strong data-i18n="booking_deposit">15,000 RUB</strong><p data-i18n="booking_deposit_p">The 15,000 RUB deposit is paid when reserving a tailoring slot at the Nelli atelier and is fully included in the final costume price.</p></div>
+        <div class="booking-notice">
+          <div class="booking-notice-title" data-i18n="booking_important">Important before booking</div>
+          <div class="booking-deposit"><strong data-i18n="booking_deposit">15,000 RUB</strong><p data-i18n="booking_deposit_p">The 15,000 RUB deposit is paid when reserving a tailoring slot at the Nelli atelier and is fully included in the final costume price.</p></div>
         <ul class="booking-rules">
           <li data-i18n="booking_rule1">The deposit is non-refundable once work on your sketches has begun.</li>
           <li data-i18n="booking_rule2">In the request, specify the discipline and desired completion date if there is an important competition.</li>
           <li data-i18n="booking_rule3">The selected month is the month when the atelier starts working on the sketches.</li>
           <li data-i18n="booking_rule4">After sketch approval and measurements, tailoring takes approximately 3–4 weeks.</li>
           <li data-i18n="booking_rule5">Nelli will contact you personally in WhatsApp when it is time to begin the sketches.</li>
-        </ul>
+          </ul>
+        </div>
       </div>
       <form id="booking-form" class="booking-form rev">
         <h3 data-i18n="booking_form_h">Tailoring request</h3><p data-i18n="booking_form_p">Fill in the key details. The message will open in your chosen personal messenger.</p>
@@ -515,7 +517,7 @@
           <label class="booking-field full"><span data-i18n="booking_comment">Performance date, music and wishes</span><textarea name="comment" data-placeholder-en="Tell us about the routine, colours and deadline" data-placeholder-ru="Расскажите о программе, цветах и сроках"></textarea></label>
         </div>
         <label class="booking-consent"><input type="checkbox" name="consent" required><span data-i18n="booking_consent">I agree to send these details to Nelli in my chosen messenger.</span></label>
-        <div class="booking-actions"><button class="btn btn-solid" type="submit" data-i18n="booking_whatsapp">Send via WhatsApp</button><button id="booking-telegram" class="btn btn-line" type="button" data-i18n="booking_telegram">Send via Telegram</button></div>
+        <div class="booking-actions"><button class="btn btn-solid" type="submit" data-i18n="booking_whatsapp">Send via WhatsApp</button><button id="booking-telegram" class="btn btn-solid" type="button" data-i18n="booking_telegram">Send via Telegram</button></div>
         <div id="booking-status" class="booking-status" role="status" aria-live="polite"></div>
       </form>
     </div>
@@ -618,6 +620,7 @@ const i18n = {
   },
   en: {}
 };
+i18n.ru.booking_important='\u0412\u0430\u0436\u043d\u043e \u043f\u0435\u0440\u0435\u0434 \u0437\u0430\u043f\u0438\u0441\u044c\u044e';
 
 document.querySelectorAll('[data-i18n]').forEach(el => { i18n.en[el.dataset.i18n] = el.innerHTML; });
 let currentLang = 'ru';
@@ -747,7 +750,10 @@ function filteredProducts(){
   const firstPrice=p=>p.prices.length?Math.min(...p.prices):Number.MAX_SAFE_INTEGER;
   if(catalogSort.value==='price-asc') list.sort((a,b)=>firstPrice(a)-firstPrice(b));
   else if(catalogSort.value==='price-desc') list.sort((a,b)=>firstPrice(b)-firstPrice(a));
-  else list.sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+  else list.sort((a,b)=>{
+    const conditionOrder=(a.condition==='new'?0:a.condition==='used'?1:2)-(b.condition==='new'?0:b.condition==='used'?1:2);
+    return conditionOrder||b.date.localeCompare(a.date)||b.id-a.id;
+  });
   return list;
 }
 function cardElement(product){
