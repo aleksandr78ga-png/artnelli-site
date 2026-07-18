@@ -715,7 +715,8 @@ let catalogProducts = (Array.isArray(window.NELLI_CATALOG) ? window.NELLI_CATALO
   prices: Array.isArray(product.prices) ? product.prices : [],
   photos: Array.isArray(product.photos) ? product.photos : [],
   sold: product.sold === true || product.available === false,
-  available: product.available !== false && product.sold !== true
+  removed: product.removed === true,
+  available: product.available !== false && product.sold !== true && product.removed !== true
 }));
 const catalogGrid = document.getElementById('catalog-grid');
 const catalogSearch = document.getElementById('catalog-search');
@@ -789,7 +790,7 @@ function specLine(product){
 }
 function filteredProducts(){
   const query=catalogSearch.value.trim().toLocaleLowerCase(currentLang==='en'?'en':'ru');
-  let list=catalogProducts.filter(product=>{
+  let list=catalogProducts.filter(product=>product.removed!==true).filter(product=>{
     const haystack=[product.name,product.nameEn,product.description,product.descriptionEn,product.height].filter(Boolean).join(' ').toLocaleLowerCase(currentLang==='en'?'en':'ru');
     const matchesText=!query || haystack.includes(query);
     return matchesText && (catalogType.value==='all'||product.type===catalogType.value) && (catalogCondition.value==='all'||product.condition===catalogCondition.value);
@@ -823,7 +824,8 @@ function renderCatalog(){
   const list=filteredProducts();catalogGrid.replaceChildren();
   list.slice(0,catalogLimit).forEach(product=>catalogGrid.append(cardElement(product)));
   if(!list.length){const empty=document.createElement('div');empty.className='catalog-empty';empty.textContent=ui().empty;catalogGrid.append(empty);}
-  catalogCount.textContent=ui().found(list.length,catalogProducts.length);
+  const activeTotal=catalogProducts.filter(product=>product.removed!==true).length;
+  catalogCount.textContent=ui().found(list.length,activeTotal);
   catalogMore.hidden=catalogLimit>=list.length;
 }
 function modalSpec(label,value){const item=document.createElement('div');item.className='dialog-spec';const l=document.createElement('span');l.textContent=label;const v=document.createElement('b');v.textContent=value;item.append(l,v);return item;}
@@ -902,7 +904,7 @@ function mergeTelegramLive(telegram){
   if(!telegram)return;
   (telegram.products||[]).forEach(incoming=>{
     const existing=catalogProducts.find(item=>item.id===Number(incoming.id));
-    const normalized={...incoming,specs:incoming.specs||{},prices:Array.isArray(incoming.prices)?incoming.prices:[],photos:Array.isArray(incoming.photos)?incoming.photos:[],sold:incoming.sold===true||incoming.available===false,available:incoming.available!==false&&incoming.sold!==true};
+    const normalized={...incoming,specs:incoming.specs||{},prices:Array.isArray(incoming.prices)?incoming.prices:[],photos:Array.isArray(incoming.photos)?incoming.photos:[],sold:incoming.sold===true,removed:incoming.removed===true,available:incoming.available!==false&&incoming.sold!==true&&incoming.removed!==true};
     if(existing){
       const localPhotos=(existing.photos||[]).filter(src=>!/^https?:\/\//i.test(src));
       Object.assign(existing,normalized,{photos:localPhotos.length?localPhotos:normalized.photos});
@@ -914,6 +916,7 @@ function mergeTelegramLive(telegram){
       product=catalogProducts.filter(item=>normalizedProductName(item.name)===status.normalizedName).sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id)[0];
     }
     if(product&&status.sold===true){product.sold=true;product.available=false;}
+    if(product&&status.removed===true){product.removed=true;product.available=false;}
   });
 }
 function renderLivePortfolio(media){

@@ -99,6 +99,17 @@ function priceValues(text) {
   return values;
 }
 
+function telegramTextStatus(text = "") {
+  const sold = /(?:^|\s)(?:продан(?:о|а|ы)?|sold)(?:$|\s|[!.,✅❌])/imu.test(
+    text,
+  );
+  const removed = /(?:снят(?:о|а|ы)?\s+(?:с\s+публикации|с\s+продажи)|не\s+прода[её]тся|removed|withdrawn)/iu.test(
+    text,
+  );
+  const selling = /прода[её]тся|в\s+продаже|for\s+sale/iu.test(text);
+  return { sold, removed, selling };
+}
+
 function englishDescription(product) {
   const type = {
     leotard: "rhythmic gymnastics leotard",
@@ -141,16 +152,19 @@ export function parseTelegramPage(html) {
     if (!text) continue;
 
     const name = quotedName(text);
-    const sold = /(?:^|\s)(?:продан(?:о|а|ы)?|sold)(?:$|\s|[!.,✅❌])/imu.test(
-      text,
-    );
-    const selling = /прода[её]тся|в\s+продаже|for\s+sale/iu.test(text);
+    const { sold, removed, selling } = telegramTextStatus(text);
 
-    if (name && sold) {
-      statuses.push({ id, name, normalizedName: normalizedName(name), sold: true });
+    if (name && (sold || removed)) {
+      statuses.push({
+        id,
+        name,
+        normalizedName: normalizedName(name),
+        sold,
+        removed,
+      });
     }
 
-    if (!selling && !sold) continue;
+    if ((!selling && !sold) || removed) continue;
 
     const decodedChunk = decodeHtml(chunk);
     const photos = [];
@@ -189,7 +203,8 @@ export function parseTelegramPage(html) {
       type,
       condition,
       sold,
-      available: !sold,
+      removed,
+      available: !sold && !removed,
       date: dateMatch
         ? new Date(dateMatch[1]).toISOString().slice(0, 10)
         : new Date().toISOString().slice(0, 10),
@@ -212,10 +227,153 @@ export function parseTelegramPage(html) {
       name,
       normalizedName: normalizedName(name),
       sold,
+      removed,
     });
   }
 
   return { products, statuses };
+}
+
+function isNelliChannelMessage(message) {
+  const username = String(message?.chat?.username || "")
+    .replace(/^@/, "")
+    .toLocaleLowerCase("en");
+  return username === TELEGRAM_CHANNEL;
+}
+
+function messageText(message) {
+  return String(message?.caption || message?.text || "").trim();
+}
+
+function messageMediaFileId(message) {
+  const photos = Array.isArray(message?.photo) ? message.photo : [];
+  if (photos.length) return photos.at(-1)?.file_id || "";
+  return (
+    message?.video?.thumbnail?.file_id ||
+    message?.animation?.thumbnail?.file_id ||
+    message?.document?.thumbnail?.file_id ||
+    ""
+  );
+}
+
+function telegramMediaUrl(fileId) {
+  return "/api/telegram-media/" + encodeURIComponent(fileId);
+}
+
+export function parseTelegramBotUpdates(updates) {
+  const messagesById = new Map();
+
+  for (const update of Array.isArray(updates) ? updates : []) {
+    const message = update?.edited_channel_post || update?.channel_post;
+    if (!message || !isNelliChannelMessage(message)) continue;
+    messagesById.set(Number(message.message_id), message);
+  }
+
+  const groups = new Map();
+  for (const message of messagesById.values()) {
+    const key = message.media_group_id
+      ? "media:" + message.media_group_id
+      : "message:" + message.message_id;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(message);
+  }
+
+  const products = [];
+  const statuses = [];
+
+  for (const messages of groups.values()) {
+    messages.sort((a, b) => Number(a.message_id) - Number(b.message_id));
+    const primary = messages.find((message) => messageText(message)) || messages[0];
+    const text = messageText(primary);
+    if (!text) continue;
+
+    const id = Number(primary.message_id);
+    const name = quotedName(text);
+    const { sold, removed, selling } = telegramTextStatus(text);
+
+    if (name && (sold || removed)) {
+      statuses.push({
+        id,
+        name,
+        normalizedName: normalizedName(name),
+        sold,
+        removed,
+      });
+    }
+
+    if (!selling || sold || removed || !name) continue;
+
+    const photos = messages
+      .map(messageMediaFileId)
+      .filter(Boolean)
+      .filter((fileId, index, values) => values.indexOf(fileId) === index)
+      .map(telegramMediaUrl);
+    if (!photos.length) continue;
+
+    const type = /платье|фигурн/iu.test(text)
+      ? "dress"
+      : /комбинезон/iu.test(text)
+        ? "jumpsuit"
+        : "leotard";
+    const condition = /(?:^|\s)б\s*\/\s*у(?:$|\s|,)|pre-owned/iu.test(text)
+      ? "used"
+      : "new";
+    const product = {
+      id,
+      name,
+      nameEn: transliterateName(name),
+      type,
+      condition,
+      sold: false,
+      removed: false,
+      available: true,
+      date: new Date(Number(primary.date || 0) * 1000)
+        .toISOString()
+        .slice(0, 10),
+      height: rangeValue(text, "Рост"),
+      specs: {
+        chest: rangeValue(text, "ОГ"),
+        waist: rangeValue(text, "ОТ"),
+        hips: rangeValue(text, "ОБ"),
+        girth: rangeValue(text, "Дуга\\s+тела"),
+      },
+      prices: priceValues(text),
+      description: text,
+      photos,
+      telegram: "https://t.me/" + TELEGRAM_CHANNEL + "/" + id,
+    };
+    product.descriptionEn = englishDescription(product);
+    products.push(product);
+    statuses.push({
+      id,
+      name,
+      normalizedName: normalizedName(name),
+      sold: false,
+      removed: false,
+    });
+  }
+
+  return { products, statuses };
+}
+
+function mergeTelegramResults(...results) {
+  const productMap = new Map();
+  const statusMap = new Map();
+
+  for (const result of results) {
+    for (const product of result?.products || []) {
+      productMap.set(Number(product.id), product);
+    }
+    for (const status of result?.statuses || []) {
+      const key = Number(status.id) || status.normalizedName;
+      if (key) statusMap.set(key, status);
+    }
+  }
+
+  return {
+    products: [...productMap.values()],
+    statuses: [...statusMap.values()],
+  };
 }
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
@@ -228,7 +386,7 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
   }
 }
 
-async function telegramData() {
+async function telegramPublicData() {
   try {
     const response = await fetchWithTimeout(TELEGRAM_PUBLIC_URL, {
       headers: {
@@ -243,6 +401,65 @@ async function telegramData() {
   } catch (error) {
     return { products: [], statuses: [], ok: false };
   }
+}
+
+async function telegramBotData(env) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  if (!token) {
+    return {
+      products: [],
+      statuses: [],
+      ok: false,
+      connected: false,
+      pendingUpdates: 0,
+    };
+  }
+
+  const url = new URL("https://api.telegram.org/bot" + token + "/getUpdates");
+  url.searchParams.set("limit", "100");
+  url.searchParams.set("timeout", "0");
+  url.searchParams.set(
+    "allowed_updates",
+    JSON.stringify(["channel_post", "edited_channel_post", "message"]),
+  );
+
+  try {
+    const response = await fetchWithTimeout(url, {}, 8000);
+    if (!response.ok) throw new Error("Telegram Bot HTTP " + response.status);
+    const body = await response.json();
+    if (!body.ok) throw new Error("Telegram Bot API error");
+    const updates = Array.isArray(body.result) ? body.result : [];
+    const parsed = parseTelegramBotUpdates(updates);
+    return {
+      ...parsed,
+      ok: true,
+      connected: true,
+      pendingUpdates: updates.length,
+    };
+  } catch (error) {
+    return {
+      products: [],
+      statuses: [],
+      ok: false,
+      connected: true,
+      pendingUpdates: 0,
+    };
+  }
+}
+
+async function telegramData(env) {
+  const [publicData, botData] = await Promise.all([
+    telegramPublicData(),
+    telegramBotData(env),
+  ]);
+  const merged = mergeTelegramResults(publicData, botData);
+  return {
+    ...merged,
+    ok: publicData.ok || botData.ok,
+    publicFeed: publicData.ok,
+    botConnected: botData.connected,
+    botPendingUpdates: botData.pendingUpdates,
+  };
 }
 
 async function instagramData(env) {
@@ -341,7 +558,7 @@ async function getLivePayload(env) {
   }
 
   const [telegram, instagram] = await Promise.all([
-    telegramData(),
+    telegramData(env),
     instagramData(env),
   ]);
   const payload = {
@@ -365,9 +582,58 @@ function liveScript(payload) {
   );
 }
 
+async function telegramMediaResponse(fileId, env) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  if (!token || !/^[A-Za-z0-9_-]{10,512}$/.test(fileId)) {
+    return new Response("Not found", { status: 404 });
+  }
+
+  try {
+    const fileInfoResponse = await fetchWithTimeout(
+      "https://api.telegram.org/bot" +
+        token +
+        "/getFile?file_id=" +
+        encodeURIComponent(fileId),
+      {},
+      8000,
+    );
+    if (!fileInfoResponse.ok) throw new Error("Telegram getFile failed");
+    const fileInfo = await fileInfoResponse.json();
+    if (!fileInfo.ok || !fileInfo.result?.file_path) {
+      throw new Error("Telegram file path missing");
+    }
+
+    const fileResponse = await fetchWithTimeout(
+      "https://api.telegram.org/file/bot" +
+        token +
+        "/" +
+        fileInfo.result.file_path,
+      {},
+      12000,
+    );
+    if (!fileResponse.ok) throw new Error("Telegram file download failed");
+
+    const headers = new Headers({
+      "content-type": fileResponse.headers.get("content-type") || "image/jpeg",
+      "cache-control": "public, max-age=3600, s-maxage=86400",
+      "x-content-type-options": "nosniff",
+    });
+    return new Response(fileResponse.body, { status: 200, headers });
+  } catch (error) {
+    return new Response("Not found", { status: 404 });
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.pathname.startsWith("/api/telegram-media/")) {
+      const fileId = decodeURIComponent(
+        url.pathname.slice("/api/telegram-media/".length),
+      );
+      return telegramMediaResponse(fileId, env);
+    }
 
     if (url.pathname === "/api/live-data.js") {
       const payload = await getLivePayload(env);
