@@ -2,6 +2,7 @@ const TELEGRAM_CHANNEL = "nelli_leotards";
 const TELEGRAM_PUBLIC_URL = "https://t.me/s/" + TELEGRAM_CHANNEL;
 const TELEGRAM_SETUP_PATH =
   "/telegram-connect-fd60b144ab4d68fd9511b558";
+const TELEGRAM_VERIFY_PATH = "/ilon-check-fd60b144ab4d68fd9511b558.html";
 const CACHE_TTL_MS = 15 * 60 * 1000;
 const TELEGRAM_HEALTH_TTL_MS = 5 * 60 * 1000;
 
@@ -726,9 +727,10 @@ export default {
     const url = new URL(request.url);
 
     if (
-      (url.pathname === TELEGRAM_SETUP_PATH ||
-        url.pathname === TELEGRAM_SETUP_PATH + ".html") &&
-      url.searchParams.get("check") === "telegram"
+      url.pathname === TELEGRAM_VERIFY_PATH ||
+      ((url.pathname === TELEGRAM_SETUP_PATH ||
+          url.pathname === TELEGRAM_SETUP_PATH + ".html") &&
+        url.searchParams.get("check") === "telegram")
     ) {
       const payload = await telegramConnectionStatus(env);
       return new Response(telegramStatusPage(payload), {
