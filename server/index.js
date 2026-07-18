@@ -1,8 +1,10 @@
 const TELEGRAM_CHANNEL = "nelli_leotards";
 const TELEGRAM_PUBLIC_URL = "https://t.me/s/" + TELEGRAM_CHANNEL;
 const CACHE_TTL_MS = 15 * 60 * 1000;
+const TELEGRAM_HEALTH_TTL_MS = 5 * 60 * 1000;
 
 let liveCache = { expiresAt: 0, payload: null };
+let telegramHealthCache = { expiresAt: 0, payload: null };
 
 function decodeHtml(value = "") {
   const named = {
@@ -447,6 +449,84 @@ async function telegramBotData(env) {
   }
 }
 
+async function telegramConnectionStatus(env) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  const checkedAt = new Date().toISOString();
+  if (!token) {
+    return {
+      configured: false,
+      authenticated: false,
+      botUsername: null,
+      channelUsername: TELEGRAM_CHANNEL,
+      channelStatus: null,
+      channelAdmin: false,
+      checkedAt,
+    };
+  }
+
+  if (
+    telegramHealthCache.payload &&
+    Date.now() < telegramHealthCache.expiresAt
+  ) {
+    return telegramHealthCache.payload;
+  }
+
+  let payload;
+  try {
+    const getMeResponse = await fetchWithTimeout(
+      "https://api.telegram.org/bot" + token + "/getMe",
+      {},
+      8000,
+    );
+    const getMe = await getMeResponse.json();
+    if (!getMeResponse.ok || !getMe.ok || !getMe.result?.id) {
+      throw new Error("Telegram bot authentication failed");
+    }
+
+    let channelStatus = null;
+    try {
+      const memberUrl = new URL(
+        "https://api.telegram.org/bot" + token + "/getChatMember",
+      );
+      memberUrl.searchParams.set("chat_id", "@" + TELEGRAM_CHANNEL);
+      memberUrl.searchParams.set("user_id", String(getMe.result.id));
+      const memberResponse = await fetchWithTimeout(memberUrl, {}, 8000);
+      const member = await memberResponse.json();
+      if (memberResponse.ok && member.ok) {
+        channelStatus = member.result?.status || null;
+      }
+    } catch (error) {
+      channelStatus = null;
+    }
+
+    payload = {
+      configured: true,
+      authenticated: true,
+      botUsername: getMe.result.username || null,
+      channelUsername: TELEGRAM_CHANNEL,
+      channelStatus,
+      channelAdmin: ["administrator", "creator"].includes(channelStatus),
+      checkedAt,
+    };
+  } catch (error) {
+    payload = {
+      configured: true,
+      authenticated: false,
+      botUsername: null,
+      channelUsername: TELEGRAM_CHANNEL,
+      channelStatus: null,
+      channelAdmin: false,
+      checkedAt,
+    };
+  }
+
+  telegramHealthCache = {
+    payload,
+    expiresAt: Date.now() + TELEGRAM_HEALTH_TTL_MS,
+  };
+  return payload;
+}
+
 async function telegramData(env) {
   const [publicData, botData] = await Promise.all([
     telegramPublicData(),
@@ -627,6 +707,18 @@ async function telegramMediaResponse(fileId, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/api/telegram-status") {
+      const payload = await telegramConnectionStatus(env);
+      return new Response(JSON.stringify(payload), {
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "public, max-age=60, s-maxage=300",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer",
+        },
+      });
+    }
 
     if (url.pathname.startsWith("/api/telegram-media/")) {
       const fileId = decodeURIComponent(
