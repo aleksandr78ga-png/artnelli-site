@@ -708,11 +708,17 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === "/api/telegram-status") {
+    if (
+      url.pathname === "/api/telegram-status" ||
+      url.pathname === "/telegram-status"
+    ) {
       const payload = await telegramConnectionStatus(env);
       return new Response(JSON.stringify(payload), {
         headers: {
-          "content-type": "application/json; charset=utf-8",
+          "content-type":
+            url.pathname === "/telegram-status"
+              ? "text/plain; charset=utf-8"
+              : "application/json; charset=utf-8",
           "cache-control": "public, max-age=60, s-maxage=300",
           "x-content-type-options": "nosniff",
           "referrer-policy": "no-referrer",
