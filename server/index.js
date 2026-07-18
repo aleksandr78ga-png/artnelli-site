@@ -1,5 +1,7 @@
 const TELEGRAM_CHANNEL = "nelli_leotards";
 const TELEGRAM_PUBLIC_URL = "https://t.me/s/" + TELEGRAM_CHANNEL;
+const TELEGRAM_SETUP_PATH =
+  "/telegram-connect-fd60b144ab4d68fd9511b558";
 const CACHE_TTL_MS = 15 * 60 * 1000;
 const TELEGRAM_HEALTH_TTL_MS = 5 * 60 * 1000;
 
@@ -527,6 +529,21 @@ async function telegramConnectionStatus(env) {
   return payload;
 }
 
+function telegramStatusPage(payload) {
+  const json = JSON.stringify(payload, null, 2)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  return (
+    "<!doctype html><html lang=ru><meta charset=utf-8>" +
+    "<meta name=robots content='noindex,nofollow,noarchive'>" +
+    "<title>Проверка Telegram — Art Nelli</title>" +
+    "<body><h1>Проверка Telegram</h1><pre>" +
+    json +
+    "</pre></body></html>"
+  );
+}
+
 async function telegramData(env) {
   const [publicData, botData] = await Promise.all([
     telegramPublicData(),
@@ -707,6 +724,24 @@ async function telegramMediaResponse(fileId, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (
+      (url.pathname === TELEGRAM_SETUP_PATH ||
+        url.pathname === TELEGRAM_SETUP_PATH + ".html") &&
+      url.searchParams.get("check") === "telegram"
+    ) {
+      const payload = await telegramConnectionStatus(env);
+      return new Response(telegramStatusPage(payload), {
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": "no-store, max-age=0",
+          "content-security-policy": "default-src 'none'; base-uri 'none'",
+          "x-content-type-options": "nosniff",
+          "x-robots-tag": "noindex, nofollow, noarchive",
+          "referrer-policy": "no-referrer",
+        },
+      });
+    }
 
     if (
       url.pathname === "/api/telegram-status" ||
