@@ -6,8 +6,3 @@
 
 /assets/*
   Cache-Control: public, max-age=86400
-
-/telegram-connect-fd60b144ab4d68fd9511b558.html
-  Cache-Control: no-store, max-age=0
-  Referrer-Policy: no-referrer
-  X-Robots-Tag: noindex, nofollow, noarchive
