@@ -36,6 +36,7 @@ copyDirectory(resolve(root, "assets"), resolve(client, "assets"));
 
 for (const file of [
   "index.html",
+  "telegram-connect-fd60b144ab4d68fd9511b558.html",
   "catalog-data.js",
   "robots.txt",
   "sitemap.xml",
