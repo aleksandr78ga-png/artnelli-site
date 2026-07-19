@@ -1,0 +1,1 @@
+window.NELLI_LIVE={"generatedAt":"2026-07-19T06:27:49.111Z","telegram":{"products":[],"statuses":[],"ok":true,"publicFeed":true,"botConnected":true,"botPendingUpdates":1},"instagram":{"ok":false,"connected":false,"followersCount":null,"media":[]}};window.dispatchEvent(new CustomEvent('nelli:live-data',{detail:window.NELLI_LIVE}));
