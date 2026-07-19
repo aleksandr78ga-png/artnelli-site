@@ -1,0 +1,55 @@
+name: Import current Art Nelli site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/bootstrap.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download the current public site
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -f .migration-imported ]]; then
+            echo "The site has already been imported."
+            exit 0
+          fi
+
+          mkdir -p site
+
+          while IFS= read -r path; do
+            [[ -n "$path" ]] || continue
+            mkdir -p "site/$(dirname "$path")"
+            curl               --fail               --location               --silent               --show-error               --retry 4               --retry-all-errors               --connect-timeout 20               --max-time 300               "https://artnelli.com/$path"               --output "site/$path"
+          done < migration-files.txt
+
+          test -s site/index.html
+          test -s site/catalog-data.js
+          test -s site/assets/site/hero.jpg
+
+          printf 'artnelli.com\n' > site/CNAME
+          touch site/.nojekyll
+          touch .migration-imported
+
+      - name: Save imported site
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site .migration-imported
+          git commit -m "Import current Art Nelli site"
+          git push
