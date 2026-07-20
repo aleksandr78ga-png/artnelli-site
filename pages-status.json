@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-07-20T07:22:44.118747+00:00",
+  "pages": {
+    "status": "built",
+    "cname": "artnelli.com",
+    "html_url": "http://artnelli.com/",
+    "build_type": "legacy",
+    "https_enforced": false,
+    "protected_domain_state": null,
+    "pending_domain_unverified_at": null,
+    "https_certificate": {
+      "state": "approved",
+      "description": "The certificate has been approved.",
+      "domains": [
+        "artnelli.com",
+        "www.artnelli.com"
+      ],
+      "expires_at": "2026-10-18"
+    }
+  },
+  "tls": {
+    "hostname": "artnelli.com",
+    "authorized": true,
+    "version": "TLSv1.3",
+    "subject_alt_names": [
+      "artnelli.com",
+      "www.artnelli.com"
+    ],
+    "not_after": "Oct 18 06:21:52 2026 GMT",
+    "presented_der_bytes": 1289
+  },
+  "urls": {
+    "/": {
+      "ok": true,
+      "status": 200,
+      "final_url": "https://artnelli.com/",
+      "server": "GitHub.com"
+    },
+    "/catalog-data.js": {
+      "ok": true,
+      "status": 200,
+      "final_url": "https://artnelli.com/catalog-data.js",
+      "server": "GitHub.com"
+    },
+    "/api/live-data.js": {
+      "ok": true,
+      "status": 200,
+      "final_url": "https://artnelli.com/api/live-data.js",
+      "server": "GitHub.com"
+    }
+  }
+}
