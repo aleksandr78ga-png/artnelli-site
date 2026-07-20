@@ -1,5 +1,9 @@
 {
-  "checked_at": "2026-07-20T07:22:44.118747+00:00",
+  "checked_at": "2026-07-20T07:24:41.189121+00:00",
+  "enforcement_attempt": {
+    "http_code": 403,
+    "response": "{\n  \"message\": \"Resource not accessible by integration\",\n  \"documentation_url\": \"https://docs.github.com/rest/pages/pages#update-information-about-a-apiname-pages-site\",\n  \"status\": \"403\"\n}"
+  },
   "pages": {
     "status": "built",
     "cname": "artnelli.com",
@@ -26,8 +30,7 @@
       "artnelli.com",
       "www.artnelli.com"
     ],
-    "not_after": "Oct 18 06:21:52 2026 GMT",
-    "presented_der_bytes": 1289
+    "not_after": "Oct 18 06:21:52 2026 GMT"
   },
   "urls": {
     "/": {
