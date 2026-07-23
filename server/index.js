@@ -316,9 +316,16 @@ function englishDescription(product) {
 }
 
 export function parseTelegramPage(html) {
-  const chunks = String(html)
-    .split(/<div class="tgme_widget_message_wrap[^>]*>/i)
-    .slice(1);
+  const source = String(html);
+  const splitChunks = source.split(
+    /<div class="tgme_widget_message_wrap[^>]*>/i,
+  );
+  const chunks =
+    splitChunks.length > 1
+      ? splitChunks.slice(1)
+      : source.includes('data-post="' + TELEGRAM_CHANNEL + "/")
+        ? [source]
+        : [];
   const products = [];
   const statuses = [];
 
