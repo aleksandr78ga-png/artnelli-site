@@ -839,6 +839,7 @@ async function scanTelegramPublicProducts(env) {
   const next = Math.max(
     cursor,
     lastExistingId >= from ? lastExistingId + 1 : from,
+    from + Math.max(1, ids.length - 8),
   );
   await writeSyncValue(env, "public_scan_cursor", next);
   return {
