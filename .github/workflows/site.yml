@@ -1,0 +1,69 @@
+name: Sync catalogue and publish artnelli.com
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "site/**"
+      - "scripts/sync-catalog.mjs"
+      - ".github/workflows/site.yml"
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  sync-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Sync Telegram catalogue
+        env:
+          NELLI_CATALOG_BACKEND: https://artnelli-leotards.aleksandr78ga.chatgpt.site/
+        run: node scripts/sync-catalog.mjs
+
+      - name: Save catalogue changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- site/catalog-data.js site/api/live-data.js site/assets/catalog
+          if git diff --cached --quiet; then
+            echo "Catalogue is already current."
+          else
+            git commit -m "Sync Telegram catalogue"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
