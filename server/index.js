@@ -31,6 +31,13 @@ async function ensureDatabase(env) {
         )
       `),
       env.DB.prepare(`
+        CREATE TABLE IF NOT EXISTS telegram_product_snapshots (
+          product_id INTEGER PRIMARY KEY,
+          product_json TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        )
+      `),
+      env.DB.prepare(`
         CREATE TABLE IF NOT EXISTS telegram_sync_state (
           key TEXT PRIMARY KEY,
           value TEXT NOT NULL,
@@ -91,14 +98,41 @@ async function saveTelegramUpdates(updates, env) {
   return statements.length;
 }
 
+async function saveTelegramProductSnapshots(products, env) {
+  if (!(await ensureDatabase(env))) return 0;
+  const now = new Date().toISOString();
+  const statements = (Array.isArray(products) ? products : [])
+    .filter((product) => Number.isFinite(Number(product?.id)))
+    .map((product) =>
+      env.DB.prepare(`
+        INSERT INTO telegram_product_snapshots
+          (product_id, product_json, updated_at)
+        VALUES (?, ?, ?)
+        ON CONFLICT(product_id) DO UPDATE SET
+          product_json = excluded.product_json,
+          updated_at = excluded.updated_at
+      `).bind(Number(product.id), JSON.stringify(product), now),
+    );
+  if (statements.length) {
+    await env.DB.batch(statements);
+    liveCache = { expiresAt: 0, payload: null };
+  }
+  return statements.length;
+}
+
 async function storedTelegramData(env) {
   if (!(await ensureDatabase(env))) {
     return { products: [], statuses: [], ok: false, storedMessages: 0 };
   }
-  const result = await env.DB.prepare(
-    "SELECT raw_json FROM telegram_messages ORDER BY message_id ASC",
-  ).all();
-  const updates = (result.results || []).flatMap((row) => {
+  const [messageResult, snapshotResult] = await Promise.all([
+    env.DB.prepare(
+      "SELECT raw_json FROM telegram_messages ORDER BY message_id ASC",
+    ).all(),
+    env.DB.prepare(
+      "SELECT product_json FROM telegram_product_snapshots ORDER BY product_id ASC",
+    ).all(),
+  ]);
+  const updates = (messageResult.results || []).flatMap((row) => {
     try {
       return [{ channel_post: JSON.parse(row.raw_json) }];
     } catch (error) {
@@ -106,10 +140,25 @@ async function storedTelegramData(env) {
     }
   });
   const parsed = parseTelegramBotUpdates(updates);
+  const snapshots = (snapshotResult.results || []).flatMap((row) => {
+    try {
+      return [JSON.parse(row.product_json)];
+    } catch (error) {
+      return [];
+    }
+  });
+  const productMap = new Map(
+    [...snapshots, ...parsed.products].map((product) => [
+      Number(product.id),
+      product,
+    ]),
+  );
   return {
     ...parsed,
+    products: [...productMap.values()],
     ok: true,
     storedMessages: updates.length,
+    storedSnapshots: snapshots.length,
   };
 }
 
@@ -629,7 +678,7 @@ function explicitMissingTelegramPost(html = "", status = 200) {
   );
 }
 
-async function telegramPostState(id) {
+async function telegramPostDocument(id) {
   try {
     const response = await fetchWithTimeout(
       "https://t.me/" +
@@ -651,14 +700,62 @@ async function telegramPostState(id) {
       html.includes('data-post="' + TELEGRAM_CHANNEL + "/" + id + '"') ||
       html.includes('data-post="' + TELEGRAM_CHANNEL + "%2F" + id + '"')
     ) {
-      return "exists";
+      return { state: "exists", html };
     }
-    return explicitMissingTelegramPost(html, response.status)
-      ? "missing"
-      : "unknown";
+    return {
+      state: explicitMissingTelegramPost(html, response.status)
+        ? "missing"
+        : "unknown",
+      html,
+    };
   } catch (error) {
-    return "unknown";
+    return { state: "unknown", html: "" };
   }
+}
+
+async function telegramPostState(id) {
+  return (await telegramPostDocument(id)).state;
+}
+
+async function scanTelegramPublicProducts(env) {
+  if (!(await ensureDatabase(env))) {
+    return { checked: 0, found: 0, saved: 0, from: null, next: null };
+  }
+
+  const firstDynamicId = Math.max(0, ...staticCatalogIds) + 1;
+  const storedCursor = Number(
+    await readSyncValue(env, "public_scan_cursor", String(firstDynamicId)),
+  );
+  const from = Math.max(firstDynamicId, storedCursor || firstDynamicId);
+  const ids = Array.from({ length: 24 }, (_, index) => from + index);
+  const documents = await Promise.all(
+    ids.map(async (id) => ({ id, ...(await telegramPostDocument(id)) })),
+  );
+  let lastExistingId = from - 1;
+  const products = [];
+
+  for (const document of documents) {
+    if (document.state !== "exists") continue;
+    lastExistingId = Math.max(lastExistingId, document.id);
+    const parsed = parseTelegramPage(document.html);
+    for (const product of parsed.products) {
+      if (!products.some((item) => Number(item.id) === Number(product.id))) {
+        products.push(product);
+      }
+    }
+  }
+
+  const saved = await saveTelegramProductSnapshots(products, env);
+  const next = lastExistingId >= from ? lastExistingId + 1 : from;
+  await writeSyncValue(env, "public_scan_cursor", next);
+  return {
+    checked: documents.filter((document) => document.state !== "unknown").length,
+    existing: documents.filter((document) => document.state === "exists").length,
+    found: products.length,
+    saved,
+    from,
+    next,
+  };
 }
 
 async function reconcileTelegramDeletions(env, storedProducts = []) {
@@ -896,10 +993,11 @@ async function telegramConnectionStatus(env) {
 
 async function telegramData(env) {
   const bootstrap = await bootstrapTelegramWebhook(env);
-  const [publicData, storedData] = await Promise.all([
+  const [publicData, publicScan] = await Promise.all([
     telegramPublicData(),
-    storedTelegramData(env),
+    scanTelegramPublicProducts(env),
   ]);
+  const storedData = await storedTelegramData(env);
   const reconciliation = await reconcileTelegramDeletions(
     env,
     storedData.products,
@@ -918,6 +1016,8 @@ async function telegramData(env) {
     webhookActive: bootstrap.active,
     importedUpdates: bootstrap.importedUpdates,
     storedMessages: storedData.storedMessages,
+    storedSnapshots: storedData.storedSnapshots,
+    publicScan,
     reconciliation,
   };
 }
@@ -1307,6 +1407,7 @@ export default {
 
     if (url.pathname === "/api/telegram-sync") {
       const bootstrap = await bootstrapTelegramWebhook(env);
+      const publicScan = await scanTelegramPublicProducts(env);
       const stored = await storedTelegramData(env);
       const reconciliation = await reconcileTelegramDeletions(
         env,
@@ -1318,7 +1419,9 @@ export default {
         webhookActive: bootstrap.active,
         importedUpdates: bootstrap.importedUpdates,
         storedMessages: stored.storedMessages,
+        storedSnapshots: stored.storedSnapshots,
         storedProducts: stored.products.length,
+        publicScan,
         reconciliation,
         webhook,
         checkedAt: new Date().toISOString(),

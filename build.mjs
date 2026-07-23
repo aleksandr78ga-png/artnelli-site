@@ -48,6 +48,7 @@ writeFileSync(
   "export default " + JSON.stringify(catalogIds) + ";\n",
 );
 copyFileSync(resolve(root, ".openai", "hosting.json"), resolve(output, ".openai", "hosting.json"));
+copyDirectory(resolve(root, "db", "migrations"), resolve(output, ".openai", "drizzle"));
 copyDirectory(resolve(root, "assets"), resolve(client, "assets"));
 
 for (const file of [
