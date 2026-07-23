@@ -1,4 +1,5 @@
 import staticCatalogIds from "./catalog-ids.js";
+import staticCatalogProducts from "./catalog-products.js";
 
 const TELEGRAM_CHANNEL = "nelli_leotards";
 const TELEGRAM_PUBLIC_URL = "https://t.me/s/" + TELEGRAM_CHANNEL;
@@ -145,6 +146,58 @@ async function deleteTelegramProductSnapshots(productIds, env) {
   );
   liveCache = { expiresAt: 0, payload: null };
   return ids.length;
+}
+
+function telegramAlbumDescriptionKey(product = {}) {
+  return String(product.description || "")
+    .toLocaleLowerCase("ru")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+async function dedupeStoredTelegramSnapshots(env) {
+  if (!(await ensureDatabase(env))) return { removed: 0 };
+  const result = await env.DB.prepare(
+    "SELECT product_id, product_json FROM telegram_product_snapshots ORDER BY product_id ASC",
+  ).all();
+  const dynamicProducts = (result.results || []).flatMap((row) => {
+    try {
+      return [JSON.parse(row.product_json)];
+    } catch (error) {
+      return [];
+    }
+  });
+  const staticByDescription = new Map();
+  for (const product of staticCatalogProducts) {
+    const key = telegramAlbumDescriptionKey(product);
+    if (!key) continue;
+    if (!staticByDescription.has(key)) staticByDescription.set(key, []);
+    staticByDescription.get(key).push(Number(product.id));
+  }
+
+  const duplicates = [];
+  const lastDynamicByDescription = new Map();
+  for (const product of dynamicProducts.sort(
+    (left, right) => Number(left.id) - Number(right.id),
+  )) {
+    const id = Number(product.id);
+    const key = telegramAlbumDescriptionKey(product);
+    if (!Number.isFinite(id) || !key) continue;
+    const staticAlbum = (staticByDescription.get(key) || []).some(
+      (staticId) => Math.abs(id - staticId) <= 10,
+    );
+    const previousDynamic = lastDynamicByDescription.get(key);
+    const dynamicAlbum =
+      previousDynamic && id - Number(previousDynamic.id) <= 10;
+    if (staticAlbum || dynamicAlbum) {
+      duplicates.push(id);
+      continue;
+    }
+    lastDynamicByDescription.set(key, product);
+  }
+
+  const removed = await deleteTelegramProductSnapshots(duplicates, env);
+  return { removed };
 }
 
 async function storedTelegramData(env) {
@@ -1316,6 +1369,7 @@ async function telegramData(env) {
     scanTelegramPublicProducts(env),
     scanTelegramTopicProducts(env),
   ]);
+  const deduplication = await dedupeStoredTelegramSnapshots(env);
   const storedData = await storedTelegramData(env);
   const reconciliation = await reconcileTelegramDeletions(
     env,
@@ -1338,6 +1392,7 @@ async function telegramData(env) {
     storedSnapshots: storedData.storedSnapshots,
     publicScan,
     topicScan,
+    deduplication,
     reconciliation,
   };
 }
@@ -1770,6 +1825,7 @@ export default {
         scanTelegramPublicProducts(env),
         scanTelegramTopicProducts(env),
       ]);
+      const deduplication = await dedupeStoredTelegramSnapshots(env);
       const stored = await storedTelegramData(env);
       const reconciliation = await reconcileTelegramDeletions(
         env,
@@ -1785,6 +1841,7 @@ export default {
         storedProducts: stored.products.length,
         publicScan,
         topicScan,
+        deduplication,
         reconciliation,
         webhook,
         checkedAt: new Date().toISOString(),

@@ -47,6 +47,17 @@ writeFileSync(
   resolve(output, "server", "catalog-ids.js"),
   "export default " + JSON.stringify(catalogIds) + ";\n",
 );
+writeFileSync(
+  resolve(output, "server", "catalog-products.js"),
+  "export default " +
+    JSON.stringify(
+      JSON.parse(catalogMatch[1]).map((product) => ({
+        id: Number(product.id),
+        description: String(product.description || ""),
+      })),
+    ) +
+    ";\n",
+);
 copyFileSync(resolve(root, ".openai", "hosting.json"), resolve(output, ".openai", "hosting.json"));
 copyDirectory(resolve(root, "db", "migrations"), resolve(output, ".openai", "drizzle"));
 copyDirectory(resolve(root, "assets"), resolve(client, "assets"));
