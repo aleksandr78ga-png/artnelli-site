@@ -120,6 +120,25 @@ async function saveTelegramProductSnapshots(products, env) {
   return statements.length;
 }
 
+async function deleteTelegramProductSnapshots(productIds, env) {
+  if (!(await ensureDatabase(env))) return 0;
+  const ids = [...new Set(
+    (Array.isArray(productIds) ? productIds : [])
+      .map(Number)
+      .filter(Number.isFinite),
+  )];
+  if (!ids.length) return 0;
+  await env.DB.batch(
+    ids.map((id) =>
+      env.DB.prepare(
+        "DELETE FROM telegram_product_snapshots WHERE product_id = ?",
+      ).bind(id),
+    ),
+  );
+  liveCache = { expiresAt: 0, payload: null };
+  return ids.length;
+}
+
 async function storedTelegramData(env) {
   if (!(await ensureDatabase(env))) {
     return { products: [], statuses: [], ok: false, storedMessages: 0 };
@@ -753,7 +772,25 @@ async function scanTelegramPublicProducts(env) {
     }
   }
 
-  const saved = await saveTelegramProductSnapshots(products, env);
+  const albumProducts = new Map();
+  const albumDuplicates = [];
+  for (const product of products.sort((a, b) => Number(a.id) - Number(b.id))) {
+    const albumKey = [
+      String(product.description || "").replace(/\s+/g, " ").trim(),
+      ...(Array.isArray(product.photos) ? product.photos : []),
+    ].join("\n");
+    if (albumProducts.has(albumKey)) {
+      albumDuplicates.push(Number(product.id));
+      continue;
+    }
+    albumProducts.set(albumKey, product);
+  }
+  const canonicalProducts = [...albumProducts.values()];
+  const saved = await saveTelegramProductSnapshots(canonicalProducts, env);
+  const duplicatesRemoved = await deleteTelegramProductSnapshots(
+    albumDuplicates,
+    env,
+  );
   const next = Math.max(
     cursor,
     lastExistingId >= from ? lastExistingId + 1 : from,
@@ -783,8 +820,10 @@ async function scanTelegramPublicProducts(env) {
   return {
     checked: documents.filter((document) => document.state !== "unknown").length,
     existing: documents.filter((document) => document.state === "exists").length,
-    found: products.length,
+    found: canonicalProducts.length,
     saved,
+    albumDuplicates: albumDuplicates.length,
+    duplicatesRemoved,
     from,
     next,
     inspected,
