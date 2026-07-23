@@ -527,9 +527,9 @@
       <p data-i18n="about_p1">An atelier of competition leotards for rhythmic gymnastics, aesthetic group gymnastics, acrobatics and figure skating, based in Tyumen, Russia.</p>
       <p data-i18n="about_p2">Every piece is one of a kind: an original sketch, professional stretch fabrics and mesh. Leotards by the atelier perform at national championships and international competitions.</p>
       <div class="about-cta">
-        <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="noopener" data-i18n="about_social_ig">Instagram</a>
-        <a class="btn btn-line" href="https://t.me/nelli_leotards" target="_blank" rel="noopener" data-i18n="about_social_tg">Telegram</a>
-        <a class="btn btn-line" href="https://vk.ru/leotards_nelli" target="_blank" rel="noopener" data-i18n="about_social_vk">VK</a>
+        <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="me noopener" data-i18n="about_social_ig">Instagram</a>
+        <a class="btn btn-line" href="https://t.me/nelli_leotards" target="_blank" rel="me noopener" data-i18n="about_social_tg">Telegram</a>
+        <a class="btn btn-line" href="https://vk.ru/leotards_nelli" target="_blank" rel="me noopener" data-i18n="about_social_vk">VK</a>
       </div>
     </div>
   </div>
@@ -757,7 +757,7 @@
     <div class="contact-row">
       <a class="btn btn-solid" href="tel:+79612064782">+7 961 206-47-82</a>
       <a class="btn btn-line" href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn btn-line" href="https://t.me/+79612064782" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn btn-line" href="https://t.me/NelliGarkusha" target="_blank" rel="me noopener">Telegram</a>
     </div>
     <div class="contact-emails mono" aria-label="Email">
       <a href="mailto:art.nelli81@gmail.com">art.nelli81@gmail.com</a>
@@ -1057,7 +1057,7 @@ function bookingMessage(){
 function sendBooking(channel){
   if(!bookingForm.reportValidity())return;
   const message=encodeURIComponent(bookingMessage());
-  const url=channel==='telegram'?`https://t.me/+79612064782?text=${message}`:`https://wa.me/79612064782?text=${message}`;
+  const url=channel==='telegram'?`https://t.me/NelliGarkusha?text=${message}`:`https://wa.me/79612064782?text=${message}`;
   bookingStatus.textContent=currentLang==='en'?'Opening Nelli’s personal chat…':i18n.ru.booking_success;
   window.open(url,'_blank','noopener');
 }
