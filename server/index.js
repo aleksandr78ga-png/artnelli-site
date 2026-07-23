@@ -2,6 +2,14 @@ import staticCatalogIds from "./catalog-ids.js";
 
 const TELEGRAM_CHANNEL = "nelli_leotards";
 const TELEGRAM_PUBLIC_URL = "https://t.me/s/" + TELEGRAM_CHANNEL;
+const TELEGRAM_TOPIC_IDS = [2];
+const TELEGRAM_ALLOWED_UPDATES = [
+  "channel_post",
+  "edited_channel_post",
+  "message",
+  "edited_message",
+];
+const TELEGRAM_WEBHOOK_MODE_VERSION = "forum-topics-v1";
 const CACHE_TTL_MS = 15 * 60 * 1000;
 const TELEGRAM_HEALTH_TTL_MS = 5 * 60 * 1000;
 const TELEGRAM_RECONCILE_BATCH = 12;
@@ -69,7 +77,7 @@ async function saveTelegramUpdates(updates, env) {
   const now = new Date().toISOString();
 
   for (const update of Array.isArray(updates) ? updates : []) {
-    const message = update?.edited_channel_post || update?.channel_post;
+    const message = telegramUpdateMessage(update);
     if (!message || !isNelliChannelMessage(message)) continue;
     const messageId = Number(message.message_id);
     if (!Number.isFinite(messageId)) continue;
@@ -153,7 +161,7 @@ async function storedTelegramData(env) {
   ]);
   const updates = (messageResult.results || []).flatMap((row) => {
     try {
-      return [{ channel_post: JSON.parse(row.raw_json) }];
+      return [{ message: JSON.parse(row.raw_json) }];
     } catch (error) {
       return [];
     }
@@ -453,6 +461,16 @@ function isNelliChannelMessage(message) {
   return username === TELEGRAM_CHANNEL;
 }
 
+function telegramUpdateMessage(update) {
+  return (
+    update?.edited_channel_post ||
+    update?.channel_post ||
+    update?.edited_message ||
+    update?.message ||
+    null
+  );
+}
+
 function messageText(message) {
   return String(message?.caption || message?.text || "").trim();
 }
@@ -483,7 +501,7 @@ export function parseTelegramBotUpdates(updates) {
   const messagesById = new Map();
 
   for (const update of Array.isArray(updates) ? updates : []) {
-    const message = update?.edited_channel_post || update?.channel_post;
+    const message = telegramUpdateMessage(update);
     if (!message || !isNelliChannelMessage(message)) continue;
     messagesById.set(Number(message.message_id), message);
   }
@@ -634,8 +652,10 @@ async function bootstrapTelegramWebhook(env) {
     await readSyncValue(env, "webhook_checked_at", "0"),
   );
   const lastWebhookUrl = await readSyncValue(env, "webhook_url", "");
+  const lastWebhookMode = await readSyncValue(env, "webhook_mode_version", "");
   if (
     lastWebhookUrl === webhookUrl &&
+    lastWebhookMode === TELEGRAM_WEBHOOK_MODE_VERSION &&
     Date.now() - lastBootstrap < 5 * 60 * 1000
   ) {
     return { configured: true, active: true, importedUpdates: 0 };
@@ -649,7 +669,7 @@ async function bootstrapTelegramWebhook(env) {
       const updates = await telegramApi(token, "getUpdates", {
         limit: 100,
         timeout: 0,
-        allowed_updates: ["channel_post", "edited_channel_post"],
+        allowed_updates: TELEGRAM_ALLOWED_UPDATES,
       });
       importedUpdates = await saveTelegramUpdates(updates, env);
       const lastUpdateId = Math.max(
@@ -667,17 +687,28 @@ async function bootstrapTelegramWebhook(env) {
       }
     }
 
-    if (info?.url !== webhookUrl) {
+    const configuredUpdates = new Set(
+      Array.isArray(info?.allowed_updates) ? info.allowed_updates : [],
+    );
+    const missingTopicUpdates = TELEGRAM_ALLOWED_UPDATES.some(
+      (updateType) => !configuredUpdates.has(updateType),
+    );
+    if (info?.url !== webhookUrl || missingTopicUpdates) {
       await telegramApi(token, "setWebhook", {
         url: webhookUrl,
         secret_token: webhookSecret,
-        allowed_updates: ["channel_post", "edited_channel_post"],
+        allowed_updates: TELEGRAM_ALLOWED_UPDATES,
         drop_pending_updates: false,
       });
     }
 
     await writeSyncValue(env, "webhook_checked_at", Date.now());
     await writeSyncValue(env, "webhook_url", webhookUrl);
+    await writeSyncValue(
+      env,
+      "webhook_mode_version",
+      TELEGRAM_WEBHOOK_MODE_VERSION,
+    );
     return { configured: true, active: true, importedUpdates };
   } catch (error) {
     return { configured: true, active: false, importedUpdates: 0 };
@@ -819,6 +850,130 @@ async function scanTelegramPublicProducts(env) {
     duplicatesRemoved,
     from,
     next,
+  };
+}
+
+function telegramPageMessageIds(html = "") {
+  const ids = [];
+  const pattern = new RegExp(
+    'data-post="' + TELEGRAM_CHANNEL + '/([0-9]+)"',
+    "gi",
+  );
+  for (const match of String(html).matchAll(pattern)) {
+    const id = Number(match[1]);
+    if (Number.isFinite(id) && !ids.includes(id)) ids.push(id);
+  }
+  return ids;
+}
+
+async function telegramTopicPage(topicId) {
+  const urls = [
+    TELEGRAM_PUBLIC_URL + "/" + encodeURIComponent(topicId),
+    TELEGRAM_PUBLIC_URL + "?thread=" + encodeURIComponent(topicId),
+  ];
+  const documents = await Promise.all(
+    urls.map(async (url) => {
+      try {
+        const response = await fetchWithTimeout(
+          url,
+          {
+            headers: {
+              accept: "text/html,application/xhtml+xml",
+              "accept-language": "ru,en;q=0.8",
+              "user-agent": "Mozilla/5.0 (compatible; ArtNelliCatalog/3.0)",
+            },
+          },
+          10000,
+        );
+        if (!response.ok) {
+          return { ok: false, html: "", messageIds: [], parsed: null };
+        }
+        const html = await response.text();
+        return {
+          ok: true,
+          html,
+          messageIds: telegramPageMessageIds(html),
+          parsed: parseTelegramPage(html),
+        };
+      } catch (error) {
+        return { ok: false, html: "", messageIds: [], parsed: null };
+      }
+    }),
+  );
+  return documents.sort((left, right) => {
+    const leftScore =
+      left.messageIds.length + (left.parsed?.products?.length || 0) * 10;
+    const rightScore =
+      right.messageIds.length + (right.parsed?.products?.length || 0) * 10;
+    return rightScore - leftScore;
+  })[0];
+}
+
+async function scanTelegramTopicProducts(env) {
+  if (!(await ensureDatabase(env))) {
+    return { checked: 0, found: 0, saved: 0, topics: [] };
+  }
+
+  const topicDocuments = await Promise.all(
+    TELEGRAM_TOPIC_IDS.map(async (topicId) => ({
+      topicId,
+      ...(await telegramTopicPage(topicId)),
+    })),
+  );
+  const staticIds = new Set(staticCatalogIds.map(Number));
+  const productMap = new Map();
+
+  for (const document of topicDocuments) {
+    for (const product of document.parsed?.products || []) {
+      if (!staticIds.has(Number(product.id))) {
+        productMap.set(Number(product.id), product);
+      }
+    }
+  }
+
+  const products = [...productMap.values()].sort(
+    (left, right) => Number(left.id) - Number(right.id),
+  );
+  const canonicalProducts = [];
+  const albumDuplicates = [];
+  const lastAlbumByDescription = new Map();
+  for (const product of products) {
+    const albumKey = String(product.description || "")
+      .replace(/\s+/g, " ")
+      .trim();
+    const existingAlbum = lastAlbumByDescription.get(albumKey);
+    if (
+      existingAlbum &&
+      Number(product.id) - Number(existingAlbum.id) <= 10
+    ) {
+      albumDuplicates.push(Number(product.id));
+      continue;
+    }
+    canonicalProducts.push(product);
+    lastAlbumByDescription.set(albumKey, product);
+  }
+
+  const saved = await saveTelegramProductSnapshots(canonicalProducts, env);
+  const duplicatesRemoved = await deleteTelegramProductSnapshots(
+    albumDuplicates,
+    env,
+  );
+  return {
+    checked: topicDocuments.filter((document) => document.ok).length,
+    found: canonicalProducts.length,
+    saved,
+    albumDuplicates: albumDuplicates.length,
+    duplicatesRemoved,
+    products: canonicalProducts.map((product) => ({
+      id: Number(product.id),
+      name: product.name,
+    })),
+    topics: topicDocuments.map((document) => ({
+      topicId: document.topicId,
+      ok: document.ok,
+      messages: document.messageIds.length,
+      products: document.parsed?.products?.length || 0,
+    })),
   };
 }
 
@@ -1057,9 +1212,10 @@ async function telegramConnectionStatus(env) {
 
 async function telegramData(env) {
   const bootstrap = await bootstrapTelegramWebhook(env);
-  const [publicData, publicScan] = await Promise.all([
+  const [publicData, publicScan, topicScan] = await Promise.all([
     telegramPublicData(),
     scanTelegramPublicProducts(env),
+    scanTelegramTopicProducts(env),
   ]);
   const storedData = await storedTelegramData(env);
   const reconciliation = await reconcileTelegramDeletions(
@@ -1082,6 +1238,7 @@ async function telegramData(env) {
     storedMessages: storedData.storedMessages,
     storedSnapshots: storedData.storedSnapshots,
     publicScan,
+    topicScan,
     reconciliation,
   };
 }
@@ -1510,7 +1667,10 @@ export default {
 
     if (url.pathname === "/api/telegram-sync") {
       const bootstrap = await bootstrapTelegramWebhook(env);
-      const publicScan = await scanTelegramPublicProducts(env);
+      const [publicScan, topicScan] = await Promise.all([
+        scanTelegramPublicProducts(env),
+        scanTelegramTopicProducts(env),
+      ]);
       const stored = await storedTelegramData(env);
       const reconciliation = await reconcileTelegramDeletions(
         env,
@@ -1525,6 +1685,7 @@ export default {
         storedSnapshots: stored.storedSnapshots,
         storedProducts: stored.products.length,
         publicScan,
+        topicScan,
         reconciliation,
         webhook,
         checkedAt: new Date().toISOString(),
