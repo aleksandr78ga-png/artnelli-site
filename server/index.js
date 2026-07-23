@@ -600,6 +600,28 @@ async function bootstrapTelegramWebhook(env) {
   }
 }
 
+async function telegramWebhookInfoSafe(env) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  if (!token) return { configured: false };
+  try {
+    const info = await telegramApi(token, "getWebhookInfo");
+    return {
+      configured: true,
+      url: info?.url || "",
+      pendingUpdateCount: Number(info?.pending_update_count || 0),
+      lastErrorDate: info?.last_error_date
+        ? new Date(Number(info.last_error_date) * 1000).toISOString()
+        : null,
+      lastErrorMessage: info?.last_error_message || null,
+      allowedUpdates: Array.isArray(info?.allowed_updates)
+        ? info.allowed_updates
+        : [],
+    };
+  } catch (error) {
+    return { configured: true, unavailable: true };
+  }
+}
+
 function explicitMissingTelegramPost(html = "", status = 200) {
   if (status === 404 || status === 410) return true;
   return /(?:tgme_widget_message_error|message\s+(?:was\s+)?deleted|post\s+not\s+found|message\s+not\s+found|публикаци[яию]\s+не\s+найдена|сообщение\s+удалено)/iu.test(
@@ -709,6 +731,44 @@ async function telegramPublicData() {
     return { ...parsed, ok: true };
   } catch (error) {
     return { products: [], statuses: [], ok: false };
+  }
+}
+
+async function telegramPublicRecent() {
+  try {
+    const response = await fetchWithTimeout(TELEGRAM_PUBLIC_URL, {
+      headers: {
+        accept: "text/html,application/xhtml+xml",
+        "accept-language": "ru,en;q=0.8",
+        "user-agent": "Mozilla/5.0 (compatible; ArtNelliCatalog/2.0)",
+      },
+    });
+    if (!response.ok) throw new Error("Telegram HTTP " + response.status);
+    const html = await response.text();
+    return String(html)
+      .split(/<div class="tgme_widget_message_wrap[^>]*>/i)
+      .slice(1)
+      .map((chunk) => {
+        const idMatch = chunk.match(
+          new RegExp('data-post="' + TELEGRAM_CHANNEL + '/([0-9]+)"', "i"),
+        );
+        const textMatch = chunk.match(
+          /<div class="tgme_widget_message_text[^>]*>([\s\S]*?)<\/div>/i,
+        );
+        const dateMatch = chunk.match(/<time[^>]+datetime=["']([^"']+)["']/i);
+        const text = plainText(textMatch?.[1] || "");
+        if (!idMatch) return null;
+        return {
+          id: Number(idMatch[1]),
+          date: dateMatch?.[1] || null,
+          text: text.slice(0, 1200),
+          productLike: isProductListing(text),
+        };
+      })
+      .filter(Boolean)
+      .slice(-12);
+  } catch (error) {
+    return [];
   }
 }
 
@@ -1252,6 +1312,7 @@ export default {
         env,
         stored.products,
       );
+      const webhook = await telegramWebhookInfoSafe(env);
       return new Response(JSON.stringify({
         configured: bootstrap.configured,
         webhookActive: bootstrap.active,
@@ -1259,12 +1320,30 @@ export default {
         storedMessages: stored.storedMessages,
         storedProducts: stored.products.length,
         reconciliation,
+        webhook,
         checkedAt: new Date().toISOString(),
       }), {
         headers: {
           "content-type": "application/json; charset=utf-8",
           "cache-control": "no-store",
           "x-content-type-options": "nosniff",
+        },
+      });
+    }
+
+    if (url.pathname === "/api/telegram-public-recent") {
+      const messages = await telegramPublicRecent();
+      return new Response(JSON.stringify({
+        channel: TELEGRAM_CHANNEL,
+        messages,
+        checkedAt: new Date().toISOString(),
+      }), {
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-store",
+          "x-content-type-options": "nosniff",
+          "x-robots-tag": "noindex, nofollow",
+          "referrer-policy": "no-referrer",
         },
       });
     }
