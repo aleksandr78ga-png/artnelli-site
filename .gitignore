@@ -4,5 +4,6 @@
 tmp/
 artnelli-deploy.zip
 dist/
+node_modules/
 script.js
 styles.css

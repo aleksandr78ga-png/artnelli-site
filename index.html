@@ -108,34 +108,42 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Можно ли заказать купальник для художественной гимнастики дистанционно?",
+          "name": "Как заказать изделие из наличия?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. Обсуждение идеи, эскиза и материалов проходит дистанционно, а мерки можно снять дома по пошаговой инструкции мастерской."
+            "text": "Откройте карточку товара и отправьте мастерской его название или ссылку на публикацию в Telegram. Мы подтвердим наличие, мерки и доставку."
           }
         },
         {
           "@type": "Question",
-          "name": "Есть ли готовые купальники в наличии?",
+          "name": "С чего начинается индивидуальный заказ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. На сайте собраны новые и бывшие в употреблении модели. Актуальность наличия синхронизируется с товарным Telegram-каналом мастерской."
+            "text": "Расскажите о дисциплине, музыке, цветах и желаемом сроке. Мы обсуждаем концепцию, согласовываем дизайн и мерки, а затем начинаем пошив."
           }
         },
         {
           "@type": "Question",
-          "name": "Как снять мерки для пошива купальника?",
+          "name": "Можно ли снять мерки дистанционно?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Используйте отдельные PDF-инструкции для девочки или мальчика. В них на схемах показаны рост, обхваты и дуга тела."
+            "text": "Да. Используйте PDF-инструкцию со схемами для девочки или мальчика и отправьте мерки на проверку до начала пошива."
           }
         },
         {
           "@type": "Question",
-          "name": "Куда доставляет мастерская?",
+          "name": "Вы создаёте костюмы для команд?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Мастерская работает с заказчиками из разных стран. Возможность, способ и срок доставки подтверждаются для каждого заказа отдельно."
+            "text": "Да. Сообщите количество спортсменок, дисциплину, дату выступления и желаемую идею, чтобы мы могли обсудить проект."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как рассчитываются сроки и доставка?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Они зависят от изделия, загрузки мастерской и города назначения. Срок и вариант доставки согласовываем индивидуально до начала работы."
           }
         }
       ]
@@ -357,6 +365,33 @@
   .review-card p{font:400 clamp(1.2rem,2vw,1.7rem)/1.5 var(--serif);margin:18px 0 28px}
   .review-card .review-note{font:300 .86rem/1.7 var(--sans);color:var(--ivory-dim);margin-bottom:24px}
 
+  /* ---------- next step ---------- */
+  #next-step{background:var(--bg-soft);border-block:1px solid var(--line)}
+  .next-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .next-card{min-height:310px;padding:clamp(24px,3vw,38px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;transition:background .3s,color .3s}
+  .next-card:hover{background:rgba(201,169,106,.08)}
+  .next-card:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+  .next-card .next-number{color:var(--gold);font:300 .68rem var(--mono);letter-spacing:.16em}
+  .next-card h3{font:400 clamp(1.35rem,2vw,1.75rem)/1.2 var(--serif);margin:clamp(34px,5vw,62px) 0 16px}
+  .next-card p{color:var(--ivory-dim);margin-bottom:28px}
+  .next-card .next-link{margin-top:auto;display:flex;justify-content:space-between;gap:16px;align-items:center;padding-top:18px;border-top:1px solid var(--line);font:300 .66rem var(--mono);letter-spacing:.13em;text-transform:uppercase}
+  .next-card .next-link::after{content:'↗';color:var(--gold);font-size:1rem}
+
+  /* ---------- faq ---------- */
+  #faq{border-bottom:1px solid var(--line)}
+  .faq-shell{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(38px,7vw,110px);align-items:start}
+  .faq-intro{position:sticky;top:110px}
+  .faq-intro h2{font:400 clamp(2rem,4vw,3.4rem)/1.1 var(--serif);margin:16px 0 18px}
+  .faq-intro h2 .it{font-family:var(--serif-it);font-style:italic;color:var(--gold)}
+  .faq-intro p{color:var(--ivory-dim);max-width:30em}
+  .faq-list{border-top:1px solid var(--line)}
+  .faq-list details{border-bottom:1px solid var(--line)}
+  .faq-list summary{list-style:none;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:26px 0;cursor:pointer;font:400 clamp(1.08rem,1.8vw,1.35rem)/1.35 var(--serif)}
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::after{content:'+';color:var(--gold);font:300 1.6rem/1 var(--sans);transition:transform .25s}
+  .faq-list details[open] summary::after{transform:rotate(45deg)}
+  .faq-list details p{max-width:50em;padding:0 52px 26px 0;color:var(--ivory-dim)}
+
   /* ---------- footer ---------- */
   footer{border-top:1px solid var(--line);padding:46px 0 24px;overflow:hidden}
   .foot-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:40px}
@@ -385,6 +420,9 @@
     .about-grid{grid-template-columns:1fr}
     .about-grid img{height:400px}
     .reviews-shell{grid-template-columns:1fr}
+    .next-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .faq-shell{grid-template-columns:1fr}
+    .faq-intro{position:static}
     .measure-guide{grid-template-columns:1fr}
     section{padding:72px 0}
     .step{grid-template-columns:1fr;gap:12px}
@@ -393,6 +431,8 @@
   @media(max-width:620px){
     .portfolio-piece,.portfolio-piece.wide{grid-column:1/-1}
     .portfolio-piece img,.portfolio-piece.wide img{height:480px}
+    .next-grid{grid-template-columns:1fr}
+    .next-card{min-height:250px}
     .contact-emails{flex-direction:column;align-items:center}
   }
 
@@ -674,6 +714,73 @@
   </div>
 </section>
 
+<section id="next-step">
+  <div class="wrap">
+    <div class="sec-head rev">
+      <h2 data-i18n="next_h2">Choose your <span class="it">next step</span></h2>
+      <div class="sec-num" data-i18n="next_num">Everything in one place</div>
+    </div>
+    <div class="next-grid rev">
+      <a class="next-card" href="#booking">
+        <span class="next-number">01</span>
+        <h3 data-i18n="next_tailoring_h">Bespoke tailoring</h3>
+        <p data-i18n="next_tailoring_p">Choose a preferred month and send your tailoring request.</p>
+        <span class="next-link" data-i18n="next_tailoring_cta">Book tailoring</span>
+      </a>
+      <a class="next-card" href="#stock">
+        <span class="next-number">02</span>
+        <h3 data-i18n="next_stock_h">Leotards in stock</h3>
+        <p data-i18n="next_stock_p">Compare measurements and choose a new or pre-owned model.</p>
+        <span class="next-link" data-i18n="next_stock_cta">Open catalogue</span>
+      </a>
+      <a class="next-card" href="#measurements">
+        <span class="next-number">03</span>
+        <h3 data-i18n="next_measure_h">How to take measurements</h3>
+        <p data-i18n="next_measure_p">Open the step-by-step guide for a girl or a boy.</p>
+        <span class="next-link" data-i18n="next_measure_cta">Open guide</span>
+      </a>
+      <a class="next-card" href="#folio">
+        <span class="next-number">04</span>
+        <h3 data-i18n="next_portfolio_h">Atelier portfolio</h3>
+        <p data-i18n="next_portfolio_p">See original atelier pieces worn by athletes.</p>
+        <span class="next-link" data-i18n="next_portfolio_cta">View work</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq-shell">
+    <div class="faq-intro rev">
+      <div class="mono" data-i18n="faq_eyebrow">Useful before ordering</div>
+      <h2 data-i18n="faq_h2">Frequently asked <span class="it">questions</span></h2>
+      <p data-i18n="faq_intro">If your question is not here, write directly — we will help you choose the right format.</p>
+    </div>
+    <div class="faq-list rev">
+      <details open>
+        <summary data-i18n="faq_q1">How do I order a ready-to-ship item?</summary>
+        <p data-i18n="faq_a1">Open the product card and send its name or Telegram publication link. We will confirm availability, measurements and delivery.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq_q2">How does a custom order begin?</summary>
+        <p data-i18n="faq_a2">Tell us the discipline, music, colours and deadline. We discuss the concept, confirm the design and measurements, and only then begin tailoring.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq_q3">Can measurements be taken remotely?</summary>
+        <p data-i18n="faq_a3">Yes. Use the illustrated PDF guide on this page and send the measurements for confirmation before tailoring.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq_q4">Do you create costumes for teams?</summary>
+        <p data-i18n="faq_a4">Yes. Tell us the number of athletes, discipline, event date and desired visual concept so we can discuss the project.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq_q5">How are timelines and delivery calculated?</summary>
+        <p data-i18n="faq_a5">They depend on the costume, workload and destination. We confirm the schedule and delivery option individually before work begins.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap rev">
     <div class="mono" data-i18n="contact_eyebrow">(05) — Contact</div>
@@ -722,6 +829,17 @@
 <script src="catalog-data.js"></script><script src="/api/live-data.js" async onerror="window.NELLI_LIVE={}"></script><script>
 const i18n = {
   ru: {
+    next_h2:'Выберите <span class="it">следующий шаг</span>', next_num:'Всё важное в одном месте',
+    next_tailoring_h:'Индивидуальный пошив', next_tailoring_p:'Выберите желаемый месяц и отправьте заявку на пошив.', next_tailoring_cta:'Записаться на пошив',
+    next_stock_h:'Купальники в наличии', next_stock_p:'Сравните мерки и выберите новую или б/у модель.', next_stock_cta:'Открыть каталог',
+    next_measure_h:'Как снять мерки', next_measure_p:'Откройте пошаговую инструкцию для девочки или мальчика.', next_measure_cta:'Открыть инструкцию',
+    next_portfolio_h:'Портфолио мастерской', next_portfolio_p:'Посмотрите авторские работы мастерской на спортсменках.', next_portfolio_cta:'Смотреть работы',
+    faq_eyebrow:'Полезно до заказа', faq_h2:'Частые <span class="it">вопросы</span>', faq_intro:'Если вашего вопроса здесь нет, напишите лично — поможем выбрать подходящий формат.',
+    faq_q1:'Как заказать изделие из наличия?', faq_a1:'Откройте карточку товара и пришлите его название или ссылку на публикацию в Telegram. Мы подтвердим наличие, мерки и доставку.',
+    faq_q2:'С чего начинается индивидуальный заказ?', faq_a2:'Расскажите о дисциплине, музыке, цветах и сроке. Обсуждаем концепцию, согласовываем дизайн и мерки — и только потом начинаем пошив.',
+    faq_q3:'Можно ли снять мерки дистанционно?', faq_a3:'Да. Используйте на этой странице PDF-инструкцию со схемами и отправьте мерки на проверку до начала пошива.',
+    faq_q4:'Вы создаёте костюмы для команд?', faq_a4:'Да. Сообщите количество спортсменок, дисциплину, дату выступления и желаемую идею, чтобы мы могли обсудить проект.',
+    faq_q5:'Как рассчитываются сроки и доставка?', faq_a5:'Они зависят от изделия, загрузки мастерской и города назначения. Срок и вариант доставки согласовываем индивидуально до начала работы.',
     measure_eyebrow:'PDF-инструкции · пошагово', measure_h:'Как правильно снять мерки', measure_p:'Выберите инструкцию для девочки или мальчика. В PDF каждая мерка показана на схеме — точные размеры можно снять дома.', measure_girl:'Инструкция для девочки', measure_boy:'Инструкция для мальчика', measure_note:'PDF · откроется в новой вкладке',
     athletes_h2:'Свежие работы <span class="it">на спортсменах</span>', athletes_num:'июль 2026', athletes_lead:'Новые готовые костюмы в движении — на спортсменках национальных сборных и международных соревнованиях.',
     athlete_cap1:'Сборная Филиппин · Кубок мира, Милан 2026', athlete_cap2:'Создано с любовью · Франция × Израиль', athlete_cap3:'Соревновательная работа · Израиль', athlete_cap4:'Тысячи усилий · одно общее чувство', athlete_cap5:'Breanna Labadan · 2026',
