@@ -549,7 +549,11 @@ async function bootstrapTelegramWebhook(env) {
   const lastBootstrap = Number(
     await readSyncValue(env, "webhook_checked_at", "0"),
   );
-  if (Date.now() - lastBootstrap < 5 * 60 * 1000) {
+  const lastWebhookUrl = await readSyncValue(env, "webhook_url", "");
+  if (
+    lastWebhookUrl === webhookUrl &&
+    Date.now() - lastBootstrap < 5 * 60 * 1000
+  ) {
     return { configured: true, active: true, importedUpdates: 0 };
   }
 
@@ -589,6 +593,7 @@ async function bootstrapTelegramWebhook(env) {
     }
 
     await writeSyncValue(env, "webhook_checked_at", Date.now());
+    await writeSyncValue(env, "webhook_url", webhookUrl);
     return { configured: true, active: true, importedUpdates };
   } catch (error) {
     return { configured: true, active: false, importedUpdates: 0 };
