@@ -152,6 +152,7 @@ function telegramAlbumDescriptionKey(product = {}) {
   return String(product.description || "")
     .toLocaleLowerCase("ru")
     .replace(/\s+/g, " ")
+    .replace(/\s+(?=см\b)/giu, "")
     .trim();
 }
 
