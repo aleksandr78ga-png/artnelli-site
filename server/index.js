@@ -726,8 +726,9 @@ async function scanTelegramPublicProducts(env) {
   const storedCursor = Number(
     await readSyncValue(env, "public_scan_cursor", String(firstDynamicId)),
   );
-  const from = Math.max(firstDynamicId, storedCursor || firstDynamicId);
-  const ids = Array.from({ length: 24 }, (_, index) => from + index);
+  const cursor = Math.max(firstDynamicId, storedCursor || firstDynamicId);
+  const from = Math.max(firstDynamicId, cursor - 8);
+  const ids = Array.from({ length: 32 }, (_, index) => from + index);
   const documents = await Promise.all(
     ids.map(async (id) => ({ id, ...(await telegramPostDocument(id)) })),
   );
@@ -746,7 +747,10 @@ async function scanTelegramPublicProducts(env) {
   }
 
   const saved = await saveTelegramProductSnapshots(products, env);
-  const next = lastExistingId >= from ? lastExistingId + 1 : from;
+  const next = Math.max(
+    cursor,
+    lastExistingId >= from ? lastExistingId + 1 : from,
+  );
   await writeSyncValue(env, "public_scan_cursor", next);
   const inspected = documents
     .filter((document) => document.state === "exists")
