@@ -748,6 +748,27 @@ async function scanTelegramPublicProducts(env) {
   const saved = await saveTelegramProductSnapshots(products, env);
   const next = lastExistingId >= from ? lastExistingId + 1 : from;
   await writeSyncValue(env, "public_scan_cursor", next);
+  const inspected = documents
+    .filter((document) => document.state === "exists")
+    .map((document) => {
+      const textMatch = document.html.match(
+        /<div class="tgme_widget_message_text[^>]*>([\s\S]*?)<\/div>/i,
+      );
+      const text = plainText(textMatch?.[1] || "");
+      return {
+        id: document.id,
+        text: text.slice(0, 600),
+        hasGarment: /купальник|леотард|платье|комбинезон/iu.test(text),
+        hasMeasurements:
+          /(?:рост|ог|от|об|дуга\s+тела|размер)/iu.test(text),
+        photos: Array.from(
+          document.html.matchAll(
+            /background-image\s*:\s*url\(['"]?([^'")]+)['"]?\)/gi,
+          ),
+        ).length,
+        parsedProducts: parseTelegramPage(document.html).products.length,
+      };
+    });
   return {
     checked: documents.filter((document) => document.state !== "unknown").length,
     existing: documents.filter((document) => document.state === "exists").length,
@@ -755,6 +776,7 @@ async function scanTelegramPublicProducts(env) {
     saved,
     from,
     next,
+    inspected,
   };
 }
 
