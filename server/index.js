@@ -772,20 +772,25 @@ async function scanTelegramPublicProducts(env) {
     }
   }
 
-  const albumProducts = new Map();
+  const albumProducts = [];
+  const lastAlbumByDescription = new Map();
   const albumDuplicates = [];
   for (const product of products.sort((a, b) => Number(a.id) - Number(b.id))) {
-    const albumKey = [
-      String(product.description || "").replace(/\s+/g, " ").trim(),
-      ...(Array.isArray(product.photos) ? product.photos : []),
-    ].join("\n");
-    if (albumProducts.has(albumKey)) {
+    const albumKey = String(product.description || "")
+      .replace(/\s+/g, " ")
+      .trim();
+    const existingAlbum = lastAlbumByDescription.get(albumKey);
+    if (
+      existingAlbum &&
+      Number(product.id) - Number(existingAlbum.id) <= 10
+    ) {
       albumDuplicates.push(Number(product.id));
       continue;
     }
-    albumProducts.set(albumKey, product);
+    albumProducts.push(product);
+    lastAlbumByDescription.set(albumKey, product);
   }
-  const canonicalProducts = [...albumProducts.values()];
+  const canonicalProducts = albumProducts;
   const saved = await saveTelegramProductSnapshots(canonicalProducts, env);
   const duplicatesRemoved = await deleteTelegramProductSnapshots(
     albumDuplicates,
