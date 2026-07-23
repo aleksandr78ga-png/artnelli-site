@@ -1,10 +1,126 @@
+import staticCatalogIds from "./catalog-ids.js";
+
 const TELEGRAM_CHANNEL = "nelli_leotards";
 const TELEGRAM_PUBLIC_URL = "https://t.me/s/" + TELEGRAM_CHANNEL;
 const CACHE_TTL_MS = 15 * 60 * 1000;
 const TELEGRAM_HEALTH_TTL_MS = 5 * 60 * 1000;
+const TELEGRAM_RECONCILE_BATCH = 12;
 
 let liveCache = { expiresAt: 0, payload: null };
 let telegramHealthCache = { expiresAt: 0, payload: null };
+let databaseReady = null;
+
+async function ensureDatabase(env) {
+  if (!env.DB) return false;
+  if (!databaseReady) {
+    databaseReady = env.DB.batch([
+      env.DB.prepare(`
+        CREATE TABLE IF NOT EXISTS telegram_messages (
+          message_id INTEGER PRIMARY KEY,
+          media_group_id TEXT,
+          raw_json TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        )
+      `),
+      env.DB.prepare(`
+        CREATE TABLE IF NOT EXISTS telegram_product_state (
+          product_id INTEGER PRIMARY KEY,
+          removed INTEGER NOT NULL DEFAULT 0,
+          checked_at TEXT,
+          updated_at TEXT NOT NULL
+        )
+      `),
+      env.DB.prepare(`
+        CREATE TABLE IF NOT EXISTS telegram_sync_state (
+          key TEXT PRIMARY KEY,
+          value TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        )
+      `),
+    ]).then(() => true).catch(() => {
+      databaseReady = null;
+      return false;
+    });
+  }
+  return databaseReady;
+}
+
+async function saveTelegramUpdates(updates, env) {
+  if (!(await ensureDatabase(env))) return 0;
+  const statements = [];
+  const now = new Date().toISOString();
+
+  for (const update of Array.isArray(updates) ? updates : []) {
+    const message = update?.edited_channel_post || update?.channel_post;
+    if (!message || !isNelliChannelMessage(message)) continue;
+    const messageId = Number(message.message_id);
+    if (!Number.isFinite(messageId)) continue;
+    statements.push(
+      env.DB.prepare(`
+        INSERT INTO telegram_messages
+          (message_id, media_group_id, raw_json, updated_at)
+        VALUES (?, ?, ?, ?)
+        ON CONFLICT(message_id) DO UPDATE SET
+          media_group_id = excluded.media_group_id,
+          raw_json = excluded.raw_json,
+          updated_at = excluded.updated_at
+      `).bind(
+        messageId,
+        message.media_group_id ? String(message.media_group_id) : null,
+        JSON.stringify(message),
+        now,
+      ),
+    );
+  }
+
+  if (statements.length) {
+    await env.DB.batch(statements);
+    liveCache = { expiresAt: 0, payload: null };
+  }
+  return statements.length;
+}
+
+async function storedTelegramData(env) {
+  if (!(await ensureDatabase(env))) {
+    return { products: [], statuses: [], ok: false, storedMessages: 0 };
+  }
+  const result = await env.DB.prepare(
+    "SELECT raw_json FROM telegram_messages ORDER BY message_id ASC",
+  ).all();
+  const updates = (result.results || []).flatMap((row) => {
+    try {
+      return [{ channel_post: JSON.parse(row.raw_json) }];
+    } catch (error) {
+      return [];
+    }
+  });
+  const parsed = parseTelegramBotUpdates(updates);
+  return {
+    ...parsed,
+    ok: true,
+    storedMessages: updates.length,
+  };
+}
+
+async function readSyncValue(env, key, fallback = "") {
+  if (!(await ensureDatabase(env))) return fallback;
+  const row = await env.DB.prepare(
+    "SELECT value FROM telegram_sync_state WHERE key = ?",
+  ).bind(key).first();
+  return row?.value ?? fallback;
+}
+
+async function writeSyncValue(env, key, value) {
+  if (!(await ensureDatabase(env))) return;
+  const now = new Date().toISOString();
+  await env.DB.prepare(`
+    INSERT INTO telegram_sync_state (key, value, updated_at)
+    VALUES (?, ?, ?)
+    ON CONFLICT(key) DO UPDATE SET
+      value = excluded.value,
+      updated_at = excluded.updated_at
+  `).bind(key, String(value), now).run();
+}
 
 function decodeHtml(value = "") {
   const named = {
@@ -388,6 +504,175 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
   }
 }
 
+async function telegramApi(token, method, payload = {}) {
+  const response = await fetchWithTimeout(
+    "https://api.telegram.org/bot" + token + "/" + method,
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    },
+    10000,
+  );
+  const body = await response.json();
+  if (!response.ok || !body.ok) {
+    throw new Error("Telegram " + method + " failed");
+  }
+  return body.result;
+}
+
+async function bootstrapTelegramWebhook(env) {
+  const token = env.TELEGRAM_BOT_TOKEN;
+  const webhookUrl = env.TELEGRAM_WEBHOOK_URL;
+  const webhookSecret = env.TELEGRAM_WEBHOOK_SECRET;
+  if (!token || !webhookUrl || !webhookSecret) {
+    return { configured: false, active: false, importedUpdates: 0 };
+  }
+
+  const lastBootstrap = Number(
+    await readSyncValue(env, "webhook_checked_at", "0"),
+  );
+  if (Date.now() - lastBootstrap < 5 * 60 * 1000) {
+    return { configured: true, active: true, importedUpdates: 0 };
+  }
+
+  try {
+    const info = await telegramApi(token, "getWebhookInfo");
+    let importedUpdates = 0;
+
+    if (!info?.url) {
+      const updates = await telegramApi(token, "getUpdates", {
+        limit: 100,
+        timeout: 0,
+        allowed_updates: ["channel_post", "edited_channel_post"],
+      });
+      importedUpdates = await saveTelegramUpdates(updates, env);
+      const lastUpdateId = Math.max(
+        0,
+        ...(Array.isArray(updates)
+          ? updates.map((update) => Number(update.update_id) || 0)
+          : []),
+      );
+      if (lastUpdateId) {
+        await telegramApi(token, "getUpdates", {
+          offset: lastUpdateId + 1,
+          limit: 1,
+          timeout: 0,
+        });
+      }
+    }
+
+    if (info?.url !== webhookUrl) {
+      await telegramApi(token, "setWebhook", {
+        url: webhookUrl,
+        secret_token: webhookSecret,
+        allowed_updates: ["channel_post", "edited_channel_post"],
+        drop_pending_updates: false,
+      });
+    }
+
+    await writeSyncValue(env, "webhook_checked_at", Date.now());
+    return { configured: true, active: true, importedUpdates };
+  } catch (error) {
+    return { configured: true, active: false, importedUpdates: 0 };
+  }
+}
+
+function explicitMissingTelegramPost(html = "", status = 200) {
+  if (status === 404 || status === 410) return true;
+  return /(?:tgme_widget_message_error|message\s+(?:was\s+)?deleted|post\s+not\s+found|message\s+not\s+found|публикаци[яию]\s+не\s+найдена|сообщение\s+удалено)/iu.test(
+    html,
+  );
+}
+
+async function telegramPostState(id) {
+  try {
+    const response = await fetchWithTimeout(
+      "https://t.me/" +
+        TELEGRAM_CHANNEL +
+        "/" +
+        encodeURIComponent(id) +
+        "?embed=1&mode=tme",
+      {
+        headers: {
+          accept: "text/html,application/xhtml+xml",
+          "accept-language": "ru,en;q=0.8",
+          "user-agent": "Mozilla/5.0 (compatible; ArtNelliCatalog/2.0)",
+        },
+      },
+      8000,
+    );
+    const html = await response.text();
+    if (
+      html.includes('data-post="' + TELEGRAM_CHANNEL + "/" + id + '"') ||
+      html.includes('data-post="' + TELEGRAM_CHANNEL + "%2F" + id + '"')
+    ) {
+      return "exists";
+    }
+    return explicitMissingTelegramPost(html, response.status)
+      ? "missing"
+      : "unknown";
+  } catch (error) {
+    return "unknown";
+  }
+}
+
+async function reconcileTelegramDeletions(env, storedProducts = []) {
+  if (!(await ensureDatabase(env))) return { checked: 0, removed: 0 };
+
+  const allIds = [...new Set([
+    ...staticCatalogIds,
+    ...storedProducts.map((product) => Number(product.id)),
+  ].filter(Number.isFinite))].sort((a, b) => b - a);
+  if (!allIds.length) return { checked: 0, removed: 0 };
+
+  const cursor = Number(await readSyncValue(env, "reconcile_cursor", "0")) || 0;
+  const batch = Array.from(
+    { length: Math.min(TELEGRAM_RECONCILE_BATCH, allIds.length) },
+    (_, index) => allIds[(cursor + index) % allIds.length],
+  );
+  const results = await Promise.all(
+    batch.map(async (id) => ({ id, state: await telegramPostState(id) })),
+  );
+  const now = new Date().toISOString();
+  const statements = results
+    .filter((result) => result.state !== "unknown")
+    .map(({ id, state }) =>
+      env.DB.prepare(`
+        INSERT INTO telegram_product_state
+          (product_id, removed, checked_at, updated_at)
+        VALUES (?, ?, ?, ?)
+        ON CONFLICT(product_id) DO UPDATE SET
+          removed = excluded.removed,
+          checked_at = excluded.checked_at,
+          updated_at = excluded.updated_at
+      `).bind(id, state === "missing" ? 1 : 0, now, now),
+    );
+  if (statements.length) await env.DB.batch(statements);
+  await writeSyncValue(
+    env,
+    "reconcile_cursor",
+    (cursor + batch.length) % allIds.length,
+  );
+  return {
+    checked: results.filter((result) => result.state !== "unknown").length,
+    removed: results.filter((result) => result.state === "missing").length,
+  };
+}
+
+async function storedRemovalStatuses(env) {
+  if (!(await ensureDatabase(env))) return [];
+  const result = await env.DB.prepare(
+    "SELECT product_id FROM telegram_product_state WHERE removed = 1",
+  ).all();
+  return (result.results || []).map((row) => ({
+    id: Number(row.product_id),
+    normalizedName: "",
+    sold: false,
+    removed: true,
+  }));
+}
+
 async function telegramPublicData() {
   try {
     const response = await fetchWithTimeout(TELEGRAM_PUBLIC_URL, {
@@ -528,17 +813,30 @@ async function telegramConnectionStatus(env) {
 }
 
 async function telegramData(env) {
-  const [publicData, botData] = await Promise.all([
+  const bootstrap = await bootstrapTelegramWebhook(env);
+  const [publicData, storedData] = await Promise.all([
     telegramPublicData(),
-    telegramBotData(env),
+    storedTelegramData(env),
   ]);
-  const merged = mergeTelegramResults(publicData, botData);
+  const reconciliation = await reconcileTelegramDeletions(
+    env,
+    storedData.products,
+  );
+  const removalStatuses = await storedRemovalStatuses(env);
+  const merged = mergeTelegramResults(
+    publicData,
+    storedData,
+    { products: [], statuses: removalStatuses },
+  );
   return {
     ...merged,
-    ok: publicData.ok || botData.ok,
+    ok: publicData.ok || storedData.ok,
     publicFeed: publicData.ok,
-    botConnected: botData.connected,
-    botPendingUpdates: botData.pendingUpdates,
+    botConnected: bootstrap.configured,
+    webhookActive: bootstrap.active,
+    importedUpdates: bootstrap.importedUpdates,
+    storedMessages: storedData.storedMessages,
+    reconciliation,
   };
 }
 
@@ -707,6 +1005,56 @@ async function telegramMediaResponse(fileId, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (
+      url.pathname === "/api/telegram-webhook" &&
+      request.method === "POST"
+    ) {
+      const expectedSecret = env.TELEGRAM_WEBHOOK_SECRET;
+      const receivedSecret = request.headers.get(
+        "x-telegram-bot-api-secret-token",
+      );
+      if (!expectedSecret || receivedSecret !== expectedSecret) {
+        return new Response("Forbidden", { status: 403 });
+      }
+      try {
+        const update = await request.json();
+        await saveTelegramUpdates([update], env);
+        return new Response("OK", {
+          status: 200,
+          headers: {
+            "content-type": "text/plain; charset=utf-8",
+            "cache-control": "no-store",
+          },
+        });
+      } catch (error) {
+        return new Response("Bad request", { status: 400 });
+      }
+    }
+
+    if (url.pathname === "/api/telegram-sync") {
+      const bootstrap = await bootstrapTelegramWebhook(env);
+      const stored = await storedTelegramData(env);
+      const reconciliation = await reconcileTelegramDeletions(
+        env,
+        stored.products,
+      );
+      return new Response(JSON.stringify({
+        configured: bootstrap.configured,
+        webhookActive: bootstrap.active,
+        importedUpdates: bootstrap.importedUpdates,
+        storedMessages: stored.storedMessages,
+        storedProducts: stored.products.length,
+        reconciliation,
+        checkedAt: new Date().toISOString(),
+      }), {
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-store",
+          "x-content-type-options": "nosniff",
+        },
+      });
+    }
 
     if (
       url.pathname === "/api/telegram-status" ||
