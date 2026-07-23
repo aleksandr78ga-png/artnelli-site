@@ -37,6 +37,17 @@ async function ensureDatabase(env) {
           updated_at TEXT NOT NULL
         )
       `),
+      env.DB.prepare(`
+        CREATE TABLE IF NOT EXISTS site_analytics (
+          day TEXT NOT NULL,
+          path TEXT NOT NULL,
+          event TEXT NOT NULL,
+          source TEXT NOT NULL,
+          country TEXT NOT NULL,
+          count INTEGER NOT NULL DEFAULT 0,
+          PRIMARY KEY (day, path, event, source, country)
+        )
+      `),
     ]).then(() => true).catch(() => {
       databaseReady = null;
       return false;
@@ -218,14 +229,20 @@ function priceValues(text) {
 }
 
 function telegramTextStatus(text = "") {
-  const sold = /(?:^|\s)(?:продан(?:о|а|ы)?|sold)(?:$|\s|[!.,✅❌])/imu.test(
-    text,
-  );
   const removed = /(?:снят(?:о|а|ы)?\s+(?:с\s+публикации|с\s+продажи)|не\s+прода[её]тся|removed|withdrawn)/iu.test(
     text,
   );
-  const selling = /прода[её]тся|в\s+продаже|for\s+sale/iu.test(text);
-  return { sold, removed, selling };
+  return { removed };
+}
+
+function isProductListing(text = "") {
+  const garment = /купальник|леотард|платье|комбинезон|rhythmic\s+gymnastics|figure\s+skat/iu.test(
+    text,
+  );
+  const measurements = /(?:^|\n|\s)(?:рост|ог|от|об|дуга\s+тела)\s*[:—-]?\s*[0-9]{2,3}/imu.test(
+    text,
+  );
+  return garment && measurements;
 }
 
 function englishDescription(product) {
@@ -235,7 +252,7 @@ function englishDescription(product) {
     jumpsuit: "competition jumpsuit",
   }[product.type] || "competition costume";
   const lines = [
-    product.sold ? "Sold" : "For sale",
+    "For sale",
     (product.condition === "used" ? "Pre-owned " : "New ") +
       type +
       ((product.nameEn || product.name) ? " “" + (product.nameEn || product.name) + "”" : ""),
@@ -245,7 +262,7 @@ function englishDescription(product) {
   if (product.specs.waist) lines.push("Waist: " + product.specs.waist + " cm");
   if (product.specs.hips) lines.push("Hips: " + product.specs.hips + " cm");
   if (product.specs.girth) lines.push("Body girth: " + product.specs.girth + " cm");
-  if (!product.sold) lines.push("Open the Telegram listing for current details.");
+  lines.push("Open the Telegram listing for current details.");
   return lines.join("\n");
 }
 
@@ -269,20 +286,20 @@ export function parseTelegramPage(html) {
     const text = plainText(textMatch?.[1] || "");
     if (!text) continue;
 
-    const name = quotedName(text);
-    const { sold, removed, selling } = telegramTextStatus(text);
+    const name = quotedName(text) || "Модель №" + id;
+    const { removed } = telegramTextStatus(text);
 
-    if (name && (sold || removed)) {
+    if (removed) {
       statuses.push({
         id,
         name,
         normalizedName: normalizedName(name),
-        sold,
+        sold: false,
         removed,
       });
     }
 
-    if ((!selling && !sold) || removed) continue;
+    if (!isProductListing(text) || removed) continue;
 
     const decodedChunk = decodeHtml(chunk);
     const photos = [];
@@ -303,7 +320,7 @@ export function parseTelegramPage(html) {
       }
     }
 
-    if (!name || photos.length === 0) continue;
+    if (photos.length === 0) continue;
 
     const dateMatch = chunk.match(/<time[^>]+datetime=["']([^"']+)["']/i);
     const type = /платье|фигурн/iu.test(text)
@@ -320,9 +337,9 @@ export function parseTelegramPage(html) {
       nameEn: transliterateName(name),
       type,
       condition,
-      sold,
-      removed,
-      available: !sold && !removed,
+      sold: false,
+      removed: false,
+      available: true,
       date: dateMatch
         ? new Date(dateMatch[1]).toISOString().slice(0, 10)
         : new Date().toISOString().slice(0, 10),
@@ -344,8 +361,8 @@ export function parseTelegramPage(html) {
       id,
       name,
       normalizedName: normalizedName(name),
-      sold,
-      removed,
+      sold: false,
+      removed: false,
     });
   }
 
@@ -406,20 +423,20 @@ export function parseTelegramBotUpdates(updates) {
     if (!text) continue;
 
     const id = Number(primary.message_id);
-    const name = quotedName(text);
-    const { sold, removed, selling } = telegramTextStatus(text);
+    const name = quotedName(text) || "Модель №" + id;
+    const { removed } = telegramTextStatus(text);
 
-    if (name && (sold || removed)) {
+    if (removed) {
       statuses.push({
         id,
         name,
         normalizedName: normalizedName(name),
-        sold,
+        sold: false,
         removed,
       });
     }
 
-    if (!selling || sold || removed || !name) continue;
+    if (!isProductListing(text) || removed) continue;
 
     const photos = messages
       .map(messageMediaFileId)
@@ -1002,9 +1019,200 @@ async function telegramMediaResponse(fileId, env) {
   }
 }
 
+const ANALYTICS_EVENTS = new Set([
+  "pageview",
+  "catalog_open",
+  "tailoring_open",
+  "booking_open",
+  "booking_send",
+  "telegram_open",
+  "whatsapp_open",
+  "measurement_download",
+  "product_open",
+]);
+
+function analyticsText(value, fallback, maxLength) {
+  const text = String(value ?? fallback)
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .trim()
+    .slice(0, maxLength);
+  return text || fallback;
+}
+
+async function collectAnalytics(request, env) {
+  if (!(await ensureDatabase(env))) {
+    return new Response(null, { status: 204 });
+  }
+
+  const requestUrl = new URL(request.url);
+  const origin = request.headers.get("origin");
+  if (origin && origin !== requestUrl.origin) {
+    return new Response("Forbidden", { status: 403 });
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch (error) {
+    return new Response("Bad request", { status: 400 });
+  }
+
+  const event = analyticsText(body?.event, "pageview", 48);
+  if (!ANALYTICS_EVENTS.has(event)) {
+    return new Response("Bad request", { status: 400 });
+  }
+
+  let path = analyticsText(body?.path, "/", 180);
+  if (!path.startsWith("/")) path = "/";
+  path = path.split("?")[0].split("#")[0] || "/";
+
+  const source = analyticsText(body?.source, "direct", 48)
+    .toLocaleLowerCase("en")
+    .replace(/[^a-z0-9_-]/g, "") || "direct";
+  const country = analyticsText(request.cf?.country, "—", 3)
+    .toLocaleUpperCase("en")
+    .replace(/[^A-Z-]/g, "") || "—";
+  const day = new Date().toISOString().slice(0, 10);
+
+  await env.DB.prepare(`
+    INSERT INTO site_analytics (day, path, event, source, country, count)
+    VALUES (?, ?, ?, ?, ?, 1)
+    ON CONFLICT(day, path, event, source, country)
+    DO UPDATE SET count = count + 1
+  `).bind(day, path, event, source, country).run();
+
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "cache-control": "no-store",
+      "x-content-type-options": "nosniff",
+    },
+  });
+}
+
+async function analyticsSummary(url, env) {
+  const requestedDays = Number(url.searchParams.get("days") || 30);
+  const days = Math.min(365, Math.max(1, Math.trunc(requestedDays) || 30));
+  const since = new Date(Date.now() - (days - 1) * 86400000)
+    .toISOString()
+    .slice(0, 10);
+
+  if (!(await ensureDatabase(env))) {
+    return {
+      generatedAt: new Date().toISOString(),
+      days,
+      since,
+      pageviews: 0,
+      interactions: 0,
+      today: 0,
+      daily: [],
+      pages: [],
+      sources: [],
+      events: [],
+      countries: [],
+    };
+  }
+
+  const [
+    totals,
+    today,
+    daily,
+    pages,
+    sources,
+    events,
+    countries,
+  ] = await Promise.all([
+    env.DB.prepare(`
+      SELECT
+        SUM(CASE WHEN event = 'pageview' THEN count ELSE 0 END) AS pageviews,
+        SUM(CASE WHEN event <> 'pageview' THEN count ELSE 0 END) AS interactions
+      FROM site_analytics
+      WHERE day >= ?
+    `).bind(since).first(),
+    env.DB.prepare(`
+      SELECT COALESCE(SUM(count), 0) AS value
+      FROM site_analytics
+      WHERE day = ? AND event = 'pageview'
+    `).bind(new Date().toISOString().slice(0, 10)).first(),
+    env.DB.prepare(`
+      SELECT day, SUM(count) AS count
+      FROM site_analytics
+      WHERE day >= ? AND event = 'pageview'
+      GROUP BY day
+      ORDER BY day ASC
+    `).bind(since).all(),
+    env.DB.prepare(`
+      SELECT path, SUM(count) AS count
+      FROM site_analytics
+      WHERE day >= ? AND event = 'pageview'
+      GROUP BY path
+      ORDER BY count DESC
+      LIMIT 12
+    `).bind(since).all(),
+    env.DB.prepare(`
+      SELECT source, SUM(count) AS count
+      FROM site_analytics
+      WHERE day >= ? AND event = 'pageview'
+      GROUP BY source
+      ORDER BY count DESC
+      LIMIT 12
+    `).bind(since).all(),
+    env.DB.prepare(`
+      SELECT event, SUM(count) AS count
+      FROM site_analytics
+      WHERE day >= ? AND event <> 'pageview'
+      GROUP BY event
+      ORDER BY count DESC
+      LIMIT 12
+    `).bind(since).all(),
+    env.DB.prepare(`
+      SELECT country, SUM(count) AS count
+      FROM site_analytics
+      WHERE day >= ? AND event = 'pageview'
+      GROUP BY country
+      ORDER BY count DESC
+      LIMIT 12
+    `).bind(since).all(),
+  ]);
+
+  return {
+    generatedAt: new Date().toISOString(),
+    days,
+    since,
+    pageviews: Number(totals?.pageviews || 0),
+    interactions: Number(totals?.interactions || 0),
+    today: Number(today?.value || 0),
+    daily: daily.results || [],
+    pages: pages.results || [],
+    sources: sources.results || [],
+    events: events.results || [],
+    countries: countries.results || [],
+  };
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (
+      url.pathname === "/api/analytics/collect" &&
+      request.method === "POST"
+    ) {
+      return collectAnalytics(request, env);
+    }
+
+    if (url.pathname === "/api/statistics" && request.method === "GET") {
+      const payload = await analyticsSummary(url, env);
+      return new Response(JSON.stringify(payload), {
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-store",
+          "x-content-type-options": "nosniff",
+          "x-robots-tag": "noindex, nofollow",
+          "referrer-policy": "no-referrer",
+        },
+      });
+    }
 
     if (
       url.pathname === "/api/telegram-webhook" &&
@@ -1094,6 +1302,8 @@ export default {
 
     if (url.pathname === "/") {
       url.pathname = "/index.html";
+    } else if (url.pathname.endsWith("/")) {
+      url.pathname += "index.html";
     }
 
     if (env.ASSETS?.fetch) {

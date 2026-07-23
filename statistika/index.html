@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Статистика сайта | Leotards by Nelli</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0d0b09">
+  <style>
+    :root{--bg:#0d0b09;--panel:#151210;--ivory:#f2ead9;--dim:#a89e8c;--gold:#c9a96a;--line:rgba(242,234,217,.14)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ivory);font-family:Arial,sans-serif;line-height:1.5}
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:auto;padding:42px 0 72px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:42px}
+    .brand{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none}
+    .brand span{color:var(--gold)}
+    h1{font-family:Georgia,serif;font-size:clamp(2rem,6vw,4.2rem);font-weight:400;line-height:1.05;margin:0 0 12px}
+    .lead{color:var(--dim);max-width:52rem;margin:0 0 30px}
+    .periods{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+    button{border:1px solid var(--line);background:transparent;color:var(--ivory);padding:10px 16px;border-radius:99px;cursor:pointer}
+    button.active{background:var(--ivory);color:var(--bg)}
+    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:28px}
+    .metric,.panel{border:1px solid var(--line);background:var(--panel)}
+    .metric{padding:24px}
+    .metric span{display:block;color:var(--dim);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em}
+    .metric strong{display:block;font-family:Georgia,serif;font-size:2.4rem;font-weight:400;margin-top:8px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .panel{padding:22px}
+    .panel h2{font-family:Georgia,serif;font-weight:400;margin:0 0 18px}
+    .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;padding:10px 0;border-top:1px solid var(--line)}
+    .row:first-of-type{border-top:0}
+    .row span{overflow:hidden;text-overflow:ellipsis}
+    .row b{color:var(--gold);font-weight:400}
+    .empty,.status{color:var(--dim)}
+    .status{margin-top:24px;font-size:.86rem}
+    @media(max-width:720px){.metrics,.grid{grid-template-columns:1fr}header{align-items:flex-start}.metric strong{font-size:2rem}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <a class="brand" href="/">Nelli <span>Garkusha</span></a>
+      <a href="/">Вернуться на сайт</a>
+    </header>
+    <h1>Статистика сайта</h1>
+    <p class="lead">Считаются только обезличенные просмотры страниц, источники переходов, страны и нажатия на важные кнопки. IP‑адреса, имена и личные данные посетителей не сохраняются.</p>
+    <div class="periods" aria-label="Период">
+      <button type="button" data-days="7">7 дней</button>
+      <button type="button" data-days="30" class="active">30 дней</button>
+      <button type="button" data-days="90">90 дней</button>
+    </div>
+    <section class="metrics" aria-label="Основные показатели">
+      <div class="metric"><span>Просмотры за период</span><strong id="pageviews">—</strong></div>
+      <div class="metric"><span>Сегодня</span><strong id="today">—</strong></div>
+      <div class="metric"><span>Действия посетителей</span><strong id="interactions">—</strong></div>
+    </section>
+    <section class="grid">
+      <article class="panel"><h2>Популярные страницы</h2><div id="pages"></div></article>
+      <article class="panel"><h2>Источники переходов</h2><div id="sources"></div></article>
+      <article class="panel"><h2>Важные действия</h2><div id="events"></div></article>
+      <article class="panel"><h2>Страны</h2><div id="countries"></div></article>
+    </section>
+    <p id="status" class="status" role="status">Загрузка…</p>
+  </main>
+  <script>
+    const labels={
+      direct:'Прямые переходы',internal:'Внутри сайта',google:'Google',yandex:'Яндекс',bing:'Bing',
+      instagram:'Instagram',telegram:'Telegram',vk:'VK',referral:'Другие сайты',
+      catalog_open:'Открыли каталог',tailoring_open:'Открыли пошив на заказ',booking_open:'Открыли запись',
+      booking_send:'Отправили заявку',telegram_open:'Перешли в Telegram',whatsapp_open:'Перешли в WhatsApp',
+      measurement_download:'Скачали инструкцию по меркам',product_open:'Открыли карточку товара'
+    };
+    const number=value=>new Intl.NumberFormat('ru-RU').format(Number(value||0));
+    function rows(id,items,key){
+      const node=document.getElementById(id);node.replaceChildren();
+      if(!items.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='Данных пока нет.';node.append(empty);return;}
+      items.forEach(item=>{const row=document.createElement('div');row.className='row';const name=document.createElement('span');name.textContent=labels[item[key]]||item[key]||'—';const value=document.createElement('b');value.textContent=number(item.count);row.append(name,value);node.append(row);});
+    }
+    async function load(days){
+      document.getElementById('status').textContent='Загрузка…';
+      try{
+        const response=await fetch('/api/statistics?days='+days,{cache:'no-store'});
+        if(!response.ok)throw new Error('HTTP '+response.status);
+        const data=await response.json();
+        document.getElementById('pageviews').textContent=number(data.pageviews);
+        document.getElementById('today').textContent=number(data.today);
+        document.getElementById('interactions').textContent=number(data.interactions);
+        rows('pages',data.pages,'path');rows('sources',data.sources,'source');rows('events',data.events,'event');rows('countries',data.countries,'country');
+        document.getElementById('status').textContent='Обновлено '+new Date(data.generatedAt).toLocaleString('ru-RU');
+      }catch(error){document.getElementById('status').textContent='Не удалось загрузить статистику. Попробуйте обновить страницу.';}
+    }
+    document.querySelector('.periods').addEventListener('click',event=>{const button=event.target.closest('[data-days]');if(!button)return;document.querySelectorAll('[data-days]').forEach(item=>item.classList.toggle('active',item===button));load(button.dataset.days);});
+    load(30);
+  </script>
+</body>
+</html>

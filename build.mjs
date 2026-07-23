@@ -53,11 +53,22 @@ copyDirectory(resolve(root, "assets"), resolve(client, "assets"));
 for (const file of [
   "index.html",
   "catalog-data.js",
+  "analytics.js",
+  "seo.css",
   "robots.txt",
   "sitemap.xml",
   "_headers",
 ]) {
   copyFileSync(resolve(root, file), resolve(client, file));
+}
+
+for (const directory of [
+  "poshiv-kupalnikov-dlya-hudozhestvennoy-gimnastiki",
+  "kupalniki-dlya-hudozhestvennoy-gimnastiki-v-nalichii",
+  "kak-snyat-merki-dlya-kupalnika",
+  "statistika",
+]) {
+  copyDirectory(resolve(root, directory), resolve(client, directory));
 }
 
 console.log("Art Nelli production bundle created in dist/.");
