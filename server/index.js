@@ -429,7 +429,7 @@ export function parseTelegramPage(html) {
       },
       prices: priceValues(text),
       description: text,
-      photos,
+      photos: photos.map(telegramPublicMediaUrl),
       telegram: "https://t.me/" + TELEGRAM_CHANNEL + "/" + id,
     };
     product.descriptionEn = englishDescription(product);
@@ -470,6 +470,13 @@ function messageMediaFileId(message) {
 
 function telegramMediaUrl(fileId) {
   return "/api/telegram-media/" + encodeURIComponent(fileId);
+}
+
+function telegramPublicMediaUrl(sourceUrl) {
+  return (
+    "/api/telegram-public-media?url=" +
+    encodeURIComponent(String(sourceUrl || ""))
+  );
 }
 
 export function parseTelegramBotUpdates(updates) {
@@ -1241,6 +1248,45 @@ async function telegramMediaResponse(fileId, env) {
   }
 }
 
+async function telegramPublicMediaResponse(sourceUrl) {
+  try {
+    const source = new URL(String(sourceUrl || ""));
+    if (
+      source.protocol !== "https:" ||
+      !/^(?:cdn[0-9]*\.)?telesco\.pe$/i.test(source.hostname) ||
+      !source.pathname.startsWith("/file/")
+    ) {
+      throw new Error("Unsupported Telegram media URL");
+    }
+    const mediaResponse = await fetchWithTimeout(
+      source,
+      {
+        headers: {
+          accept: "image/avif,image/webp,image/png,image/jpeg,image/*",
+          "user-agent": "Mozilla/5.0 (compatible; ArtNelliCatalog/2.0)",
+        },
+      },
+      12000,
+    );
+    const contentType =
+      mediaResponse.headers.get("content-type") || "image/jpeg";
+    if (!mediaResponse.ok || !contentType.startsWith("image/")) {
+      throw new Error("Telegram media download failed");
+    }
+    return new Response(mediaResponse.body, {
+      status: 200,
+      headers: {
+        "content-type": contentType,
+        "cache-control": "public, max-age=3600, s-maxage=86400",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+      },
+    });
+  } catch (error) {
+    return new Response("Not found", { status: 404 });
+  }
+}
+
 const ANALYTICS_EVENTS = new Set([
   "pageview",
   "catalog_open",
@@ -1531,6 +1577,13 @@ export default {
         url.pathname.slice("/api/telegram-media/".length),
       );
       return telegramMediaResponse(fileId, env);
+    }
+
+    if (
+      url.pathname === "/api/telegram-public-media" &&
+      request.method === "GET"
+    ) {
+      return telegramPublicMediaResponse(url.searchParams.get("url"));
     }
 
     if (url.pathname === "/api/live-data.js") {
