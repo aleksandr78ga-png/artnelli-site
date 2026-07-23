@@ -251,6 +251,36 @@ function normalizedName(value = "") {
     .trim();
 }
 
+function telegramDataPostId(chunk = "") {
+  const match = String(chunk).match(
+    new RegExp(
+      'data-post="' + TELEGRAM_CHANNEL + '/(?:[0-9]+/)?([0-9]+)"',
+      "i",
+    ),
+  );
+  return match ? Number(match[1]) : null;
+}
+
+function telegramDocumentIncludesPost(html = "", id) {
+  const rawPattern = new RegExp(
+    'data-post="' +
+      TELEGRAM_CHANNEL +
+      '/(?:[0-9]+/)?' +
+      encodeURIComponent(id) +
+      '"',
+    "i",
+  );
+  const encodedPattern = new RegExp(
+    'data-post="' +
+      TELEGRAM_CHANNEL +
+      '%2F(?:[0-9]+%2F)?' +
+      encodeURIComponent(id) +
+      '"',
+    "i",
+  );
+  return rawPattern.test(String(html)) || encodedPattern.test(String(html));
+}
+
 const CYRILLIC_TO_LATIN = {
   а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "yo", ж: "zh",
   з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n", о: "o",
@@ -342,7 +372,7 @@ function englishDescription(product) {
   return lines.join("\n");
 }
 
-export function parseTelegramPage(html) {
+export function parseTelegramPage(html, topicId = null) {
   const source = String(html);
   const splitChunks = source.split(
     /<div class="tgme_widget_message_wrap[^>]*>/i,
@@ -357,12 +387,8 @@ export function parseTelegramPage(html) {
   const statuses = [];
 
   for (const chunk of chunks) {
-    const idMatch = chunk.match(
-      new RegExp('data-post="' + TELEGRAM_CHANNEL + '/([0-9]+)"', "i"),
-    );
-    if (!idMatch) continue;
-
-    const id = Number(idMatch[1]);
+    const id = telegramDataPostId(chunk);
+    if (!Number.isFinite(id)) continue;
     const textMatch = chunk.match(
       /<div class="tgme_widget_message_text[^>]*>([\s\S]*?)<\/div>/i,
     );
@@ -438,7 +464,12 @@ export function parseTelegramPage(html) {
       prices: priceValues(text),
       description: text,
       photos: photos.map(telegramPublicMediaUrl),
-      telegram: "https://t.me/" + TELEGRAM_CHANNEL + "/" + id,
+      telegram:
+        "https://t.me/" +
+        TELEGRAM_CHANNEL +
+        "/" +
+        (Number.isFinite(Number(topicId)) ? Number(topicId) + "/" : "") +
+        id,
     };
     product.descriptionEn = englishDescription(product);
     products.push(product);
@@ -744,39 +775,56 @@ function explicitMissingTelegramPost(html = "", status = 200) {
   );
 }
 
-async function telegramPostDocument(id) {
-  try {
-    const response = await fetchWithTimeout(
-      "https://t.me/" +
-        TELEGRAM_CHANNEL +
-        "/" +
-        encodeURIComponent(id) +
-        "?embed=1&mode=tme",
-      {
-        headers: {
-          accept: "text/html,application/xhtml+xml",
-          "accept-language": "ru,en;q=0.8",
-          "user-agent": "Mozilla/5.0 (compatible; ArtNelliCatalog/2.0)",
-        },
-      },
-      8000,
-    );
-    const html = await response.text();
-    if (
-      html.includes('data-post="' + TELEGRAM_CHANNEL + "/" + id + '"') ||
-      html.includes('data-post="' + TELEGRAM_CHANNEL + "%2F" + id + '"')
-    ) {
-      return { state: "exists", html };
-    }
-    return {
-      state: explicitMissingTelegramPost(html, response.status)
-        ? "missing"
-        : "unknown",
-      html,
-    };
-  } catch (error) {
-    return { state: "unknown", html: "" };
+async function telegramPostDocument(id, topicId = null) {
+  const topicIds = Number.isFinite(Number(topicId))
+    ? [Number(topicId)]
+    : TELEGRAM_TOPIC_IDS;
+  const paths = [
+    encodeURIComponent(id),
+    ...topicIds.map(
+      (currentTopicId) =>
+        encodeURIComponent(currentTopicId) + "/" + encodeURIComponent(id),
+    ),
+  ];
+  const documents = await Promise.all(
+    paths.map(async (path) => {
+      try {
+        const response = await fetchWithTimeout(
+          "https://t.me/" +
+            TELEGRAM_CHANNEL +
+            "/" +
+            path +
+            "?embed=1&mode=tme",
+          {
+            headers: {
+              accept: "text/html,application/xhtml+xml",
+              "accept-language": "ru,en;q=0.8",
+              "user-agent": "Mozilla/5.0 (compatible; ArtNelliCatalog/3.0)",
+            },
+          },
+          8000,
+        );
+        const html = await response.text();
+        if (telegramDocumentIncludesPost(html, id)) {
+          return { state: "exists", html };
+        }
+        return {
+          state: explicitMissingTelegramPost(html, response.status)
+            ? "missing"
+            : "unknown",
+          html,
+        };
+      } catch (error) {
+        return { state: "unknown", html: "" };
+      }
+    }),
+  );
+  const existing = documents.find((document) => document.state === "exists");
+  if (existing) return existing;
+  if (documents.every((document) => document.state === "missing")) {
+    return { state: "missing", html: "" };
   }
+  return { state: "unknown", html: "" };
 }
 
 async function telegramPostState(id) {
@@ -857,7 +905,7 @@ async function scanTelegramPublicProducts(env) {
 function telegramPageMessageIds(html = "") {
   const ids = [];
   const pattern = new RegExp(
-    'data-post="' + TELEGRAM_CHANNEL + '/([0-9]+)"',
+    'data-post="' + TELEGRAM_CHANNEL + '/(?:[0-9]+/)?([0-9]+)"',
     "gi",
   );
   for (const match of String(html).matchAll(pattern)) {
@@ -894,7 +942,7 @@ async function telegramTopicPage(topicId) {
           ok: true,
           html,
           messageIds: telegramPageMessageIds(html),
-          parsed: parseTelegramPage(html),
+          parsed: parseTelegramPage(html, topicId),
         };
       } catch (error) {
         return { ok: false, html: "", messageIds: [], parsed: null };
@@ -910,22 +958,69 @@ async function telegramTopicPage(topicId) {
   })[0];
 }
 
+async function scanTelegramTopicIdRange(env, topicId) {
+  const firstDynamicId = Math.max(0, ...staticCatalogIds) + 1;
+  const key = "topic_scan_cursor_" + topicId;
+  const storedCursor = Number(
+    await readSyncValue(env, key, String(firstDynamicId)),
+  );
+  const cursor = Math.max(firstDynamicId, storedCursor || firstDynamicId);
+  const from = Math.max(firstDynamicId, cursor - 8);
+  const ids = Array.from({ length: 32 }, (_, index) => from + index);
+  const documents = await Promise.all(
+    ids.map(async (id) => ({
+      id,
+      ...(await telegramPostDocument(id, topicId)),
+    })),
+  );
+  const products = [];
+  let lastExistingId = from - 1;
+  for (const document of documents) {
+    if (document.state !== "exists") continue;
+    lastExistingId = Math.max(lastExistingId, document.id);
+    for (const product of parseTelegramPage(document.html, topicId).products) {
+      if (!products.some((item) => Number(item.id) === Number(product.id))) {
+        products.push(product);
+      }
+    }
+  }
+  const next = Math.max(
+    cursor,
+    lastExistingId >= from ? lastExistingId + 1 : from,
+    from + Math.max(1, ids.length - 8),
+  );
+  await writeSyncValue(env, key, next);
+  return {
+    from,
+    next,
+    checked: documents.filter((document) => document.state !== "unknown").length,
+    existing: documents.filter((document) => document.state === "exists").length,
+    products,
+  };
+}
+
 async function scanTelegramTopicProducts(env) {
   if (!(await ensureDatabase(env))) {
     return { checked: 0, found: 0, saved: 0, topics: [] };
   }
 
   const topicDocuments = await Promise.all(
-    TELEGRAM_TOPIC_IDS.map(async (topicId) => ({
-      topicId,
-      ...(await telegramTopicPage(topicId)),
-    })),
+    TELEGRAM_TOPIC_IDS.map(async (topicId) => {
+      const [page, range] = await Promise.all([
+        telegramTopicPage(topicId),
+        scanTelegramTopicIdRange(env, topicId),
+      ]);
+      return { topicId, ...page, range };
+    }),
   );
   const staticIds = new Set(staticCatalogIds.map(Number));
   const productMap = new Map();
 
   for (const document of topicDocuments) {
-    for (const product of document.parsed?.products || []) {
+    for (const product of [
+      ...(document.parsed?.products || []),
+      ...(document.range?.products || []),
+    ]) {
       if (!staticIds.has(Number(product.id))) {
         productMap.set(Number(product.id), product);
       }
@@ -973,7 +1068,12 @@ async function scanTelegramTopicProducts(env) {
       topicId: document.topicId,
       ok: document.ok,
       messages: document.messageIds.length,
-      products: document.parsed?.products?.length || 0,
+      products:
+        (document.parsed?.products?.length || 0) +
+        (document.range?.products?.length || 0),
+      from: document.range?.from ?? null,
+      next: document.range?.next ?? null,
+      existing: document.range?.existing || 0,
     })),
   };
 }
@@ -1066,17 +1166,15 @@ async function telegramPublicRecent() {
       .split(/<div class="tgme_widget_message_wrap[^>]*>/i)
       .slice(1)
       .map((chunk) => {
-        const idMatch = chunk.match(
-          new RegExp('data-post="' + TELEGRAM_CHANNEL + '/([0-9]+)"', "i"),
-        );
+        const id = telegramDataPostId(chunk);
         const textMatch = chunk.match(
           /<div class="tgme_widget_message_text[^>]*>([\s\S]*?)<\/div>/i,
         );
         const dateMatch = chunk.match(/<time[^>]+datetime=["']([^"']+)["']/i);
         const text = plainText(textMatch?.[1] || "");
-        if (!idMatch) return null;
+        if (!Number.isFinite(id)) return null;
         return {
-          id: Number(idMatch[1]),
+          id,
           date: dateMatch?.[1] || null,
           text: text.slice(0, 1200),
           productLike: isProductListing(text),
