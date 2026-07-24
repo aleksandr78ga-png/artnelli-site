@@ -61,6 +61,7 @@ writeFileSync(
 copyFileSync(resolve(root, ".openai", "hosting.json"), resolve(output, ".openai", "hosting.json"));
 copyDirectory(resolve(root, "db", "migrations"), resolve(output, ".openai", "drizzle"));
 copyDirectory(resolve(root, "assets"), resolve(client, "assets"));
+copyDirectory(resolve(root, "max"), resolve(client, "max"));
 
 for (const file of [
   "index.html",
@@ -83,4 +84,4 @@ for (const directory of [
   copyDirectory(resolve(root, directory), resolve(client, directory));
 }
 
-console.log("Art Nelli production bundle created in dist/.");
+console.log("Art Nelli production bundle with MAX mini-app created in dist/.");
