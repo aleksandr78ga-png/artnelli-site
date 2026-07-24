@@ -10,6 +10,7 @@
     filtered: [],
     visible: PAGE_SIZE,
     type: "all",
+    condition: "new",
     query: "",
     activeProduct: null,
   };
@@ -18,6 +19,9 @@
   const grid = document.getElementById("catalog-grid");
   const count = document.getElementById("catalog-count");
   const empty = document.getElementById("catalog-empty");
+  const catalogTitle = document.getElementById("catalog-title");
+  const newModelsCount = document.getElementById("new-models-count");
+  const usedModelsCount = document.getElementById("used-models-count");
   const showMore = document.getElementById("show-more");
   const cardTemplate = document.getElementById("product-card-template");
   const productDialog = document.getElementById("product-dialog");
@@ -79,9 +83,27 @@
         if (Boolean(a.sold) !== Boolean(b.sold)) return a.sold ? 1 : -1;
         return String(b.date || "").localeCompare(String(a.date || "")) || Number(b.id) - Number(a.id);
       });
+    updateConditionCounts();
+  }
+
+  function modelWord(value) {
+    const mod100 = value % 100;
+    const mod10 = value % 10;
+    if (mod100 >= 11 && mod100 <= 14) return "моделей";
+    if (mod10 === 1) return "модель";
+    if (mod10 >= 2 && mod10 <= 4) return "модели";
+    return "моделей";
+  }
+
+  function updateConditionCounts() {
+    const newCount = state.products.filter((product) => product.condition === "new").length;
+    const usedCount = state.products.filter((product) => product.condition === "used").length;
+    newModelsCount.textContent = `${newCount} ${modelWord(newCount)}`;
+    usedModelsCount.textContent = `${usedCount} ${modelWord(usedCount)}`;
   }
 
   function productMatches(product) {
+    if (product.condition !== state.condition) return false;
     if (state.type !== "all" && product.type !== state.type) return false;
     if (!state.query) return true;
     const haystack = normalize([
@@ -96,6 +118,7 @@
 
   function renderCatalog(reset = false) {
     if (reset) state.visible = PAGE_SIZE;
+    catalogTitle.textContent = state.condition === "used" ? "Костюмы б/у" : "Новые модели";
     state.filtered = state.products.filter(productMatches);
     const visible = state.filtered.slice(0, state.visible);
     grid.replaceChildren();
@@ -110,7 +133,11 @@
       fragment.querySelector(".product-height").textContent = product.height ? `Рост ${product.height} см` : "Параметры в карточке";
       fragment.querySelector(".product-price").textContent = formatPrice(product.prices);
       const productState = fragment.querySelector(".product-state");
-      productState.textContent = product.sold ? "Продано" : "Наличие уточнить";
+      productState.textContent = product.sold
+        ? "Продано"
+        : product.condition === "used"
+          ? "Б/у · наличие уточнить"
+          : "Новая · наличие уточнить";
       productState.classList.toggle("sold", Boolean(product.sold));
       button.setAttribute("aria-label", `Открыть модель ${product.name}`);
       button.addEventListener("click", () => openProduct(product));
@@ -370,6 +397,18 @@
   document.getElementById("catalog-search").addEventListener("input", (event) => {
     state.query = normalize(event.target.value);
     renderCatalog(true);
+  });
+
+  document.querySelectorAll(".condition-tab").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".condition-tab").forEach((item) => {
+        item.classList.toggle("active", item === button);
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+      state.condition = button.dataset.condition;
+      renderCatalog(true);
+      haptic();
+    });
   });
 
   document.querySelectorAll(".filter-chip").forEach((button) => {

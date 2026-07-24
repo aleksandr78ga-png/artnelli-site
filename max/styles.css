@@ -62,7 +62,7 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
 }
 .primary-button{border:1px solid var(--gold);background:var(--gold);color:#171116}
 .secondary-button{border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.primary-button:active,.secondary-button:active,.channel-button:active,.filter-chip:active{transform:scale(.98)}
+.primary-button:active,.secondary-button:active,.channel-button:active,.condition-tab:active,.filter-chip:active{transform:scale(.98)}
 
 .trust-strip{
   display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px;
@@ -75,6 +75,20 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
 .section-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 4px 24px}
 .section-heading h2,.atelier-card h2,.how-it-works h2,.order-form h2{font-size:clamp(2rem,8.5vw,3.25rem)}
 .catalog-count{margin:0 0 3px;color:var(--muted);font-size:.72rem;white-space:nowrap}
+
+.condition-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.condition-tab{
+  position:relative;min-height:94px;padding:15px 16px;border:1px solid var(--line);border-radius:16px;
+  background:linear-gradient(145deg,rgba(255,255,255,.025),transparent),var(--surface);
+  color:var(--muted);text-align:left;cursor:pointer;overflow:hidden;transition:border-color .2s,background .2s,transform .2s
+}
+.condition-tab::after{content:"";position:absolute;right:16px;bottom:0;left:16px;height:1px;background:transparent}
+.condition-tab span{display:block;color:var(--ink);font:500 1.7rem/1 "Cormorant Garamond",serif}
+.condition-tab small{display:block;margin-top:9px;font-size:.63rem;line-height:1.35}
+.condition-tab.active{border-color:rgba(216,178,110,.55);background:linear-gradient(145deg,rgba(216,178,110,.16),rgba(216,178,110,.025)),var(--surface)}
+.condition-tab.active::after{background:var(--gold)}
+.condition-tab.active span,.condition-tab.active small{color:var(--gold-soft)}
+
 .catalog-tools{position:sticky;top:61px;z-index:10;margin:0 -14px 20px;padding:10px 14px 12px;background:rgba(10,9,11,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
 .search-box input{
   width:100%;height:44px;border:1px solid var(--line);border-radius:13px;background:var(--surface);

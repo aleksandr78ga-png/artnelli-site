@@ -21,6 +21,12 @@ assert(
   "Catalog contains duplicate product ids",
 );
 
+const newProducts = products?.filter((product) => product.condition === "new") || [];
+const usedProducts = products?.filter((product) => product.condition === "used") || [];
+assert(newProducts.length > 0, "Catalog has no new products");
+assert(usedProducts.length > 0, "Catalog has no used products");
+assert(newProducts.length + usedProducts.length === products?.length, "Catalog has products without a condition");
+
 for (const product of products || []) {
   assert(product.id, "A catalog product is missing an id");
   assert(product.name, `Product ${product.id || "unknown"} is missing a name`);
@@ -36,7 +42,9 @@ const requiredMarkers = [
   'id="product-dialog"',
   'id="order-dialog"',
   'https://st.max.ru/js/max-web-app.js',
-  'https://artnelli.com/max/og.png',
+  'https://artnelli-leotards.aleksandr78ga.chatgpt.site/max/og.png',
+  'data-condition="new"',
+  'data-condition="used"',
   './privacy.html',
   './terms.html',
 ];
