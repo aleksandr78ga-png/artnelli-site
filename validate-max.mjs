@@ -42,7 +42,7 @@ const requiredMarkers = [
   'id="product-dialog"',
   'id="order-dialog"',
   'https://st.max.ru/js/max-web-app.js',
-  'https://artnelli-leotards.aleksandr78ga.chatgpt.site/max/og.png',
+  'https://artnelli-leotards.aleksandr78ga.chatgpt.site/max/og-site.png',
   'data-condition="new"',
   'data-condition="used"',
   './privacy.html',
