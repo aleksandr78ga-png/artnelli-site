@@ -43,6 +43,9 @@ const requiredMarkers = [
   'id="order-dialog"',
   'https://st.max.ru/js/max-web-app.js',
   'https://artnelli-leotards.aleksandr78ga.chatgpt.site/max/og-site.png',
+  '../assets/site/hero-video.mp4',
+  'Арт-мастерская · ручная работа · Тюмень',
+  'Купальник как <em>искусство.</em>',
   'data-condition="new"',
   'data-condition="used"',
   './privacy.html',
@@ -51,6 +54,7 @@ const requiredMarkers = [
 for (const marker of requiredMarkers) {
   assert(html.includes(marker), `MAX page is missing: ${marker}`);
 }
+assert(!html.includes("../assets/site/hero.jpg"), "MAX hero still uses the old static image");
 
 const privacy = readFileSync(resolve(root, "max", "privacy.html"), "utf8");
 for (const marker of [
