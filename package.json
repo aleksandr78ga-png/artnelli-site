@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "validate": "node validate-max.mjs",
+    "sync:catalog": "node scripts/sync-catalog.mjs",
+    "sync:catalog:check": "node scripts/check-catalog.mjs"
   },
   "devDependencies": {
     "vite": "^7.0.0"

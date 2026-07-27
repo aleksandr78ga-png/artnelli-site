@@ -15,11 +15,23 @@ vm.runInContext(readFileSync(resolve(root, "catalog-data.js"), "utf8"), context)
 const products = context.window.NELLI_CATALOG;
 
 assert(Array.isArray(products), "Catalog does not expose window.NELLI_CATALOG");
-assert(products?.length === 89, `Catalog must contain 89 products, found ${products?.length || 0}`);
+assert(products?.length > 0, "Catalog is empty");
 assert(
   new Set((products || []).map((product) => product.id)).size === products?.length,
   "Catalog contains duplicate product ids",
 );
+const syncStatePath = resolve(root, "catalog-sync-state.json");
+if (existsSync(syncStatePath)) {
+  const syncState = JSON.parse(readFileSync(syncStatePath, "utf8"));
+  assert(
+    syncState.productCount === products?.length,
+    `Catalog count differs from sync state: ${products?.length || 0} vs ${syncState.productCount}`,
+  );
+  assert(
+    syncState.source === "https://t.me/nelli_leotards",
+    "Catalog sync source is not the primary Telegram catalogue",
+  );
+}
 
 const newProducts = products?.filter((product) => product.condition === "new") || [];
 const usedProducts = products?.filter((product) => product.condition === "used") || [];

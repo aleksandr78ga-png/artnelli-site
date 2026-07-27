@@ -7,3 +7,4 @@ dist/
 node_modules/
 script.js
 styles.css
+.catalog-sync-tmp/
