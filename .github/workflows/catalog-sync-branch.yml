@@ -1,0 +1,61 @@
+name: Mirror catalogue to catalog-sync
+
+on:
+  workflow_run:
+    workflows:
+      - Sync catalogue and publish artnelli.com
+    types:
+      - completed
+  schedule:
+    - cron: "37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog-sync-branch-update
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out catalog-sync
+        uses: actions/checkout@v4
+        with:
+          ref: catalog-sync
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Preview Telegram changes
+        env:
+          NELLI_CATALOG_BACKEND: https://artnelli-leotards.aleksandr78ga.chatgpt.site/
+        run: npm run sync:catalog:check
+      - name: Synchronize Telegram catalogue
+        env:
+          NELLI_CATALOG_BACKEND: https://artnelli-leotards.aleksandr78ga.chatgpt.site/
+        run: npm run sync:catalog
+      - name: Build and validate site and MAX mini-app
+        run: |
+          npm run build
+          npm run validate
+      - name: Save verified catalogue to catalog-sync
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- catalog-data.js catalog-sync-state.json api/live-data.js assets/catalog
+          if git diff --cached --quiet; then
+            echo "catalog-sync is already current."
+          else
+            git commit -m "Sync Telegram catalogue"
+            git push origin HEAD:catalog-sync
+          fi
