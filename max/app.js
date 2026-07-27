@@ -51,7 +51,12 @@
 
   function mergeProducts() {
     const base = Array.isArray(window.NELLI_CATALOG)
-      ? window.NELLI_CATALOG.map((item) => ({ ...item, sold: Boolean(item.sold) }))
+      ? window.NELLI_CATALOG.map((item) => ({
+          ...item,
+          sold: Boolean(item.sold),
+          removed: item.removed === true,
+          available: item.removed !== true,
+        }))
       : [];
     const byId = new Map(base.map((item) => [Number(item.id), item]));
     const live = window.NELLI_LIVE?.telegram;
@@ -59,7 +64,11 @@
     for (const incoming of live?.products || []) {
       const id = Number(incoming.id);
       const current = byId.get(id);
-      byId.set(id, current ? { ...current, ...incoming } : { ...incoming });
+      const merged = current ? { ...current, ...incoming } : { ...incoming };
+      merged.sold = Boolean(merged.sold);
+      merged.removed = merged.removed === true;
+      merged.available = !merged.removed;
+      byId.set(id, merged);
     }
 
     const statuses = live?.statuses || [];
@@ -68,16 +77,24 @@
       const direct = byId.get(id);
       if (direct) {
         direct.sold = Boolean(status.sold);
+        direct.removed = status.removed === true;
+        direct.available = !direct.removed;
         continue;
       }
-      if (!status.sold) continue;
       const key = normalize(status.normalizedName || status.name);
-      for (const product of byId.values()) {
-        if (productKey(product) === key && Number(product.id) <= id) product.sold = true;
+      if (!key) continue;
+      const matching = [...byId.values()]
+        .filter((product) => productKey(product) === key && Number(product.id) <= id)
+        .sort((left, right) => Number(right.id) - Number(left.id))[0];
+      if (matching) {
+        matching.sold = Boolean(status.sold);
+        matching.removed = status.removed === true;
+        matching.available = !matching.removed;
       }
     }
 
     state.products = [...byId.values()]
+      .filter((product) => product?.removed !== true)
       .filter((product) => product?.name && product?.photos?.length)
       .sort((a, b) => {
         if (Boolean(a.sold) !== Boolean(b.sold)) return a.sold ? 1 : -1;
