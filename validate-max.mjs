@@ -54,7 +54,7 @@ const requiredMarkers = [
   'id="product-dialog"',
   'id="order-dialog"',
   'https://st.max.ru/js/max-web-app.js',
-  'https://artnelli-leotards.aleksandr78ga.chatgpt.site/max/og-site.png',
+  'https://artnelli.com/max/og-site.png',
   '../assets/site/hero-video.mp4',
   'Арт-мастерская · ручная работа · Тюмень',
   'Купальник как <em>искусство.</em>',
@@ -67,6 +67,11 @@ for (const marker of requiredMarkers) {
   assert(html.includes(marker), `MAX page is missing: ${marker}`);
 }
 assert(!html.includes("../assets/site/hero.jpg"), "MAX hero still uses the old static image");
+assert(!html.includes("chatgpt.site"), "MAX page still points to the old hosting domain");
+const styles = readFileSync(resolve(root, "max", "styles.css"), "utf8");
+assert(!styles.includes("fonts.googleapis.com"), "MAX styles still load Google Fonts");
+assert(!styles.includes("fonts.gstatic.com"), "MAX styles still load remote font files");
+assert(styles.includes("../assets/fonts/"), "MAX styles do not use local fonts");
 
 const privacy = readFileSync(resolve(root, "max", "privacy.html"), "utf8");
 for (const marker of [
@@ -89,6 +94,14 @@ for (const file of [
   "dist/client/max/og.png",
   "dist/server/index.js",
   "dist/.openai/hosting.json",
+  "dist/client/api/live-data.js",
+  "dist/client/CNAME",
+  "dist/client/assets/fonts/cormorant-garamond-500-cyrillic.woff2",
+  "dist/client/assets/fonts/cormorant-garamond-500-latin.woff2",
+  "dist/client/assets/fonts/cormorant-garamond-500-italic-cyrillic.woff2",
+  "dist/client/assets/fonts/cormorant-garamond-500-italic-latin.woff2",
+  "dist/client/assets/fonts/inter-400-600-cyrillic.woff2",
+  "dist/client/assets/fonts/inter-400-600-latin.woff2",
 ]) {
   assert(existsSync(resolve(root, file)), `Missing required file: ${file}`);
 }

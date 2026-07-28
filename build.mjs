@@ -62,6 +62,7 @@ copyFileSync(resolve(root, ".openai", "hosting.json"), resolve(output, ".openai"
 copyDirectory(resolve(root, "db", "migrations"), resolve(output, ".openai", "drizzle"));
 copyDirectory(resolve(root, "assets"), resolve(client, "assets"));
 copyDirectory(resolve(root, "max"), resolve(client, "max"));
+copyDirectory(resolve(root, "api"), resolve(client, "api"));
 
 for (const file of [
   "index.html",
@@ -71,6 +72,7 @@ for (const file of [
   "robots.txt",
   "sitemap.xml",
   "_headers",
+  "CNAME",
 ]) {
   copyFileSync(resolve(root, file), resolve(client, file));
 }

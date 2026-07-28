@@ -1,4 +1,4 @@
-name: Validate catalog-sync branch
+name: Validate and publish catalog-sync
 
 on:
   workflow_dispatch:
@@ -7,14 +7,15 @@ on:
       - catalog-sync
 
 permissions:
-  contents: read
+  contents: write
+  actions: write
 
 concurrency:
-  group: catalog-sync-validation
-  cancel-in-progress: true
+  group: catalog-sync-publish
+  cancel-in-progress: false
 
 jobs:
-  validate:
+  validate-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Check out catalog-sync
@@ -30,3 +31,41 @@ jobs:
         run: |
           npm run build
           npm run validate
+      - name: Publish verified site to gh-pages
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          publish_dir="${RUNNER_TEMP}/nelli-pages"
+          git fetch origin gh-pages:refs/remotes/origin/gh-pages
+          git worktree add --detach "${publish_dir}" origin/gh-pages
+          rsync --archive --delete \
+            --exclude=".git" \
+            --exclude=".github" \
+            dist/client/ "${publish_dir}/"
+          printf 'artnelli.com\n' > "${publish_dir}/CNAME"
+          touch "${publish_dir}/.nojekyll"
+          git -C "${publish_dir}" config user.name "github-actions[bot]"
+          git -C "${publish_dir}" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C "${publish_dir}" add -A
+          if git -C "${publish_dir}" diff --cached --quiet; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+            echo "Published site is already current."
+          else
+            git -C "${publish_dir}" commit -m "Publish catalog-sync"
+            git -C "${publish_dir}" push origin HEAD:gh-pages
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          fi
+      - name: Start protected Pages deployment
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/deploy-pages.yml/dispatches" \
+            --data '{"ref":"gh-pages"}'

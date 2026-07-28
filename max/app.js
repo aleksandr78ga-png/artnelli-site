@@ -3,6 +3,7 @@
 
   const MAX_CHANNEL = "https://max.ru/channel_artnelli";
   const TELEGRAM_CHANNEL = "https://t.me/nelli_leotards";
+  const ORDER_API = location.hostname === "artnelli.com" ? "" : "/api/max-order";
   const PAGE_SIZE = 18;
 
   const state = {
@@ -342,9 +343,9 @@
     orderStatus.className = "order-status";
     orderStatus.textContent = "Отправляем заявку…";
 
-    if (payload.initData) {
+    if (payload.initData && ORDER_API) {
       try {
-        const response = await fetch("/api/max-order", {
+        const response = await fetch(ORDER_API, {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(payload),
