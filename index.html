@@ -469,7 +469,7 @@
   .dialog-spec{padding:14px 0;border-bottom:1px solid var(--line)}.dialog-spec:nth-child(odd){padding-right:14px}.dialog-spec:nth-child(even){padding-left:14px;border-left:1px solid var(--line)}
   .dialog-spec span{display:block;color:var(--ivory-dim);font:300 .62rem var(--mono);letter-spacing:.12em;text-transform:uppercase}.dialog-spec b{font-weight:300}
   .dialog-description{white-space:pre-line;color:var(--ivory-dim);margin-bottom:30px;line-height:1.75}
-  .dialog-actions{display:flex;gap:12px;flex-wrap:wrap}.dialog-actions .btn{padding-inline:24px}
+  .dialog-actions{display:flex;gap:12px;flex-wrap:wrap}.dialog-actions .btn{padding-inline:24px}.dialog-actions button.btn{background:transparent;cursor:pointer}
   @media(max-width:1080px){.catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.catalog-toolbar{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:760px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.catalog-photo{height:320px}.catalog-toolbar{grid-template-columns:1fr}.catalog-summary{align-items:flex-start;flex-direction:column}.product-dialog-grid{grid-template-columns:1fr}.product-gallery{padding:14px}.product-main-wrap{min-height:420px}.product-main{height:56vh}.product-info{padding:28px 20px}.dialog-close{position:fixed;right:20px}}
   @media(max-width:480px){.catalog-grid{grid-template-columns:1fr}.catalog-photo{height:440px}.catalog-card h3{min-height:0}.product-dialog{width:100vw;max-height:100svh;border:0}.product-main{height:52vh}.product-main-wrap{min-height:340px}}
@@ -785,9 +785,9 @@
     <h2 data-i18n="booking_messenger_h">Choose a messenger</h2>
     <p data-i18n="booking_messenger_p">Choose where you would like to continue your private conversation with Nelli.</p>
     <div class="booking-messenger-options">
-      <button class="btn btn-solid" type="button" data-booking-channel="whatsapp">WhatsApp</button>
-      <button class="btn btn-solid" type="button" data-booking-channel="telegram">Telegram</button>
-      <button class="btn btn-solid" type="button" data-booking-channel="max">MAX</button>
+      <button class="btn btn-solid" type="button" data-messenger-channel="whatsapp">WhatsApp</button>
+      <button class="btn btn-solid" type="button" data-messenger-channel="telegram">Telegram</button>
+      <button class="btn btn-solid" type="button" data-messenger-channel="max">MAX</button>
     </div>
   </div>
 </dialog>
@@ -802,7 +802,7 @@
     <div class="product-info">
       <div id="dialog-type" class="catalog-type"></div><h2 id="dialog-name"></h2><div id="dialog-price" class="dialog-price"></div>
       <div id="dialog-specs" class="dialog-spec-grid"></div><div id="dialog-description" class="dialog-description"></div>
-      <div class="dialog-actions"><a id="dialog-telegram" class="btn btn-solid" target="_blank" rel="noopener">Открыть в Telegram</a><a class="btn btn-line" href="https://wa.me/79612064782" target="_blank" rel="noopener">Задать вопрос</a></div>
+      <div class="dialog-actions"><a id="dialog-telegram" class="btn btn-solid" target="_blank" rel="noopener">Открыть в Telegram</a><button id="dialog-question" class="btn btn-line" type="button">Задать вопрос</button></div>
     </div>
   </div>
 </dialog>
@@ -909,6 +909,7 @@ const catalogSort = document.getElementById('catalog-sort');
 const catalogCount = document.getElementById('catalog-count');
 const catalogMore = document.getElementById('catalog-more');
 const productDialog = document.getElementById('product-dialog');
+const productQuestionButton = document.getElementById('dialog-question');
 const typeLabels = {
   ru:{leotard:'Купальник',dress:'Платье',jumpsuit:'Комбинезон'},
   en:{leotard:'Leotard',dress:'Dress',jumpsuit:'Jumpsuit'}
@@ -948,7 +949,7 @@ function updateCatalogChrome(){
   document.getElementById('gallery-prev').setAttribute('aria-label',t.previous);
   document.getElementById('gallery-next').setAttribute('aria-label',t.next);
   document.getElementById('dialog-telegram').textContent=t.openTelegram;
-  document.querySelector('.dialog-actions .btn-line').textContent=activeProduct&&productSold(activeProduct)?t.similar:t.ask;
+  productQuestionButton.textContent=activeProduct&&productSold(activeProduct)?t.similar:t.ask;
 }
 
 function money(product){
@@ -1025,7 +1026,7 @@ function openProduct(id){
   const specs=document.getElementById('dialog-specs');specs.replaceChildren();
   if(activeProduct.height)specs.append(modalSpec(ui().height,activeProduct.height+unit()));
   Object.entries(activeProduct.specs).forEach(([key,value])=>specs.append(modalSpec(ui().spec[key]||key,value+unit())));
-  document.getElementById('dialog-description').textContent=productDescription(activeProduct);document.getElementById('dialog-telegram').href=activeProduct.telegram;document.querySelector('.dialog-actions .btn-line').textContent=productSold(activeProduct)?ui().similar:ui().ask;
+  document.getElementById('dialog-description').textContent=productDescription(activeProduct);document.getElementById('dialog-telegram').href=activeProduct.telegram;productQuestionButton.textContent=productSold(activeProduct)?ui().similar:ui().ask;
   const thumbs=document.getElementById('product-thumbs');thumbs.replaceChildren();activeProduct.photos.forEach((src,index)=>{const button=document.createElement('button');button.type='button';button.className='product-thumb';button.dataset.photoIndex=index;button.setAttribute('aria-label',ui().modalPhoto(index+1));const image=document.createElement('img');image.src=src;image.alt='';image.loading='lazy';button.append(image);thumbs.append(button);});
   showActivePhoto();if(!productDialog.open)productDialog.showModal();document.body.style.overflow='hidden';
 }
@@ -1041,6 +1042,7 @@ const bookingForm=document.getElementById('booking-form');
 const bookingMonths=document.getElementById('booking-months');
 const bookingStatus=document.getElementById('booking-status');
 const bookingMessengerDialog=document.getElementById('booking-messenger-dialog');
+let messengerContext='booking';
 function renderBookingMonths(){
   if(!bookingMonths)return;
   const selected=bookingForm.elements.month?.value||'';
@@ -1065,10 +1067,25 @@ function bookingMessage(){
   const lines=currentLang==='en'?[`I would like to book a tailoring slot — ${monthText}.`,`I confirm that I have read and understood the terms of the 15,000 RUB sketch work fee: if the order proceeds, the amount is credited toward the final price; if the order stops after the sketch work has been completed, the fee is non-refundable.`,`Please confirm this slot is available.`]:[`Хочу записаться на пошив — ${monthText}.`,`Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.`,`Пожалуйста, подтвердите доступность слота.`];
   return lines.join('\n');
 }
-function openBookingMessenger(channel){
-  if(!bookingForm.reportValidity())return;
-  const bookingText=bookingMessage();
-  const message=encodeURIComponent(bookingText);
+function productQuestionMessage(){
+  if(!activeProduct)return '';
+  const name=productName(activeProduct);
+  const source=activeProduct.telegram||'';
+  const lines=currentLang==='en'?
+    [productSold(activeProduct)?'Hello! I would like to ask about a similar model.':'Hello! I have a question about this model.',`Model: “${name}”`,activeProduct.height?`Height: ${activeProduct.height} cm`:'',source?`Model link: ${source}`:'']:
+    [productSold(activeProduct)?'Здравствуйте! Хочу подобрать похожую модель.':'Здравствуйте! Хочу задать вопрос об этой модели.',`Модель: «${name}»`,activeProduct.height?`Рост: ${activeProduct.height} см`:'',source?`Ссылка на модель: ${source}`:''];
+  return lines.filter(Boolean).join('\n');
+}
+function copyMessengerText(text){
+  const textarea=document.createElement('textarea');textarea.value=text;textarea.setAttribute('readonly','');textarea.style.position='fixed';textarea.style.left='-9999px';document.body.append(textarea);textarea.select();
+  let copied=false;try{copied=document.execCommand('copy');}catch(e){}
+  textarea.remove();if(!copied&&navigator.clipboard?.writeText)navigator.clipboard.writeText(text).catch(()=>{});
+}
+function openMessenger(channel){
+  if(messengerContext==='booking'&&!bookingForm.reportValidity())return;
+  const requestText=messengerContext==='product'?productQuestionMessage():bookingMessage();
+  if(!requestText)return;
+  const message=encodeURIComponent(requestText);
   const urls={
     whatsapp:`https://wa.me/79612064782?text=${message}`,
     telegram:`https://t.me/nelli_leotard?text=${message}`,
@@ -1078,21 +1095,25 @@ function openBookingMessenger(channel){
   if(!url)return;
   bookingMessengerDialog.close();
   const names={whatsapp:'WhatsApp',telegram:'Telegram',max:'MAX'};
-  if(channel==='max'&&navigator.clipboard?.writeText){
-    navigator.clipboard.writeText(bookingText).catch(()=>{});
-  }
-  bookingStatus.textContent=currentLang==='en'?(channel==='max'?`The booking message and confirmation have been copied. Paste and send them to Nelli in MAX.`:`Opening Nelli’s private chat in ${names[channel]}…`):(channel==='max'?`Заявка и подтверждение скопированы. Вставьте и отправьте их Нелли в MAX.`:`Открываем личную переписку с Нелли в ${names[channel]}…`);
+  if(channel==='max')copyMessengerText(requestText);
+  if(messengerContext==='booking')bookingStatus.textContent=currentLang==='en'?(channel==='max'?`The booking message and confirmation have been copied. Paste and send them to Nelli in MAX.`:`Opening Nelli’s private chat in ${names[channel]}…`):(channel==='max'?`Заявка и подтверждение скопированы. Вставьте и отправьте их Нелли в MAX.`:`Открываем личную переписку с Нелли в ${names[channel]}…`);
   window.open(url,'_blank','noopener');
 }
 bookingForm.addEventListener('submit',event=>{
   event.preventDefault();
   if(!bookingForm.reportValidity())return;
+  messengerContext='booking';
   bookingStatus.textContent='';
   bookingMessengerDialog.showModal();
 });
+productQuestionButton.addEventListener('click',()=>{
+  if(!activeProduct)return;
+  messengerContext='product';
+  bookingMessengerDialog.showModal();
+});
 bookingMessengerDialog.querySelector('.booking-messenger-options').addEventListener('click',event=>{
-  const trigger=event.target.closest('[data-booking-channel]');
-  if(trigger)openBookingMessenger(trigger.dataset.bookingChannel);
+  const trigger=event.target.closest('[data-messenger-channel]');
+  if(trigger)openMessenger(trigger.dataset.messengerChannel);
 });
 bookingMessengerDialog.addEventListener('click',event=>{if(event.target===bookingMessengerDialog)bookingMessengerDialog.close();});
 renderBookingMonths();
