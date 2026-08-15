@@ -205,20 +205,29 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
 
 .order-form{display:grid;gap:16px;padding:30px 18px calc(24px + var(--safe-bottom))}
 .order-product-note{margin:12px 0 4px;color:var(--muted);font-size:.76rem;line-height:1.5}
-.order-form label>span:first-child{display:block;margin-bottom:7px;color:var(--muted);font-size:.68rem}
-.order-form input,.order-form textarea{
-  width:100%;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);
-  padding:12px 13px;outline:none
+.order-slot-fieldset{min-width:0;margin:2px 0 0;padding:0;border:0}
+.order-slot-fieldset legend{margin-bottom:10px;color:var(--muted);font-size:.68rem}
+.order-months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.order-month{position:relative;display:block;min-width:0;cursor:pointer}
+.order-month input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.order-month-card{
+  display:flex;min-height:82px;flex-direction:column;justify-content:center;gap:7px;padding:12px;
+  border:1px solid var(--line);border-radius:14px;background:var(--bg);transition:border-color .2s,background .2s
 }
-.order-form input{height:46px}
-.order-form input:focus,.order-form textarea:focus{border-color:var(--gold)}
-.phone-row{display:grid;grid-template-columns:1fr auto;gap:8px}
-.phone-row button{border:1px solid var(--gold);border-radius:12px;background:rgba(216,178,110,.12);color:var(--gold-soft);padding:0 13px;font-size:.7rem;cursor:pointer}
-.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.order-month-card strong{font:500 1.18rem/1.05 "Cormorant Garamond",serif;text-transform:capitalize}
+.order-month-card span{color:var(--muted);font-size:.6rem;line-height:1.35}
+.order-month input:checked+.order-month-card{border-color:var(--gold);background:rgba(216,178,110,.12)}
+.order-month input:checked+.order-month-card strong{color:var(--gold-soft)}
+.order-month input:focus-visible+.order-month-card{outline:2px solid var(--gold-soft);outline-offset:2px}
+.order-slot-note{margin:9px 0 0;color:var(--muted);font-size:.63rem;line-height:1.45}
+.sketch-fee{padding:15px;border-left:2px solid var(--gold);background:rgba(216,178,110,.08)}
+.sketch-fee strong{display:block;color:var(--gold-soft);font-size:.78rem;line-height:1.4}
+.sketch-fee p{margin:8px 0 0;color:#ded4de;font-size:.7rem;line-height:1.55}
 .consent-row{display:grid!important;grid-template-columns:20px 1fr;gap:9px;align-items:start}
 .consent-row input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--gold)}
 .consent-row span{margin:0!important;font-size:.65rem!important;line-height:1.45}
 .consent-row a{border-bottom:1px solid var(--line)}
+.sketch-terms-row{padding:2px 0}
 .order-status{min-height:1.3em;margin:0;color:var(--muted);font-size:.72rem;line-height:1.5;text-align:center}
 .order-status.success{color:#a9d8b5}
 .order-status.error{color:#e8a4a4}
@@ -246,7 +255,7 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
   .channel-button{padding-inline:10px}
   .catalog-grid{gap:7px}
   .product-copy{padding:10px}
-  .two-fields{grid-template-columns:1fr}
+  .order-months{grid-template-columns:1fr}
 }
 
 @media(prefers-reduced-motion:reduce){
