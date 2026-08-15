@@ -2,6 +2,7 @@
   "use strict";
 
   const MAX_CHANNEL = "https://max.ru/channel_artnelli";
+  const MAX_PERSONAL = "https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU";
   const TELEGRAM_CHANNEL = "https://t.me/nelli_leotards";
   const ORDER_API = location.hostname === "artnelli.com" ? "" : "/api/max-order";
   const PAGE_SIZE = 18;
@@ -222,7 +223,7 @@
         </div>
         <p class="detail-price">${escapeHtml(formatPrice(product.prices))}</p>
         <p class="detail-description">${escapeHtml(description)}</p>
-        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа.</p>
+        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель будут скопированы для сообщения Нелли.</p>
         <div class="detail-actions">
           <button class="primary-button" type="button" data-order>${product.sold ? "Подобрать похожую" : "Хочу эту модель"}</button>
           <button class="secondary-button" type="button" data-share>Поделиться в MAX</button>
@@ -230,10 +231,7 @@
         <button class="detail-source" type="button" data-source>Оригинал в Telegram ↗</button>
       </section>`;
 
-    productContent.querySelector("[data-order]").addEventListener("click", () => {
-      productDialog.close();
-      openOrder(product);
-    });
+    productContent.querySelector("[data-order]").addEventListener("click", () => openProductChat(product));
     productContent.querySelector("[data-share]").addEventListener("click", () => shareProduct(product));
     productContent.querySelector("[data-source]").addEventListener("click", () => openExternal(product.telegram || TELEGRAM_CHANNEL));
     productDialog.showModal();
@@ -291,6 +289,44 @@
     haptic();
     if (app?.openMaxLink) app.openMaxLink(url);
     else window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  function copyTextForChat(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    textarea.style.top = "0";
+    document.body.append(textarea);
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, text.length);
+    let copied = false;
+    try {
+      copied = document.execCommand("copy");
+    } catch (_) {
+      // Use the asynchronous Clipboard API below when legacy copying is unavailable.
+    }
+    textarea.remove();
+    if (!copied && navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).catch(() => {});
+    }
+  }
+
+  function productInquiryMessage(product) {
+    return [
+      product.sold ? "Здравствуйте! Хочу подобрать похожую модель." : "Здравствуйте! Хочу эту модель.",
+      `Модель: «${product.name}»`,
+      `Рост: ${product.height || "уточнить"} см`,
+      `Карточка модели: ${productUrl(product)}`,
+    ].join("\n");
+  }
+
+  function openProductChat(product) {
+    copyTextForChat(productInquiryMessage(product));
+    productDialog.close();
+    openMax(MAX_PERSONAL);
   }
 
   function shareInMax(text, link = "") {
