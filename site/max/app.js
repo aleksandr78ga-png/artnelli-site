@@ -4,7 +4,6 @@
   const MAX_CHANNEL = "https://max.ru/channel_artnelli";
   const MAX_PERSONAL = "https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU";
   const TELEGRAM_CHANNEL = "https://t.me/nelli_leotards";
-  const ORDER_API = location.hostname === "artnelli.com" ? "" : "/api/max-order";
   const PAGE_SIZE = 18;
 
   const state = {
@@ -30,10 +29,8 @@
   const productContent = document.getElementById("product-content");
   const orderDialog = document.getElementById("order-dialog");
   const orderForm = document.getElementById("order-form");
-  const orderTitle = document.getElementById("order-title");
-  const orderNote = document.getElementById("order-product-note");
+  const orderMonths = document.getElementById("order-months");
   const orderStatus = document.getElementById("order-status");
-  const sendOrderButton = document.getElementById("send-order");
 
   const formatPrice = (prices = []) => {
     if (!prices.length) return "Цена по запросу";
@@ -240,18 +237,39 @@
     haptic();
   }
 
-  function openOrder(product = null) {
+  function renderOrderMonths() {
+    const start = new Date();
+    start.setDate(1);
+    orderMonths.replaceChildren();
+
+    for (let index = 0; index < 6; index += 1) {
+      const date = new Date(start.getFullYear(), start.getMonth() + index, 1);
+      const value = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+      const label = document.createElement("label");
+      const radio = document.createElement("input");
+      const card = document.createElement("span");
+      const title = document.createElement("strong");
+      const note = document.createElement("span");
+
+      label.className = "order-month";
+      radio.type = "radio";
+      radio.name = "month";
+      radio.value = value;
+      radio.required = index === 0;
+      card.className = "order-month-card";
+      title.textContent = new Intl.DateTimeFormat("ru-RU", { month: "long", year: "numeric" }).format(date);
+      note.textContent = "Доступность подтверждает Нелли";
+      card.append(title, note);
+      label.append(radio, card);
+      orderMonths.append(label);
+    }
+  }
+
+  function openOrder() {
     orderForm.reset();
     orderStatus.textContent = "";
     orderStatus.className = "order-status";
-    const customer = app?.initDataUnsafe?.user?.first_name || "";
-    orderForm.elements.customer.value = customer;
-    orderForm.elements.productId.value = product?.id || "";
-    orderForm.elements.productName.value = product?.name || "";
-    orderTitle.textContent = product ? product.name : "Индивидуальный пошив";
-    orderNote.textContent = product
-      ? (product.sold ? "Эта модель отмечена как проданная. Мастерская предложит похожий вариант." : "Нелли лично подтвердит цену и наличие этой модели.")
-      : "Расскажите об образе — Нелли лично подтвердит свободную дату и сроки.";
+    renderOrderMonths();
     orderDialog.showModal();
     document.body.classList.add("sheet-open");
     app?.BackButton?.show?.();
@@ -346,86 +364,24 @@
     );
   }
 
-  function orderMessage(data) {
-    const product = data.get("productName");
+  function bookingMessage(data) {
+    const [year, month] = String(data.get("month")).split("-").map(Number);
+    const monthText = new Intl.DateTimeFormat("ru-RU", { month: "long", year: "numeric" })
+      .format(new Date(year, month - 1, 1));
     return [
-      "Заявка в мастерскую Art Nelli",
-      product ? `Модель: ${product}` : "Индивидуальный пошив",
-      `Имя: ${data.get("customer")}`,
-      `Телефон / мессенджер: ${data.get("phone")}`,
-      `Рост спортсменки: ${data.get("athleteHeight") || "не указан"}`,
-      `Город: ${data.get("city") || "не указан"}`,
-      `Срок / выступление: ${data.get("deadline") || "не указан"}`,
-      `Пожелания: ${data.get("wishes") || "—"}`,
+      `Здравствуйте! Хочу записаться на индивидуальный пошив — ${monthText}.`,
+      "Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.",
+      "Пожалуйста, подтвердите доступность слота.",
     ].join("\n");
   }
 
-  async function submitOrder(event) {
+  function submitOrder(event) {
     event.preventDefault();
     if (!orderForm.reportValidity()) return;
     const data = new FormData(orderForm);
-    const payload = {
-      initData: app?.initData || "",
-      productId: data.get("productId"),
-      productName: data.get("productName"),
-      customer: data.get("customer"),
-      phone: data.get("phone"),
-      athleteHeight: data.get("athleteHeight"),
-      city: data.get("city"),
-      deadline: data.get("deadline"),
-      wishes: data.get("wishes"),
-    };
-    sendOrderButton.disabled = true;
-    orderStatus.className = "order-status";
-    orderStatus.textContent = "Отправляем заявку…";
-
-    if (payload.initData && ORDER_API) {
-      try {
-        const response = await fetch(ORDER_API, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        const result = await response.json().catch(() => ({}));
-        if (response.ok) {
-          orderStatus.className = "order-status success";
-          orderStatus.textContent = `Заявка ${result.orderId || ""} отправлена. Мастерская ответит в MAX.`;
-          app?.disableClosingConfirmation?.();
-          haptic();
-          return;
-        }
-        if (![404, 503].includes(response.status)) throw new Error(result.error || "Ошибка отправки");
-      } catch (error) {
-        if (!navigator.onLine) {
-          orderStatus.className = "order-status error";
-          orderStatus.textContent = "Нет соединения. Проверьте интернет и повторите.";
-          sendOrderButton.disabled = false;
-          return;
-        }
-      }
-    }
-
-    orderStatus.className = "order-status";
-    orderStatus.textContent = "Откроется выбор чата в MAX. Выберите чат Art Nelli и отправьте заявку.";
-    shareInMax(orderMessage(data), data.get("productId") ? productUrl({ id: data.get("productId") }) : "https://artnelli.com/max/");
-    sendOrderButton.disabled = false;
-  }
-
-  async function requestContact() {
-    if (!app?.requestContact) {
-      orderStatus.className = "order-status";
-      orderStatus.textContent = "Введите номер вручную — получение контакта доступно внутри MAX.";
-      return;
-    }
-    try {
-      const result = await app.requestContact();
-      if (result?.phone) {
-        orderForm.elements.phone.value = result.phone.startsWith("+") ? result.phone : "+" + result.phone;
-        orderStatus.textContent = "Номер получен из MAX.";
-      }
-    } catch (_) {
-      orderStatus.textContent = "Номер не получен. Его можно ввести вручную.";
-    }
+    copyTextForChat(bookingMessage(data));
+    orderDialog.close();
+    openMax(MAX_PERSONAL);
   }
 
   function setViewport() {
@@ -488,7 +444,6 @@
     renderCatalog();
   });
   document.getElementById("custom-order").addEventListener("click", () => openOrder());
-  document.getElementById("request-contact").addEventListener("click", requestContact);
   orderForm.addEventListener("submit", submitOrder);
   productDialog.addEventListener("close", onSheetClose);
   orderDialog.addEventListener("close", onSheetClose);
