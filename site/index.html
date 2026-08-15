@@ -313,20 +313,25 @@
   .booking-month input:focus-visible+.booking-month-card{outline:2px solid var(--ivory);outline-offset:2px}
   .booking-month-card strong{font:400 1.05rem/1.25 var(--serif);text-transform:capitalize}
   .booking-month-card span{color:var(--ivory-dim);font:300 .58rem/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-  .booking-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}
-  .booking-field{display:flex;flex-direction:column;gap:8px;color:var(--ivory-dim);font:300 .63rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
-  .booking-field.full{grid-column:1/-1}
-  .booking-field input,.booking-field select,.booking-field textarea{width:100%;border:1px solid var(--line);border-radius:0;background:var(--bg-soft);color:var(--ivory);padding:13px 14px;font:300 .9rem var(--sans);outline:none;text-transform:none;letter-spacing:0;color-scheme:dark}
-  .booking-field input,.booking-field select{height:50px}
-  .booking-field textarea{min-height:118px;resize:vertical}
-  .booking-field input:focus,.booking-field select:focus,.booking-field textarea:focus{border-color:var(--gold)}
-  .booking-consent{display:flex;align-items:flex-start;gap:12px;margin:22px 0;color:var(--ivory-dim);font-size:.78rem}
-  .booking-consent input{margin-top:5px;accent-color:var(--gold)}
-  .booking-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .booking-ack{display:flex;align-items:flex-start;gap:13px;margin-top:22px;padding:18px;border:1px solid rgba(201,169,106,.48);background:rgba(201,169,106,.08);color:var(--ivory-dim);font-size:.84rem;line-height:1.65;cursor:pointer}
+  .booking-ack input{flex:0 0 auto;width:18px;height:18px;margin-top:4px;accent-color:var(--gold);cursor:pointer}
+  .booking-ack strong{color:var(--ivory);font-weight:500}
+  .booking-ack:focus-within{border-color:var(--gold)}
+  .booking-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
   .booking-actions .btn{cursor:pointer;flex:1;text-align:center}
   .booking-status{min-height:1.5em;margin-top:14px;color:var(--gold);font:300 .68rem var(--mono);letter-spacing:.08em}
+  .booking-messenger-dialog{width:min(620px,calc(100vw - 32px));padding:0;border:1px solid rgba(201,169,106,.72);background:var(--bg);color:var(--ivory);box-shadow:0 24px 100px rgba(0,0,0,.72)}
+  .booking-messenger-dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(7px)}
+  .booking-messenger-panel{padding:clamp(26px,5vw,52px);text-align:center}
+  .booking-messenger-close-row{display:flex;justify-content:flex-end;margin:-10px -10px 14px}
+  .booking-messenger-close{border:0;background:transparent;color:var(--ivory-dim);padding:10px;cursor:pointer;font:300 .65rem var(--mono);letter-spacing:.13em;text-transform:uppercase}
+  .booking-messenger-close:hover{color:var(--gold)}
+  .booking-messenger-dialog h2{font:400 clamp(1.8rem,4vw,2.7rem)/1.15 var(--serif);margin:13px 0 14px}
+  .booking-messenger-dialog p{color:var(--ivory-dim);max-width:34em;margin:0 auto 28px}
+  .booking-messenger-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .booking-messenger-options .btn{width:100%;padding-inline:16px;cursor:pointer}
   @media(max-width:900px){.booking-shell{grid-template-columns:1fr}.booking-copy{position:static}.booking-months{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  @media(max-width:620px){.booking-months,.booking-fields{grid-template-columns:1fr}.booking-field.full{grid-column:auto}.booking-actions .btn{width:100%;text-align:center}}
+  @media(max-width:620px){.booking-months,.booking-messenger-options{grid-template-columns:1fr}.booking-actions .btn{width:100%;text-align:center}}
   /* ---------- about ---------- */
   .about-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);align-items:center}
   .about-grid .ph{position:relative}
@@ -530,6 +535,7 @@
         <a class="btn btn-line" href="https://www.instagram.com/art_nelli_leotards/" target="_blank" rel="me noopener" data-i18n="about_social_ig">Instagram</a>
         <a class="btn btn-line" href="https://t.me/nelli_leotards" target="_blank" rel="me noopener" data-i18n="about_social_tg">Telegram</a>
         <a class="btn btn-line" href="https://vk.ru/leotards_nelli" target="_blank" rel="me noopener" data-i18n="about_social_vk">VK</a>
+        <a class="btn btn-line" href="https://max.ru/channel_artnelli" target="_blank" rel="me noopener" data-i18n="about_social_max">MAX</a>
       </div>
     </div>
   </div>
@@ -644,35 +650,26 @@
     </div>
     <div class="booking-shell">
       <div class="booking-copy rev">
-        <div class="mono" data-i18n="booking_deposit_label">Reservation deposit</div>
+        <div class="mono" data-i18n="booking_deposit_label">Sketch work fee</div>
         <h3 data-i18n="booking_copy_h">Your costume — <span class="it">in the atelier calendar</span></h3>
-        <p data-i18n="booking_copy_p">Choose a preferred month and send the request. Nelli will personally confirm the available date and timing.</p>
+        <p data-i18n="booking_copy_p">Choose a preferred month or slot. Nelli will personally confirm availability in your private chat.</p>
         <div class="booking-notice">
           <div class="booking-notice-title" data-i18n="booking_important">Important before booking</div>
-          <div class="booking-deposit"><strong data-i18n="booking_deposit">15,000 RUB</strong><p data-i18n="booking_deposit_p">The 15,000 RUB deposit is paid when reserving a tailoring slot at the Nelli atelier and is fully included in the final costume price.</p></div>
+          <div id="booking-sketch-fee" class="booking-deposit"><strong data-i18n="booking_deposit">15,000 RUB</strong><p data-i18n="booking_deposit_p">15,000 RUB is the fee for the sketch work. If the order proceeds to tailoring, the full amount is credited toward the final costume price. If the order does not continue after the sketch work has been completed, the fee is non-refundable.</p></div>
         <ul class="booking-rules">
-          <li data-i18n="booking_rule1">The deposit is non-refundable once work on your sketches has begun.</li>
-          <li data-i18n="booking_rule2">In the request, specify the discipline and desired completion date if there is an important competition.</li>
-          <li data-i18n="booking_rule3">The selected month is the month when the atelier starts working on the sketches.</li>
+          <li data-i18n="booking_rule1">The fee is non-refundable if the order stops after the sketch work has been completed.</li>
+          <li data-i18n="booking_rule2">The website does not ask for your name, phone number, city or athlete details.</li>
+          <li data-i18n="booking_rule3">The selected month is a preferred slot; Nelli personally confirms availability in the private chat.</li>
           <li data-i18n="booking_rule4">After sketch approval and measurements, tailoring takes approximately 3–4 weeks.</li>
-          <li data-i18n="booking_rule5">Nelli will contact you personally in WhatsApp when it is time to begin the sketches.</li>
+          <li data-i18n="booking_rule5">All order details are discussed directly with Nelli in your chosen messenger.</li>
           </ul>
         </div>
       </div>
       <form id="booking-form" class="booking-form rev">
-        <h3 data-i18n="booking_form_h">Tailoring request</h3><p data-i18n="booking_form_p">Fill in the key details. The message will open in your chosen personal messenger.</p>
-        <span class="booking-label" data-i18n="booking_month_label">Preferred tailoring month</span><div id="booking-months" class="booking-months"></div>
-        <div class="booking-fields">
-          <label class="booking-field"><span data-i18n="booking_name">Your name</span><input name="customer" required autocomplete="name" data-placeholder-en="Name" data-placeholder-ru="Имя"></label>
-          <label class="booking-field"><span data-i18n="booking_athlete">Athlete's name</span><input name="athlete" required data-placeholder-en="Athlete's name" data-placeholder-ru="Имя спортсменки"></label>
-          <label class="booking-field"><span data-i18n="booking_phone">Phone / messenger</span><input name="phone" required autocomplete="tel" inputmode="tel" data-placeholder-en="+1 000 000 0000" data-placeholder-ru="+7 000 000-00-00"></label>
-          <label class="booking-field"><span data-i18n="booking_city">City and country</span><input name="city" required autocomplete="address-level2" data-placeholder-en="City, country" data-placeholder-ru="Город, страна"></label>
-          <label class="booking-field"><span data-i18n="booking_discipline">Discipline</span><select name="discipline" required><option value="" data-i18n="booking_select">Select</option><option value="rhythmic" data-i18n="booking_rhythmic">Rhythmic gymnastics</option><option value="aesthetic" data-i18n="booking_aesthetic">Aesthetic group gymnastics</option><option value="acrobatics" data-i18n="booking_acrobatics">Acrobatics</option><option value="skating" data-i18n="booking_skating">Figure skating</option></select></label>
-          <label class="booking-field"><span data-i18n="booking_height">Athlete's height</span><input name="height" required inputmode="numeric" data-placeholder-en="Height, cm" data-placeholder-ru="Рост, см"></label>
-          <label class="booking-field full"><span data-i18n="booking_comment">Performance date, music and wishes</span><textarea name="comment" data-placeholder-en="Tell us about the routine, colours and deadline" data-placeholder-ru="Расскажите о программе, цветах и сроках"></textarea></label>
-        </div>
-        <label class="booking-consent"><input type="checkbox" name="consent" required><span data-i18n="booking_consent">I agree to send these details to Nelli in my chosen messenger.</span></label>
-        <div class="booking-actions"><button class="btn btn-solid" type="submit" data-i18n="booking_whatsapp">Send via WhatsApp</button><button id="booking-telegram" class="btn btn-solid" type="button" data-i18n="booking_telegram">Send via Telegram</button></div>
+        <h3 data-i18n="booking_form_h">Choose a tailoring slot</h3><p data-i18n="booking_form_p">Choose a preferred month. The website does not ask for your name, phone number or any other personal details. Then choose WhatsApp, Telegram or MAX for your private chat with Nelli.</p>
+        <span class="booking-label" data-i18n="booking_month_label">Preferred month / slot</span><div id="booking-months" class="booking-months"></div>
+        <label class="booking-ack"><input name="sketchTerms" type="checkbox" required aria-describedby="booking-sketch-fee"><span data-i18n="booking_terms_ack">I have read and understood the terms of the <strong>15,000 RUB sketch work fee</strong>: if the order proceeds, the amount is credited toward the final price; if the order stops after the sketch work has been completed, the fee is non-refundable.</span></label>
+        <div class="booking-actions"><button class="btn btn-solid" type="submit" data-i18n="booking_submit">I want to book</button></div>
         <div id="booking-status" class="booking-status" role="status" aria-live="polite"></div>
       </form>
     </div>
@@ -753,11 +750,12 @@
   <div class="wrap rev">
     <div class="mono" data-i18n="contact_eyebrow">(07) — Contact</div>
     <h2 data-i18n="contact_h2">Let's design <span class="it">yours</span></h2>
-    <p data-i18n="contact_p">Email or call us — you can also message us on WhatsApp or Telegram.</p>
+    <p data-i18n="contact_p">Email or call us — you can also message us on WhatsApp, Telegram or MAX.</p>
     <div class="contact-row">
       <a class="btn btn-solid" href="tel:+79612064782">+7 961 206-47-82</a>
       <a class="btn btn-line" href="https://wa.me/79612064782" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn btn-line" href="https://t.me/NelliGarkusha" target="_blank" rel="me noopener">Telegram</a>
+      <a class="btn btn-line" href="https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU" target="_blank" rel="me noopener">MAX</a>
     </div>
     <div class="contact-emails mono" aria-label="Email">
       <a href="mailto:art.nelli81@gmail.com">art.nelli81@gmail.com</a>
@@ -780,6 +778,19 @@
   <div class="wordmark">Nelli <span>Garkusha</span></div>
 </footer>
 
+<dialog id="booking-messenger-dialog" class="booking-messenger-dialog">
+  <div class="booking-messenger-panel">
+    <form method="dialog" class="booking-messenger-close-row"><button class="booking-messenger-close" type="submit" data-i18n="booking_messenger_close">Close</button></form>
+    <div class="mono" data-i18n="booking_messenger_eyebrow">Private chat with Nelli</div>
+    <h2 data-i18n="booking_messenger_h">Choose a messenger</h2>
+    <p data-i18n="booking_messenger_p">Choose where you would like to continue your private conversation with Nelli.</p>
+    <div class="booking-messenger-options">
+      <button class="btn btn-solid" type="button" data-booking-channel="whatsapp">WhatsApp</button>
+      <button class="btn btn-solid" type="button" data-booking-channel="telegram">Telegram</button>
+      <button class="btn btn-solid" type="button" data-booking-channel="max">MAX</button>
+    </div>
+  </div>
+</dialog>
 
 <dialog id="product-dialog" class="product-dialog">
   <form method="dialog"><button class="dialog-close" aria-label="Закрыть">×</button></form>
@@ -825,7 +836,7 @@ const i18n = {
     card_cta:'Узнать о купальнике', card_cta2:'Узнать о купальнике', card_cta3:'Узнать о купальнике', card_cta4:'Узнать о купальнике', card_cta5:'Узнать о купальнике',
     rail_hint:'листайте →',
     tg_h2:'Модели из <span class="it">Telegram-канала</span>', tg_num:'Карточки товаров', tg_p:'Шесть выбранных публикаций со всеми фотографиями, видео и оригинальными описаниями.', tg_product:'Актуальная модель', tg_open:'Открыть модель в Telegram ↗', tg_cta:'Открыть канал',
-    order_h2:'Как рождается <span class="it">ваш купальник</span>', order_num:'Индивидуальный пошив',    booking_h2:'Запись <span class="it">на пошив</span>', booking_num:'Календарь мастерской', booking_deposit_label:'Предоплата за бронирование', booking_copy_h:'Ваш костюм — <span class="it">в календаре мастерской</span>', booking_copy_p:'Выберите желаемый месяц и отправьте заявку. Нелли лично подтвердит свободную дату и сроки.', booking_deposit:'15 000 ₽', booking_deposit_p:'Предоплата 15 000 рублей вносится при записи на пошив в мастерской Nelli и полностью учитывается в итоговой стоимости костюма.', booking_rule1:'Предоплата не возвращается, если работа над эскизами уже началась.', booking_rule2:'В заявке укажите вид спорта и желаемую дату готовности, если впереди важные соревнования.', booking_rule3:'Выбранный месяц — это месяц, когда мастерская приступает к работе над эскизами.', booking_rule4:'После утверждения эскиза и снятия мерок пошив занимает около 3–4 недель.', booking_rule5:'Нелли лично свяжется с вами в WhatsApp, когда будет готова приступить к работе над эскизами.', booking_form_h:'Заявка на пошив', booking_form_p:'Заполните главное — сообщение откроется в выбранном личном мессенджере.', booking_month_label:'Желаемый месяц пошива', booking_slot_note:'Наличие подтверждает мастерская', booking_name:'Ваше имя', booking_athlete:'Имя спортсменки', booking_phone:'Телефон / мессенджер', booking_city:'Город и страна', booking_discipline:'Вид спорта', booking_height:'Рост спортсменки', booking_comment:'Дата выступления, музыка и пожелания', booking_select:'Выберите', booking_rhythmic:'Художественная гимнастика', booking_aesthetic:'Эстетическая гимнастика', booking_acrobatics:'Акробатика', booking_skating:'Фигурное катание', booking_consent:'Согласен(на) отправить эти данные Нелли в выбранном мессенджере.', booking_whatsapp:'Отправить в WhatsApp', booking_telegram:'Отправить в Telegram', booking_success:'Открываем личный чат с Нелли…',
+    order_h2:'Как рождается <span class="it">ваш купальник</span>', order_num:'Индивидуальный пошив',    booking_h2:'Запись <span class="it">на пошив</span>', booking_num:'Календарь мастерской', booking_deposit_label:'Оплата работы над эскизами', booking_copy_h:'Ваш костюм — <span class="it">в календаре мастерской</span>', booking_copy_p:'Выберите желаемый месяц или слот. Нелли лично подтвердит доступность в личной переписке.', booking_deposit:'15 000 ₽', booking_deposit_p:'15 000 ₽ — оплата работы над эскизами. Если заказ переходит к пошиву, эта сумма полностью засчитывается в итоговую стоимость изделия. Если после выполнения работы над эскизами заказ не продолжается, оплата не возвращается.', booking_rule1:'Оплата не возвращается, если после выполненной работы над эскизами заказ прекращается.', booking_rule2:'На сайте не нужно указывать имя, телефон, город или данные спортсменки.', booking_rule3:'Выбранный месяц — желаемый слот; его доступность Нелли лично подтверждает в переписке.', booking_rule4:'После утверждения эскиза и снятия мерок пошив занимает около 3–4 недель.', booking_rule5:'Все детали заказа обсуждаются напрямую с Нелли в выбранном мессенджере.', booking_form_h:'Выберите слот для пошива', booking_form_p:'Выберите желаемый месяц. На сайте не нужно указывать имя, телефон или другие персональные данные. Затем выберите WhatsApp, Telegram или MAX для личной переписки с Нелли.', booking_month_label:'Желаемый месяц / слот', booking_slot_note:'Доступность подтверждает Нелли', booking_terms_ack:'Я ознакомился(ась) и понимаю условия <strong>оплаты 15 000 ₽ за работу над эскизами</strong>: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.', booking_submit:'Хочу записаться', booking_messenger_close:'Закрыть', booking_messenger_eyebrow:'Личная переписка с Нелли', booking_messenger_h:'Выберите мессенджер', booking_messenger_p:'Выберите, где вам удобно продолжить личную переписку с Нелли.',
     step1_h:'Расскажите идею', step1_p:'Напишите нам в WhatsApp или Telegram: музыка, настроение, любимые цвета — или просто ощущение. Мы предложим идеи.',
     step2_h:'Эскиз и ткани', step2_p:'Создаём уникальный эскиз, согласовываем палитру, ткани и работу с кристаллами до начала кроя.',
     step3_h:'Мерки дистанционно', step3_p:'Простая инструкция поможет снять мерки дома — посадка согласовывается до пошива.',
@@ -833,8 +844,8 @@ const i18n = {
     about_eyebrow:'Мастерская',
     about_p1:'Арт-мастерская купальников для художественной гимнастики, эстетической гимнастики, акробатики и фигурного катания. Тюмень, Россия.',
     about_p2:'Каждое изделие уникально: авторский эскиз, профессиональные ткани и сетка. Купальники мастерской выступают на чемпионатах России и международных стартах.',
-    about_social_ig:'Мы в Instagram', about_social_tg:'Мы в Telegram', about_social_vk:'Мы в VK',
-    contact_eyebrow:'(07) — Контакты', contact_h2:'Создадим <span class="it">ваш</span>', contact_p:'Пишите на почту или звоните — также можно связаться с нами в WhatsApp или Telegram.',
+    about_social_ig:'Мы в Instagram', about_social_tg:'Мы в Telegram', about_social_vk:'Мы в VK', about_social_max:'Мы в MAX',
+    contact_eyebrow:'(07) — Контакты', contact_h2:'Создадим <span class="it">ваш</span>', contact_p:'Пишите на почту или звоните — также можно связаться с нами в WhatsApp, Telegram или MAX.',
     foot_city:'Тюмень, Россия', foot_tag:'Купальники-кутюр для художественной гимнастики', foot_tailoring:'Индивидуальный пошив', foot_stock:'Купальники в наличии', foot_measure:'Как снять мерки'
   },
   en: {}
@@ -1029,6 +1040,7 @@ productDialog.addEventListener('close',()=>{document.body.style.overflow='';});
 const bookingForm=document.getElementById('booking-form');
 const bookingMonths=document.getElementById('booking-months');
 const bookingStatus=document.getElementById('booking-status');
+const bookingMessengerDialog=document.getElementById('booking-messenger-dialog');
 function renderBookingMonths(){
   if(!bookingMonths)return;
   const selected=bookingForm.elements.month?.value||'';
@@ -1042,27 +1054,47 @@ function renderBookingMonths(){
     const radio=document.createElement('input');radio.type='radio';radio.name='month';radio.value=value;radio.required=index===0;radio.checked=value===selected;
     const card=document.createElement('span');card.className='booking-month-card';
     const title=document.createElement('strong');title.textContent=new Intl.DateTimeFormat(locale,{month:'long',year:'numeric'}).format(date);
-    const note=document.createElement('span');note.textContent=currentLang==='en'?'Availability confirmed by the atelier':i18n.ru.booking_slot_note;
+    const note=document.createElement('span');note.textContent=currentLang==='en'?'Availability confirmed by Nelli':i18n.ru.booking_slot_note;
     card.append(title,note);label.append(radio,card);bookingMonths.append(label);
   }
 }
 function bookingMessage(){
   const data=new FormData(bookingForm);
-  const discipline=bookingForm.elements.discipline.options[bookingForm.elements.discipline.selectedIndex]?.textContent||'';
   const [year,month]=String(data.get('month')).split('-').map(Number);
   const monthText=new Intl.DateTimeFormat(currentLang==='en'?'en-US':'ru-RU',{month:'long',year:'numeric'}).format(new Date(year,month-1,1));
-  const lines=currentLang==='en'?[`Tailoring request — ${monthText}`,`Customer: ${data.get('customer')}`,`Athlete: ${data.get('athlete')}`,`Phone / messenger: ${data.get('phone')}`,`City / country: ${data.get('city')}`,`Discipline: ${discipline}`,`Height: ${data.get('height')} cm`,`Performance and wishes: ${data.get('comment')||'—'}`]:[`Заявка на пошив — ${monthText}`,`Заказчик: ${data.get('customer')}`,`Спортсменка: ${data.get('athlete')}`,`Телефон / мессенджер: ${data.get('phone')}`,`Город / страна: ${data.get('city')}`,`Вид спорта: ${discipline}`,`Рост: ${data.get('height')} см`,`Выступление и пожелания: ${data.get('comment')||'—'}`];
+  const lines=currentLang==='en'?[`I would like to book a tailoring slot — ${monthText}.`,`I confirm that I have read and understood the terms of the 15,000 RUB sketch work fee: if the order proceeds, the amount is credited toward the final price; if the order stops after the sketch work has been completed, the fee is non-refundable.`,`Please confirm this slot is available.`]:[`Хочу записаться на пошив — ${monthText}.`,`Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.`,`Пожалуйста, подтвердите доступность слота.`];
   return lines.join('\n');
 }
-function sendBooking(channel){
+function openBookingMessenger(channel){
   if(!bookingForm.reportValidity())return;
-  const message=encodeURIComponent(bookingMessage());
-  const url=channel==='telegram'?`https://t.me/NelliGarkusha?text=${message}`:`https://wa.me/79612064782?text=${message}`;
-  bookingStatus.textContent=currentLang==='en'?'Opening Nelli’s personal chat…':i18n.ru.booking_success;
+  const bookingText=bookingMessage();
+  const message=encodeURIComponent(bookingText);
+  const urls={
+    whatsapp:`https://wa.me/79612064782?text=${message}`,
+    telegram:`https://t.me/NelliGarkusha?text=${message}`,
+    max:'https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU'
+  };
+  const url=urls[channel];
+  if(!url)return;
+  bookingMessengerDialog.close();
+  const names={whatsapp:'WhatsApp',telegram:'Telegram',max:'MAX'};
+  if(channel==='max'&&navigator.clipboard?.writeText){
+    navigator.clipboard.writeText(bookingText).catch(()=>{});
+  }
+  bookingStatus.textContent=currentLang==='en'?(channel==='max'?`The booking message and confirmation have been copied. Paste and send them to Nelli in MAX.`:`Opening Nelli’s private chat in ${names[channel]}…`):(channel==='max'?`Заявка и подтверждение скопированы. Вставьте и отправьте их Нелли в MAX.`:`Открываем личную переписку с Нелли в ${names[channel]}…`);
   window.open(url,'_blank','noopener');
 }
-bookingForm.addEventListener('submit',event=>{event.preventDefault();sendBooking('whatsapp');});
-document.getElementById('booking-telegram').addEventListener('click',()=>sendBooking('telegram'));
+bookingForm.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!bookingForm.reportValidity())return;
+  bookingStatus.textContent='';
+  bookingMessengerDialog.showModal();
+});
+bookingMessengerDialog.querySelector('.booking-messenger-options').addEventListener('click',event=>{
+  const trigger=event.target.closest('[data-booking-channel]');
+  if(trigger)openBookingMessenger(trigger.dataset.bookingChannel);
+});
+bookingMessengerDialog.addEventListener('click',event=>{if(event.target===bookingMessengerDialog)bookingMessengerDialog.close();});
 renderBookingMonths();
 let liveFollowersCount = 70002;
 function updateFollowerCount(){
