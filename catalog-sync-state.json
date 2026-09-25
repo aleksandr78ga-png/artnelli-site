@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "https://t.me/nelli_leotards",
-  "productCount": 95,
-  "newCount": 52,
+  "productCount": 94,
+  "newCount": 51,
   "usedCount": 43,
   "removedIds": [
     922,
@@ -12,6 +12,7 @@
     2902,
     4687,
     4880,
+    5061,
     5143,
     5219,
     5255,
