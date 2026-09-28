@@ -19,3 +19,10 @@
 - Rental post 5726 (Танец огня) is 4,500 RUB; pre-owned sale post 5733 remains 39,000 RUB.
 - scripts/catalog-offer.mjs normalizes explicit rental headings after every catalogue sync, preserving prices and separate sale listings.
 - Rental inquiries and prices explicitly say rental.
+
+## Four rental offers confirmed by owner (28 September 2026)
+- Rental topic: https://t.me/nelli_leotards/1865. The owner supplied screenshots confirming four offers: Peach 3,500 RUB, Yellow gold 5,000 RUB, Ярко-красный 4,500 RUB, Танец огня 4,500 RUB.
+- The first three offers were imported from those screenshots. Their negative local catalogue IDs (-186501, -186502, -186503) are not Telegram message IDs. Link their source buttons to the confirmed rental topic until the individual post URLs are available; do not invent post IDs or reuse sale post IDs.
+- Original photos are reused after visual matching. Peach photos were restored from commit e39ed82; its deleted sale listing 2833 remains absent. The separate existing Yellow gold and Ярко-красный sale listings are unchanged.
+- The normal sync retains imported rentals. When a single real rental listing with the same name and measurements arrives, scripts/catalog-offer.mjs replaces the local import to avoid a duplicate. A sale listing is never used for that replacement.
+- This completes the one-time import, not historical access to Telegram. The upstream bot feed currently omits topic IDs. Full topic-based classification and automatic deletion checks for the three imported offers still need upstream support and verified individual post IDs. Do not report those capabilities as complete.

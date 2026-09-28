@@ -3,7 +3,8 @@
 export function normalizeCatalogOffer(product) {
   const heading = String(product.description || '').normalize('NFKC')
     .split(/\r?\n/).find(line => line.trim()) || '';
-  const isRental = /^[^\p{L}\p{N}]*(?:аренда|прокат)(?=$|[^\p{L}])/iu.test(heading);
+  const isRental = Number(product.telegramTopicId) === 1865 ||
+    /^[^\p{L}\p{N}]*(?:аренда|прокат)(?=$|[^\p{L}])/iu.test(heading);
   if (!isRental) return product;
   return {
     ...product,
@@ -13,4 +14,26 @@ export function normalizeCatalogOffer(product) {
       descriptionEn: product.descriptionEn.replace(/^For sale\s*\n(?:New |Pre-owned )?/i, 'For rent\n'),
     } : {}),
   };
+}
+
+// Owner-supplied screenshots can establish an offer before its message ID is
+// available. Negative IDs belong to these local imports, never to Telegram.
+// Replace an import only when a single real rental post identifies the same
+// model and measurements. A separate sale or an ambiguous match must survive.
+export function reconcileImportedRentals(products) {
+  const normalize = (value = '') => String(value).normalize('NFKC')
+    .toLocaleLowerCase('ru').replace(/[–—]/g, '-').replace(/\s+/g, '').trim();
+  const sameModel = (left, right) =>
+    normalize(left.name) === normalize(right.name) &&
+    normalize(left.height) === normalize(right.height) &&
+    ['chest', 'waist', 'hips', 'girth'].every((key) =>
+      normalize(left.specs?.[key]) === normalize(right.specs?.[key]));
+  return products.filter((product) => {
+    if (product.sourceImport !== 'owner-screenshots-2026-09-28' ||
+        Number(product.id) >= 0 || product.condition !== 'rental') return true;
+    const matches = products.filter((candidate) =>
+      Number(candidate.id) > 0 && candidate.condition === 'rental' &&
+      candidate.removed !== true && sameModel(product, candidate));
+    return matches.length !== 1;
+  });
 }
