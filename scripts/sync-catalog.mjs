@@ -1,4 +1,5 @@
 import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged } from "./catalog-offer.mjs";
+import { confirmedRentalRemovalIds } from "./rental-history.mjs";
 import { createHash } from "node:crypto";
 import { access, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -251,6 +252,8 @@ async function main() {
       .filter((status) => status?.removed === true)
       .map((status) => Number(status.id)),
   );
+  const rentalHistory = JSON.parse(await readFile(path.join(rootDir, 'data', 'telegram-rental-history.json'), 'utf8'));
+  for (const id of confirmedRentalRemovalIds(rentalHistory)) removedIds.add(id);
   for (const product of telegram.products) {
     const id = Number(product?.id);
     if (product?.removed === true && Number.isFinite(id)) removedIds.add(id);

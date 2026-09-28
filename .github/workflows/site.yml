@@ -8,6 +8,8 @@ on:
       - "site/**"
       - "scripts/sync-catalog.mjs"
       - "scripts/catalog-offer.mjs"
+      - "scripts/rental-history.mjs"
+      - "data/telegram-rental-history.json"
       - ".github/workflows/site.yml"
       - ".github/workflows/catalog-sync-branch.yml"
   schedule:
@@ -36,7 +38,7 @@ jobs:
           node-version: "22"
 
       - name: Validate rental synchronization rules
-        run: node --test scripts/catalog-offer.test.mjs
+        run: node --test scripts/catalog-offer.test.mjs scripts/rental-history.test.mjs
 
       - name: Sync Telegram catalogue
         env:

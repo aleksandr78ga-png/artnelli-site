@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "channel": "nelli_leotards",
+  "topicId": 1865,
+  "source": "authenticated-telegram-topic",
+  "checkedAt": "2026-09-28T08:58:29.839Z",
+  "records": [
+    {
+      "id": 2827,
+      "name": "Peach",
+      "lastSeenAt": "2026-09-28T08:58:29.839Z",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2840,
+      "name": "Yellow gold",
+      "lastSeenAt": "2026-09-28T08:58:29.839Z",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4206,
+      "name": "Ярко-красный",
+      "lastSeenAt": "2026-09-28T08:58:29.839Z",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5726,
+      "name": "Танец огня",
+      "lastSeenAt": "2026-09-28T08:58:29.839Z",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    }
+  ]
+}
