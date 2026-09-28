@@ -46,6 +46,16 @@ jobs:
           mkdir -p backup/api backup/assets/catalog
           cp published/api/live-data.js backup/api/live-data.js
           rsync --archive --delete published/assets/catalog/ backup/assets/catalog/
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const source = fs.readFileSync('backup/catalog-data.js', 'utf8');
+          const products = JSON.parse(source.slice(source.indexOf('=') + 1).trim().replace(/;$/, ''));
+          const state = {schemaVersion:1, source:'https://t.me/nelli_leotards', mirroredFrom:'gh-pages', productCount:products.length,
+            newCount:products.filter(p=>p.condition==='new').length,
+            usedCount:products.filter(p=>p.condition==='used').length,
+            rentalCount:products.filter(p=>p.condition==='rental').length};
+          fs.writeFileSync('backup/catalog-sync-state.json', JSON.stringify(state, null, 2) + '\n');
+          JS
       - name: Install dependencies
         working-directory: backup
         run: npm ci
@@ -61,7 +71,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- catalog-data.js api/live-data.js assets/catalog
+          git add -A -- catalog-data.js catalog-sync-state.json api/live-data.js assets/catalog
           if git diff --cached --quiet; then
             echo "Catalogue backup is current."
           else

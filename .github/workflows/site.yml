@@ -9,6 +9,7 @@ on:
       - "scripts/sync-catalog.mjs"
       - "scripts/catalog-offer.mjs"
       - ".github/workflows/site.yml"
+      - ".github/workflows/catalog-sync-branch.yml"
   schedule:
     - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
