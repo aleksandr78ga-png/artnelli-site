@@ -91,8 +91,8 @@ if (removedLocal > removalLimit) {
   throw new Error(`Защитная остановка: найдено ${removedLocal} массовых удалений`);
 }
 if (new Set(ids).size !== ids.length) throw new Error("Обнаружены дубли ID");
-if (products.some((product) => !["new", "used"].includes(product.condition))) {
-  throw new Error("Есть карточки без раздела новые/б/у");
+if (products.some((product) => !["new", "used", "rental"].includes(product.condition))) {
+  throw new Error("Есть карточки с неизвестной категорией (новые/б/у/аренда)");
 }
 
 console.log(
