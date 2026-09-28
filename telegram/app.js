@@ -1,8 +1,7 @@
 (() => {
   "use strict";
 
-  const MAX_CHANNEL = "https://max.ru/channel_artnelli";
-  const MAX_PERSONAL = "https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU";
+  const TELEGRAM_PERSONAL = "https://t.me/nelli_leotard";
   const TELEGRAM_CHANNEL = "https://t.me/nelli_leotards";
   const PAGE_SIZE = 18;
 
@@ -16,7 +15,15 @@
     activeProduct: null,
   };
 
-  const app = window.WebApp || null;
+  const app = window.Telegram?.WebApp || null;
+  const { t, translatePage } = window.NELLI_I18N;
+  let language = "ru";
+  try { language = localStorage.getItem("nelliTelegramLanguage") || "ru"; } catch (_) {}
+  const queryLanguage = new URLSearchParams(location.search).get("lang");
+  if (queryLanguage === "en" || queryLanguage === "ru") language = queryLanguage;
+  window.NELLI_I18N.language = language === "en" ? "en" : "ru";
+  const locale = () => window.NELLI_I18N.language === "en" ? "en-GB" : "ru-RU";
+  const productName = (product) => window.NELLI_I18N.language === "en" ? product.nameEn || product.name : product.name;
   const grid = document.getElementById("catalog-grid");
   const count = document.getElementById("catalog-count");
   const empty = document.getElementById("catalog-empty");
@@ -34,16 +41,16 @@
   const orderStatus = document.getElementById("order-status");
 
   const formatPrice = (prices = []) => {
-    if (!prices.length) return "Цена по запросу";
+    if (!prices.length) return t("Цена по запросу");
     const values = prices.filter(Number.isFinite).sort((a, b) => a - b);
-    if (!values.length) return "Цена по запросу";
-    const money = (value) => new Intl.NumberFormat("ru-RU").format(value) + " ₽";
+    if (!values.length) return t("Цена по запросу");
+    const money = (value) => new Intl.NumberFormat(locale()).format(value) + " ₽";
     return values.length > 1 ? `${money(values[0])}–${money(values.at(-1))}` : money(values[0]);
   };
 
   function offerPrice(product) {
     const amount = formatPrice(product.prices);
-    return product.condition === "rental" ? "Аренда" + ": " + amount : amount;
+    return product.condition === "rental" ? t("Аренда") + ": " + amount : amount;
   }
 
   const normalize = (value = "") => String(value)
@@ -109,12 +116,13 @@
   }
 
   function modelWord(value) {
+    if (window.NELLI_I18N.language === "en") return value === 1 ? "model" : "models";
     const mod100 = value % 100;
     const mod10 = value % 10;
-    if (mod100 >= 11 && mod100 <= 14) return "моделей";
-    if (mod10 === 1) return "модель";
-    if (mod10 >= 2 && mod10 <= 4) return "модели";
-    return "моделей";
+    if (mod100 >= 11 && mod100 <= 14) return t("моделей");
+    if (mod10 === 1) return t("модель");
+    if (mod10 >= 2 && mod10 <= 4) return t("модели");
+    return t("моделей");
   }
 
   function updateConditionCounts() {
@@ -142,7 +150,7 @@
 
   function renderCatalog(reset = false) {
     if (reset) state.visible = PAGE_SIZE;
-    catalogTitle.textContent = state.condition === "rental" ? "Аренда" : state.condition === "used" ? "Костюмы б/у" : "Новые модели";
+    catalogTitle.textContent = state.condition === "rental" ? t("Аренда") : state.condition === "used" ? t("Костюмы б/у") : t("Новые модели");
     state.filtered = state.products.filter(productMatches);
     const visible = state.filtered.slice(0, state.visible);
     grid.replaceChildren();
@@ -152,45 +160,45 @@
       const button = fragment.querySelector(".product-open");
       const image = fragment.querySelector(".product-image");
       image.src = "../" + product.photos[0].replace(/^\/+/, "");
-      image.alt = `${product.name} — ${product.type === "dress" ? "платье" : product.type === "jumpsuit" ? "комбинезон" : "купальник"} Art Nelli`;
-      fragment.querySelector(".product-name").textContent = product.name;
-      fragment.querySelector(".product-height").textContent = product.height ? `Рост ${product.height} см` : "Параметры в карточке";
+      image.alt = `${productName(product)} — ${product.type === "dress" ? t("платье") : product.type === "jumpsuit" ? t("комбинезон") : t("купальник")} Art Nelli`;
+      fragment.querySelector(".product-name").textContent = productName(product);
+      fragment.querySelector(".product-height").textContent = product.height ? `${t("Рост")} ${product.height} ${t("см")}` : t("Параметры в карточке");
       fragment.querySelector(".product-price").textContent = offerPrice(product);
       const productState = fragment.querySelector(".product-state");
       productState.textContent = product.sold
-        ? "Продано"
+        ? t("Продано")
         : product.condition === "rental"
-          ? "Аренда · наличие уточнить"
+          ? t("Аренда · наличие уточнить")
         : product.condition === "used"
-          ? "Б/у · наличие уточнить"
-          : "Новая · наличие уточнить";
+          ? t("Б/у · наличие уточнить")
+          : t("Новая · наличие уточнить");
       productState.classList.toggle("sold", Boolean(product.sold));
-      button.setAttribute("aria-label", `Открыть модель ${product.name}`);
+      button.setAttribute("aria-label", `${t("Открыть модель")} ${productName(product)}`);
       button.addEventListener("click", () => openProduct(product));
       grid.append(fragment);
     }
 
-    count.textContent = state.filtered.length ? `${visible.length} из ${state.filtered.length}` : "0 моделей";
+    count.textContent = state.filtered.length ? `${visible.length} ${t("из")} ${state.filtered.length}` : `0 ${modelWord(0)}`;
     empty.hidden = state.filtered.length !== 0;
     showMore.hidden = visible.length >= state.filtered.length;
   }
 
   function productUrl(product) {
-    const url = new URL("/max/", window.location.origin);
+    const url = new URL("https://artnelli.com/telegram/");
     url.searchParams.set("product", String(product.id));
     return url.href;
   }
 
   function productSpecs(product) {
     const labels = [
-      ["chest", "ОГ"],
-      ["waist", "ОТ"],
-      ["hips", "ОБ"],
-      ["girth", "Дуга"],
+      ["chest", t("ОГ")],
+      ["waist", t("ОТ")],
+      ["hips", t("ОБ")],
+      ["girth", t("Дуга")],
     ];
     return labels
       .filter(([key]) => product.specs?.[key])
-      .map(([key, label]) => `<span>${label} ${escapeHtml(product.specs[key])} см</span>`)
+      .map(([key, label]) => `<span>${t(label)} ${escapeHtml(product.specs[key])} ${t("см")}</span>`)
       .join("");
   }
 
@@ -206,7 +214,7 @@
 
   function haptic() {
     try {
-      app?.HapticFeedback?.impactOccurred?.("light", false);
+      app?.HapticFeedback?.impactOccurred?.("light");
     } catch (_) {
       // Haptic feedback is optional.
     }
@@ -215,25 +223,25 @@
   function openProduct(product) {
     state.activeProduct = product;
     const gallery = product.photos
-      .map((photo, index) => `<img src="../${escapeHtml(photo.replace(/^\/+/, ""))}" alt="${escapeHtml(product.name)} — фото ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
+      .map((photo, index) => `<img src="../${escapeHtml(photo.replace(/^\/+/, ""))}" alt="${escapeHtml(productName(product))} — ${t("фото")} ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
       .join("");
-    const description = product.description || "Описание модели уточняется.";
+    const description = (window.NELLI_I18N.language === "en" ? product.descriptionEn || product.description : product.description) || t("Описание модели уточняется.");
     productContent.innerHTML = `
       <div class="product-gallery">${gallery}</div>
       <section class="product-detail">
-        <p class="eyebrow">${product.condition === "rental" ? "Аренда" : product.condition === "used" ? "Работа мастерской · б/у" : "Авторская модель Art Nelli"}</p>
-        <h2>${escapeHtml(product.name)}</h2>
+        <p class="eyebrow">${product.condition === "rental" ? t("Аренда") : product.condition === "used" ? t("Работа мастерской · б/у") : t("Авторская модель Art Nelli")}</p>
+        <h2>${escapeHtml(productName(product))}</h2>
         <div class="detail-meta">
-          ${product.height ? `<span>Рост ${escapeHtml(product.height)} см</span>` : ""}
+          ${product.height ? `<span>${t("Рост")} ${escapeHtml(product.height)} ${t("см")}</span>` : ""}
           ${productSpecs(product)}
           ${product.sold ? "<span>Продано</span>" : ""}
         </div>
         <p class="detail-price">${escapeHtml(offerPrice(product))}</p>
         <p class="detail-description">${escapeHtml(description)}</p>
-        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель будут скопированы для сообщения Нелли.</p>
+        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель появятся в сообщении Нелли. Нажмите «Отправить» в Telegram.</p>
         <div class="detail-actions">
-          <button class="primary-button" type="button" data-order>${product.sold ? "Подобрать похожую" : product.condition === "rental" ? "Хочу взять в аренду" : "Хочу эту модель"}</button>
-          <button class="secondary-button" type="button" data-share>Поделиться в MAX</button>
+          <button class="primary-button" type="button" data-order>${product.sold ? t("Подобрать похожую") : product.condition === "rental" ? t("Хочу взять в аренду") : t("Хочу эту модель")}</button>
+          <button class="secondary-button" type="button" data-share>Поделиться в Telegram</button>
         </div>
         <button class="detail-source" type="button" data-source>Оригинал в Telegram ↗</button>
       </section>`;
@@ -241,6 +249,7 @@
     productContent.querySelector("[data-order]").addEventListener("click", () => openProductChat(product));
     productContent.querySelector("[data-share]").addEventListener("click", () => shareProduct(product));
     productContent.querySelector("[data-source]").addEventListener("click", () => openExternal(product.telegram || TELEGRAM_CHANNEL));
+    translatePage(productContent);
     productDialog.showModal();
     document.body.classList.add("sheet-open");
     app?.BackButton?.show?.();
@@ -267,8 +276,8 @@
       radio.value = value;
       radio.required = index === 0;
       card.className = "order-month-card";
-      title.textContent = new Intl.DateTimeFormat("ru-RU", { month: "long", year: "numeric" }).format(date);
-      note.textContent = "Доступность подтверждает Нелли";
+      title.textContent = new Intl.DateTimeFormat(locale(), { month: "long", year: "numeric" }).format(date);
+      note.textContent = t("Доступность подтверждает Нелли");
       card.append(title, note);
       label.append(radio, card);
       orderMonths.append(label);
@@ -307,81 +316,53 @@
     }
   }
 
+  function openTelegram(url) {
+    haptic();
+    if (app?.initData && app?.openTelegramLink) app.openTelegramLink(url);
+    else window.location.assign(url);
+  }
+
   function openExternal(url) {
-    haptic();
-    if (app?.openLink) app.openLink(url);
+    if (new URL(url).hostname === "t.me") return openTelegram(url);
+    if (app?.initData && app?.openLink) app.openLink(url);
     else window.open(url, "_blank", "noopener,noreferrer");
   }
 
-  function openMax(url) {
-    haptic();
-    if (app?.openMaxLink) app.openMaxLink(url);
-    else window.open(url, "_blank", "noopener,noreferrer");
-  }
-
-  function copyTextForChat(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "fixed";
-    textarea.style.left = "-9999px";
-    textarea.style.top = "0";
-    document.body.append(textarea);
-    textarea.focus();
-    textarea.select();
-    textarea.setSelectionRange(0, text.length);
-    let copied = false;
-    try {
-      copied = document.execCommand("copy");
-    } catch (_) {
-      // Use the asynchronous Clipboard API below when legacy copying is unavailable.
-    }
-    textarea.remove();
-    if (!copied && navigator.clipboard?.writeText) {
-      navigator.clipboard.writeText(text).catch(() => {});
-    }
+  function openPersonalChat(text) {
+    const url = new URL(TELEGRAM_PERSONAL);
+    url.searchParams.set("text", text);
+    openTelegram(url.href);
   }
 
   function productInquiryMessage(product) {
     return [
-      product.sold ? "Здравствуйте! Хочу подобрать похожую модель." : product.condition === "rental" ? "Здравствуйте! Хочу взять эту модель в аренду." : "Здравствуйте! Хочу эту модель.",
-      `Модель: «${product.name}»`,
-      `Рост: ${product.height || "уточнить"} см`,
-      `Карточка модели: ${productUrl(product)}`,
+      product.sold ? t("Здравствуйте! Хочу подобрать похожую модель.") : product.condition === "rental" ? t("Здравствуйте! Хочу взять эту модель в аренду.") : t("Здравствуйте! Хочу эту модель."),
+      `${t("Модель")}: «${productName(product)}»`,
+      `${t("Рост")}: ${product.height || t("уточнить")} ${t("см")}`,
+      `ID: ${product.id}`,
+      `${t("Карточка модели")}: ${productUrl(product)}`,
     ].join("\n");
   }
 
   function openProductChat(product) {
-    copyTextForChat(productInquiryMessage(product));
-    productDialog.close();
-    openMax(MAX_PERSONAL);
-  }
-
-  function shareInMax(text, link = "") {
-    haptic();
-    if (app?.shareMaxContent) {
-      app.shareMaxContent({ text, ...(link ? { link } : {}) });
-      return;
-    }
-    const payload = encodeURIComponent([text, link].filter(Boolean).join("\n"));
-    window.open(`https://max.ru/:share?text=${payload}`, "_blank", "noopener,noreferrer");
+    openPersonalChat(productInquiryMessage(product));
   }
 
   function shareProduct(product) {
-    shareInMax(
-      `${product.name} — ${offerPrice(product)}. Рост ${product.height || "уточнить"} см. Art Nelli.`,
-      productUrl(product),
-    );
+    const url = new URL("https://t.me/share/url");
+    url.searchParams.set("url", productUrl(product));
+    url.searchParams.set("text", `${productName(product)} — ${offerPrice(product)}. Art Nelli.`);
+    openTelegram(url.href);
   }
 
   function bookingMessage(data) {
     const [year, month] = String(data.get("month")).split("-").map(Number);
-    const monthText = new Intl.DateTimeFormat("ru-RU", { month: "long", year: "numeric" })
+    const monthText = new Intl.DateTimeFormat(locale(), { month: "long", year: "numeric" })
       .format(new Date(year, month - 1, 1));
     return [
-      `Здравствуйте! Хочу записаться на индивидуальный пошив — ${monthText}.`,
-      "Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.",
-      "Пожалуйста, подтвердите доступность слота.",
+      `${t("Здравствуйте! Хочу записаться на индивидуальный пошив")} — ${monthText}.`,
+      t("Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается."),
+      t("Пожалуйста, подтвердите доступность слота."),
     ].join("\n");
   }
 
@@ -389,25 +370,18 @@
     event.preventDefault();
     if (!orderForm.reportValidity()) return;
     const data = new FormData(orderForm);
-    copyTextForChat(bookingMessage(data));
-    orderDialog.close();
-    openMax(MAX_PERSONAL);
+    openPersonalChat(bookingMessage(data));
   }
 
   function setViewport() {
-    if (!app?.getViewportSize) return;
-    app.getViewportSize().then((size) => {
-      const height = Number.parseFloat(size?.height);
-      if (Number.isFinite(height) && height > 300) {
-        document.documentElement.style.setProperty("--viewport-height", `${height}px`);
-      }
-    }).catch(() => {});
+    const height = Number(app?.viewportStableHeight);
+    if (height > 300) document.documentElement.style.setProperty("--viewport-height", `${height}px`);
   }
 
   function openStartProduct() {
     const queryId = new URLSearchParams(window.location.search).get("product");
-    const startParam = app?.initDataUnsafe?.start_param || "";
-    const startId = /^product_(\d+)$/.exec(startParam)?.[1];
+    const startParam = app?.initDataUnsafe?.start_param || new URLSearchParams(location.search).get("tgWebAppStartParam") || "";
+    const startId = /^product_(-?\d+)$/.exec(startParam)?.[1];
     const productId = Number(queryId || startId);
     if (!Number.isFinite(productId)) return;
     const product = state.products.find((item) => Number(item.id) === productId);
@@ -441,8 +415,8 @@
     });
   });
 
-  document.querySelectorAll("[data-max-link]").forEach((button) => {
-    button.addEventListener("click", () => openMax(button.dataset.maxLink || MAX_CHANNEL));
+  document.querySelectorAll("[data-telegram-link]").forEach((button) => {
+    button.addEventListener("click", () => openTelegram(button.dataset.telegramLink || TELEGRAM_CHANNEL));
   });
 
   document.querySelectorAll("[data-external-link]").forEach((button) => {
@@ -459,6 +433,26 @@
   orderDialog.addEventListener("close", onSheetClose);
   app?.BackButton?.onClick?.(closeTopSheet);
 
+  document.getElementById("language-toggle").addEventListener("click", () => {
+    window.NELLI_I18N.language = window.NELLI_I18N.language === "ru" ? "en" : "ru";
+    try { localStorage.setItem("nelliTelegramLanguage", window.NELLI_I18N.language); } catch (_) {}
+    applyLanguage();
+    updateConditionCounts();
+    renderCatalog();
+    if (orderDialog.open) {
+      const selected = orderForm.querySelector("[name=month]:checked")?.value;
+      renderOrderMonths();
+      for (const input of orderForm.querySelectorAll("[name=month]")) input.checked = input.value === selected;
+    }
+  });
+  function applyLanguage() {
+    document.documentElement.lang = window.NELLI_I18N.language;
+    translatePage(document.body);
+    document.getElementById("language-toggle").textContent = window.NELLI_I18N.language === "ru" ? "EN" : "RU";
+  }
+  try { app?.ready?.(); app?.expand?.(); } catch (_) {}
+  app?.onEvent?.("viewportChanged", setViewport);
+  applyLanguage();
   mergeProducts();
   renderCatalog();
   setViewport();

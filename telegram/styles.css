@@ -263,4 +263,8 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+/* Telegram safe areas and compact language control. */
+:root{--safe-top:max(12px,env(safe-area-inset-top),var(--tg-content-safe-area-inset-top,0px));--safe-bottom:max(18px,env(safe-area-inset-bottom),var(--tg-content-safe-area-inset-bottom,0px))}
+.app-header{gap:8px;flex-wrap:wrap}.app-header .brand{margin-right:auto}#language-toggle{padding-inline:10px;flex-shrink:0}
+
 @media(max-width:400px){.condition-tab{padding:12px 8px}.condition-tab span{font-size:1.4rem}}

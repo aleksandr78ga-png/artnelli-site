@@ -1,0 +1,4 @@
+Contact: mailto:art.nelli81@gmail.com
+Expires: 2027-07-23T00:00:00Z
+Canonical: https://artnelli.com/.well-known/security.txt
+Preferred-Languages: ru, en

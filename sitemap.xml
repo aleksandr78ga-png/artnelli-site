@@ -3,9 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://artnelli.com/</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-20</lastmod>
     <image:image>
       <image:loc>https://artnelli.com/assets/site/hero.jpg</image:loc>
       <image:title>Купальники для художественной гимнастики Leotards by Nelli</image:title>
@@ -13,9 +11,7 @@
   </url>
   <url>
     <loc>https://artnelli.com/poshiv-kupalnikov-dlya-hudozhestvennoy-gimnastiki/</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-20</lastmod>
     <image:image>
       <image:loc>https://artnelli.com/assets/portfolio/portfolio-02.jpg</image:loc>
       <image:title>Купальник для художественной гимнастики на заказ</image:title>
@@ -23,9 +19,7 @@
   </url>
   <url>
     <loc>https://artnelli.com/kupalniki-dlya-hudozhestvennoy-gimnastiki-v-nalichii/</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-20</lastmod>
     <image:image>
       <image:loc>https://artnelli.com/assets/site/hero.jpg</image:loc>
       <image:title>Купальники для художественной гимнастики в наличии</image:title>
@@ -33,9 +27,7 @@
   </url>
   <url>
     <loc>https://artnelli.com/kak-snyat-merki-dlya-kupalnika/</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-20</lastmod>
     <image:image>
       <image:loc>https://artnelli.com/assets/guides/measurements-preview.webp</image:loc>
       <image:title>Как снять мерки для гимнастического купальника</image:title>
