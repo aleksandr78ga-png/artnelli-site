@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a090b">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Каталог Art Nelli в Telegram: авторские купальники и костюмы для художественной гимнастики.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Art Nelli — каталог в Telegram">
+  <meta property="og:description" content="Авторские гимнастические купальники, готовые модели и заявка на индивидуальный пошив.">
+  <meta property="og:url" content="https://artnelli.com/telegram/">
+  <meta property="og:image" content="https://artnelli.com/max/og-site.png">
+  <meta property="og:image:alt" content="Art Nelli — каталог в Telegram">
+  <title>Art Nelli — каталог в Telegram</title>
+  <link rel="preconnect" href="https://telegram.org">
+  <link rel="stylesheet" href="./styles.css?v=20260928-1">
+  <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
+  <script src="../catalog-data.js" defer></script>
+  <script src="/api/live-data.js" defer></script>
+  <script src="./i18n.js?v=20260928-1" defer></script>
+  <script src="./app.js?v=20260928-1" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="#top" aria-label="Art Nelli — к началу">
+      <span class="brand-mark">AN</span>
+      <span><strong>ART NELLI</strong><small>авторская мастерская</small></span>
+    </a>
+    <button id="language-toggle" class="channel-button" type="button" aria-label="Switch language">EN</button>
+    <button class="channel-button" type="button" data-telegram-link="https://t.me/nelli_leotards">Telegram-канал</button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="../assets/site/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Арт-мастерская · ручная работа · Тюмень</p>
+        <h1 id="hero-title">Купальник как <em>искусство.</em></h1>
+        <p>Купальники-кутюр для художественной гимнастики — создаются под одну гимнастку, одну программу, одно незабываемое выступление.</p>
+        <a class="primary-button" href="#catalog">Смотреть каталог</a>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Преимущества">
+      <span>Авторский дизайн</span>
+      <span>Ручная работа</span>
+      <span>Доставка по миру</span>
+    </section>
+
+    <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Из Telegram‑каталога Art Nelli</p>
+          <h2 id="catalog-title">Новые модели</h2>
+        </div>
+        <p id="catalog-count" class="catalog-count" aria-live="polite"></p>
+      </div>
+
+      <div class="condition-tabs" role="group" aria-label="Состояние моделей">
+        <button class="condition-tab active" type="button" data-condition="new" aria-pressed="true">
+          <span>Новые</span>
+          <small id="new-models-count">Модели из мастерской</small>
+        </button>
+        <button class="condition-tab" type="button" data-condition="used" aria-pressed="false">
+          <span>Б/у</span>
+          <small id="used-models-count">Костюмы в идеальном состоянии</small>
+        </button>
+      </div>
+
+      <div class="catalog-tools">
+        <label class="search-box">
+          <span class="sr-only">Поиск по каталогу</span>
+          <input id="catalog-search" type="search" placeholder="Название или рост" autocomplete="off">
+        </label>
+        <div class="filter-row" role="group" aria-label="Тип изделия">
+          <button class="filter-chip active" type="button" data-type="all">Все</button>
+          <button class="filter-chip" type="button" data-type="leotard">Купальники</button>
+          <button class="filter-chip" type="button" data-type="dress">Платья</button>
+          <button class="filter-chip" type="button" data-type="jumpsuit">Комбинезоны</button>
+        </div>
+      </div>
+
+      <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
+      <button id="show-more" class="secondary-button show-more" type="button">Показать ещё</button>
+      <p id="catalog-empty" class="empty-state" hidden>По вашему запросу моделей не найдено.</p>
+    </section>
+
+    <section class="atelier-card" aria-labelledby="atelier-title">
+      <div>
+        <p class="eyebrow">Индивидуальный пошив</p>
+        <h2 id="atelier-title">Создадим костюм под вашу музыку и образ</h2>
+        <p>Выберите желаемый месяц или слот. Нелли лично подтвердит возможность заказа в личной переписке.</p>
+      </div>
+      <button id="custom-order" class="primary-button" type="button">Хочу записаться</button>
+    </section>
+
+    <section class="how-it-works" aria-labelledby="process-title">
+      <p class="eyebrow">Как это работает</p>
+      <h2 id="process-title">От идеи до выхода на ковёр</h2>
+      <ol>
+        <li><span>01</span><div><strong>Выбор</strong><p>Выберите модель или желаемый месяц/слот и перейдите в личную переписку с Нелли.</p></div></li>
+        <li><span>02</span><div><strong>Подтверждение</strong><p>Мастерская уточняет наличие, цену или свободное место на пошив.</p></div></li>
+        <li><span>03</span><div><strong>Создание</strong><p>Эскиз, мерки, ручная работа и бережная доставка.</p></div></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <strong>ART NELLI</strong>
+    <p>Нелли Гаркуша · Тюмень, Россия</p>
+    <nav aria-label="Служебные ссылки">
+      <a href="./privacy.html">Конфиденциальность</a>
+      <a href="./terms.html">Условия использования</a>
+      <button type="button" data-external-link="https://artnelli.com/">Полный сайт</button>
+    </nav>
+    <p class="source-note">Источник карточек — <button type="button" data-external-link="https://t.me/nelli_leotards">Telegram‑канал Art Nelli</button>.</p>
+  </footer>
+
+  <dialog id="product-dialog" class="sheet product-sheet">
+    <form method="dialog" class="sheet-close-row">
+      <button class="icon-button" aria-label="Закрыть карточку">×</button>
+    </form>
+    <div id="product-content"></div>
+  </dialog>
+
+  <dialog id="order-dialog" class="sheet order-sheet">
+    <form method="dialog" class="sheet-close-row">
+      <button class="icon-button" aria-label="Закрыть заявку">×</button>
+    </form>
+    <form id="order-form" class="order-form">
+      <div>
+        <p class="eyebrow">Личная переписка с Нелли</p>
+        <h2>Индивидуальный пошив</h2>
+        <p class="order-product-note">Выберите желаемый месяц или слот. Нелли лично подтвердит доступность в личном Telegram.</p>
+      </div>
+      <fieldset class="order-slot-fieldset">
+        <legend>Желаемый месяц / слот</legend>
+        <div id="order-months" class="order-months"></div>
+        <p class="order-slot-note">Выбор предварительный: свободное время подтверждает Нелли.</p>
+      </fieldset>
+      <div class="sketch-fee">
+        <strong>15 000 ₽ — оплата работы над эскизами</strong>
+        <p>Если заказ продолжается, сумма полностью входит в итоговую стоимость изделия. Если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.</p>
+      </div>
+      <label class="consent-row sketch-terms-row">
+        <input name="sketchTerms" type="checkbox" required>
+        <span>Я ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами.</span>
+      </label>
+      <button class="primary-button" type="submit">Хочу записаться</button>
+      <p id="order-status" class="order-status" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <button class="product-open" type="button">
+        <span class="product-image-wrap">
+          <img class="product-image" alt="" loading="lazy">
+          <span class="product-state"></span>
+        </span>
+        <span class="product-copy">
+          <strong class="product-name"></strong>
+          <span class="product-height"></span>
+          <span class="product-price"></span>
+        </span>
+      </button>
+    </article>
+  </template>
+</body>
+</html>
