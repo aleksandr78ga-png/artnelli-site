@@ -1,3 +1,4 @@
+import { normalizeCatalogOffer } from "./catalog-offer.mjs";
 import { access, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
@@ -304,7 +305,7 @@ async function main() {
     else added += 1;
   }
 
-  const products = [...productById.values()].sort((left, right) => {
+  const products = [...productById.values()].map(normalizeCatalogOffer).sort((left, right) => {
     const dateOrder = String(left.date || "").localeCompare(String(right.date || ""));
     return dateOrder || Number(left.id) - Number(right.id);
   });

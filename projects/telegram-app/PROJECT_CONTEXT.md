@@ -13,3 +13,9 @@
 - No bot token in client code. The static catalogue needs no bot token; BotFather configuration is performed by its owner.
 - Main site and MAX app are independent and unchanged.
 - Verify actual iOS/Android in-app launch after the owner configures BotFather.
+
+## Rental category (28 September 2026)
+- Main site, MAX and Telegram expose Rental separately from New and Pre-owned.
+- Rental post 5726 (Танец огня) is 4,500 RUB; pre-owned sale post 5733 remains 39,000 RUB.
+- scripts/catalog-offer.mjs normalizes explicit rental headings after every catalogue sync, preserving prices and separate sale listings.
+- Rental inquiries and prices explicitly say rental.

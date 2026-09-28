@@ -580,7 +580,7 @@
     <div class="catalog-toolbar rev">
       <label class="catalog-search"><span>Поиск</span><input id="catalog-search" type="search" placeholder="Название, рост или описание" autocomplete="off"></label>
       <label><span>Тип</span><select id="catalog-type"><option value="all">Все товары</option><option value="leotard">Купальники</option><option value="dress">Платья</option><option value="jumpsuit">Комбинезоны</option></select></label>
-      <label><span>Состояние</span><select id="catalog-condition"><option value="all">Любое</option><option value="new">Новые</option><option value="used">Б/у</option></select></label>
+      <label><span>Категория</span><select id="catalog-condition"><option value="all">Любое</option><option value="new">Новые</option><option value="used">Б/у</option><option value="rental">Аренда</option></select></label>
       <label><span>Сортировка</span><select id="catalog-sort"><option value="newest">Сначала новые</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option></select></label>
     </div>
     <div class="catalog-summary"><span id="catalog-count">Загрузка каталога…</span><a href="https://t.me/nelli_leotards" target="_blank" rel="noopener">Источник: Telegram ↗</a></div>
@@ -806,7 +806,7 @@
     </div>
   </div>
 </dialog>
-<script src="catalog-data.js"></script><script src="/api/live-data.js" async onerror="window.NELLI_LIVE={}"></script><script>
+<script src="catalog-data.js?v=20260928-rental-1"></script><script src="/api/live-data.js" async onerror="window.NELLI_LIVE={}"></script><script>
 const i18n = {
   ru: {
     measure_eyebrow:'PDF-инструкции · пошагово', measure_h:'Как правильно снять мерки', measure_p:'Выберите инструкцию для девочки или мальчика. В PDF каждая мерка показана на схеме — точные размеры можно снять дома.', measure_girl:'Инструкция для девочки', measure_boy:'Инструкция для мальчика', measure_note:'PDF · откроется в новой вкладке',
@@ -914,13 +914,13 @@ const typeLabels = {
   ru:{leotard:'Купальник',dress:'Платье',jumpsuit:'Комбинезон'},
   en:{leotard:'Leotard',dress:'Dress',jumpsuit:'Jumpsuit'}
 };
-const conditionLabels = {ru:{new:'Новый',used:'Б/у'},en:{new:'New',used:'Pre-owned'}};
+const conditionLabels = {ru:{new:'Новый',used:'Б/у',rental:'Аренда'},en:{new:'New',used:'Pre-owned',rental:'Rental'}};
 const catalogUi = {
   ru:{
-    searchLabel:'Поиск',searchPlaceholder:'Название, рост или описание',typeLabel:'Тип',typeOptions:['Все товары','Купальники','Платья','Комбинезоны'],conditionLabel:'Состояние',conditionOptions:['Любое','Новые','Б/у'],sortLabel:'Сортировка',sortOptions:['Сначала новые','Сначала дешевле','Сначала дороже'],source:'Источник: Telegram ↗',more:'Показать ещё',details:'Подробнее',empty:'По вашему запросу ничего не найдено.',found:(shown,total)=>`Найдено: ${shown} из ${total}`,item:'Товар',priceRequest:'Цена по запросу',height:'Рост',noSpecs:'Параметры в описании',photo:n=>`${n} фото`,open:name=>`Открыть ${name}`,photoAlt:(name,n)=>`${name} — фото ${n}`,modalPhoto:n=>`Фото ${n}`,close:'Закрыть',previous:'Предыдущее фото',next:'Следующее фото',openTelegram:'Открыть в Telegram',ask:'Задать вопрос',similar:'Подобрать похожий',sold:'Продано',spec:{chest:'Обхват груди',waist:'Обхват талии',hips:'Обхват бёдер',girth:'Дуга тела'}
+    searchLabel:'Поиск',searchPlaceholder:'Название, рост или описание',typeLabel:'Тип',typeOptions:['Все товары','Купальники','Платья','Комбинезоны'],conditionLabel:'Категория',conditionOptions:['Любое','Новые','Б/у','Аренда'],sortLabel:'Сортировка',sortOptions:['Сначала новые','Сначала дешевле','Сначала дороже'],source:'Источник: Telegram ↗',more:'Показать ещё',details:'Подробнее',empty:'По вашему запросу ничего не найдено.',found:(shown,total)=>`Найдено: ${shown} из ${total}`,item:'Товар',priceRequest:'Цена по запросу',height:'Рост',noSpecs:'Параметры в описании',photo:n=>`${n} фото`,open:name=>`Открыть ${name}`,photoAlt:(name,n)=>`${name} — фото ${n}`,modalPhoto:n=>`Фото ${n}`,close:'Закрыть',previous:'Предыдущее фото',next:'Следующее фото',openTelegram:'Открыть в Telegram',ask:'Задать вопрос',similar:'Подобрать похожий',sold:'Продано',spec:{chest:'Обхват груди',waist:'Обхват талии',hips:'Обхват бёдер',girth:'Дуга тела'}
   },
   en:{
-    searchLabel:'Search',searchPlaceholder:'Name, height or description',typeLabel:'Type',typeOptions:['All items','Leotards','Dresses','Jumpsuits'],conditionLabel:'Condition',conditionOptions:['Any','New','Pre-owned'],sortLabel:'Sort by',sortOptions:['Newest first','Lowest price','Highest price'],source:'Source: Telegram ↗',more:'Show more',details:'View details',empty:'No products match your search.',found:(shown,total)=>`Found: ${shown} of ${total}`,item:'Item',priceRequest:'Price on request',height:'Height',noSpecs:'See product details',photo:n=>`${n} ${n===1?'photo':'photos'}`,open:name=>`Open ${name}`,photoAlt:(name,n)=>`${name} — photo ${n}`,modalPhoto:n=>`Photo ${n}`,close:'Close',previous:'Previous photo',next:'Next photo',openTelegram:'Open in Telegram',ask:'Ask a question',similar:'Ask about a similar item',sold:'Sold',spec:{chest:'Chest',waist:'Waist',hips:'Hips',girth:'Body girth'}
+    searchLabel:'Search',searchPlaceholder:'Name, height or description',typeLabel:'Type',typeOptions:['All items','Leotards','Dresses','Jumpsuits'],conditionLabel:'Category',conditionOptions:['Any','New','Pre-owned','Rental'],sortLabel:'Sort by',sortOptions:['Newest first','Lowest price','Highest price'],source:'Source: Telegram ↗',more:'Show more',details:'View details',empty:'No products match your search.',found:(shown,total)=>`Found: ${shown} of ${total}`,item:'Item',priceRequest:'Price on request',height:'Height',noSpecs:'See product details',photo:n=>`${n} ${n===1?'photo':'photos'}`,open:name=>`Open ${name}`,photoAlt:(name,n)=>`${name} — photo ${n}`,modalPhoto:n=>`Photo ${n}`,close:'Close',previous:'Previous photo',next:'Next photo',openTelegram:'Open in Telegram',ask:'Ask a question',similar:'Ask about a similar item',sold:'Sold',spec:{chest:'Chest',waist:'Waist',hips:'Hips',girth:'Body girth'}
   }
 };
 let catalogLimit = 24;
@@ -957,7 +957,8 @@ function money(product){
   if(!product.prices.length) return ui().priceRequest;
   const values=[...product.prices].sort((a,b)=>a-b);
   const format=n=>currentLang==='en' ? new Intl.NumberFormat('en-US').format(n)+' RUB' : new Intl.NumberFormat('ru-RU').format(n)+' ₽';
-  return values.length===1 ? format(values[0]) : format(values[0])+' — '+format(values[values.length-1]);
+  const amount=values.length===1 ? format(values[0]) : format(values[0])+' — '+format(values[values.length-1]);
+  return product.condition==='rental' ? (currentLang==='en'?'Rental: ':'Аренда: ')+amount : amount;
 }
 function specLine(product){
   const parts=[];
@@ -1074,6 +1075,7 @@ function productQuestionMessage(){
   const lines=currentLang==='en'?
     [productSold(activeProduct)?'Hello! I would like to ask about a similar model.':'Hello! I have a question about this model.',`Model: “${name}”`,activeProduct.height?`Height: ${activeProduct.height} cm`:'',source?`Model link: ${source}`:'']:
     [productSold(activeProduct)?'Здравствуйте! Хочу подобрать похожую модель.':'Здравствуйте! Хочу задать вопрос об этой модели.',`Модель: «${name}»`,activeProduct.height?`Рост: ${activeProduct.height} см`:'',source?`Ссылка на модель: ${source}`:''];
+  if(activeProduct.condition==='rental')lines.push(currentLang==='en'?'Inquiry about rental.':'Обращение по аренде.');
   return lines.filter(Boolean).join('\n');
 }
 function copyMessengerText(text){
