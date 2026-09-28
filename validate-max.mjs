@@ -37,7 +37,8 @@ const newProducts = products?.filter((product) => product.condition === "new") |
 const usedProducts = products?.filter((product) => product.condition === "used") || [];
 assert(newProducts.length > 0, "Catalog has no new products");
 assert(usedProducts.length > 0, "Catalog has no used products");
-assert(newProducts.length + usedProducts.length === products?.length, "Catalog has products without a condition");
+const rentalProducts = products?.filter((product) => product.condition === "rental") || [];
+assert(newProducts.length + usedProducts.length + rentalProducts.length === products?.length, "Catalog has products without a valid condition");
 
 for (const product of products || []) {
   assert(product.id, "A catalog product is missing an id");
