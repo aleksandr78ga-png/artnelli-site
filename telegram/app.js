@@ -30,6 +30,7 @@
   const catalogTitle = document.getElementById("catalog-title");
   const newModelsCount = document.getElementById("new-models-count");
   const usedModelsCount = document.getElementById("used-models-count");
+  const rentalModelsCount = document.getElementById("rental-models-count");
   const showMore = document.getElementById("show-more");
   const cardTemplate = document.getElementById("product-card-template");
   const productDialog = document.getElementById("product-dialog");
@@ -46,6 +47,11 @@
     const money = (value) => new Intl.NumberFormat(locale()).format(value) + " ₽";
     return values.length > 1 ? `${money(values[0])}–${money(values.at(-1))}` : money(values[0]);
   };
+
+  function offerPrice(product) {
+    const amount = formatPrice(product.prices);
+    return product.condition === "rental" ? t("Аренда") + ": " + amount : amount;
+  }
 
   const normalize = (value = "") => String(value)
     .toLocaleLowerCase("ru")
@@ -124,6 +130,8 @@
     const usedCount = state.products.filter((product) => product.condition === "used").length;
     newModelsCount.textContent = `${newCount} ${modelWord(newCount)}`;
     usedModelsCount.textContent = `${usedCount} ${modelWord(usedCount)}`;
+    const rentalCount = state.products.filter((product) => product.condition === "rental").length;
+    rentalModelsCount.textContent = `${rentalCount} ${modelWord(rentalCount)}`;
   }
 
   function productMatches(product) {
@@ -142,7 +150,7 @@
 
   function renderCatalog(reset = false) {
     if (reset) state.visible = PAGE_SIZE;
-    catalogTitle.textContent = state.condition === "used" ? t("Костюмы б/у") : t("Новые модели");
+    catalogTitle.textContent = state.condition === "rental" ? t("Аренда") : state.condition === "used" ? t("Костюмы б/у") : t("Новые модели");
     state.filtered = state.products.filter(productMatches);
     const visible = state.filtered.slice(0, state.visible);
     grid.replaceChildren();
@@ -155,10 +163,12 @@
       image.alt = `${productName(product)} — ${product.type === "dress" ? t("платье") : product.type === "jumpsuit" ? t("комбинезон") : t("купальник")} Art Nelli`;
       fragment.querySelector(".product-name").textContent = productName(product);
       fragment.querySelector(".product-height").textContent = product.height ? `${t("Рост")} ${product.height} ${t("см")}` : t("Параметры в карточке");
-      fragment.querySelector(".product-price").textContent = formatPrice(product.prices);
+      fragment.querySelector(".product-price").textContent = offerPrice(product);
       const productState = fragment.querySelector(".product-state");
       productState.textContent = product.sold
         ? t("Продано")
+        : product.condition === "rental"
+          ? t("Аренда · наличие уточнить")
         : product.condition === "used"
           ? t("Б/у · наличие уточнить")
           : t("Новая · наличие уточнить");
@@ -219,18 +229,18 @@
     productContent.innerHTML = `
       <div class="product-gallery">${gallery}</div>
       <section class="product-detail">
-        <p class="eyebrow">${product.condition === "used" ? t("Работа мастерской · б/у") : t("Авторская модель Art Nelli")}</p>
+        <p class="eyebrow">${product.condition === "rental" ? t("Аренда") : product.condition === "used" ? t("Работа мастерской · б/у") : t("Авторская модель Art Nelli")}</p>
         <h2>${escapeHtml(productName(product))}</h2>
         <div class="detail-meta">
           ${product.height ? `<span>${t("Рост")} ${escapeHtml(product.height)} ${t("см")}</span>` : ""}
           ${productSpecs(product)}
           ${product.sold ? "<span>Продано</span>" : ""}
         </div>
-        <p class="detail-price">${escapeHtml(formatPrice(product.prices))}</p>
+        <p class="detail-price">${escapeHtml(offerPrice(product))}</p>
         <p class="detail-description">${escapeHtml(description)}</p>
         <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель появятся в сообщении Нелли. Нажмите «Отправить» в Telegram.</p>
         <div class="detail-actions">
-          <button class="primary-button" type="button" data-order>${product.sold ? t("Подобрать похожую") : t("Хочу эту модель")}</button>
+          <button class="primary-button" type="button" data-order>${product.sold ? t("Подобрать похожую") : product.condition === "rental" ? t("Хочу взять в аренду") : t("Хочу эту модель")}</button>
           <button class="secondary-button" type="button" data-share>Поделиться в Telegram</button>
         </div>
         <button class="detail-source" type="button" data-source>Оригинал в Telegram ↗</button>
@@ -326,7 +336,7 @@
 
   function productInquiryMessage(product) {
     return [
-      t(product.sold ? t("Здравствуйте! Хочу подобрать похожую модель.") : t("Здравствуйте! Хочу эту модель.")),
+      product.sold ? t("Здравствуйте! Хочу подобрать похожую модель.") : product.condition === "rental" ? t("Здравствуйте! Хочу взять эту модель в аренду.") : t("Здравствуйте! Хочу эту модель."),
       `${t("Модель")}: «${productName(product)}»`,
       `${t("Рост")}: ${product.height || t("уточнить")} ${t("см")}`,
       `ID: ${product.id}`,
@@ -341,7 +351,7 @@
   function shareProduct(product) {
     const url = new URL("https://t.me/share/url");
     url.searchParams.set("url", productUrl(product));
-    url.searchParams.set("text", `${productName(product)} — ${formatPrice(product.prices)}. Art Nelli.`);
+    url.searchParams.set("text", `${productName(product)} — ${offerPrice(product)}. Art Nelli.`);
     openTelegram(url.href);
   }
 

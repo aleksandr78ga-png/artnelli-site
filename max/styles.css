@@ -123,7 +123,7 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
 .section-heading h2,.atelier-card h2,.how-it-works h2,.order-form h2{font-size:clamp(2rem,8.5vw,3.25rem)}
 .catalog-count{margin:0 0 3px;color:var(--muted);font-size:.72rem;white-space:nowrap}
 
-.condition-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.condition-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 18px}
 .condition-tab{
   position:relative;min-height:94px;padding:15px 16px;border:1px solid var(--line);border-radius:16px;
   background:linear-gradient(145deg,rgba(255,255,255,.025),transparent),var(--surface);
@@ -262,3 +262,5 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+@media(max-width:400px){.condition-tab{padding:12px 8px}.condition-tab span{font-size:1.4rem}}

@@ -14,11 +14,11 @@
   <meta property="og:image:alt" content="Art Nelli — каталог в MAX">
   <title>Art Nelli — каталог в MAX</title>
   <link rel="preconnect" href="https://st.max.ru">
-  <link rel="stylesheet" href="./styles.css?v=20260815-2">
+  <link rel="stylesheet" href="./styles.css?v=20260928-rental-1">
   <script src="https://st.max.ru/js/max-web-app.js" defer></script>
-  <script src="../catalog-data.js" defer></script>
+  <script src="../catalog-data.js?v=20260928-rental-1" defer></script>
   <script src="/api/live-data.js" defer></script>
-  <script src="./app.js?v=20260815-2" defer></script>
+  <script src="./app.js?v=20260928-rental-1" defer></script>
 </head>
 <body>
   <header class="app-header">
@@ -58,7 +58,7 @@
         <p id="catalog-count" class="catalog-count" aria-live="polite"></p>
       </div>
 
-      <div class="condition-tabs" role="group" aria-label="Состояние моделей">
+      <div class="condition-tabs" role="group" aria-label="Категория моделей">
         <button class="condition-tab active" type="button" data-condition="new" aria-pressed="true">
           <span>Новые</span>
           <small id="new-models-count">Модели из мастерской</small>
@@ -66,6 +66,10 @@
         <button class="condition-tab" type="button" data-condition="used" aria-pressed="false">
           <span>Б/у</span>
           <small id="used-models-count">Костюмы в идеальном состоянии</small>
+        </button>
+        <button class="condition-tab" type="button" data-condition="rental" aria-pressed="false">
+          <span>Аренда</span>
+          <small id="rental-models-count">Модели в аренду</small>
         </button>
       </div>
 

@@ -1,6 +1,12 @@
 (() => {
   "use strict";
   const translations = {
+  "Категория моделей": "Category",
+  "Аренда": "Rental",
+  "Модели в аренду": "Designs for rent",
+  "Аренда · наличие уточнить": "Rental · ask about availability",
+  "Здравствуйте! Хочу взять эту модель в аренду.": "Hello! I would like to rent this design.",
+  "Хочу взять в аренду": "I want to rent this design",
   "авторская мастерская": "designer atelier",
   "Art Nelli — к началу": "Art Nelli — back to top",
   "Telegram-канал": "Telegram channel",
@@ -101,7 +107,7 @@
     translatePage(root) {
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
       for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-        if (node.parentElement?.closest("script,style,#catalog-grid,#catalog-count,#new-models-count,#used-models-count,#catalog-title,#order-months,.product-name,.detail-description")) continue;
+        if (node.parentElement?.closest("script,style,#catalog-grid,#catalog-count,#new-models-count,#used-models-count,#rental-models-count,#catalog-title,#order-months,.product-name,.detail-description")) continue;
         const raw = originals.get(node) ?? node.textContent;
         originals.set(node, raw);
         node.textContent = raw.replace(raw.trim(), api.t(raw.trim()));
