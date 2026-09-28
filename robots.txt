@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /statistika/
 
 Sitemap: https://artnelli.com/sitemap.xml

@@ -2,8 +2,8 @@
   "use strict";
 
   const MAX_CHANNEL = "https://max.ru/channel_artnelli";
-  const MAX_PERSONAL = "https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU";
   const TELEGRAM_CHANNEL = "https://t.me/nelli_leotards";
+  const ORDER_API = location.hostname === "artnelli.com" ? "" : "/api/max-order";
   const PAGE_SIZE = 18;
 
   const state = {
@@ -23,15 +23,16 @@
   const catalogTitle = document.getElementById("catalog-title");
   const newModelsCount = document.getElementById("new-models-count");
   const usedModelsCount = document.getElementById("used-models-count");
-  const rentalModelsCount = document.getElementById("rental-models-count");
   const showMore = document.getElementById("show-more");
   const cardTemplate = document.getElementById("product-card-template");
   const productDialog = document.getElementById("product-dialog");
   const productContent = document.getElementById("product-content");
   const orderDialog = document.getElementById("order-dialog");
   const orderForm = document.getElementById("order-form");
-  const orderMonths = document.getElementById("order-months");
+  const orderTitle = document.getElementById("order-title");
+  const orderNote = document.getElementById("order-product-note");
   const orderStatus = document.getElementById("order-status");
+  const sendOrderButton = document.getElementById("send-order");
 
   const formatPrice = (prices = []) => {
     if (!prices.length) return "Цена по запросу";
@@ -40,11 +41,6 @@
     const money = (value) => new Intl.NumberFormat("ru-RU").format(value) + " ₽";
     return values.length > 1 ? `${money(values[0])}–${money(values.at(-1))}` : money(values[0]);
   };
-
-  function offerPrice(product) {
-    const amount = formatPrice(product.prices);
-    return product.condition === "rental" ? "Аренда" + ": " + amount : amount;
-  }
 
   const normalize = (value = "") => String(value)
     .toLocaleLowerCase("ru")
@@ -122,8 +118,6 @@
     const usedCount = state.products.filter((product) => product.condition === "used").length;
     newModelsCount.textContent = `${newCount} ${modelWord(newCount)}`;
     usedModelsCount.textContent = `${usedCount} ${modelWord(usedCount)}`;
-    const rentalCount = state.products.filter((product) => product.condition === "rental").length;
-    rentalModelsCount.textContent = `${rentalCount} ${modelWord(rentalCount)}`;
   }
 
   function productMatches(product) {
@@ -142,7 +136,7 @@
 
   function renderCatalog(reset = false) {
     if (reset) state.visible = PAGE_SIZE;
-    catalogTitle.textContent = state.condition === "rental" ? "Аренда" : state.condition === "used" ? "Костюмы б/у" : "Новые модели";
+    catalogTitle.textContent = state.condition === "used" ? "Костюмы б/у" : "Новые модели";
     state.filtered = state.products.filter(productMatches);
     const visible = state.filtered.slice(0, state.visible);
     grid.replaceChildren();
@@ -155,12 +149,10 @@
       image.alt = `${product.name} — ${product.type === "dress" ? "платье" : product.type === "jumpsuit" ? "комбинезон" : "купальник"} Art Nelli`;
       fragment.querySelector(".product-name").textContent = product.name;
       fragment.querySelector(".product-height").textContent = product.height ? `Рост ${product.height} см` : "Параметры в карточке";
-      fragment.querySelector(".product-price").textContent = offerPrice(product);
+      fragment.querySelector(".product-price").textContent = formatPrice(product.prices);
       const productState = fragment.querySelector(".product-state");
       productState.textContent = product.sold
         ? "Продано"
-        : product.condition === "rental"
-          ? "Аренда · наличие уточнить"
         : product.condition === "used"
           ? "Б/у · наличие уточнить"
           : "Новая · наличие уточнить";
@@ -221,24 +213,27 @@
     productContent.innerHTML = `
       <div class="product-gallery">${gallery}</div>
       <section class="product-detail">
-        <p class="eyebrow">${product.condition === "rental" ? "Аренда" : product.condition === "used" ? "Работа мастерской · б/у" : "Авторская модель Art Nelli"}</p>
+        <p class="eyebrow">${product.condition === "used" ? "Работа мастерской · б/у" : "Авторская модель Art Nelli"}</p>
         <h2>${escapeHtml(product.name)}</h2>
         <div class="detail-meta">
           ${product.height ? `<span>Рост ${escapeHtml(product.height)} см</span>` : ""}
           ${productSpecs(product)}
           ${product.sold ? "<span>Продано</span>" : ""}
         </div>
-        <p class="detail-price">${escapeHtml(offerPrice(product))}</p>
+        <p class="detail-price">${escapeHtml(formatPrice(product.prices))}</p>
         <p class="detail-description">${escapeHtml(description)}</p>
-        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель будут скопированы для сообщения Нелли.</p>
+        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа.</p>
         <div class="detail-actions">
-          <button class="primary-button" type="button" data-order>${product.sold ? "Подобрать похожую" : product.condition === "rental" ? "Хочу взять в аренду" : "Хочу эту модель"}</button>
+          <button class="primary-button" type="button" data-order>${product.sold ? "Подобрать похожую" : "Хочу эту модель"}</button>
           <button class="secondary-button" type="button" data-share>Поделиться в MAX</button>
         </div>
         <button class="detail-source" type="button" data-source>Оригинал в Telegram ↗</button>
       </section>`;
 
-    productContent.querySelector("[data-order]").addEventListener("click", () => openProductChat(product));
+    productContent.querySelector("[data-order]").addEventListener("click", () => {
+      productDialog.close();
+      openOrder(product);
+    });
     productContent.querySelector("[data-share]").addEventListener("click", () => shareProduct(product));
     productContent.querySelector("[data-source]").addEventListener("click", () => openExternal(product.telegram || TELEGRAM_CHANNEL));
     productDialog.showModal();
@@ -247,39 +242,18 @@
     haptic();
   }
 
-  function renderOrderMonths() {
-    const start = new Date();
-    start.setDate(1);
-    orderMonths.replaceChildren();
-
-    for (let index = 0; index < 6; index += 1) {
-      const date = new Date(start.getFullYear(), start.getMonth() + index, 1);
-      const value = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
-      const label = document.createElement("label");
-      const radio = document.createElement("input");
-      const card = document.createElement("span");
-      const title = document.createElement("strong");
-      const note = document.createElement("span");
-
-      label.className = "order-month";
-      radio.type = "radio";
-      radio.name = "month";
-      radio.value = value;
-      radio.required = index === 0;
-      card.className = "order-month-card";
-      title.textContent = new Intl.DateTimeFormat("ru-RU", { month: "long", year: "numeric" }).format(date);
-      note.textContent = "Доступность подтверждает Нелли";
-      card.append(title, note);
-      label.append(radio, card);
-      orderMonths.append(label);
-    }
-  }
-
-  function openOrder() {
+  function openOrder(product = null) {
     orderForm.reset();
     orderStatus.textContent = "";
     orderStatus.className = "order-status";
-    renderOrderMonths();
+    const customer = app?.initDataUnsafe?.user?.first_name || "";
+    orderForm.elements.customer.value = customer;
+    orderForm.elements.productId.value = product?.id || "";
+    orderForm.elements.productName.value = product?.name || "";
+    orderTitle.textContent = product ? product.name : "Индивидуальный пошив";
+    orderNote.textContent = product
+      ? (product.sold ? "Эта модель отмечена как проданная. Мастерская предложит похожий вариант." : "Нелли лично подтвердит цену и наличие этой модели.")
+      : "Расскажите об образе — Нелли лично подтвердит свободную дату и сроки.";
     orderDialog.showModal();
     document.body.classList.add("sheet-open");
     app?.BackButton?.show?.();
@@ -319,44 +293,6 @@
     else window.open(url, "_blank", "noopener,noreferrer");
   }
 
-  function copyTextForChat(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "fixed";
-    textarea.style.left = "-9999px";
-    textarea.style.top = "0";
-    document.body.append(textarea);
-    textarea.focus();
-    textarea.select();
-    textarea.setSelectionRange(0, text.length);
-    let copied = false;
-    try {
-      copied = document.execCommand("copy");
-    } catch (_) {
-      // Use the asynchronous Clipboard API below when legacy copying is unavailable.
-    }
-    textarea.remove();
-    if (!copied && navigator.clipboard?.writeText) {
-      navigator.clipboard.writeText(text).catch(() => {});
-    }
-  }
-
-  function productInquiryMessage(product) {
-    return [
-      product.sold ? "Здравствуйте! Хочу подобрать похожую модель." : product.condition === "rental" ? "Здравствуйте! Хочу взять эту модель в аренду." : "Здравствуйте! Хочу эту модель.",
-      `Модель: «${product.name}»`,
-      `Рост: ${product.height || "уточнить"} см`,
-      `Карточка модели: ${productUrl(product)}`,
-    ].join("\n");
-  }
-
-  function openProductChat(product) {
-    copyTextForChat(productInquiryMessage(product));
-    productDialog.close();
-    openMax(MAX_PERSONAL);
-  }
-
   function shareInMax(text, link = "") {
     haptic();
     if (app?.shareMaxContent) {
@@ -369,29 +305,91 @@
 
   function shareProduct(product) {
     shareInMax(
-      `${product.name} — ${offerPrice(product)}. Рост ${product.height || "уточнить"} см. Art Nelli.`,
+      `${product.name} — ${formatPrice(product.prices)}. Рост ${product.height || "уточнить"} см. Art Nelli.`,
       productUrl(product),
     );
   }
 
-  function bookingMessage(data) {
-    const [year, month] = String(data.get("month")).split("-").map(Number);
-    const monthText = new Intl.DateTimeFormat("ru-RU", { month: "long", year: "numeric" })
-      .format(new Date(year, month - 1, 1));
+  function orderMessage(data) {
+    const product = data.get("productName");
     return [
-      `Здравствуйте! Хочу записаться на индивидуальный пошив — ${monthText}.`,
-      "Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.",
-      "Пожалуйста, подтвердите доступность слота.",
+      "Заявка в мастерскую Art Nelli",
+      product ? `Модель: ${product}` : "Индивидуальный пошив",
+      `Имя: ${data.get("customer")}`,
+      `Телефон / мессенджер: ${data.get("phone")}`,
+      `Рост спортсменки: ${data.get("athleteHeight") || "не указан"}`,
+      `Город: ${data.get("city") || "не указан"}`,
+      `Срок / выступление: ${data.get("deadline") || "не указан"}`,
+      `Пожелания: ${data.get("wishes") || "—"}`,
     ].join("\n");
   }
 
-  function submitOrder(event) {
+  async function submitOrder(event) {
     event.preventDefault();
     if (!orderForm.reportValidity()) return;
     const data = new FormData(orderForm);
-    copyTextForChat(bookingMessage(data));
-    orderDialog.close();
-    openMax(MAX_PERSONAL);
+    const payload = {
+      initData: app?.initData || "",
+      productId: data.get("productId"),
+      productName: data.get("productName"),
+      customer: data.get("customer"),
+      phone: data.get("phone"),
+      athleteHeight: data.get("athleteHeight"),
+      city: data.get("city"),
+      deadline: data.get("deadline"),
+      wishes: data.get("wishes"),
+    };
+    sendOrderButton.disabled = true;
+    orderStatus.className = "order-status";
+    orderStatus.textContent = "Отправляем заявку…";
+
+    if (payload.initData && ORDER_API) {
+      try {
+        const response = await fetch(ORDER_API, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok) {
+          orderStatus.className = "order-status success";
+          orderStatus.textContent = `Заявка ${result.orderId || ""} отправлена. Мастерская ответит в MAX.`;
+          app?.disableClosingConfirmation?.();
+          haptic();
+          return;
+        }
+        if (![404, 503].includes(response.status)) throw new Error(result.error || "Ошибка отправки");
+      } catch (error) {
+        if (!navigator.onLine) {
+          orderStatus.className = "order-status error";
+          orderStatus.textContent = "Нет соединения. Проверьте интернет и повторите.";
+          sendOrderButton.disabled = false;
+          return;
+        }
+      }
+    }
+
+    orderStatus.className = "order-status";
+    orderStatus.textContent = "Откроется выбор чата в MAX. Выберите чат Art Nelli и отправьте заявку.";
+    shareInMax(orderMessage(data), data.get("productId") ? productUrl({ id: data.get("productId") }) : "https://artnelli.com/max/");
+    sendOrderButton.disabled = false;
+  }
+
+  async function requestContact() {
+    if (!app?.requestContact) {
+      orderStatus.className = "order-status";
+      orderStatus.textContent = "Введите номер вручную — получение контакта доступно внутри MAX.";
+      return;
+    }
+    try {
+      const result = await app.requestContact();
+      if (result?.phone) {
+        orderForm.elements.phone.value = result.phone.startsWith("+") ? result.phone : "+" + result.phone;
+        orderStatus.textContent = "Номер получен из MAX.";
+      }
+    } catch (_) {
+      orderStatus.textContent = "Номер не получен. Его можно ввести вручную.";
+    }
   }
 
   function setViewport() {
@@ -454,6 +452,7 @@
     renderCatalog();
   });
   document.getElementById("custom-order").addEventListener("click", () => openOrder());
+  document.getElementById("request-contact").addEventListener("click", requestContact);
   orderForm.addEventListener("submit", submitOrder);
   productDialog.addEventListener("close", onSheetClose);
   orderDialog.addEventListener("close", onSheetClose);
