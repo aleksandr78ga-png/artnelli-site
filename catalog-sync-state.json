@@ -1,25 +1,9 @@
 {
   "schemaVersion": 1,
   "source": "https://t.me/nelli_leotards",
-  "productCount": 94,
-  "newCount": 51,
+  "mirroredFrom": "gh-pages",
+  "productCount": 97,
+  "newCount": 50,
   "usedCount": 43,
-  "removedIds": [
-    922,
-    976,
-    1897,
-    2833,
-    2902,
-    4687,
-    4880,
-    5061,
-    5143,
-    5219,
-    5255,
-    5307,
-    5390,
-    5417,
-    5480,
-    5637
-  ]
+  "rentalCount": 4
 }
