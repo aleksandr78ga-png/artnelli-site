@@ -34,3 +34,5 @@
 - Public deletion reconciliation excludes local negative IDs, treats inaccessible posts as unknown, and requires an explicit missing response confirmed at least 10 minutes later. It is not a substitute for authenticated Telegram history access.
 - FULL synchronization remains blocked: three screenshot imports still lack original message IDs and the public rental topic cannot be read reliably. No Telegram client/MTProto session or API app credentials are configured. Do not claim guaranteed detection of deletions or media deletions.
 - Backend source is maintained in the Sites project appgprj_6a560583dddc81918a4559268688cbff. Keep future backend changes in its source repository.
+
+- main/site is the only production publisher. catalog-sync is a validated backup of published data/assets; its older UI must never overwrite gh-pages or remove /telegram/.

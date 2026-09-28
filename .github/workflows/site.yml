@@ -34,6 +34,9 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Validate rental synchronization rules
+        run: node --test scripts/catalog-offer.test.mjs
+
       - name: Sync Telegram catalogue
         env:
           NELLI_CATALOG_BACKEND: https://artnelli-leotards.aleksandr78ga.chatgpt.site/
