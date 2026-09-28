@@ -28,7 +28,11 @@ export function reconcileImportedRentals(products) {
     normalize(left.height) === normalize(right.height) &&
     ['chest', 'waist', 'hips', 'girth'].every((key) =>
       normalize(left.specs?.[key]) === normalize(right.specs?.[key]));
+  const albumAliases = new Set(products.flatMap(product =>
+    (product.telegramMessageIds || []).map(Number).filter(id =>
+      id > 0 && id !== Number(product.id))));
   return products.filter((product) => {
+    if (albumAliases.has(Number(product.id))) return false;
     if (product.sourceImport !== 'owner-screenshots-2026-09-28' ||
         Number(product.id) >= 0 || product.condition !== 'rental') return true;
     const matches = products.filter((candidate) =>

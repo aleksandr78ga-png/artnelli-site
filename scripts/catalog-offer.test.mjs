@@ -22,6 +22,12 @@ test('rental photo edits and removed photos refresh the local album', () => {
   assert.equal(rentalPhotosChanged(old,{condition:'used',photos:['/api/photo-c']}),false);
 });
 
+test('a public photo permalink does not duplicate its known Telegram album', () => {
+  const primary={id:5755,condition:'new',telegramMessageIds:[5755,5756,5757,5758,5759]};
+  const duplicate={id:5759,condition:'new'};
+  assert.deepEqual(reconcileImportedRentals([primary,duplicate]),[primary]);
+});
+
 test('pre-owned sale mentioning rental keeps its sale category and price', () => {
   for (const description of ['Продаётся б/у (аренда) купальник «Танец огня»','Б/у, (аренда)\nКупальник «Ярко-красный»']) {
     const input = {condition:'used',prices:[39000],description};
