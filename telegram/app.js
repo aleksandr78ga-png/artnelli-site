@@ -381,7 +381,7 @@
   function openStartProduct() {
     const queryId = new URLSearchParams(window.location.search).get("product");
     const startParam = app?.initDataUnsafe?.start_param || new URLSearchParams(location.search).get("tgWebAppStartParam") || "";
-    const startId = /^product_(\d+)$/.exec(startParam)?.[1];
+    const startId = /^product_(-?\d+)$/.exec(startParam)?.[1];
     const productId = Number(queryId || startId);
     if (!Number.isFinite(productId)) return;
     const product = state.products.find((item) => Number(item.id) === productId);
