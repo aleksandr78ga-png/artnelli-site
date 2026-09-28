@@ -37,3 +37,9 @@ export function reconcileImportedRentals(products) {
     return matches.length !== 1;
   });
 }
+
+export function rentalPhotosChanged(existing, incoming) {
+  if (normalizeCatalogOffer(incoming).condition !== 'rental') return false;
+  return JSON.stringify(existing?.telegramPhotoSources || []) !==
+    JSON.stringify(incoming.photos || []);
+}

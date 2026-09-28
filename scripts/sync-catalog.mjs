@@ -1,4 +1,5 @@
-import { normalizeCatalogOffer, reconcileImportedRentals } from "./catalog-offer.mjs";
+import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged } from "./catalog-offer.mjs";
+import { createHash } from "node:crypto";
 import { access, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
@@ -148,8 +149,9 @@ function imageExtension(contentType, remoteUrl, bytes) {
   throw new Error(`Неизвестный формат изображения: ${contentType || remoteUrl}`);
 }
 
-async function downloadImage(remotePath, productId, photoIndex, existingNames) {
-  const prefix = `telegram-${productId}-${String(photoIndex + 1).padStart(2, "0")}`;
+async function downloadImage(remotePath, productId, photoIndex, existingNames, versioned = false) {
+  const version = versioned ? '-' + createHash('sha256').update(remotePath).digest('hex').slice(0,12) : '';
+  const prefix = `telegram-${productId}-${String(photoIndex + 1).padStart(2, "0")}${version}`;
   const existingName = existingNames.find((name) => name.startsWith(`${prefix}.`));
   if (existingName) return `assets/catalog/${existingName}`;
 
@@ -279,14 +281,15 @@ async function main() {
       photos.length > 0 &&
       photos.every((photo) => typeof photo === "string" && !photo.startsWith("/api/"));
 
-    if (!hasLocalPhotos) {
+    const refreshRentalPhotos = rentalPhotosChanged(existing, incoming);
+    if (!hasLocalPhotos || refreshRentalPhotos) {
       const incomingPhotos = Array.isArray(incoming.photos) ? incoming.photos : [];
       if (incomingPhotos.length === 0) {
         throw new Error(`У товара ${id} нет фотографий`);
       }
       photos = await Promise.all(
         incomingPhotos.map((photo, index) =>
-          downloadImage(photo, id, index, existingNames),
+          downloadImage(photo, id, index, existingNames, refreshRentalPhotos),
         ),
       );
     }
@@ -297,6 +300,9 @@ async function main() {
         {
           ...(existing || {}),
           ...incoming,
+          ...(normalizeCatalogOffer(incoming).condition === 'rental' ? {
+            telegramPhotoSources: incoming.photos || [],
+          } : {}),
         },
         photos,
       ),

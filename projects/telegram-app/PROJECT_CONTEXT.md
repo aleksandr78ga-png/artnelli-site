@@ -26,3 +26,11 @@
 - Original photos are reused after visual matching. Peach photos were restored from commit e39ed82; its deleted sale listing 2833 remains absent. The separate existing Yellow gold and Ярко-красный sale listings are unchanged.
 - The normal sync retains imported rentals. When a single real rental listing with the same name and measurements arrives, scripts/catalog-offer.mjs replaces the local import to avoid a duplicate. A sale listing is never used for that replacement.
 - This completes the one-time import, not historical access to Telegram. The upstream bot feed currently omits topic IDs. Full topic-based classification and automatic deletion checks for the three imported offers still need upstream support and verified individual post IDs. Do not report those capabilities as complete.
+
+## Rental event synchronization (28 September 2026)
+- The backend now preserves message_thread_id and classifies confirmed topic 1865 as rental even without an explicit rental heading. Public URL redirects never establish topic membership.
+- Edited captions, prices, and media remain attached to the original message/album. The publisher refreshes rental images when their source file IDs change and uses versioned asset filenames.
+- The scheduled publisher runs at minutes 7, 22, 37, 52 each hour; GitHub may delay scheduled runs.
+- Public deletion reconciliation excludes local negative IDs, treats inaccessible posts as unknown, and requires an explicit missing response confirmed at least 10 minutes later. It is not a substitute for authenticated Telegram history access.
+- FULL synchronization remains blocked: three screenshot imports still lack original message IDs and the public rental topic cannot be read reliably. No Telegram client/MTProto session or API app credentials are configured. Do not claim guaranteed detection of deletions or media deletions.
+- Backend source is maintained in the Sites project appgprj_6a560583dddc81918a4559268688cbff. Keep future backend changes in its source repository.

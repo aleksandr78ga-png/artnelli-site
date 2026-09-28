@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeCatalogOffer, reconcileImportedRentals } from './catalog-offer.mjs';
+import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged } from './catalog-offer.mjs';
 
 test('rental offer stays rental when the upstream feed labels it new', () => {
   const input = {id:5726, condition:'new', prices:[4500], description:'Аренда ❤️\nКупальник «Танец огня»\nСтоимость аренды — 4 500 ₽', descriptionEn:'For sale\nNew rhythmic gymnastics leotard “Tanets ognya”'};
@@ -10,6 +10,16 @@ test('rental offer stays rental when the upstream feed labels it new', () => {
   assert.equal(output.description,input.description);
   assert.match(output.descriptionEn,/^For rent\nrhythmic/);
   assert.deepEqual(normalizeCatalogOffer({...output, condition:'new'}),output);
+});
+
+test('rental photo edits and removed photos refresh the local album', () => {
+  const old = {telegramPhotoSources:['/api/photo-a','/api/photo-b']};
+  const incoming = {condition:'rental', photos:['/api/photo-a','/api/photo-b']};
+  assert.equal(rentalPhotosChanged(old,incoming),false);
+  assert.equal(rentalPhotosChanged(old,{...incoming,photos:['/api/photo-a']}),true);
+  assert.equal(rentalPhotosChanged(old,{...incoming,photos:['/api/photo-c','/api/photo-b']}),true);
+  assert.equal(rentalPhotosChanged(undefined,incoming),true);
+  assert.equal(rentalPhotosChanged(old,{condition:'used',photos:['/api/photo-c']}),false);
 });
 
 test('pre-owned sale mentioning rental keeps its sale category and price', () => {
