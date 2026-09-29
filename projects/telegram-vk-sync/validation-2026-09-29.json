@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-29",
+  "kind": "offline_validation_only",
+  "unitTestsPassed": 19,
+  "telegramParserChecksPassed": 3,
+  "sourceCount": 98,
+  "productsWithOneValidPrice": 73,
+  "priceOnRequest": 24,
+  "multiplePriceCards": 1,
+  "rentalCards": 4,
+  "actualSnapshotPreview": {
+    "sourceCards": 98,
+    "updateCandidates": 0,
+    "unchanged": 0,
+    "needsReview": 98,
+    "retained": 0,
+    "creates": 0,
+    "deletes": 0
+  },
+  "actualSnapshotBlockers": [
+    "source_snapshot_stale_or_unverified",
+    "vk_snapshot_missing"
+  ],
+  "vkRequestsMade": 0,
+  "liveShopChanges": 0,
+  "siteDeployment": false
+}
