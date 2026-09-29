@@ -3,9 +3,9 @@
   "vk_sync_configured": false,
   "do_not_delete_missing_products": true,
   "source_count": 98,
-  "offer_count": 70,
-  "price_on_request_count": 26,
-  "offer_variants_require_mapping_count": 2,
+  "offer_count": 73,
+  "price_on_request_count": 24,
+  "offer_variants_require_mapping_count": 1,
   "skipped": [
     {
       "id": 538,
@@ -33,16 +33,6 @@
       "reason": "price_on_request"
     },
     {
-      "id": 2920,
-      "name": "Купальник №2920",
-      "reason": "price_on_request"
-    },
-    {
-      "id": 3062,
-      "name": "Кармин",
-      "reason": "offer_variants_require_mapping"
-    },
-    {
       "id": 3465,
       "name": "Золушка",
       "reason": "price_on_request"
@@ -50,11 +40,6 @@
     {
       "id": 3473,
       "name": "Сакура",
-      "reason": "price_on_request"
-    },
-    {
-      "id": 3548,
-      "name": "Oriental lemon",
       "reason": "price_on_request"
     },
     {
@@ -119,7 +104,7 @@
     },
     {
       "id": 5528,
-      "name": "Рост 130-140 см",
+      "name": "гимнастки",
       "reason": "price_on_request"
     },
     {
@@ -235,6 +220,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "fae72e8e708b19aa85a10ce1043a0fef6963a5b83c4d044a58e51ecf76dd81da",
-  "generated_at": "2026-09-29T05:19:47+00:00"
+  "fingerprint": "9fdf61f83a813774366d7d9d2520aa635aa48d0aeaeeea2a49920b2d9d00b662",
+  "generated_at": "2026-09-29T05:57:36+00:00"
 }

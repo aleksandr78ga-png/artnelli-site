@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2026-09-29 05:19">
+<yml_catalog date="2026-09-29 05:57">
   <shop>
     <name>Leotards by Nelli</name>
     <company>Leotards by Nelli</company>
@@ -198,7 +198,7 @@
 Обхват талии: 66-72 см
 Обхват бёдер: 86-92 см
 Дуга тела: 145-155 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/16/1092</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1092</description>
       </offer>
       <offer id="artnelli-1136" available="true">
         <url>https://artnelli.com/telegram/?product=1136</url>
@@ -218,7 +218,7 @@
 Обхват талии: 64-70 см
 Обхват бёдер: 83-90 см
 Дуга тела: 140-150 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/738/1136</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1136</description>
       </offer>
       <offer id="artnelli-1279" available="true">
         <url>https://artnelli.com/telegram/?product=1279</url>
@@ -281,7 +281,7 @@
 Обхват талии: 54-62 см
 Обхват бёдер: 66-75 см
 Дуга тела: 116-123 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/2/1339</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1339</description>
       </offer>
       <offer id="artnelli-2233" available="true">
         <url>https://artnelli.com/telegram/?product=2233</url>
@@ -430,16 +430,16 @@
         <picture>https://artnelli.com/feeds/vk-images/43bb06dccc38a35aabefea91.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/4e70c557eeead76c88fffd52.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/38ae5ace2f7f897e9f0e0336.jpg</picture>
-        <name>Б/у — Рост 130-145 см</name>
+        <name>Б/у — Купальник №2883</name>
         <vendor>Leotards by Nelli</vendor>
-        <description>Рост 130-145 см
+        <description>Купальник №2883
 Купальники б/у
 Рост: 130-145 см
 Обхват груди: 62-67 см
 Обхват талии: 52-57 см
 Обхват бёдер: 64-70 см
 Дуга тела: 114-122 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/2883</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2883</description>
       </offer>
       <offer id="artnelli-2892" available="true">
         <url>https://artnelli.com/telegram/?product=2892</url>
@@ -447,16 +447,62 @@
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://artnelli.com/feeds/vk-images/67d34d69b256631b8ece5034.jpg</picture>
-        <name>Б/у — Рост 130-145 см</name>
+        <name>Б/у — мастерской</name>
         <vendor>Leotards by Nelli</vendor>
-        <description>Рост 130-145 см
+        <description>мастерской
 Купальники б/у
 Рост: 130-145 см
 Обхват груди: 62-67 см
 Обхват талии: 52-57 см
 Обхват бёдер: 64-70 см
 Дуга тела: 114-122 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/2892</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2892</description>
+      </offer>
+      <offer id="artnelli-2920" available="true">
+        <url>https://artnelli.com/telegram/?product=2920</url>
+        <price>110000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/54a720c1d1eac204b7373f8e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1376faf03edee3672207c16a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4f1dc3b88cd924017a9db636.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0ef8984dcf7f66aa23417383.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5129f4ace92d51d088b6481a.jpg</picture>
+        <name>Б/у — Купальник №2920</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Купальник №2920
+Купальники б/у
+Рост: 145-155 см
+Обхват груди: 75 см
+Обхват талии: 59 см
+Обхват бёдер: 77 см
+Дуга тела: 128 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2920</description>
+      </offer>
+      <offer id="artnelli-3062" available="true">
+        <url>https://artnelli.com/telegram/?product=3062</url>
+        <price>71800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/c3bcc423130acbe6cad54942.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2609ded0722a5ba4e24642a0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8b8febef8ed059d52d1b1b33.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ab4fde1afce6092ed1639dbf.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/418042f753d7a3a54b7dbf35.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0110518a6c43569d25e77919.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1c7c8e8ff4fad5ebf8197598.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/72b1906891647f1cab9ab3e7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/feba373f1d3ed8a78e50f125.jpg</picture>
+        <name>Кармин</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Кармин
+Новые купальники
+Рост: 144-155 см
+Обхват груди: 70-80 см
+Обхват талии: 58-65 см
+Обхват бёдер: 72-82 см
+Дуга тела: 124-134 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3062</description>
       </offer>
       <offer id="artnelli-3146" available="true">
         <url>https://artnelli.com/telegram/?product=3146</url>
@@ -553,6 +599,29 @@
 Дуга тела: 100-110 см
 Подробности в исходном объявлении: https://t.me/nelli_leotards/3520</description>
       </offer>
+      <offer id="artnelli-3548" available="true">
+        <url>https://artnelli.com/telegram/?product=3548</url>
+        <price>85000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/7741b0ab07024cebe6727b4a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d0c9c7ea3d23fd39e4895058.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/453b38b57a2bcef775e139e4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fbe9dd31118052093a4dd42a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0b8b916ed85a8e4011680c6f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/247db1ef885d5c7b2a789131.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/198c54c8f74fbdcffae280e5.jpg</picture>
+        <name>Б/у — Oriental lemon</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Oriental lemon
+Купальники б/у
+Рост: 135-145 см
+Обхват груди: 68 см
+Обхват талии: 55 см
+Обхват бёдер: 70 см
+Дуга тела: 120 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3548</description>
+      </offer>
       <offer id="artnelli-3580" available="true">
         <url>https://artnelli.com/telegram/?product=3580</url>
         <price>98500</price>
@@ -609,7 +678,7 @@
 Обхват талии: 56-64 см
 Обхват бёдер: 70-80 см
 Дуга тела: 123-133 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/14/3640</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3640</description>
       </offer>
       <offer id="artnelli-3759" available="true">
         <url>https://artnelli.com/telegram/?product=3759</url>
@@ -677,7 +746,7 @@
 Обхват талии: 52+ см
 Обхват бёдер: 63 см
 Дуга тела: 110+ см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4117</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4117</description>
       </offer>
       <offer id="artnelli-4126" available="true">
         <url>https://artnelli.com/telegram/?product=4126</url>
@@ -701,7 +770,7 @@
 Обхват талии: 52+ см
 Обхват бёдер: 63 см
 Дуга тела: 109+ см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4126</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4126</description>
       </offer>
       <offer id="artnelli-4159" available="true">
         <url>https://artnelli.com/telegram/?product=4159</url>
@@ -819,7 +888,7 @@
 Обхват талии: 57+ см
 Обхват бёдер: 68+ см
 Дуга тела: 116+ см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4564</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4564</description>
       </offer>
       <offer id="artnelli-4573" available="true">
         <url>https://artnelli.com/telegram/?product=4573</url>
@@ -843,7 +912,7 @@
 Обхват талии: 57+ см
 Обхват бёдер: 68+ см
 Дуга тела: 116+ см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4573</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4573</description>
       </offer>
       <offer id="artnelli-4592" available="true">
         <url>https://artnelli.com/telegram/?product=4592</url>
@@ -867,7 +936,7 @@
 Обхват талии: 56-64 см
 Обхват бёдер: 70-80 см
 Дуга тела: 123-133 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/14/4592</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4592</description>
       </offer>
       <offer id="artnelli-4751" available="true">
         <url>https://artnelli.com/telegram/?product=4751</url>
@@ -1056,7 +1125,7 @@
 Обхват талии: 52+ см
 Обхват бёдер: 58 см
 Дуга тела: 105+ см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4995</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4995</description>
       </offer>
       <offer id="artnelli-5016" available="true">
         <url>https://artnelli.com/telegram/?product=5016</url>
@@ -1265,7 +1334,7 @@
 Обхват талии: 54-62 см
 Обхват бёдер: 67-75 см
 Дуга тела: 118-128 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/2/5471</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5471</description>
       </offer>
       <offer id="artnelli-5491" available="true">
         <url>https://artnelli.com/telegram/?product=5491</url>
@@ -1289,7 +1358,7 @@
 Обхват талии: 59-65 см
 Обхват бёдер: 76-84 см
 Дуга тела: 128-137 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5491</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5491</description>
       </offer>
       <offer id="artnelli-5520" available="true">
         <url>https://artnelli.com/telegram/?product=5520</url>
@@ -1303,16 +1372,16 @@
         <picture>https://artnelli.com/feeds/vk-images/6f589e2e1909133df08335c0.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/dda4a757b3a55e268755f639.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/8c96554f0686e552483e516e.jpg</picture>
-        <name>Б/у — Рост 140-150 см</name>
+        <name>Б/у — гимнастки</name>
         <vendor>Leotards by Nelli</vendor>
-        <description>Рост 140-150 см
+        <description>гимнастки
 Купальники б/у
 Рост: 140-150 см
 Обхват груди: 65+ см
 Обхват талии: 58+ см
 Обхват бёдер: 68+ см
 Дуга тела: 117+ см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5520</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5520</description>
       </offer>
       <offer id="artnelli-5549" available="true">
         <url>https://artnelli.com/telegram/?product=5549</url>
@@ -1336,7 +1405,7 @@
 Обхват талии: 59-65 см
 Обхват бёдер: 76-84 см
 Дуга тела: 128-137 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5549</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5549</description>
       </offer>
       <offer id="artnelli-5576" available="true">
         <url>https://artnelli.com/telegram/?product=5576</url>
@@ -1359,7 +1428,7 @@
 Обхват талии: 59-65 см
 Обхват бёдер: 76-84 см
 Дуга тела: 128-137 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5576</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5576</description>
       </offer>
       <offer id="artnelli-5661" available="true">
         <url>https://artnelli.com/telegram/?product=5661</url>
@@ -1383,7 +1452,7 @@
 Обхват талии: 59-66 см
 Обхват бёдер: 77-85 см
 Дуга тела: 130-140 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5661</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5661</description>
       </offer>
       <offer id="artnelli-5680" available="true">
         <url>https://artnelli.com/telegram/?product=5680</url>
@@ -1407,7 +1476,7 @@
 Обхват талии: 56-64 см
 Обхват бёдер: 70-80 см
 Дуга тела: 123-133 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/14/5680</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5680</description>
       </offer>
       <offer id="artnelli-5689" available="true">
         <url>https://artnelli.com/telegram/?product=5689</url>
@@ -1420,15 +1489,15 @@
         <picture>https://artnelli.com/feeds/vk-images/18378bbb5f094990833b6825.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/be5071e03476058fe4ed7508.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/8df28b74a84676e714428fa6.jpg</picture>
-        <name>Б/у — Сшит по меркам:</name>
+        <name>Б/у — цвете ✨</name>
         <vendor>Leotards by Nelli</vendor>
-        <description>Сшит по меркам:
+        <description>цвете ✨
 Купальники б/у
 Обхват груди: 68 см
 Обхват талии: 57 см
 Обхват бёдер: 72 см
 Дуга тела: 120 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5689</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5689</description>
       </offer>
       <offer id="artnelli-5706" available="true">
         <url>https://artnelli.com/telegram/?product=5706</url>
@@ -1452,7 +1521,7 @@
 Обхват талии: 59-65 см
 Обхват бёдер: 76-84 см
 Дуга тела: 128-137 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5706</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5706</description>
       </offer>
       <offer id="artnelli-5715" available="true">
         <url>https://artnelli.com/telegram/?product=5715</url>
@@ -1498,7 +1567,7 @@
 Обхват бёдер: 60-68 см
 Дуга тела: 108-116 см
 Указана стоимость аренды. Срок и условия уточняйте перед бронированием.
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1865/5726</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5726</description>
       </offer>
       <offer id="artnelli-5733" available="true">
         <url>https://artnelli.com/telegram/?product=5733</url>
@@ -1520,7 +1589,7 @@
 Обхват талии: 50-56 см
 Обхват бёдер: 60-68 см
 Дуга тела: 108-116 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5733</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5733</description>
       </offer>
       <offer id="artnelli-5745" available="true">
         <url>https://artnelli.com/telegram/?product=5745</url>
@@ -1544,7 +1613,7 @@
 Обхват талии: 58-64 см
 Обхват бёдер: 66-78 см
 Дуга тела: 120-126 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5745</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5745</description>
       </offer>
       <offer id="artnelli-5755" available="true">
         <url>https://artnelli.com/telegram/?product=5755</url>
@@ -1568,7 +1637,7 @@
 Обхват талии: 59-65 см
 Обхват бёдер: 76-84 см
 Дуга тела: 128-137 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5755</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5755</description>
       </offer>
       <offer id="artnelli-5767" available="true">
         <url>https://artnelli.com/telegram/?product=5767</url>
@@ -1592,7 +1661,7 @@
 Обхват талии: 56-64 см
 Обхват бёдер: 70-80 см
 Дуга тела: 123-133 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/14/5767</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5767</description>
       </offer>
     </offers>
   </shop>
