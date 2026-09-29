@@ -14,6 +14,8 @@ Generated files:
 
 - `https://artnelli.com/feeds/vk.yml` — YML export.
 - `https://artnelli.com/feeds/vk-report.json` — included/skipped counts and reasons.
+- `https://artnelli.com/feeds/vk-pending.json` — source offers requiring a receiving
+  mapping for on-request pricing or distinct offer variants; not a VK import file.
 - `site/feeds/vk-images/` — JPEG copies for VK; originals are unchanged.
 
 The source export is rebuilt after each successful Telegram catalogue update.
@@ -35,10 +37,27 @@ automatic synchronisation.
 
 ## Export rules
 
+Nelli clarified on 2026-09-29: an absent price means **price on request**, not a
+broken card. The same product may be offered both for sale and for rent at
+different prices; these must remain distinct offers. Do not choose one amount
+arbitrarily, take the lowest price, or convert an on-request price into zero.
+
+The received VK YML instructions require a price field; representation of
+on-request pricing has not yet been verified. These cards are preserved in
+`vk-pending.json` with the appropriate status, pending a verified receiver
+mapping. Distinct prices without explicit sale/rental assignment also remain
+there until their roles are established. They are not catalogue errors.
+
+Two concrete exceptions need care: Telegram post 538 explicitly labels 38,900
+RUB as black and 41,900 RUB as red (colour variants); “Кармин” post 3062 contains
+71,800 and 68,500 RUB without an explicit rental label. The exporter does not
+reinterpret either value as rent automatically.
+
 - Stable source IDs: `artnelli-<Telegram product id>`. Do not regenerate or change
   these IDs when updating names, prices, descriptions or images.
-- Exactly one positive numeric RUB price is required. Missing/ambiguous prices
-  are reported and omitted; zero prices and guesses are prohibited.
+- The current numeric YML file requires one positive numeric RUB price. Offers
+  priced on request and variants awaiting price-role mapping are retained in
+  the pending-offers file; zero prices and guesses are prohibited.
   The structured price must agree with every explicitly stated RUB price in
   the original description; currency is never inferred from the number alone.
 - New, used and rental offers have distinct categories. Used/rental names are

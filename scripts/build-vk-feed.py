@@ -124,7 +124,7 @@ def build(site):
     for category_id, label in CATEGORIES.values():
         add(categories, "category", label, id=category_id)
     offers = ET.SubElement(shop, "offers")
-    skipped, image_warnings, seen = [], [], set()
+    skipped, pending_offers, image_warnings, seen = [], [], [], set()
     for product in products:
         product_id = product.get("id")
         if isinstance(product_id, bool) or not isinstance(product_id, int) or product_id <= 0:
@@ -142,9 +142,9 @@ def build(site):
         elif not plain(product.get("name")):
             reason = "missing_name"
         elif not isinstance(prices, list) or not prices:
-            reason = "missing_price"
+            reason = "price_on_request"
         elif len(prices) != 1:
-            reason = "ambiguous_price"
+            reason = "offer_variants_require_mapping"
         elif isinstance(prices[0], bool) or not isinstance(prices[0], (int, float)) or not (0 < prices[0] < 10**9) or round(prices[0], 2) != prices[0]:
             reason = "invalid_price"
         else:
@@ -152,9 +152,18 @@ def build(site):
             if not declared:
                 reason = "unverified_rub_price"
             elif declared != {Decimal(str(prices[0]))}:
-                reason = "source_price_conflict"
+                reason = "offer_variants_require_mapping"
         if reason:
             skipped.append({"id": product_id, "name": plain(product.get("name")), "reason": reason})
+            if reason in {"price_on_request", "offer_variants_require_mapping"}:
+                pending_offers.append({
+                    "id": f"artnelli-{product_id}", "name": plain(product.get("name")),
+                    "condition": product.get("condition"), "price_status": reason,
+                    "price_label": "Цена по запросу" if reason == "price_on_request" else "Варианты предложения",
+                    "prices_rub": [float(p) for p in sorted(rub_prices(product.get("description")))],
+                    "url": BASE_URL + "telegram/?product=" + str(product_id),
+                    "description": description(product),
+                })
             continue
         pictures = []
         for relative in product.get("photos") or []:
@@ -187,8 +196,10 @@ def build(site):
     report = {"scope": "source_export_only", "vk_sync_configured": False,
               "do_not_delete_missing_products": True,
               "source_count": len(products), "offer_count": len(offers),
+              "price_on_request_count": sum(p["price_status"] == "price_on_request" for p in pending_offers),
+              "offer_variants_require_mapping_count": sum(p["price_status"] == "offer_variants_require_mapping" for p in pending_offers),
               "skipped": skipped, "image_warnings": image_warnings}
-    fingerprint = hashlib.sha256(ET.tostring(shop) + json.dumps(report, sort_keys=True).encode()).hexdigest()
+    fingerprint = hashlib.sha256(ET.tostring(shop) + json.dumps([report, pending_offers], sort_keys=True).encode()).hexdigest()
     previous_path = site / "feeds/vk-report.json"
     previous = json.loads(previous_path.read_text()) if previous_path.exists() else {}
     generated_at = previous.get("generated_at") if previous.get("fingerprint") == fingerprint else None
@@ -203,6 +214,10 @@ def build(site):
     ET.fromstring(xml)
     write_if_changed(site / "feeds/vk.yml", xml)
     write_if_changed(previous_path, (json.dumps(report, ensure_ascii=False, indent=2) + "\n").encode())
+    write_if_changed(site / "feeds/vk-pending.json", (json.dumps({
+        "scope": "pending_receiver_mapping_not_a_vk_import_file",
+        "generated_at": generated_at, "offers": pending_offers,
+    }, ensure_ascii=False, indent=2) + "\n").encode())
     print(f"VK source export: {len(offers)}/{len(products)} offers, {len(skipped)} skipped, {len(image_warnings)} image warnings. VK is not connected.")
     return report
 

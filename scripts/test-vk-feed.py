@@ -32,7 +32,7 @@ class FeedTest(unittest.TestCase):
         (self.site / "catalog-data.js").write_text("window.NELLI_CATALOG = " + json.dumps(products) + ";\n")
 
     def test_prices_privacy_rental_and_jpeg(self):
-        self.catalog([self.product(), self.product(2, prices=[]),
+        self.catalog([self.product(), self.product(2, prices=[], description="Цена по запросу"),
                       self.product(3, prices=[1, 2]), self.product(4, condition="rental", prices=[4500], description="Аренда 4 500 ₽"),
                       self.product(5, sold=True), self.product(6, condition="used", prices=[1234.50], description="Цена 1 234,50 руб."),
                       self.product(7, prices=[0]), self.product(8, prices=[True]),
@@ -54,6 +54,12 @@ class FeedTest(unittest.TestCase):
         self.assertNotIn("адрес клиента", xml)
         self.assertTrue(report["do_not_delete_missing_products"])
         self.assertEqual(len(report["skipped"]), 7)
+        self.assertEqual(report["price_on_request_count"], 1)
+        self.assertEqual(report["offer_variants_require_mapping_count"], 2)
+        pending = json.loads((self.site / "feeds/vk-pending.json").read_text())["offers"]
+        self.assertEqual(pending[0]["price_label"], "Цена по запросу")
+        self.assertEqual(pending[0]["prices_rub"], [])
+        self.assertEqual(pending[0]["price_status"], "price_on_request")
         for picture in self.site.glob("feeds/vk-images/*"):
             with Image.open(picture) as image:
                 self.assertEqual(image.format, "JPEG")
