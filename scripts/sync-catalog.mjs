@@ -278,6 +278,13 @@ async function main() {
       continue;
     }
 
+
+    const statedRubPrices = [...String(incoming.description || "").matchAll(/(?<![\d.,])((?:[1-9]\d{0,2}(?:[ \u00a0\u202f.]\d{3})+|\d+)(?:,\d{1,2})?)\s*(?:руб(?:лей|ля|ль)?|₽)/giu)]
+      .map(match => Number(match[1].replace(/[ .\u00a0\u202f]/g, "").replace(",", ".")));
+    if ((incoming.prices || []).some(price => !statedRubPrices.includes(Number(price)))) {
+      throw new Error(`Цена товара ${id} не соответствует отдельной сумме в исходном объявлении`);
+    }
+
     const existing = productById.get(id);
     let photos = Array.isArray(existing?.photos) ? existing.photos : [];
     const hasLocalPhotos =
