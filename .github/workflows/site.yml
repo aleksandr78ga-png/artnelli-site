@@ -9,6 +9,9 @@ on:
       - "scripts/sync-catalog.mjs"
       - "scripts/catalog-offer.mjs"
       - "scripts/rental-history.mjs"
+      - "scripts/build-vk-feed.py"
+      - "scripts/test-vk-feed.py"
+      - "scripts/requirements-vk-feed.txt"
       - "data/telegram-rental-history.json"
       - ".github/workflows/site.yml"
       - ".github/workflows/catalog-sync-branch.yml"
@@ -40,10 +43,23 @@ jobs:
       - name: Validate rental synchronization rules
         run: node --test scripts/catalog-offer.test.mjs scripts/rental-history.test.mjs
 
+      - name: Set up Python for the VK source export
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate VK source export rules
+        run: |
+          python -m pip install -r scripts/requirements-vk-feed.txt
+          python scripts/test-vk-feed.py
+
       - name: Sync Telegram catalogue
         env:
           NELLI_CATALOG_BACKEND: https://artnelli-leotards.aleksandr78ga.chatgpt.site/
         run: node scripts/sync-catalog.mjs
+
+      - name: Build VK source export (no VK connection)
+        run: python scripts/build-vk-feed.py
 
       - name: Save catalogue changes
         shell: bash
@@ -51,7 +67,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- site/catalog-data.js site/api/live-data.js site/assets/catalog
+          git add -A -- site/catalog-data.js site/api/live-data.js site/assets/catalog site/feeds
           if git diff --cached --quiet; then
             echo "Catalogue is already current."
           else
