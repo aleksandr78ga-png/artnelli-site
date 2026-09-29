@@ -1,0 +1,238 @@
+{
+  "scope": "source_export_only",
+  "vk_sync_configured": false,
+  "do_not_delete_missing_products": true,
+  "source_count": 98,
+  "offer_count": 70,
+  "skipped": [
+    {
+      "id": 538,
+      "name": "Купальник №538",
+      "reason": "ambiguous_price"
+    },
+    {
+      "id": 2184,
+      "name": "Купальник №2184",
+      "reason": "missing_price"
+    },
+    {
+      "id": 2347,
+      "name": "Монохром",
+      "reason": "missing_price"
+    },
+    {
+      "id": 2454,
+      "name": "Испания",
+      "reason": "missing_price"
+    },
+    {
+      "id": 2911,
+      "name": "Купальник №2911",
+      "reason": "missing_price"
+    },
+    {
+      "id": 2920,
+      "name": "Купальник №2920",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3062,
+      "name": "Кармин",
+      "reason": "source_price_conflict"
+    },
+    {
+      "id": 3465,
+      "name": "Золушка",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3473,
+      "name": "Сакура",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3548,
+      "name": "Oriental lemon",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3568,
+      "name": "Blue",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3630,
+      "name": "Купальник №3630",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3649,
+      "name": "Купальник №3649",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3707,
+      "name": "Lilac",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3716,
+      "name": "Нежность",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3950,
+      "name": "Golden branches",
+      "reason": "missing_price"
+    },
+    {
+      "id": 3957,
+      "name": "Зеленые Ветви",
+      "reason": "missing_price"
+    },
+    {
+      "id": 4178,
+      "name": "Купальник №4178",
+      "reason": "missing_price"
+    },
+    {
+      "id": 4779,
+      "name": "Синий",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5006,
+      "name": "Turquoise",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5169,
+      "name": "Red Neon",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5461,
+      "name": "Изумруд",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5528,
+      "name": "Рост 130-140 см",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5607,
+      "name": "Bright",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5616,
+      "name": "Фиолетовый",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5625,
+      "name": "Коричневый",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5653,
+      "name": "Фуксия",
+      "reason": "missing_price"
+    },
+    {
+      "id": 5696,
+      "name": "Яркая зима",
+      "reason": "missing_price"
+    }
+  ],
+  "image_warnings": [
+    {
+      "id": 5471,
+      "image": "assets/catalog/telegram-5471-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5471,
+      "image": "assets/catalog/telegram-5471-05.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5491,
+      "image": "assets/catalog/telegram-5491-04.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5520,
+      "image": "assets/catalog/telegram-5520-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5549,
+      "image": "assets/catalog/telegram-5549-04.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5576,
+      "image": "assets/catalog/telegram-5576-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5576,
+      "image": "assets/catalog/telegram-5576-09.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5661,
+      "image": "assets/catalog/telegram-5661-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5680,
+      "image": "assets/catalog/telegram-5680-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5689,
+      "image": "assets/catalog/telegram-5689-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5706,
+      "image": "assets/catalog/telegram-5706-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5715,
+      "image": "assets/catalog/telegram-5715-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5726,
+      "image": "assets/catalog/telegram-5726-02-f85b2cd444a5.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5733,
+      "image": "assets/catalog/telegram-5733-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5745,
+      "image": "assets/catalog/telegram-5745-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5755,
+      "image": "assets/catalog/telegram-5755-03.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5767,
+      "image": "assets/catalog/telegram-5767-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    }
+  ],
+  "fingerprint": "905bd2983afd2c88f5a0c6926ea4f567fca1a06fa05cb2e598ea63e03ee4f59f",
+  "generated_at": "2026-09-29T05:15:07+00:00"
+}
