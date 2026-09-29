@@ -108,7 +108,7 @@ introduced.
 
 Nelli authorised all required corrections and continued synchronisation setup.
 The Sites backend previously checked old listing existence without importing
-its edited caption. Version 46 now refreshes all known listing captions/prices
+its edited caption. Version 48 now refreshes all known listing captions/prices
 in bounded concurrent requests, persists those observations, and returns them
 in the same live payload. A newer snapshot is not overwritten by an older bot
 record; a later bot edit still wins. Existing album media is retained during
@@ -117,7 +117,7 @@ approximately 15-minute publisher remains in use; scheduler delay and source
 availability can delay an update. Regression tests cover old-price correction,
 on-request price, source freshness, bounded full traversal, and unknown pages.
 
-Backend source commit: `7ddd366362528787756b65e32e8b8a973f8f6f9d`.
+Backend source commit: `59b06e5c3d0963fc953112566da709e88a52ff9d`.
 
 ## Receiving service research — not connected
 
@@ -128,3 +128,25 @@ is not Nelli’s price-on-request requirement. Neither option is enabled.
 A paid subscription, new account, or VK permission grant has not been made.
 Sources inspected: https://soc-commerce.com/features/import-to-vk and
 https://docs.soc-commerce.com/shop/settings/main_settings.html.
+
+## Verification — 2026-09-29 05:57 UTC
+
+The updated backend was verified against live Telegram content: Кармин 71,800
+RUB, Oriental lemon 85,000 RUB; crossed-out prices are excluded in both HTML
+and bot caption entities. Adjacent amounts cannot concatenate into one price.
+The GitHub importer rejects any structured amount that is not a separate
+explicit RUB amount in the source, before writing or publishing the catalogue.
+An unnamed old listing retains its existing catalogue name. All 11 backend
+regression tests passed. The production source run succeeded after the earlier
+rejected price was corrected (run 36527942983, retry).
+
+The refreshed export has 98 source cards, 73 numeric-price offers, 24 cards
+priced on request and one two-colour listing awaiting a receiver mapping.
+Кармин is included as `artnelli-3062` at 71,800 RUB. No VK writes occurred.
+
+Scheduling limitation: site.yml requests runs every 15 minutes, but this session
+observed scheduled source runs at 2026-09-28 16:49/22:17 and 2026-09-29 02:03 UTC,
+with longer gaps than requested. Do not promise a strict 15-minute refresh SLA.
+The existing paused hourly rental-check automation remains paused; no duplicate
+schedule was added. GitHub documents that scheduled runs may be delayed/dropped:
+https://docs.github.com/en/actions/how-tos/troubleshoot-workflows.
