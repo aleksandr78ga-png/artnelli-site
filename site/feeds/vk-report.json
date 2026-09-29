@@ -4,146 +4,148 @@
   "do_not_delete_missing_products": true,
   "source_count": 98,
   "offer_count": 70,
+  "price_on_request_count": 26,
+  "offer_variants_require_mapping_count": 2,
   "skipped": [
     {
       "id": 538,
       "name": "Купальник №538",
-      "reason": "ambiguous_price"
+      "reason": "offer_variants_require_mapping"
     },
     {
       "id": 2184,
       "name": "Купальник №2184",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 2347,
       "name": "Монохром",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 2454,
       "name": "Испания",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 2911,
       "name": "Купальник №2911",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 2920,
       "name": "Купальник №2920",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3062,
       "name": "Кармин",
-      "reason": "source_price_conflict"
+      "reason": "offer_variants_require_mapping"
     },
     {
       "id": 3465,
       "name": "Золушка",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3473,
       "name": "Сакура",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3548,
       "name": "Oriental lemon",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3568,
       "name": "Blue",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3630,
       "name": "Купальник №3630",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3649,
       "name": "Купальник №3649",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3707,
       "name": "Lilac",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3716,
       "name": "Нежность",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3950,
       "name": "Golden branches",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 3957,
       "name": "Зеленые Ветви",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 4178,
       "name": "Купальник №4178",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 4779,
       "name": "Синий",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5006,
       "name": "Turquoise",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5169,
       "name": "Red Neon",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5461,
       "name": "Изумруд",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5528,
       "name": "Рост 130-140 см",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5607,
       "name": "Bright",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5616,
       "name": "Фиолетовый",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5625,
       "name": "Коричневый",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5653,
       "name": "Фуксия",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     },
     {
       "id": 5696,
       "name": "Яркая зима",
-      "reason": "missing_price"
+      "reason": "price_on_request"
     }
   ],
   "image_warnings": [
@@ -233,6 +235,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "905bd2983afd2c88f5a0c6926ea4f567fca1a06fa05cb2e598ea63e03ee4f59f",
-  "generated_at": "2026-09-29T05:15:07+00:00"
+  "fingerprint": "fae72e8e708b19aa85a10ce1043a0fef6963a5b83c4d044a58e51ecf76dd81da",
+  "generated_at": "2026-09-29T05:19:47+00:00"
 }
