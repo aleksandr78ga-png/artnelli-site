@@ -1,0 +1,1599 @@
+<?xml version='1.0' encoding='utf-8'?>
+<yml_catalog date="2026-09-29 05:15">
+  <shop>
+    <name>Leotards by Nelli</name>
+    <company>Leotards by Nelli</company>
+    <url>https://artnelli.com/</url>
+    <currencies>
+      <currency id="RUB" rate="1" />
+    </currencies>
+    <categories>
+      <category id="1">Новые купальники</category>
+      <category id="2">Купальники б/у</category>
+      <category id="3">Аренда купальников</category>
+    </categories>
+    <offers>
+      <offer id="artnelli-8" available="true">
+        <url>https://artnelli.com/telegram/?product=8</url>
+        <price>38900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/146a5c568adb67541fc7cf1a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/508e44397a9680ce132a9ab5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/43dde1f68671134d6b673805.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6659874d032fda025e673e0b.jpg</picture>
+        <name>Монохром</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Монохром
+Новые купальники
+Рост: 110-130 см
+Обхват груди: 60-66 см
+Обхват талии: 50-56 см
+Обхват бёдер: 62-68 см
+Дуга тела: 106-118 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/8</description>
+      </offer>
+      <offer id="artnelli-30" available="true">
+        <url>https://artnelli.com/telegram/?product=30</url>
+        <price>87500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/88f3b16efa50c07f22eec3b1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8ebceb6263bcbe6c93d720d4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8d17f5f662d88b6b40901aae.jpg</picture>
+        <name>Махагони</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Махагони
+Новые купальники
+Рост: 160-170 см
+Обхват груди: 78-86 см
+Обхват талии: 62-70 см
+Обхват бёдер: 80-88 см
+Дуга тела: 140-150 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/30</description>
+      </offer>
+      <offer id="artnelli-60" available="true">
+        <url>https://artnelli.com/telegram/?product=60</url>
+        <price>41900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/146a5c568adb67541fc7cf1a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1b9dd1201a51e58a6c77fe39.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5ea24c288a6f3f5f96248edf.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6659874d032fda025e673e0b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/508e44397a9680ce132a9ab5.jpg</picture>
+        <name>Монохром</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Монохром
+Новые купальники
+Рост: 130-145 см
+Обхват груди: 65-76 см
+Обхват талии: 55-65 см
+Обхват бёдер: 68-78 см
+Дуга тела: 119-127 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/60</description>
+      </offer>
+      <offer id="artnelli-66" available="true">
+        <url>https://artnelli.com/telegram/?product=66</url>
+        <price>46900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/146a5c568adb67541fc7cf1a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/508e44397a9680ce132a9ab5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1b9dd1201a51e58a6c77fe39.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6659874d032fda025e673e0b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5ea24c288a6f3f5f96248edf.jpg</picture>
+        <name>Монохром</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Монохром
+Новые купальники
+Рост: 140-160 см
+Обхват груди: 75-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 77-85 см
+Дуга тела: 128-136 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/66</description>
+      </offer>
+      <offer id="artnelli-72" available="true">
+        <url>https://artnelli.com/telegram/?product=72</url>
+        <price>55000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a568872cc05d4dbd53a28b0c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/56e85040a1365fea885b5ec4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/cf5c24354d93097d7d99df3a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0e372d1b3c90cdc1a415116f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1d15285ea726cee8e7488b1b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/df994358ea8644e2794c4a7e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d694b475788c86e002fe0f06.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/388f2c8930c51ee8ac184cb6.jpg</picture>
+        <name>Черномор и Птица-Лебедь</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Черномор и Птица-Лебедь
+Новые купальники
+Рост: 135-155 см
+Обхват груди: 70-75 см
+Обхват талии: 56-60 см
+Обхват бёдер: 74-77 см
+Дуга тела: 125-128 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/72</description>
+      </offer>
+      <offer id="artnelli-82" available="true">
+        <url>https://artnelli.com/telegram/?product=82</url>
+        <price>63500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a5ddfb71154af5a9500e12d1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/07568c433a5c2b6eb06dbce1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a53559e7a69a7e10a16fce19.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1d953324903515c76256021b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/87cc53479d2505a5c939e14e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b04de501be000696bf1bff08.jpg</picture>
+        <name>Снежная Королева</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Снежная Королева
+Новые купальники
+Рост: 140-155 см
+Обхват груди: 68-72 см
+Обхват талии: 56-58 см
+Обхват бёдер: 72-76 см
+Дуга тела: 124-128 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/82</description>
+      </offer>
+      <offer id="artnelli-89" available="true">
+        <url>https://artnelli.com/telegram/?product=89</url>
+        <price>55000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a10446c5781d69df9a83dd87.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7b034035139f9d55d633e785.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f00600dae5033510779c5483.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7dfe481b257c030408f94f25.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/13bff9c8d3ddff7f8f555467.jpg</picture>
+        <name>Царевна -лебедь</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Царевна -лебедь
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 72-75 см
+Обхват талии: 56-58 см
+Обхват бёдер: 74-77 см
+Дуга тела: 126-130 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/89</description>
+      </offer>
+      <offer id="artnelli-298" available="true">
+        <url>https://artnelli.com/telegram/?product=298</url>
+        <price>49900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5fef868ce6f5a31cf0edbdcf.jpg</picture>
+        <name>Red</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Red
+Новые купальники
+Рост: 140-160 см
+Обхват груди: 75-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 77-85 см
+Дуга тела: 128-136 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/298</description>
+      </offer>
+      <offer id="artnelli-1092" available="true">
+        <url>https://artnelli.com/telegram/?product=1092</url>
+        <price>89400</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/e091a568022f2ddc0ef3a470.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/df95f5e88125b17e85c0f5e8.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0b32348f5ec53dab87218aab.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/02782ecd1c942ed03bebf17b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c834b977ede12811908c8c4d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/afe17c9ce71628d987c48f19.jpg</picture>
+        <name>Volcano</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Volcano
+Новые купальники
+Рост: 160-180 см
+Обхват груди: 82-88 см
+Обхват талии: 66-72 см
+Обхват бёдер: 86-92 см
+Дуга тела: 145-155 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/16/1092</description>
+      </offer>
+      <offer id="artnelli-1136" available="true">
+        <url>https://artnelli.com/telegram/?product=1136</url>
+        <price>55700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/dd4e187c19ee2ae0a7c077d9.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e230d4b91744e89457a5ee46.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/93cb83de33c59b82a01d1ddb.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/efe5dc5cb4d9b9363649e408.jpg</picture>
+        <name>Coral</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Coral
+Новые купальники
+Рост: 160-180 см
+Обхват груди: 77-86 см
+Обхват талии: 64-70 см
+Обхват бёдер: 83-90 см
+Дуга тела: 140-150 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/738/1136</description>
+      </offer>
+      <offer id="artnelli-1279" available="true">
+        <url>https://artnelli.com/telegram/?product=1279</url>
+        <price>59500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/7113564293ecc2f05f6f656b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5b7b7560f9fbc8a502d0cb94.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/908d4fa3c08638b20f27e71c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8fb7112a3bb4fccc6fa4d058.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8755bed639faa089d17afc19.jpg</picture>
+        <name>Лето</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Лето
+Новые купальники
+Рост: 140-155 см
+Обхват груди: 70-78 см
+Обхват талии: 58-65 см
+Обхват бёдер: 74-82 см
+Дуга тела: 124-130 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1279</description>
+      </offer>
+      <offer id="artnelli-1297" available="true">
+        <url>https://artnelli.com/telegram/?product=1297</url>
+        <price>54800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/cae74500a142f41d3219f594.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/30eefe751f6e537e05a7fb59.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0bab327ba1557d95748c7df1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ec1f2519ca9838923817158c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/48410ce7b9aa2ca2ad632e9f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a1ddb4de8e33351725ce3b8b.jpg</picture>
+        <name>Red&amp;Fuchsia</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Red&amp;Fuchsia
+Новые купальники
+Рост: 140-155 см
+Обхват груди: 66-76 см
+Обхват талии: 55-65 см
+Обхват бёдер: 68-78 см
+Дуга тела: 119-128 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1297</description>
+      </offer>
+      <offer id="artnelli-1339" available="true">
+        <url>https://artnelli.com/telegram/?product=1339</url>
+        <price>84700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/73b0c7e5f7a4d6b40bd3c481.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/944cfc61eb561e38cb404a4f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/051304ff0b814a46b5ffa4c2.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2d5d5d2517b9628f2b57c71c.jpg</picture>
+        <name>Белое золото</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Белое золото
+Новые купальники
+Рост: 130-140 см
+Обхват груди: 64-72 см
+Обхват талии: 54-62 см
+Обхват бёдер: 66-75 см
+Дуга тела: 116-123 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2/1339</description>
+      </offer>
+      <offer id="artnelli-2233" available="true">
+        <url>https://artnelli.com/telegram/?product=2233</url>
+        <price>74800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/96c1658259e5e8f5aa28c94e.jpg</picture>
+        <name>Oriental</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Oriental
+Новые купальники
+Рост: 130-145 см
+Обхват груди: 60-69 см
+Обхват талии: 50-57 см
+Обхват бёдер: 60-69 см
+Дуга тела: 110-120 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2233</description>
+      </offer>
+      <offer id="artnelli-2421" available="true">
+        <url>https://artnelli.com/telegram/?product=2421</url>
+        <price>76700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/0b5693995e5eb75322f513a1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b713eded459c696a85eb11e4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/984a088f024015ec89d38ea4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/15b0956354459e496ed314a0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/49f49f7dd31fb4de39582791.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0682a6c55165f710b92d6bb2.jpg</picture>
+        <name>Red &amp; Blue</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Red &amp; Blue
+Новые купальники
+Рост: 150-160 см
+Обхват груди: 72-82 см
+Обхват талии: 58-64 см
+Обхват бёдер: 72-82 см
+Дуга тела: 126-135 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2421</description>
+      </offer>
+      <offer id="artnelli-2499" available="true">
+        <url>https://artnelli.com/telegram/?product=2499</url>
+        <price>49000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5d2b15aceafa43a0e3246099.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d87583c64befc068b7ad0df0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fd77f021c85807b9005170e6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8cf292efd8beff83e18a3e00.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/879eedef6c8d26d92f42bde5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4b17869922d16b971e416b6f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/dd66feb79b626fee80d03a3a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2ae2093d7921b16f59a4ec06.jpg</picture>
+        <name>Б/у — Yellow gold</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Yellow gold
+Купальники б/у
+Рост: 120-140 см
+Обхват груди: 62-69 см
+Обхват талии: 52-58 см
+Обхват бёдер: 64-72 см
+Дуга тела: 108-115 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2499</description>
+      </offer>
+      <offer id="artnelli-2817" available="true">
+        <url>https://artnelli.com/telegram/?product=2817</url>
+        <price>33900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/8dd39121cab682a1c6b79416.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/05308d4fcd2549b90aff5013.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8711f4421814ee4be2ac2624.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c6102368b1502db5e0ea045e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fc2f0f8ead59ae4288c20a8b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/27871051504c59822f5d94d2.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c21c5188bd542356d754aa83.jpg</picture>
+        <name>Синий</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Синий
+Новые купальники
+Рост: 105-125 см
+Обхват груди: 54-64 см
+Обхват талии: 48-56 см
+Обхват бёдер: 54-64 см
+Дуга тела: 102-112 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2817</description>
+      </offer>
+      <offer id="artnelli-2827" available="true">
+        <url>https://artnelli.com/telegram/?product=2827</url>
+        <price>3500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/0adabed1a9abc656edeb1c89.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/764a64ff22207dc363217ccc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/77a963105cb7c57055f9d2e0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1ced33d8f4a898a1df6b1b21.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4f0cc44f1e77ae2d8a88d26b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/35df86b817d37d756829c5b5.jpg</picture>
+        <name>Аренда — Peach</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Peach
+Аренда купальников
+Рост: 105-125 см
+Обхват груди: 54-64 см
+Обхват талии: 48-56 см
+Обхват бёдер: 54-64 см
+Дуга тела: 102-112 см
+Указана стоимость аренды. Срок и условия уточняйте перед бронированием.
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1865/2827</description>
+      </offer>
+      <offer id="artnelli-2840" available="true">
+        <url>https://artnelli.com/telegram/?product=2840</url>
+        <price>5000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5d2b15aceafa43a0e3246099.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d87583c64befc068b7ad0df0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fd77f021c85807b9005170e6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8cf292efd8beff83e18a3e00.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/879eedef6c8d26d92f42bde5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4b17869922d16b971e416b6f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/dd66feb79b626fee80d03a3a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2ae2093d7921b16f59a4ec06.jpg</picture>
+        <name>Аренда — Yellow gold</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Yellow gold
+Аренда купальников
+Рост: 120-140 см
+Обхват груди: 62-69 см
+Обхват талии: 52-58 см
+Обхват бёдер: 64-72 см
+Дуга тела: 108-115 см
+Указана стоимость аренды. Срок и условия уточняйте перед бронированием.
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1865/2840</description>
+      </offer>
+      <offer id="artnelli-2883" available="true">
+        <url>https://artnelli.com/telegram/?product=2883</url>
+        <price>62500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/71e0068ceb570afff47a36c3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fc2ca21f181e8b4db5dad56d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e1b37cfd5217a2c1200a5abb.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/23a64753cddb622c41c37851.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2e4572c8dd3261499be3e822.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/43bb06dccc38a35aabefea91.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4e70c557eeead76c88fffd52.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/38ae5ace2f7f897e9f0e0336.jpg</picture>
+        <name>Б/у — Рост 130-145 см</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Рост 130-145 см
+Купальники б/у
+Рост: 130-145 см
+Обхват груди: 62-67 см
+Обхват талии: 52-57 см
+Обхват бёдер: 64-70 см
+Дуга тела: 114-122 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/2883</description>
+      </offer>
+      <offer id="artnelli-2892" available="true">
+        <url>https://artnelli.com/telegram/?product=2892</url>
+        <price>62500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/67d34d69b256631b8ece5034.jpg</picture>
+        <name>Б/у — Рост 130-145 см</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Рост 130-145 см
+Купальники б/у
+Рост: 130-145 см
+Обхват груди: 62-67 см
+Обхват талии: 52-57 см
+Обхват бёдер: 64-70 см
+Дуга тела: 114-122 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/2892</description>
+      </offer>
+      <offer id="artnelli-3146" available="true">
+        <url>https://artnelli.com/telegram/?product=3146</url>
+        <price>66300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/e128f2db05bf32f390bc8bc3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/33295221781e77c4acf32ba5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/56dd4a719fc64fe3a3e58570.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/224ac773c6656f31103975e1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/746d7b39aad15d89b08314a0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/da5c0d0538b03ab1fa8cf296.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/bb4335379a517c31e75c0189.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a7fb1e20ac61f9885ca75741.jpg</picture>
+        <name>Снегири</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Снегири
+Новые купальники
+Рост: 115 см
+Обхват груди: 56-61 см
+Обхват талии: 45-49 см
+Обхват бёдер: 56-61 см
+Дуга тела: 98-108 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3146</description>
+      </offer>
+      <offer id="artnelli-3405" available="true">
+        <url>https://artnelli.com/telegram/?product=3405</url>
+        <price>55000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/f0a04e3fae6700cc03d91e34.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2cda32f986c76075cd382025.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b69a1e4300d7ba2db3394fbc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d8a435a388b7bdbd0b68f2af.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a53714484eb60f30cb9f4d03.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b0d830c01d70aecc65e0af22.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/aa5747e2c2d5ab78bd9b316c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b3473a09a300728ff518295e.jpg</picture>
+        <name>Б/у — Звезды</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Звезды
+Купальники б/у
+Рост: 135 см
+Обхват груди: 63 см
+Обхват талии: 55 см
+Обхват бёдер: 64 см
+Дуга тела: 113 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3405</description>
+      </offer>
+      <offer id="artnelli-3456" available="true">
+        <url>https://artnelli.com/telegram/?product=3456</url>
+        <price>55000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/90cca10008efca94a384411a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e40e2e5d63e46aafada64a23.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a806e626273d621d3b901d3d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/371a63094e48b53d4c5b4b86.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/59cf5546b02776d94268ff2a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/75e5576074dafd3eae8224f3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f21055397edcbf154bf65e1e.jpg</picture>
+        <name>Б/у — Bright</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Bright
+Купальники б/у
+Рост: 135-145 см
+Обхват груди: 63 см
+Обхват талии: 55 см
+Обхват бёдер: 68 см
+Дуга тела: 116 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3456</description>
+      </offer>
+      <offer id="artnelli-3520" available="true">
+        <url>https://artnelli.com/telegram/?product=3520</url>
+        <price>33800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/008cbc3837c3d4169343cb1b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e046c30a9f7f7624ed6afc09.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/91de7d92c9ab04fa5b8fd863.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/601c8e44a25e128a381da352.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/945b2b714c9087fc3504ee86.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5f43e86d59afe43c2f70abc2.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e18370cf472935294193bc1b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8d84cbecab964542dc0e3140.jpg</picture>
+        <name>Красный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Красный
+Новые купальники
+Рост: 105-125 см
+Обхват груди: 54-64 см
+Обхват талии: 48-56 см
+Обхват бёдер: 54-64 см
+Дуга тела: 100-110 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3520</description>
+      </offer>
+      <offer id="artnelli-3580" available="true">
+        <url>https://artnelli.com/telegram/?product=3580</url>
+        <price>98500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/418e8d7a9b365d9c67efa9ed.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/33eed574b8458076049c7136.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/37586e445ff6b0f6269e4b53.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e3f2c66f0ae6e7323521b8d8.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/59f0cb59fbb288b13f5e4c80.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/09bb3e992ef7f3910af594fa.jpg</picture>
+        <name>Elegance</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Elegance
+Новые купальники
+Рост: 150-165 см
+Обхват груди: 72-83 см
+Обхват талии: 59-66 см
+Обхват бёдер: 73-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3580</description>
+      </offer>
+      <offer id="artnelli-3588" available="true">
+        <url>https://artnelli.com/telegram/?product=3588</url>
+        <price>145000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5e9a45d4054053e93bc3b44b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/01e754c3fc5a56813f1fd19c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/84046a190b1609ac0aa94533.jpg</picture>
+        <name>Огненный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Огненный
+Новые купальники
+Рост: 150-160 см
+Обхват груди: 70-80 см
+Обхват талии: 58-66 см
+Обхват бёдер: 75-85 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3588</description>
+      </offer>
+      <offer id="artnelli-3640" available="true">
+        <url>https://artnelli.com/telegram/?product=3640</url>
+        <price>78600</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/8283dc7f6fa37083b25141c7.jpg</picture>
+        <name>Звезда</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Звезда
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/14/3640</description>
+      </offer>
+      <offer id="artnelli-3759" available="true">
+        <url>https://artnelli.com/telegram/?product=3759</url>
+        <price>65000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/b96911afab70daf8d4d6d472.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c13f9c94576d7cd9e3ff7f6b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b1c498a551c3e43217d9edcb.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/365a70704d461bd295db1b60.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c945169e4615fcae17ae1c80.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4553623e49516f0ebc84caaf.jpg</picture>
+        <name>Б/у — Сиреневый</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Сиреневый
+Купальники б/у
+Рост: 165 см
+Обхват груди: 80 см
+Обхват талии: 65 см
+Обхват бёдер: 85 см
+Дуга тела: 142 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3759</description>
+      </offer>
+      <offer id="artnelli-3809" available="true">
+        <url>https://artnelli.com/telegram/?product=3809</url>
+        <price>78700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a4a11eb17facab7c4ec4d27b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3154e85d27945b28438666ee.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/883b1ce93fe56d1dd525f6ce.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9790a5e99cab2154abbb1a14.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5dbb32560c4f9bc42191a99b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/30798757f8d2015f4c575e3a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/847cd39d051011aa2c62a2cb.jpg</picture>
+        <name>Ирисы</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Ирисы
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 67-76 см
+Обхват талии: 56-64 см
+Обхват бёдер: 69-78 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/3809</description>
+      </offer>
+      <offer id="artnelli-4117" available="true">
+        <url>https://artnelli.com/telegram/?product=4117</url>
+        <price>30000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/012743adf63c6c577f488129.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4a1160b701bd644181e72535.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/61093699d6cd52b45d3fa349.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b47931a499e15678f6988f96.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f029872e1808899699fa1b26.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/24ee358c79b82dc546ca8eb0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6221ab03a5001571504c5973.jpg</picture>
+        <name>Б/у — Green fantasy</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Green fantasy
+Купальники б/у
+Рост: 125-135 см
+Обхват груди: 63+ см
+Обхват талии: 52+ см
+Обхват бёдер: 63 см
+Дуга тела: 110+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4117</description>
+      </offer>
+      <offer id="artnelli-4126" available="true">
+        <url>https://artnelli.com/telegram/?product=4126</url>
+        <price>30000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/1e2eefd860f369b25ed7c430.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/63b43da410815ddd87571115.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/67c38be8f1c1fbc7f9aacbfe.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7e79d6ac27df36f9d100c08d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/38e9f0b450cb406676c8b672.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/bfcd95d4ba10f8b195e792f4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9ec2084802b4daf4c04bc627.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2fa6a0afcf2757bdef9bad68.jpg</picture>
+        <name>Б/у — Purple Fieria</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Purple Fieria
+Купальники б/у
+Рост: 125-135 см
+Обхват груди: 63+ см
+Обхват талии: 52+ см
+Обхват бёдер: 63 см
+Дуга тела: 109+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4126</description>
+      </offer>
+      <offer id="artnelli-4159" available="true">
+        <url>https://artnelli.com/telegram/?product=4159</url>
+        <price>78000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/bcfdcb6070368733fc67e0c6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6566a53db6200b1c469cbf1e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ec35765b0ec4ed778d3ac28a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e81a688ab0fef10beeed9815.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9570fd2e4e044acaedace4e8.jpg</picture>
+        <name>Б/у — Каролина</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Каролина
+Купальники б/у
+Рост: 140-150 см
+Обхват груди: 67+ см
+Обхват талии: 60+ см
+Обхват бёдер: 73 см
+Дуга тела: 123+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4159</description>
+      </offer>
+      <offer id="artnelli-4197" available="true">
+        <url>https://artnelli.com/telegram/?product=4197</url>
+        <price>34500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/52043614e300eb421e13f04a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/522025a66c3348b3cb0c0424.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/854b3f9e9dae04646d2b55f4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ec5ad6fc78ed81c4ee8687a3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e0c8e7e758f13bd0ce6d24ab.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/591531d671be9636eb8df295.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ca5fc7ebf66ec3090394bf68.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/77ad0154e78b8bbfe2de648a.jpg</picture>
+        <name>Б/у — Ярко-красный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Ярко-красный
+Купальники б/у
+Рост: 115-135 см
+Обхват груди: 58-64 см
+Обхват талии: 52-56 см
+Обхват бёдер: 58-65 см
+Дуга тела: 107-115 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4197</description>
+      </offer>
+      <offer id="artnelli-4206" available="true">
+        <url>https://artnelli.com/telegram/?product=4206</url>
+        <price>4500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/52043614e300eb421e13f04a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/522025a66c3348b3cb0c0424.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/854b3f9e9dae04646d2b55f4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ec5ad6fc78ed81c4ee8687a3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e0c8e7e758f13bd0ce6d24ab.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/591531d671be9636eb8df295.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ca5fc7ebf66ec3090394bf68.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/77ad0154e78b8bbfe2de648a.jpg</picture>
+        <name>Аренда — Ярко-красный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Ярко-красный
+Аренда купальников
+Рост: 115-135 см
+Обхват груди: 58-64 см
+Обхват талии: 52-56 см
+Обхват бёдер: 58-65 см
+Дуга тела: 107-115 см
+Указана стоимость аренды. Срок и условия уточняйте перед бронированием.
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1865/4206</description>
+      </offer>
+      <offer id="artnelli-4270" available="true">
+        <url>https://artnelli.com/telegram/?product=4270</url>
+        <price>78300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5db6b2cedd15e16259b9d8a4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f40d6957711fbf64d4252526.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a172ec79861e446de6adaa83.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/eb5000506ed00b92349769c1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a600d0a9c1659db336a0e96b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/03be2a8612cd912948170232.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9d75c61a629dc89cf29c6705.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0b82b146b40b5333f6a169d2.jpg</picture>
+        <name>Pink-Emerald</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Pink-Emerald
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4270</description>
+      </offer>
+      <offer id="artnelli-4564" available="true">
+        <url>https://artnelli.com/telegram/?product=4564</url>
+        <price>49000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/6a7d55c4023f479e002864d3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a3c94dd34ec2ccb95c0dce41.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1e61895607c0345f8ef9721f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/240b6a0aff4fd293872dc64f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d1b24fd9f4e3580e2cfd49a5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0258beef88a18591d7cb79a7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/80b3006f04d73ff0add4bba1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7bcf1b19c206a98d99559976.jpg</picture>
+        <name>Б/у — Народный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Народный
+Купальники б/у
+Рост: 125-140 см
+Обхват груди: 65+ см
+Обхват талии: 57+ см
+Обхват бёдер: 68+ см
+Дуга тела: 116+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4564</description>
+      </offer>
+      <offer id="artnelli-4573" available="true">
+        <url>https://artnelli.com/telegram/?product=4573</url>
+        <price>49000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/f573fbcdc9a245305a8f3699.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a2657a48b85a63c16b2447bb.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/cc9e7322f548263e297d8afd.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/14ad5e4435054e8f79bc341e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a1b64105b9cbfc13da42e34c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3662c3ce4d4f64859a3f30e3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3ac31425497d008ec9246213.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/484b861f3f824f83ca2ccf39.jpg</picture>
+        <name>Б/у — Золотой</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Золотой
+Купальники б/у
+Рост: 125-140 см
+Обхват груди: 65+ см
+Обхват талии: 57+ см
+Обхват бёдер: 68+ см
+Дуга тела: 116+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4573</description>
+      </offer>
+      <offer id="artnelli-4592" available="true">
+        <url>https://artnelli.com/telegram/?product=4592</url>
+        <price>82300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a855c49074865c5ea7a9badc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/118e106351ab1542ccdf4c85.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/11fce897d6fe846318bd7883.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/91ebb9ac262087ae1089c45a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0aa93e9668fbe7c6a2611c1a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/01aef89364bf842235dfd618.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fa7bdb2051126587a8087c8d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3f6bc4cf581df00a6adf082d.jpg</picture>
+        <name>Сафари</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Сафари
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/14/4592</description>
+      </offer>
+      <offer id="artnelli-4751" available="true">
+        <url>https://artnelli.com/telegram/?product=4751</url>
+        <price>85500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/4e4c447b22f60013d1edd1c7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3dbbbbbf43fc22c43414491e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/444b690a87096c79cf1ccef7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/83851282c71ed908a0041f0f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/19ab458e29b28cddf48ad576.jpg</picture>
+        <name>Красный вихрь</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Красный вихрь
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4751</description>
+      </offer>
+      <offer id="artnelli-4796" available="true">
+        <url>https://artnelli.com/telegram/?product=4796</url>
+        <price>85600</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a93ea7339dc5857f7cff5c70.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1ba4104144dfb486193239e3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f5ea0680aff33f5ae7e3b056.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6d1dd87e22579c808dd2d8e8.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d38917f9196f85912ad4fc9e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ba8904824ce40aef611a74ab.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1b7b2d2c01d3c3290c15416f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/af8f44769be4372dd39abe7b.jpg</picture>
+        <name>Фиеста</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Фиеста
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4796</description>
+      </offer>
+      <offer id="artnelli-4836" available="true">
+        <url>https://artnelli.com/telegram/?product=4836</url>
+        <price>73500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a8189d6f539c8f2fb90e13a3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f3c99cf7d6fe9a99dd71f721.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/77e75c642a13bdc1df8ab998.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e44fdb1685ab283423a55e89.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/430510c65bcf08486bf565e9.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/792f5e65e023ee747673b8b6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fbb5b50990dec35c43aefc8e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/602169ea38e3b63364c70f65.jpg</picture>
+        <name>Сочный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Сочный
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4836</description>
+      </offer>
+      <offer id="artnelli-4870" available="true">
+        <url>https://artnelli.com/telegram/?product=4870</url>
+        <price>76700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/1e48a2c2b60b9812f1fee829.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f7ce9999abcf9a4f2189dd66.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/74ee933679260c6913bd5596.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1dad7e68005e7d717be619cd.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/581aece2768d243032a3fb5e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/53df4d9752ce949dcaaeca70.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c4c3f8b1b9d22fc7df8e32e0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/84823a164d5471bbf7026038.jpg</picture>
+        <name>Золотая Черника</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Золотая Черника
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4870</description>
+      </offer>
+      <offer id="artnelli-4893" available="true">
+        <url>https://artnelli.com/telegram/?product=4893</url>
+        <price>76800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/06a18cb4432f62e6f1ed4ffd.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/11b1953b0c0a9c97af4de74f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/17110dce39e71eb0db0face6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b4f2c1060e12b770a9e695a5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/11c076669649b03dabf1e934.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/193b22c7b1c71bdac21f115c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c4488250ff1dec7bd4dcf94b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0152c7780834990a5ed6c8ee.jpg</picture>
+        <name>Happy Blue</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Happy Blue
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4893</description>
+      </offer>
+      <offer id="artnelli-4918" available="true">
+        <url>https://artnelli.com/telegram/?product=4918</url>
+        <price>78500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/6cda792a0f14169c4cae5c6a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c04bf13caea24658f4e5658b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/078874a04735d0c8e579fdc8.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/89cd1776e1e679d82e1c8edc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4e37379ccb76f3eeda7eb5e7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1752239544ca06f8ce76d071.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1f0578fa4ffc84ca43abe9a5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3af90302802dc84063c9f52a.jpg</picture>
+        <name>Небесно голубой</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Небесно голубой
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4918</description>
+      </offer>
+      <offer id="artnelli-4986" available="true">
+        <url>https://artnelli.com/telegram/?product=4986</url>
+        <price>85000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/848826b380d86f5de50d6ab3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e796d4ff7f270c76b47c4d3e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2c66b3eda1c3eb9afb846055.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/aecce47b7f6b77210b7b8675.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7dc0f0da1f5b82cb1493eb5c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3a8ed28233c9b54b0b199179.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2c626bf5c30a06164057d16e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/043b71a2f1941d684c4eeb31.jpg</picture>
+        <name>Б/у — Coral</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Coral
+Купальники б/у
+Рост: 125-135 см
+Обхват груди: 60+ см
+Обхват талии: 52+ см
+Обхват бёдер: 62 см
+Дуга тела: 111+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/4986</description>
+      </offer>
+      <offer id="artnelli-4995" available="true">
+        <url>https://artnelli.com/telegram/?product=4995</url>
+        <price>85000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/c2f6ba2cebb243b00a72a277.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d9a4ec5fd03e969950788efa.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/cd1bc75e126f9631fa4f55e5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8b1bf84a1f8350c8b97f44e6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/cbf2be58c192623921a389b7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/926831b1eacb2ea351cc9b85.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/40a320563db70fe2f9666ec9.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b20291e6c40ec49635db8c9d.jpg</picture>
+        <name>Б/у — Bright blue</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Bright blue
+Купальники б/у
+Рост: 115-125 см
+Обхват груди: 56+ см
+Обхват талии: 52+ см
+Обхват бёдер: 58 см
+Дуга тела: 105+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/4995</description>
+      </offer>
+      <offer id="artnelli-5016" available="true">
+        <url>https://artnelli.com/telegram/?product=5016</url>
+        <price>88500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a6907bd95aa2cb87522fe3b7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/062bf1c4119c9f5fd5b561ad.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7c15b012862b0b0ceb17035c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ffd13555611be87de7fbabeb.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/be4d4ac35a67f69dd5dd114b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3b744d142d7321459be0b55e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9f922a56805dddfaf0a09036.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8c3fba16bd79b0250ea8a0e0.jpg</picture>
+        <name>Снежное Величие</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Снежное Величие
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5016</description>
+      </offer>
+      <offer id="artnelli-5124" available="true">
+        <url>https://artnelli.com/telegram/?product=5124</url>
+        <price>82700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/0d278da8334a05e10c65ea03.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7e7cb35c87ec6b5bc44e458a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0d2ee1d8e10be6a50d708356.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7121fb026da33095e7019163.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7c5ee3290df9341c77cc897d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c4ab283526f9c6c21c7432e3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/449669934493b8fd9d2a2948.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b9bd35968ff42352447ee581.jpg</picture>
+        <name>Золотой</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Золотой
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5124</description>
+      </offer>
+      <offer id="artnelli-5153" available="true">
+        <url>https://artnelli.com/telegram/?product=5153</url>
+        <price>78700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/d573461c2c2259ef8a86f8b0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ff6fcb9b025149fc6e35ba56.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/045f00ce3b32fd1f4fda2e5b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d0afc9452f0aa4ec2e8d5d53.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/499b77c404a30c7065495827.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d937ab7be12f0bca276be644.jpg</picture>
+        <name>Elegant Black</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Elegant Black
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5153</description>
+      </offer>
+      <offer id="artnelli-5278" available="true">
+        <url>https://artnelli.com/telegram/?product=5278</url>
+        <price>76500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/0eba9be41f17c5e1cff5029e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3b36a6b29beaca1f429f98cf.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e92029f16ad73bbc899d9392.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b6e2261b8e39a1309406c07c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4acbbec33e4eca5fd08893ff.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/47ccbffcab617da2c40a0a08.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/98a765b258962a436c4b6e64.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f1f0d9f449084a9f4519213b.jpg</picture>
+        <name>Краски</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Краски
+Новые купальники
+Рост: 135-145 см
+Обхват груди: 63-72 см
+Обхват талии: 54-62 см
+Обхват бёдер: 67-75 см
+Дуга тела: 114-124 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5278</description>
+      </offer>
+      <offer id="artnelli-5298" available="true">
+        <url>https://artnelli.com/telegram/?product=5298</url>
+        <price>83700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/d69afd3259c9a79a19f5744a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/44f8a5e68d6ac3dc1970c518.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d26c3ecc01701f1682fbcd56.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/88850b4aa7afe956b6ee1bdd.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0bf10cfc9832dc7771d912ae.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/dd4190c6a34c6da1e67da1d1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/81832e3454541ecdc038025e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fdc90019737ec6b023d3c71b.jpg</picture>
+        <name>Птичка певчая</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Птичка певчая
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5298</description>
+      </offer>
+      <offer id="artnelli-5316" available="true">
+        <url>https://artnelli.com/telegram/?product=5316</url>
+        <price>79700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/b16d1fc7d91e388f45a34cf2.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e5977f3602203d3a235d3a48.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f0837689ff2a9cf39ab0ad48.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a78573341829a20e807cc03b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/773d7f6e14846cc537fa6949.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/75536311ffe1331b7b383b00.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1b44565be7320ea2c1ceb95e.jpg</picture>
+        <name>Изящно красный</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Изящно красный
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5316</description>
+      </offer>
+      <offer id="artnelli-5408" available="true">
+        <url>https://artnelli.com/telegram/?product=5408</url>
+        <price>79700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/e6465b2b3919fff55204f49d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/29d8bdb9c60ec39d6a6b7be3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5c052c8087f3850de7262319.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f745aa368059577bba1d982b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c1af3531fa08e35563284e7c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4909ba146d9586e1fb69714d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b441294c545db5a8851d2a8b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0d793c4231509cd147d449a7.jpg</picture>
+        <name>Зефир</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Зефир
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5408</description>
+      </offer>
+      <offer id="artnelli-5426" available="true">
+        <url>https://artnelli.com/telegram/?product=5426</url>
+        <price>61500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/e91bfc8acb25c87128b07aac.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/624210e98a965cbe96e654a4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e71a05bdf8b2e358a1f50bff.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9709a69798f8bf6e3a22ca47.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c5016c5782f0fd473e8aace7.jpg</picture>
+        <name>Голубой</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Голубой
+Новые купальники
+Рост: 130-140 см
+Обхват груди: 60-68 см
+Обхват талии: 50-56 см
+Обхват бёдер: 60-68 см
+Дуга тела: 110-120 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5426</description>
+      </offer>
+      <offer id="artnelli-5471" available="true">
+        <url>https://artnelli.com/telegram/?product=5471</url>
+        <price>69800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/0269cc29d7cc8320b1c59e0f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/956d7009686eac588192c84f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a29701a86bcc2b84044dda39.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5f41f4026d5cdcfea86c8af5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0869b3ff26987b8a5d8ee630.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1489233f971c625112b3b16e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5a2f90ba82983e8d68f0eb08.jpg</picture>
+        <name>Сияние звёзд</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Сияние звёзд
+Новые купальники
+Рост: 135-150 см
+Обхват груди: 67-75 см
+Обхват талии: 54-62 см
+Обхват бёдер: 67-75 см
+Дуга тела: 118-128 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/2/5471</description>
+      </offer>
+      <offer id="artnelli-5491" available="true">
+        <url>https://artnelli.com/telegram/?product=5491</url>
+        <price>82900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/84d752d24e651659a1c6aea0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2a1f689a008c6cd9d0305c18.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/055fb7702f7ae6df0282f94c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a83b6bb93cd1cb1e7dfbac1d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6adcba18090efa61eeff4e92.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/df1e5205185b40b555cef20f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7c9ad742059ad396ad6a455c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3c0062727e63fb7bf1830bca.jpg</picture>
+        <name>Элегантная Фуксия</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Элегантная Фуксия
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5491</description>
+      </offer>
+      <offer id="artnelli-5520" available="true">
+        <url>https://artnelli.com/telegram/?product=5520</url>
+        <price>106250</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/d3157c9935d87e821d65db73.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b685cc02df02094a60ba579a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2bfc6457862d2a308e76d2eb.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/363eef4d8159e3914c83157d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6f589e2e1909133df08335c0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/dda4a757b3a55e268755f639.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8c96554f0686e552483e516e.jpg</picture>
+        <name>Б/у — Рост 140-150 см</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Рост 140-150 см
+Купальники б/у
+Рост: 140-150 см
+Обхват груди: 65+ см
+Обхват талии: 58+ см
+Обхват бёдер: 68+ см
+Дуга тела: 117+ см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5520</description>
+      </offer>
+      <offer id="artnelli-5549" available="true">
+        <url>https://artnelli.com/telegram/?product=5549</url>
+        <price>79900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/21685d8344e28ebfe11bd1db.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e88817eec7107187479c8223.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ace2e27e82eed1dfe3e86065.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9fa01af25bbd5b24557ab172.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/db9671e2fe660ca0b3fb1a5f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b0d67dd73255a62a2c8a0fd1.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/be4f57b6b4ec772715a4c519.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/eb8529c16d8ddb09c0ca8137.jpg</picture>
+        <name>Серебряные Лучи</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Серебряные Лучи
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5549</description>
+      </offer>
+      <offer id="artnelli-5576" available="true">
+        <url>https://artnelli.com/telegram/?product=5576</url>
+        <price>86300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/9a3828125abf6f9ad89e180b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d49360b2dd10143d3e3c2ebd.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/5854a4ac319b4bad0ddd0330.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/377adbb407da34313dc991e3.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/af28bfcc440cd9be67251f13.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/cc06f3c359d99df6f79cb440.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b8c9ab4fb9854316cec68f89.jpg</picture>
+        <name>Royal Regalia</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Royal Regalia
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5576</description>
+      </offer>
+      <offer id="artnelli-5661" available="true">
+        <url>https://artnelli.com/telegram/?product=5661</url>
+        <price>88500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/8054ea0fbfcd20114c081baa.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9702ef423b2634ace2e4725c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a8f5bcb65a1266f85e29b1e7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6f80447d7c0dc41c5b3db526.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4a2dd10664590a10c0f666ec.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7cc73fab00c5021d0ea1a86e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d6f783e517552b79a5ed5672.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c297079f3ed74280a0a625f8.jpg</picture>
+        <name>Moonlight</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Moonlight
+Новые купальники
+Рост: 145-165 см
+Обхват груди: 73-83 см
+Обхват талии: 59-66 см
+Обхват бёдер: 77-85 см
+Дуга тела: 130-140 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5661</description>
+      </offer>
+      <offer id="artnelli-5680" available="true">
+        <url>https://artnelli.com/telegram/?product=5680</url>
+        <price>83500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a46060551574898fcef5e65e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/26c94ae3eb948343bbeb2b44.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/fe0fe334a9c0be94a2f483cc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/45d213568cde4f965116162b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b8db4e3bdfd317cc2d783525.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/44966ea18a468bb880482ab4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/24483b88958ab893d7369a09.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0fa29a3d5b57a699920685ac.jpg</picture>
+        <name>Огненный рассвет</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Огненный рассвет
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/14/5680</description>
+      </offer>
+      <offer id="artnelli-5689" available="true">
+        <url>https://artnelli.com/telegram/?product=5689</url>
+        <price>54000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/9f8d1403a6458eccff9cc1b5.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/802cedf0c6aab503fdf659e6.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2483f997147a291be8656fd4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/18378bbb5f094990833b6825.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/be5071e03476058fe4ed7508.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/8df28b74a84676e714428fa6.jpg</picture>
+        <name>Б/у — Сшит по меркам:</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Сшит по меркам:
+Купальники б/у
+Обхват груди: 68 см
+Обхват талии: 57 см
+Обхват бёдер: 72 см
+Дуга тела: 120 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5689</description>
+      </offer>
+      <offer id="artnelli-5706" available="true">
+        <url>https://artnelli.com/telegram/?product=5706</url>
+        <price>79800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/436ff0410c753f894127c927.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6ab86175d783bb4109502871.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/b4e787fa4019a3f0b1a1c0d7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f00f2706757ad445ef9a0901.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/1d0638eb49d5cf12d97492da.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/110a72859f648b41049b7674.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0524faf10aa148b25245035e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f32fa49a3b88527017879ae1.jpg</picture>
+        <name>Крылья феникса</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Крылья феникса
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5706</description>
+      </offer>
+      <offer id="artnelli-5715" available="true">
+        <url>https://artnelli.com/telegram/?product=5715</url>
+        <price>87300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/9a4a9d942fd4c5a03ab70b9b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d74da06a67026e6e72f3bcec.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/21921b78d4550d9c803f464d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2717e56e000404a775727a9d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/828a642deab03a49724698d8.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3eb70c38810269a748127a11.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/23ee3eafe257ca599ec4b6fd.jpg</picture>
+        <name>Chocolate Gold</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Chocolate Gold
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/14/5715</description>
+      </offer>
+      <offer id="artnelli-5726" available="true">
+        <url>https://artnelli.com/telegram/?product=5726</url>
+        <price>4500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5a8a302ef1909f2a67aa5729.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ba53ce8973bbe3b39f124b61.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2b71d6d4826b0ceb8e3ab8cc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a3a10e2f986ba5d16ea42924.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7a04b1835709906b8f65a910.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/974d3475b4da1abefc7ac47f.jpg</picture>
+        <name>Аренда — Танец огня</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Танец огня
+Аренда купальников
+Рост: 116-130 см
+Обхват груди: 59-65 см
+Обхват талии: 50-56 см
+Обхват бёдер: 60-68 см
+Дуга тела: 108-116 см
+Указана стоимость аренды. Срок и условия уточняйте перед бронированием.
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1865/5726</description>
+      </offer>
+      <offer id="artnelli-5733" available="true">
+        <url>https://artnelli.com/telegram/?product=5733</url>
+        <price>39000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/5a8a302ef1909f2a67aa5729.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a3a10e2f986ba5d16ea42924.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/2b71d6d4826b0ceb8e3ab8cc.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/ba53ce8973bbe3b39f124b61.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7a04b1835709906b8f65a910.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/974d3475b4da1abefc7ac47f.jpg</picture>
+        <name>Б/у — Танец огня</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Танец огня
+Купальники б/у
+Рост: 116-130 см
+Обхват груди: 59-65 см
+Обхват талии: 50-56 см
+Обхват бёдер: 60-68 см
+Дуга тела: 108-116 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5733</description>
+      </offer>
+      <offer id="artnelli-5745" available="true">
+        <url>https://artnelli.com/telegram/?product=5745</url>
+        <price>50000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/b1fb0a8f12e6e311b36c6811.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/042a35f37e5441e1e2fa2f08.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/22f06f67a8b42e1ddda0ce1a.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/713ddaa0b2a24b075633e15d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/d01f986ec20bf8d8c9ccbb93.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c9ca58aa4e06554046e6a8f0.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/79dc42b68da46288ccbd4dc8.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9fe4884670f7eb0012a85428.jpg</picture>
+        <name>Б/у — Fantasy neon</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Fantasy neon
+Купальники б/у
+Рост: 140-148 см
+Обхват груди: 66-76 см
+Обхват талии: 58-64 см
+Обхват бёдер: 66-78 см
+Дуга тела: 120-126 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/5745</description>
+      </offer>
+      <offer id="artnelli-5755" available="true">
+        <url>https://artnelli.com/telegram/?product=5755</url>
+        <price>83700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/cf5f562033ced8d4f338e46d.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7899a0ea64bc6892ca22e22c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f3da683debbd8f915f960e49.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/3a43ab21e4a4f05e2769ce26.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/dea1c61bb393f53311d9e093.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/75e97039186bb3d449f4b337.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e209ef17dc6b9a685e18df0f.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a908ddc6a3084e11a466d7c7.jpg</picture>
+        <name>Рубиновый узор</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Рубиновый узор
+Новые купальники
+Рост: 145-160 см
+Обхват груди: 72-82 см
+Обхват талии: 59-65 см
+Обхват бёдер: 76-84 см
+Дуга тела: 128-137 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5755</description>
+      </offer>
+      <offer id="artnelli-5767" available="true">
+        <url>https://artnelli.com/telegram/?product=5767</url>
+        <price>86900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/a173dfaa17b2544214551799.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7a0527108432d97239f3a815.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/01d8fa5199fab39c637ede20.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/a3fc9332023afdcecd3ba076.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/89803d38f7ad1ebdac95a896.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/6bf7fa4a3a3a07b979fdbb59.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/4469c10f3fbee24127794518.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/20b2def9dd2d4de5c5d44481.jpg</picture>
+        <name>Тропический драйв</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Тропический драйв
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 123-133 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/14/5767</description>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
