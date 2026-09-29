@@ -48,10 +48,11 @@ on-request pricing has not yet been verified. These cards are preserved in
 mapping. Distinct prices without explicit sale/rental assignment also remain
 there until their roles are established. They are not catalogue errors.
 
-Two concrete exceptions need care: Telegram post 538 explicitly labels 38,900
-RUB as black and 41,900 RUB as red (colour variants); “Кармин” post 3062 contains
-71,800 and 68,500 RUB without an explicit rental label. The exporter does not
-reinterpret either value as rent automatically.
+Telegram post 538 explicitly labels 38,900 RUB as black and 41,900 RUB as red
+(colour variants); those offers still need their photos mapped. On 2026-09-29
+Nelli restored “Кармин” (3062) to 71,800 RUB. The corrected Telegram listing was
+visually verified: 68,500 RUB is gone. The catalogue description is corrected
+accordingly; this is a current purchase price, not a rental price.
 
 - Stable source IDs: `artnelli-<Telegram product id>`. Do not regenerate or change
   these IDs when updating names, prices, descriptions or images.
@@ -102,3 +103,28 @@ python scripts/build-vk-feed.py
 The PR workflow validates against the real checked-out catalogue and its images.
 `site.yml` is the only production publisher; no parallel publishing workflow is
 introduced.
+
+## Existing Telegram listing updates — 2026-09-29
+
+Nelli authorised all required corrections and continued synchronisation setup.
+The Sites backend previously checked old listing existence without importing
+its edited caption. Version 46 now refreshes all known listing captions/prices
+in bounded concurrent requests, persists those observations, and returns them
+in the same live payload. A newer snapshot is not overwritten by an older bot
+record; a later bot edit still wins. Existing album media is retained during
+caption refresh. Unknown/unavailable pages never establish removal. The existing
+approximately 15-minute publisher remains in use; scheduler delay and source
+availability can delay an update. Regression tests cover old-price correction,
+on-request price, source freshness, bounded full traversal, and unknown pages.
+
+Backend source commit: `7ddd366362528787756b65e32e8b8a973f8f6f9d`.
+
+## Receiving service research — not connected
+
+Official Soc Commerce documentation currently offers an initial import that
+either deletes old cards or leaves them beside newly created cards. It does not
+establish matching the 44 manual cards. Its no-price option inserts 0.01, which
+is not Nelli’s price-on-request requirement. Neither option is enabled.
+A paid subscription, new account, or VK permission grant has not been made.
+Sources inspected: https://soc-commerce.com/features/import-to-vk and
+https://docs.soc-commerce.com/shop/settings/main_settings.html.
