@@ -1,0 +1,39 @@
+[
+  {
+    "sourceKey": "nelli_leotards:5426:sale",
+    "ownerId": -57458681,
+    "itemId": 13952962,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_supplied_product_url_and_edit_form_screenshots",
+      "observedAt": "2026-09-30T08:19:14Z",
+      "sourceUrl": "https://t.me/nelli_leotards/5426",
+      "targetUrl": "https://vk.ru/market/product/rost-130-140-sm-goluboy-novy-57458681-13952962",
+      "name": "Голубой",
+      "priceRub": 61500,
+      "heightCm": "130-140",
+      "measurementsCm": {
+        "chest": "60-68",
+        "waist": "50-56",
+        "hips": "60-68",
+        "girth": "110-120"
+      },
+      "matchedFields": [
+        "name",
+        "price",
+        "height",
+        "chest",
+        "waist",
+        "hips",
+        "girth",
+        "cover_photo"
+      ],
+      "targetPhotoCountObserved": 5,
+      "targetSkuObserved": "",
+      "allTargetPhotosVerified": false,
+      "liveVkApiVerified": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  }
+]
