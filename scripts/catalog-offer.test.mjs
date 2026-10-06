@@ -55,3 +55,9 @@ test('real rental replaces its screenshot import; sale and ambiguous matches do 
   assert.deepEqual(result[1].prices,[4000]);
   assert.equal(reconcileImportedRentals([imported,rental,{...rental,id:6001}]).length,3);
 });
+import { catalogPhotosChanged } from './catalog-offer.mjs';
+test('sale photo edits refresh too, while durable published assets need no duplicate download',()=>{
+  const existing={condition:'new',photos:['assets/catalog/a.webp'],telegramPhotoSources:['/api/telegram-media/old']};
+  assert.equal(catalogPhotosChanged(existing,{condition:'new',photos:['/api/telegram-media/new']}),true);
+  assert.equal(catalogPhotosChanged(existing,{photos:['https://artnelli.com/assets/catalog/a.webp']}),false);
+});

@@ -9,10 +9,14 @@ on:
       - "scripts/sync-catalog.mjs"
       - "scripts/catalog-offer.mjs"
       - "scripts/rental-history.mjs"
+      - "scripts/catalog-history.mjs"
+      - "scripts/catalog-history.test.mjs"
+      - "scripts/live-data.test.mjs"
       - "scripts/build-vk-feed.py"
       - "scripts/test-vk-feed.py"
       - "scripts/requirements-vk-feed.txt"
       - "data/telegram-rental-history.json"
+      - "data/telegram-catalog-history.json"
       - ".github/workflows/site.yml"
       - ".github/workflows/catalog-sync-branch.yml"
   schedule:
@@ -41,7 +45,7 @@ jobs:
           node-version: "22"
 
       - name: Validate rental synchronization rules
-        run: node --test scripts/catalog-offer.test.mjs scripts/rental-history.test.mjs
+        run: node --test scripts/catalog-offer.test.mjs scripts/rental-history.test.mjs scripts/catalog-history.test.mjs scripts/live-data.test.mjs
 
       - name: Set up Python for the VK source export
         uses: actions/setup-python@v5

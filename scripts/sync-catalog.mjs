@@ -1,5 +1,6 @@
-import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged } from "./catalog-offer.mjs";
+import { normalizeCatalogOffer, reconcileImportedRentals, catalogPhotosChanged } from "./catalog-offer.mjs";
 import { confirmedRentalRemovalIds } from "./rental-history.mjs";
+import { confirmedCatalogRemovalIds } from "./catalog-history.mjs";
 import { createHash } from "node:crypto";
 import { access, mkdir, readFile, readdir, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -10,7 +11,6 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, "..");
 const siteDir = path.join(rootDir, "site");
 const catalogFile = path.join(siteDir, "catalog-data.js");
-const liveDataFile = path.join(siteDir, "api", "live-data.js");
 const catalogAssetsDir = path.join(siteDir, "assets", "catalog");
 const tempDir = path.join(rootDir, ".catalog-sync-tmp");
 const backendUrl = new URL(
@@ -208,28 +208,6 @@ function stableCatalogSource(products) {
   return `window.NELLI_CATALOG = ${JSON.stringify(products)};\n`;
 }
 
-function staticLiveDataSource() {
-  const data = {
-    generatedAt: null,
-    telegram: {
-      products: [],
-      statuses: [],
-      ok: true,
-      publicFeed: true,
-      source: "github",
-    },
-    instagram: {
-      ok: false,
-      connected: false,
-      followersCount: null,
-      media: [],
-    },
-  };
-  return (
-    `window.NELLI_LIVE=${JSON.stringify(data)};` +
-    "window.dispatchEvent(new CustomEvent('nelli:live-data',{detail:window.NELLI_LIVE}));\n"
-  );
-}
 
 async function main() {
   const localSource = await readFile(catalogFile, "utf8");
@@ -254,6 +232,11 @@ async function main() {
   );
   const rentalHistory = JSON.parse(await readFile(path.join(rootDir, 'data', 'telegram-rental-history.json'), 'utf8'));
   for (const id of confirmedRentalRemovalIds(rentalHistory)) removedIds.add(id);
+  const catalogHistoryFile = path.join(rootDir,'data','telegram-catalog-history.json');
+  if (await fileExists(catalogHistoryFile)) {
+    const history=JSON.parse(await readFile(catalogHistoryFile,'utf8'));
+    for (const id of confirmedCatalogRemovalIds(history)) removedIds.add(id);
+  }
   for (const product of telegram.products) {
     const id = Number(product?.id);
     if (product?.removed === true && Number.isFinite(id)) removedIds.add(id);
@@ -291,7 +274,7 @@ async function main() {
       photos.length > 0 &&
       photos.every((photo) => typeof photo === "string" && !photo.startsWith("/api/"));
 
-    const refreshRentalPhotos = rentalPhotosChanged(existing, incoming);
+    const refreshRentalPhotos = catalogPhotosChanged(existing, incoming);
     if (!hasLocalPhotos || refreshRentalPhotos) {
       const incomingPhotos = Array.isArray(incoming.photos) ? incoming.photos : [];
       if (incomingPhotos.length === 0) {
@@ -310,9 +293,7 @@ async function main() {
         {
           ...(existing || {}),
           ...incoming,
-          ...(normalizeCatalogOffer(incoming).condition === 'rental' ? {
-            telegramPhotoSources: incoming.photos || [],
-          } : {}),
+          telegramPhotoSources: incoming.photos || [],
         },
         photos,
       ),
@@ -354,14 +335,8 @@ async function main() {
     await writeFile(catalogFile, nextCatalogSource);
   }
 
-  const nextLiveDataSource = staticLiveDataSource();
-  const currentLiveDataSource = (await fileExists(liveDataFile))
-    ? await readFile(liveDataFile, "utf8")
-    : "";
-  if (currentLiveDataSource !== nextLiveDataSource) {
-    await mkdir(path.dirname(liveDataFile), { recursive: true });
-    await writeFile(liveDataFile, nextLiveDataSource);
-  }
+  // /api/live-data.js is the shared live loader. Never replace it with an empty
+  // static feed: all three clients must keep reading the Telegram webhook data.
 
   console.log(
     `Каталог синхронизирован: ${products.length} карточек, добавлено ${added}, обновлено ${updated}, удалено ${removedIds.size}, удалено фото ${removedAssets}.`,

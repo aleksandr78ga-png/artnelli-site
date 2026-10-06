@@ -47,3 +47,13 @@ export function rentalPhotosChanged(existing, incoming) {
   return JSON.stringify(existing?.telegramPhotoSources || []) !==
     JSON.stringify(incoming.photos || []);
 }
+
+export function catalogPhotosChanged(existing, incoming) {
+  const sources = incoming.photos || [];
+  const local = existing?.photos || [];
+  const path = value => String(value).replace(/^https:\/\/artnelli\.com\//, '');
+  if (JSON.stringify(sources.map(path)) === JSON.stringify(local.map(path))) return false;
+  if (!existing?.telegramPhotoSources) return Number(incoming.telegramMediaUpdatedAt || 0) * 1000 >
+    (Date.parse(existing?.catalogMediaSnapshotAt || '') || Date.now());
+  return JSON.stringify(existing.telegramPhotoSources) !== JSON.stringify(sources);
+}

@@ -1021,7 +1021,7 @@ function showActivePhoto(){
 }
 function openProduct(id){
   const selected=catalogProducts.find(product=>product.id===Number(id));if(!selected)return;
-  const preservePhoto=productDialog.open&&activeProduct&&activeProduct.id===selected.id;activeProduct=selected;if(!preservePhoto)activePhoto=0;
+  const preservePhoto=productDialog.open&&activeProduct&&activeProduct.id===selected.id;activeProduct=selected;if(!preservePhoto)activePhoto=0;else activePhoto=Math.min(activePhoto,selected.photos.length-1);
   document.getElementById('dialog-type').textContent=typeLabel(activeProduct.type)+' · '+(productSold(activeProduct)?ui().sold:conditionLabel(activeProduct.condition));
   document.getElementById('dialog-name').textContent=productName(activeProduct);document.getElementById('dialog-price').textContent=money(activeProduct);
   const specs=document.getElementById('dialog-specs');specs.replaceChildren();
@@ -1133,8 +1133,7 @@ function mergeTelegramLive(telegram){
     const existing=catalogProducts.find(item=>item.id===Number(incoming.id));
     const normalized={...incoming,specs:incoming.specs||{},prices:Array.isArray(incoming.prices)?incoming.prices:[],photos:Array.isArray(incoming.photos)?incoming.photos:[],sold:incoming.sold===true,removed:incoming.removed===true,available:incoming.available!==false&&incoming.sold!==true&&incoming.removed!==true};
     if(existing){
-      const localPhotos=(existing.photos||[]).filter(src=>!/^https?:\/\//i.test(src));
-      Object.assign(existing,normalized,{photos:localPhotos.length?localPhotos:normalized.photos});
+      Object.assign(existing,normalized,{photos:normalized.photos.length?normalized.photos:existing.photos});
     }else if(normalized.photos.length){catalogProducts.push(normalized);}
   });
   (telegram.statuses||[]).forEach(status=>{
@@ -1167,7 +1166,11 @@ function applyLiveData(data){
   if(Number.isFinite(data.instagram?.followersCount)){liveFollowersCount=Number(data.instagram.followersCount);updateFollowerCount();}
   mergeTelegramLive(data.telegram);
   renderLivePortfolio(data.instagram?.media||[]);
-  catalogLimit=24;renderCatalog();
+  renderCatalog();
+  if(productDialog.open&&activeProduct){
+    const refreshed=catalogProducts.find(product=>product.id===activeProduct.id&&product.removed!==true);
+    if(refreshed)openProduct(refreshed.id);else productDialog.close();
+  }
 }
 window.addEventListener('nelli:live-data',event=>applyLiveData(event.detail));
 window.updateDynamicLanguage=()=>{updateFollowerCount();updateCatalogChrome();renderCatalog();renderBookingMonths();renderLivePortfolio(window.NELLI_LIVE?.instagram?.media||[]);if(productDialog.open&&activeProduct)openProduct(activeProduct.id);};
@@ -1177,3 +1180,4 @@ renderCatalog();
 if(window.NELLI_LIVE)applyLiveData(window.NELLI_LIVE);</script>
 </body>
 </html>
+
