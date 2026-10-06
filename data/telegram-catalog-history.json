@@ -3,7 +3,7 @@
   "channel": "nelli_leotards",
   "source": "authenticated-telegram-catalog",
   "scope": "all-product-topics",
-  "checkedAt": "2026-10-06T06:59:09.193Z",
+  "checkedAt": "2026-10-06T08:11:46.056Z",
   "records": [
     {
       "id": 8,
@@ -17,7 +17,7 @@
         12
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -35,7 +35,7 @@
         34
       ],
       "telegramTopicId": 16,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -54,7 +54,7 @@
         65
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -73,7 +73,7 @@
         71
       ],
       "telegramTopicId": 16,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -96,7 +96,7 @@
         81
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -116,7 +116,7 @@
         88
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -136,7 +136,7 @@
         95
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -158,7 +158,7 @@
         306
       ],
       "telegramTopicId": 16,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -173,7 +173,7 @@
         539
       ],
       "telegramTopicId": 4,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -192,7 +192,7 @@
         1097
       ],
       "telegramTopicId": 16,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -211,7 +211,7 @@
         1141
       ],
       "telegramTopicId": 738,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -231,7 +231,7 @@
         1285
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -251,7 +251,7 @@
         1303
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -270,7 +270,7 @@
         1344
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -291,7 +291,7 @@
         2191
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -314,7 +314,7 @@
         2201
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -336,7 +336,7 @@
         2241
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -355,7 +355,7 @@
         2352
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -375,7 +375,7 @@
         2427
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -398,7 +398,7 @@
         2463
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -420,7 +420,7 @@
         2507
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -441,7 +441,7 @@
         2824
       ],
       "telegramTopicId": 4,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -453,8 +453,8 @@
       "telegramTopicId": 1865,
       "lastSeenAt": null,
       "missingSince": "2026-10-06T06:43:57.387813+00:00",
-      "lastMissingAt": "2026-10-06T06:59:09.193Z",
-      "missingChecks": 2,
+      "lastMissingAt": "2026-10-06T08:11:46.056Z",
+      "missingChecks": 3,
       "removed": true
     },
     {
@@ -470,7 +470,7 @@
         2845
       ],
       "telegramTopicId": 1865,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -492,7 +492,7 @@
         2891
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -515,7 +515,7 @@
         2901
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -537,7 +537,7 @@
         2919
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -556,7 +556,7 @@
         2925
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -579,7 +579,7 @@
         3071
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -601,7 +601,7 @@
         3154
       ],
       "telegramTopicId": 4,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -623,7 +623,7 @@
         3163
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -645,7 +645,7 @@
         3413
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -666,7 +666,7 @@
         3463
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -687,7 +687,7 @@
         3472
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -709,7 +709,7 @@
         3481
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -731,7 +731,7 @@
         3528
       ],
       "telegramTopicId": 4,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -753,7 +753,7 @@
         3556
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -774,7 +774,7 @@
         3575
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -794,7 +794,7 @@
         3586
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -816,7 +816,7 @@
         3596
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -838,7 +838,7 @@
         3638
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -860,7 +860,7 @@
         3648
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -881,7 +881,7 @@
         3656
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -903,7 +903,7 @@
         3715
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -925,7 +925,7 @@
         3724
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -947,7 +947,7 @@
         3767
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -969,7 +969,7 @@
         3817
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -989,7 +989,7 @@
         3956
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1009,7 +1009,7 @@
         3963
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1031,7 +1031,7 @@
         4125
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1053,7 +1053,7 @@
         4134
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1072,7 +1072,7 @@
         4164
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1094,7 +1094,7 @@
         4186
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1116,7 +1116,7 @@
         4205
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1138,7 +1138,7 @@
         4214
       ],
       "telegramTopicId": 1865,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1160,7 +1160,7 @@
         4278
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1182,7 +1182,7 @@
         4572
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1204,7 +1204,7 @@
         4581
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1226,7 +1226,7 @@
         4600
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1248,7 +1248,7 @@
         4759
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1270,7 +1270,7 @@
         4787
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1292,7 +1292,7 @@
         4804
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1314,7 +1314,7 @@
         4844
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1336,7 +1336,7 @@
         4878
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1358,7 +1358,7 @@
         4901
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1380,7 +1380,7 @@
         4926
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1402,7 +1402,7 @@
         4994
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1424,7 +1424,7 @@
         5003
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1446,7 +1446,7 @@
         5014
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1468,7 +1468,7 @@
         5024
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1490,7 +1490,7 @@
         5132
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1510,7 +1510,7 @@
         5159
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1531,7 +1531,7 @@
         5176
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1553,7 +1553,7 @@
         5286
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1575,7 +1575,7 @@
         5306
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1597,7 +1597,7 @@
         5324
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1619,7 +1619,7 @@
         5416
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1631,8 +1631,8 @@
       "telegramTopicId": null,
       "lastSeenAt": null,
       "missingSince": "2026-10-06T06:43:57.387813+00:00",
-      "lastMissingAt": "2026-10-06T06:59:09.193Z",
-      "missingChecks": 2,
+      "lastMissingAt": "2026-10-06T08:11:46.056Z",
+      "missingChecks": 3,
       "removed": true
     },
     {
@@ -1650,7 +1650,7 @@
         5462
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1672,7 +1672,7 @@
         5479
       ],
       "telegramTopicId": 2,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1694,7 +1694,7 @@
         5499
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1715,7 +1715,7 @@
         5527
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1737,7 +1737,7 @@
         5536
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1759,7 +1759,7 @@
         5557
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1781,7 +1781,7 @@
         5584
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1803,7 +1803,7 @@
         5615
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1825,7 +1825,7 @@
         5624
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1847,7 +1847,7 @@
         5633
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1868,7 +1868,7 @@
         5660
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1890,7 +1890,7 @@
         5669
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1912,7 +1912,7 @@
         5688
       ],
       "telegramTopicId": 14,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1932,7 +1932,7 @@
         5695
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1954,7 +1954,7 @@
         5704
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1976,7 +1976,7 @@
         5714
       ],
       "telegramTopicId": 5098,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -1988,8 +1988,8 @@
       "telegramTopicId": 14,
       "lastSeenAt": null,
       "missingSince": "2026-10-06T06:43:57.387813+00:00",
-      "lastMissingAt": "2026-10-06T06:59:09.193Z",
-      "missingChecks": 2,
+      "lastMissingAt": "2026-10-06T08:11:46.056Z",
+      "missingChecks": 3,
       "removed": true
     },
     {
@@ -2006,7 +2006,7 @@
         5732
       ],
       "telegramTopicId": 1865,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -2026,7 +2026,7 @@
         5739
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -2048,7 +2048,7 @@
         5753
       ],
       "telegramTopicId": 1864,
-      "lastSeenAt": "2026-10-06T06:59:09.193Z",
+      "lastSeenAt": "2026-10-06T08:11:46.056Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -2060,8 +2060,8 @@
       "telegramTopicId": null,
       "lastSeenAt": null,
       "missingSince": "2026-10-06T06:43:57.387813+00:00",
-      "lastMissingAt": "2026-10-06T06:59:09.193Z",
-      "missingChecks": 2,
+      "lastMissingAt": "2026-10-06T08:11:46.056Z",
+      "missingChecks": 3,
       "removed": true
     },
     {
@@ -2070,8 +2070,8 @@
       "telegramTopicId": null,
       "lastSeenAt": null,
       "missingSince": "2026-10-06T06:43:57.387813+00:00",
-      "lastMissingAt": "2026-10-06T06:59:09.193Z",
-      "missingChecks": 2,
+      "lastMissingAt": "2026-10-06T08:11:46.056Z",
+      "missingChecks": 3,
       "removed": true
     }
   ]
