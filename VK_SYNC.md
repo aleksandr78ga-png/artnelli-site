@@ -1,5 +1,14 @@
 # VK catalogue connection
 
+## Mandatory source policy — 2026-10-06
+
+Telegram catalogue `nelli_leotards` is the only primary source. Nelli's standing
+instruction requires automatic additions, edits of all product facts/media,
+and confirmed removals across every storefront, with a complete content
+reconciliation at least daily. Follow `PROJECT_RULES.md` and `CATALOG_SYNC.md`.
+This applies to the future VK receiver and Avito adapter. Source export alone
+does not establish a working receiving integration.
+
 ## Status — 2026-09-29
 
 Nelli authorised connecting the VK shop to the shared catalogue. This change
