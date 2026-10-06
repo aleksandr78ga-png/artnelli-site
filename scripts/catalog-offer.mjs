@@ -57,3 +57,12 @@ export function catalogPhotosChanged(existing, incoming) {
     (Date.parse(existing?.catalogMediaSnapshotAt || '') || Date.now());
   return JSON.stringify(existing.telegramPhotoSources) !== JSON.stringify(sources);
 }
+export function catalogPriceValues(text = '') {
+  const values = [];
+  const pattern = /(?<![\d.,])((?:[1-9]\d{0,2}(?:[ \u00a0\u202f.]\d{3})+|\d+)(?:,\d{1,2})?)\s*(?:(тыс(?:яч(?:а|и)?|\.?))\s*)?(?:руб(?:лей|ля|ль)?|₽)/giu;
+  for (const match of String(text).matchAll(pattern)) {
+    const number = Number(match[1].replace(/[ .\u00a0\u202f]/g, '').replace(',', '.')) * (match[2] ? 1000 : 1);
+    if (Number.isFinite(number) && number >= 1000 && !values.includes(number)) values.push(number);
+  }
+  return values;
+}

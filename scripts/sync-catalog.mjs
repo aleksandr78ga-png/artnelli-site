@@ -1,4 +1,4 @@
-import { normalizeCatalogOffer, reconcileImportedRentals, catalogPhotosChanged } from "./catalog-offer.mjs";
+import { normalizeCatalogOffer, reconcileImportedRentals, catalogPhotosChanged, catalogPriceValues } from "./catalog-offer.mjs";
 import { confirmedRentalRemovalIds } from "./rental-history.mjs";
 import { confirmedCatalogRemovalIds } from "./catalog-history.mjs";
 import { createHash } from "node:crypto";
@@ -262,8 +262,7 @@ async function main() {
     }
 
 
-    const statedRubPrices = [...String(incoming.description || "").matchAll(/(?<![\d.,])((?:[1-9]\d{0,2}(?:[ \u00a0\u202f.]\d{3})+|\d+)(?:,\d{1,2})?)\s*(?:руб(?:лей|ля|ль)?|₽)/giu)]
-      .map(match => Number(match[1].replace(/[ .\u00a0\u202f]/g, "").replace(",", ".")));
+    const statedRubPrices = catalogPriceValues(incoming.description);
     if ((incoming.prices || []).some(price => !statedRubPrices.includes(Number(price)))) {
       throw new Error(`Цена товара ${id} не соответствует отдельной сумме в исходном объявлении`);
     }

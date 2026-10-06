@@ -1,6 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged } from './catalog-offer.mjs';
+import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged, catalogPriceValues } from './catalog-offer.mjs';
+
+test('publisher validates ruble prices stated in thousands and keeps separate amounts',()=>{
+  assert.deepEqual(catalogPriceValues('Стоимость 38 тысяч рублей'),[38000]);
+  assert.deepEqual(catalogPriceValues('Стоимость 110 тысяч рублей'),[110000]);
+  assert.deepEqual(catalogPriceValues('Стоимость 38,5 тыс. ₽'),[38500]);
+  assert.deepEqual(catalogPriceValues('Стоимость 95 000 85 000 рублей'),[85000]);
+  assert.deepEqual(catalogPriceValues('Стоимость 4.500 рублей. Price 1.200 $'),[4500]);
+});
 
 test('rental offer stays rental when the upstream feed labels it new', () => {
   const input = {id:5726, condition:'new', prices:[4500], description:'Аренда ❤️\nКупальник «Танец огня»\nСтоимость аренды — 4 500 ₽', descriptionEn:'For sale\nNew rhythmic gymnastics leotard “Tanets ognya”'};
