@@ -1,0 +1,1000 @@
+{
+  "version": 1,
+  "channel": "nelli_leotards",
+  "source": "authenticated-telegram-catalog",
+  "scope": "all-product-topics",
+  "checkedAt": "2026-10-06T06:43:57.387813+00:00",
+  "records": [
+    {
+      "id": 8,
+      "name": "Монохром",
+      "telegramTopicId": 2,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 30,
+      "name": "Махагони",
+      "telegramTopicId": 16,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 60,
+      "name": "Монохром",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 66,
+      "name": "Монохром",
+      "telegramTopicId": 16,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 72,
+      "name": "Черномор и Птица-Лебедь",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 82,
+      "name": "Снежная Королева",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 89,
+      "name": "Царевна -лебедь",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 298,
+      "name": "Red",
+      "telegramTopicId": 16,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 538,
+      "name": "Купальник №538",
+      "telegramTopicId": 4,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 1092,
+      "name": "Volcano",
+      "telegramTopicId": 16,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 1136,
+      "name": "Coral",
+      "telegramTopicId": 738,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 1279,
+      "name": "Лето",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 1297,
+      "name": "Red&Fuchsia",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 1339,
+      "name": "Белое золото",
+      "telegramTopicId": 2,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2184,
+      "name": "Купальник №2184",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2233,
+      "name": "Oriental",
+      "telegramTopicId": 2,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2347,
+      "name": "Монохром",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2421,
+      "name": "Red & Blue",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2454,
+      "name": "Испания",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2499,
+      "name": "Yellow gold",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2817,
+      "name": "Синий",
+      "telegramTopicId": 4,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2827,
+      "name": "Peach",
+      "telegramTopicId": 1865,
+      "lastSeenAt": null,
+      "missingSince": "2026-10-06T06:43:57.387813+00:00",
+      "lastMissingAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingChecks": 1,
+      "removed": false
+    },
+    {
+      "id": 2840,
+      "name": "Yellow gold",
+      "telegramTopicId": 1865,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2883,
+      "name": "Купальник №2883",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2892,
+      "name": "мастерской",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2911,
+      "name": "Купальник №2911",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 2920,
+      "name": "Купальник №2920",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3062,
+      "name": "Кармин",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3146,
+      "name": "Снегири",
+      "telegramTopicId": 4,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3405,
+      "name": "Звезды",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3456,
+      "name": "Bright",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3465,
+      "name": "Золушка",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3473,
+      "name": "Сакура",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3520,
+      "name": "Красный",
+      "telegramTopicId": 4,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3548,
+      "name": "Oriental lemon",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3568,
+      "name": "Blue",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3580,
+      "name": "Elegance",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3588,
+      "name": "Огненный",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3630,
+      "name": "Купальник №3630",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3640,
+      "name": "Звезда",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3649,
+      "name": "Купальник №3649",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3707,
+      "name": "Lilac",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3716,
+      "name": "Нежность",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3759,
+      "name": "Сиреневый",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3809,
+      "name": "Ирисы",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3950,
+      "name": "Golden branches",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 3957,
+      "name": "Зеленые Ветви",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4117,
+      "name": "Green fantasy",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4126,
+      "name": "Purple Fieria",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4159,
+      "name": "Каролина",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4178,
+      "name": "Купальник №4178",
+      "telegramTopicId": 2,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4197,
+      "name": "Ярко-красный",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4206,
+      "name": "Ярко-красный",
+      "telegramTopicId": 1865,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4270,
+      "name": "Pink-Emerald",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4564,
+      "name": "Народный",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4573,
+      "name": "Золотой",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4592,
+      "name": "Сафари",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4751,
+      "name": "Красный вихрь",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4779,
+      "name": "Синий",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4796,
+      "name": "Фиеста",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4836,
+      "name": "Сочный",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4870,
+      "name": "Золотая Черника",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4893,
+      "name": "Happy Blue",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4918,
+      "name": "Небесно голубой",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4986,
+      "name": "Coral",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 4995,
+      "name": "Bright blue",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5006,
+      "name": "Turquoise",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5016,
+      "name": "Снежное Величие",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5124,
+      "name": "Золотой",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5153,
+      "name": "Elegant Black",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5169,
+      "name": "Red Neon",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5278,
+      "name": "Краски",
+      "telegramTopicId": 2,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5298,
+      "name": "Птичка певчая",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5316,
+      "name": "Изящно красный",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5408,
+      "name": "Зефир",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5426,
+      "name": "Голубой",
+      "telegramTopicId": null,
+      "lastSeenAt": null,
+      "missingSince": "2026-10-06T06:43:57.387813+00:00",
+      "lastMissingAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingChecks": 1,
+      "removed": false
+    },
+    {
+      "id": 5461,
+      "name": "Изумруд",
+      "observedAlbumRootId": 5455,
+      "observedMessageIds": [
+        5455,
+        5456,
+        5457,
+        5458,
+        5459,
+        5460,
+        5461,
+        5462
+      ],
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5471,
+      "name": "Сияние звёзд",
+      "telegramTopicId": 2,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5491,
+      "name": "Элегантная Фуксия",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5520,
+      "name": "гимнастки",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5528,
+      "name": "гимнастки",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5549,
+      "name": "Серебряные Лучи",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5576,
+      "name": "Royal Regalia",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5607,
+      "name": "Bright",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5616,
+      "name": "Фиолетовый",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5625,
+      "name": "Коричневый",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5653,
+      "name": "Фуксия",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5661,
+      "name": "Moonlight",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5680,
+      "name": "Огненный рассвет",
+      "telegramTopicId": 14,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5689,
+      "name": "цвете ✨",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5696,
+      "name": "Яркая зима",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5706,
+      "name": "Крылья феникса",
+      "telegramTopicId": 5098,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5715,
+      "name": "Chocolate Gold",
+      "telegramTopicId": 14,
+      "lastSeenAt": null,
+      "missingSince": "2026-10-06T06:43:57.387813+00:00",
+      "lastMissingAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingChecks": 1,
+      "removed": false
+    },
+    {
+      "id": 5726,
+      "name": "Танец огня",
+      "telegramTopicId": 1865,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5733,
+      "name": "Танец огня",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5745,
+      "name": "Fantasy neon",
+      "telegramTopicId": 1864,
+      "lastSeenAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingSince": null,
+      "lastMissingAt": null,
+      "missingChecks": 0,
+      "removed": false
+    },
+    {
+      "id": 5755,
+      "name": "Рубиновый узор",
+      "telegramTopicId": null,
+      "lastSeenAt": null,
+      "missingSince": "2026-10-06T06:43:57.387813+00:00",
+      "lastMissingAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingChecks": 1,
+      "removed": false
+    },
+    {
+      "id": 5767,
+      "name": "Тропический драйв",
+      "telegramTopicId": null,
+      "lastSeenAt": null,
+      "missingSince": "2026-10-06T06:43:57.387813+00:00",
+      "lastMissingAt": "2026-10-06T06:43:57.387813+00:00",
+      "missingChecks": 1,
+      "removed": false
+    }
+  ]
+}

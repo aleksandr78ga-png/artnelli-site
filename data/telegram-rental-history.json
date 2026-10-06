@@ -3,21 +3,21 @@
   "channel": "nelli_leotards",
   "topicId": 1865,
   "source": "authenticated-telegram-topic",
-  "checkedAt": "2026-09-28T13:40:20.160Z",
+  "checkedAt": "2026-10-06T05:43:27.628Z",
   "records": [
     {
       "id": 2827,
       "name": "Peach",
       "lastSeenAt": "2026-09-28T13:40:20.160Z",
-      "missingSince": null,
-      "lastMissingAt": null,
-      "missingChecks": 0,
+      "missingSince": "2026-10-06T05:43:27.628Z",
+      "lastMissingAt": "2026-10-06T05:43:27.628Z",
+      "missingChecks": 1,
       "removed": false
     },
     {
       "id": 2840,
       "name": "Yellow gold",
-      "lastSeenAt": "2026-09-28T13:40:20.160Z",
+      "lastSeenAt": "2026-10-06T05:43:27.628Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -26,7 +26,7 @@
     {
       "id": 4206,
       "name": "Ярко-красный",
-      "lastSeenAt": "2026-09-28T13:40:20.160Z",
+      "lastSeenAt": "2026-10-06T05:43:27.628Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -35,7 +35,7 @@
     {
       "id": 5726,
       "name": "Танец огня",
-      "lastSeenAt": "2026-09-28T13:40:20.160Z",
+      "lastSeenAt": "2026-10-06T05:43:27.628Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,

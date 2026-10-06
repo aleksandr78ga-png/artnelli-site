@@ -8,6 +8,13 @@ export function validateCatalogHistory(state) {
   const ids = new Set();
   for (const record of state.records) {
     if (!validId(record.id) || ids.has(record.id)) throw new Error('Invalid catalogue post ID');
+    if (record.observedMessageIds != null && (!Array.isArray(record.observedMessageIds) ||
+        record.observedMessageIds.some(id=>!validId(id)) ||
+        new Set(record.observedMessageIds).size!==record.observedMessageIds.length))
+      throw new Error('Invalid observed album message IDs');
+    if (record.observedAlbumRootId != null && (!validId(record.observedAlbumRootId) ||
+        !record.observedMessageIds?.includes(record.observedAlbumRootId)))
+      throw new Error('Invalid observed album root ID');
     ids.add(record.id);
     if (record.removed && !(record.missingChecks >= 2 &&
         Date.parse(record.lastMissingAt) <= Date.parse(state.checkedAt) &&
@@ -31,6 +38,7 @@ export function recordCatalogHistory(previous, observation, knownProducts = []) 
   for (const p of knownProducts) if (validId(p.id) && !records.has(p.id))
     records.set(p.id,{id:p.id,name:p.name,telegramTopicId:p.telegramTopicId||null,lastSeenAt:null});
   for (const p of present.values()) records.set(p.id,{id:p.id,name:p.name||records.get(p.id)?.name||'',
+    ...(p.observedAlbumRootId?{observedAlbumRootId:p.observedAlbumRootId,observedMessageIds:p.observedMessageIds}:{}),
     telegramTopicId:p.telegramTopicId||null,lastSeenAt:observation.checkedAt,missingSince:null,lastMissingAt:null,
     missingChecks:0,removed:false});
   for (const [id,p] of records) if (!present.has(id)) {

@@ -10,6 +10,8 @@ on:
       - "scripts/catalog-offer.mjs"
       - "scripts/rental-history.mjs"
       - "scripts/catalog-history.mjs"
+      - "scripts/catalog-observation.mjs"
+      - "scripts/catalog-observation.test.mjs"
       - "scripts/catalog-history.test.mjs"
       - "scripts/live-data.test.mjs"
       - "scripts/build-vk-feed.py"
@@ -45,7 +47,7 @@ jobs:
           node-version: "22"
 
       - name: Validate rental synchronization rules
-        run: node --test scripts/catalog-offer.test.mjs scripts/rental-history.test.mjs scripts/catalog-history.test.mjs scripts/live-data.test.mjs
+        run: node --test scripts/catalog-offer.test.mjs scripts/rental-history.test.mjs scripts/catalog-history.test.mjs scripts/catalog-observation.test.mjs scripts/live-data.test.mjs
 
       - name: Set up Python for the VK source export
         uses: actions/setup-python@v5
