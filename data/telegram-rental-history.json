@@ -3,15 +3,15 @@
   "channel": "nelli_leotards",
   "topicId": 1865,
   "source": "authenticated-telegram-topic",
-  "checkedAt": "2026-10-06T20:08:50.220Z",
+  "checkedAt": "2026-10-06T20:51:10.862Z",
   "records": [
     {
       "id": 2827,
       "name": "Peach",
       "lastSeenAt": "2026-09-28T13:40:20.160Z",
       "missingSince": "2026-10-06T05:43:27.628Z",
-      "lastMissingAt": "2026-10-06T20:08:50.220Z",
-      "missingChecks": 14,
+      "lastMissingAt": "2026-10-06T20:51:10.862Z",
+      "missingChecks": 15,
       "removed": true
     },
     {
@@ -26,7 +26,7 @@
         2844,
         2845
       ],
-      "lastSeenAt": "2026-10-06T20:08:50.220Z",
+      "lastSeenAt": "2026-10-06T20:51:10.862Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -47,7 +47,7 @@
         4213,
         4214
       ],
-      "lastSeenAt": "2026-10-06T20:08:50.220Z",
+      "lastSeenAt": "2026-10-06T20:51:10.862Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -66,7 +66,7 @@
         5731,
         5732
       ],
-      "lastSeenAt": "2026-10-06T20:08:50.220Z",
+      "lastSeenAt": "2026-10-06T20:51:10.862Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
