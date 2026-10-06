@@ -4,7 +4,7 @@
   "do_not_delete_missing_products": true,
   "source_count": 98,
   "offer_count": 73,
-  "price_on_request_count": 24,
+  "price_on_request_count": 22,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
     {
@@ -20,12 +20,12 @@
     {
       "id": 2347,
       "name": "Монохром",
-      "reason": "price_on_request"
+      "reason": "unverified_rub_price"
     },
     {
       "id": 2454,
       "name": "Испания",
-      "reason": "price_on_request"
+      "reason": "unverified_rub_price"
     },
     {
       "id": 2911,
@@ -220,6 +220,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "02b5dadac4c84552975b700bbb371b5726e6dbeb3e04f54e199a530016f9e5a3",
-  "generated_at": "2026-10-06T05:08:38+00:00"
+  "fingerprint": "3ea143672a240e9cf2114d7574903a40322bc79e70deb4e5c08a7d78c038c84e",
+  "generated_at": "2026-10-06T06:58:57+00:00"
 }
