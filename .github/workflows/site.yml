@@ -7,6 +7,7 @@ on:
     paths:
       - "site/**"
       - "scripts/sync-catalog.mjs"
+      - "scripts/check-live-catalog.mjs"
       - "scripts/catalog-offer.mjs"
       - "scripts/rental-history.mjs"
       - "scripts/catalog-history.mjs"
@@ -66,6 +67,11 @@ jobs:
 
       - name: Build VK source export (no VK connection)
         run: python scripts/build-vk-feed.py
+
+      - name: Check live catalogue delivery
+        env:
+          NELLI_CATALOG_BACKEND: https://artnelli-leotards.aleksandr78ga.chatgpt.site/
+        run: node scripts/check-live-catalog.mjs
 
       - name: Save catalogue changes
         shell: bash

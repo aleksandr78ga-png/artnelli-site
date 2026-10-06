@@ -3,21 +3,30 @@
   "channel": "nelli_leotards",
   "topicId": 1865,
   "source": "authenticated-telegram-topic",
-  "checkedAt": "2026-10-06T05:43:27.628Z",
+  "checkedAt": "2026-10-06T06:59:09.193Z",
   "records": [
     {
       "id": 2827,
       "name": "Peach",
       "lastSeenAt": "2026-09-28T13:40:20.160Z",
       "missingSince": "2026-10-06T05:43:27.628Z",
-      "lastMissingAt": "2026-10-06T05:43:27.628Z",
-      "missingChecks": 1,
-      "removed": false
+      "lastMissingAt": "2026-10-06T06:59:09.193Z",
+      "missingChecks": 2,
+      "removed": true
     },
     {
       "id": 2840,
       "name": "Yellow gold",
-      "lastSeenAt": "2026-10-06T05:43:27.628Z",
+      "observedAlbumRootId": 2840,
+      "observedMessageIds": [
+        2840,
+        2841,
+        2842,
+        2843,
+        2844,
+        2845
+      ],
+      "lastSeenAt": "2026-10-06T06:59:09.193Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -26,7 +35,19 @@
     {
       "id": 4206,
       "name": "Ярко-красный",
-      "lastSeenAt": "2026-10-06T05:43:27.628Z",
+      "observedAlbumRootId": 4206,
+      "observedMessageIds": [
+        4206,
+        4207,
+        4208,
+        4209,
+        4210,
+        4211,
+        4212,
+        4213,
+        4214
+      ],
+      "lastSeenAt": "2026-10-06T06:59:09.193Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
@@ -35,7 +56,17 @@
     {
       "id": 5726,
       "name": "Танец огня",
-      "lastSeenAt": "2026-10-06T05:43:27.628Z",
+      "observedAlbumRootId": 5726,
+      "observedMessageIds": [
+        5726,
+        5727,
+        5728,
+        5729,
+        5730,
+        5731,
+        5732
+      ],
+      "lastSeenAt": "2026-10-06T06:59:09.193Z",
       "missingSince": null,
       "lastMissingAt": null,
       "missingChecks": 0,
