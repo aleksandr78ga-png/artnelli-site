@@ -54,6 +54,11 @@
 
   const productKey = (product) => normalize(product.name);
 
+  function photoUrl(photo) {
+    const value = String(photo || '');
+    return /^https:\/\//i.test(value) || value.startsWith('/') ? value : '../' + value;
+  }
+
   function mergeProducts() {
     const base = Array.isArray(window.NELLI_CATALOG)
       ? window.NELLI_CATALOG.map((item) => ({
@@ -151,7 +156,7 @@
       const fragment = cardTemplate.content.cloneNode(true);
       const button = fragment.querySelector(".product-open");
       const image = fragment.querySelector(".product-image");
-      image.src = "../" + product.photos[0].replace(/^\/+/, "");
+      image.src = photoUrl(product.photos[0]);
       image.alt = `${product.name} — ${product.type === "dress" ? "платье" : product.type === "jumpsuit" ? "комбинезон" : "купальник"} Art Nelli`;
       fragment.querySelector(".product-name").textContent = product.name;
       fragment.querySelector(".product-height").textContent = product.height ? `Рост ${product.height} см` : "Параметры в карточке";
@@ -215,7 +220,7 @@
   function openProduct(product) {
     state.activeProduct = product;
     const gallery = product.photos
-      .map((photo, index) => `<img src="../${escapeHtml(photo.replace(/^\/+/, ""))}" alt="${escapeHtml(product.name)} — фото ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
+      .map((photo, index) => `<img src="${escapeHtml(photoUrl(photo))}" alt="${escapeHtml(product.name)} — фото ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
       .join("");
     const description = product.description || "Описание модели уточняется.";
     productContent.innerHTML = `
@@ -241,7 +246,7 @@
     productContent.querySelector("[data-order]").addEventListener("click", () => openProductChat(product));
     productContent.querySelector("[data-share]").addEventListener("click", () => shareProduct(product));
     productContent.querySelector("[data-source]").addEventListener("click", () => openExternal(product.telegram || TELEGRAM_CHANNEL));
-    productDialog.showModal();
+    if (!productDialog.open) productDialog.showModal();
     document.body.classList.add("sheet-open");
     app?.BackButton?.show?.();
     haptic();
@@ -465,7 +470,14 @@
   openStartProduct();
 
   window.addEventListener("nelli:live-data", () => {
+    const activeId = state.activeProduct?.id;
     mergeProducts();
-    renderCatalog(true);
-  }, { once: true });
+    renderCatalog();
+    if (productDialog.open && activeId) {
+      const refreshed = state.products.find(product => product.id === activeId);
+      if (refreshed) openProduct(refreshed);
+      else productDialog.close();
+    }
+  });
 })();
+

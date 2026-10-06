@@ -61,6 +61,11 @@
 
   const productKey = (product) => normalize(product.name);
 
+  function photoUrl(photo) {
+    const value = String(photo || '');
+    return /^https:\/\//i.test(value) || value.startsWith('/') ? value : '../' + value;
+  }
+
   function mergeProducts() {
     const base = Array.isArray(window.NELLI_CATALOG)
       ? window.NELLI_CATALOG.map((item) => ({
@@ -159,7 +164,7 @@
       const fragment = cardTemplate.content.cloneNode(true);
       const button = fragment.querySelector(".product-open");
       const image = fragment.querySelector(".product-image");
-      image.src = "../" + product.photos[0].replace(/^\/+/, "");
+      image.src = photoUrl(product.photos[0]);
       image.alt = `${productName(product)} — ${product.type === "dress" ? t("платье") : product.type === "jumpsuit" ? t("комбинезон") : t("купальник")} Art Nelli`;
       fragment.querySelector(".product-name").textContent = productName(product);
       fragment.querySelector(".product-height").textContent = product.height ? `${t("Рост")} ${product.height} ${t("см")}` : t("Параметры в карточке");
@@ -223,7 +228,7 @@
   function openProduct(product) {
     state.activeProduct = product;
     const gallery = product.photos
-      .map((photo, index) => `<img src="../${escapeHtml(photo.replace(/^\/+/, ""))}" alt="${escapeHtml(productName(product))} — ${t("фото")} ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
+      .map((photo, index) => `<img src="${escapeHtml(photoUrl(photo))}" alt="${escapeHtml(productName(product))} — ${t("фото")} ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
       .join("");
     const description = (window.NELLI_I18N.language === "en" ? product.descriptionEn || product.description : product.description) || t("Описание модели уточняется.");
     productContent.innerHTML = `
@@ -250,7 +255,7 @@
     productContent.querySelector("[data-share]").addEventListener("click", () => shareProduct(product));
     productContent.querySelector("[data-source]").addEventListener("click", () => openExternal(product.telegram || TELEGRAM_CHANNEL));
     translatePage(productContent);
-    productDialog.showModal();
+    if (!productDialog.open) productDialog.showModal();
     document.body.classList.add("sheet-open");
     app?.BackButton?.show?.();
     haptic();
@@ -459,7 +464,14 @@
   openStartProduct();
 
   window.addEventListener("nelli:live-data", () => {
+    const activeId = state.activeProduct?.id;
     mergeProducts();
-    renderCatalog(true);
-  }, { once: true });
+    renderCatalog();
+    if (productDialog.open && activeId) {
+      const refreshed = state.products.find(product => product.id === activeId);
+      if (refreshed) openProduct(refreshed);
+      else productDialog.close();
+    }
+  });
 })();
+
