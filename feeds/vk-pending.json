@@ -1,6 +1,6 @@
 {
   "scope": "pending_receiver_mapping_not_a_vk_import_file",
-  "generated_at": "2026-10-06T05:08:38+00:00",
+  "generated_at": "2026-10-06T06:58:57+00:00",
   "offers": [
     {
       "id": "artnelli-538",
@@ -24,26 +24,6 @@
       "prices_rub": [],
       "url": "https://artnelli.com/telegram/?product=2184",
       "description": "Купальник №2184\nКупальники б/у\nРост: 125-140 см\nОбхват груди: 57-65 см\nОбхват талии: 52-57 см\nОбхват бёдер: 60-68 см\nДуга тела: 112-120 см\nПодробности в исходном объявлении: https://t.me/nelli_leotards/2184"
-    },
-    {
-      "id": "artnelli-2347",
-      "name": "Монохром",
-      "condition": "used",
-      "price_status": "price_on_request",
-      "price_label": "Цена по запросу",
-      "prices_rub": [],
-      "url": "https://artnelli.com/telegram/?product=2347",
-      "description": "Монохром\nКупальники б/у\nРост: 140-160 см\nОбхват груди: 75-82 см\nОбхват талии: 59-65 см\nОбхват бёдер: 77-85 см\nДуга тела: 128-136 см\nПодробности в исходном объявлении: https://t.me/nelli_leotards/2347"
-    },
-    {
-      "id": "artnelli-2454",
-      "name": "Испания",
-      "condition": "used",
-      "price_status": "price_on_request",
-      "price_label": "Цена по запросу",
-      "prices_rub": [],
-      "url": "https://artnelli.com/telegram/?product=2454",
-      "description": "Испания\nКупальники б/у\nРост: 144-154 см\nОбхват груди: 68-78 см\nОбхват талии: 56-66 см\nОбхват бёдер: 70-80 см\nДуга тела: 122-128 см\nПодробности в исходном объявлении: https://t.me/nelli_leotards/2454"
     },
     {
       "id": "artnelli-2911",
