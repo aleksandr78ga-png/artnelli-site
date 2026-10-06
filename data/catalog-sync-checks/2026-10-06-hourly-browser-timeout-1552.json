@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "source": "nelli_leotards",
+  "chatId": "-1001871308468",
+  "scope": "all-product-topics",
+  "sourceReadStartedAt": "2026-10-06T15:57:07.013Z",
+  "sourceLastReadAt": "2026-10-06T15:58:41.884Z",
+  "reportedAt": "2026-10-06T16:10:31.604Z",
+  "completeHourlyAudit": false,
+  "observedFrames": 21,
+  "topics": [
+    {
+      "topicId": 4,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": 4,
+      "observedProductIds": [
+        538,
+        2817,
+        3146,
+        3520
+      ]
+    },
+    {
+      "topicId": 16,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": 4,
+      "observedProductIds": [
+        30,
+        66,
+        298,
+        1092
+      ]
+    },
+    {
+      "topicId": 738,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": 1,
+      "observedProductIds": [
+        1136
+      ]
+    }
+  ],
+  "unreadTopics": [
+    1864,
+    1865,
+    5098,
+    14,
+    2
+  ],
+  "observedCanonicalIds": [
+    30,
+    66,
+    298,
+    538,
+    1092,
+    1136,
+    2817,
+    3146,
+    3520
+  ],
+  "addedIds": [],
+  "newlyRemovedIds": [],
+  "additionsAndAbsencesUndetermined": true,
+  "historyCountersAdvanced": false,
+  "recordersInvoked": false,
+  "productChangesPublished": false,
+  "retainedHistoryAt": "2026-10-06T14:54:01.642Z",
+  "blocker": {
+    "kind": "browser-tool-timeout",
+    "attempts": 2,
+    "operation": "opening topic 2 then read-only state recovery",
+    "timeoutSecondsEach": 300,
+    "loginExpiryObserved": false,
+    "catalogAbsenceInferred": false
+  },
+  "verification": {
+    "previousPublisherApi": {
+      "checkedAt": "2026-10-06T15:51:52.373Z",
+      "historyAt": "2026-10-06T14:54:01.642Z",
+      "count": 93,
+      "exactIds": true,
+      "exactPrices": true,
+      "runId": 37490939784,
+      "jobId": 112363183292,
+      "precedesSourceRead": true
+    },
+    "backup": {
+      "ref": "gh-pages",
+      "count": 93,
+      "allFieldsMatch": true
+    },
+    "actualStorefrontsVerifiedThisRun": false
+  },
+  "marketplaces": {
+    "vk": "source-export-only; receiving adapter unconfirmed",
+    "avito": "planned; not connected"
+  },
+  "recurringCheckPreserved": true,
+  "result": "partial source read; browser unavailable; last confirmed data retained"
+}
