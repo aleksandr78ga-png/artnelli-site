@@ -4,8 +4,9 @@
 
 Telegram catalogue `nelli_leotards` is the only primary source. Nelli's standing
 instruction requires automatic additions, edits of all product facts/media,
-and confirmed removals across every storefront, with a complete content
-reconciliation at least daily. Follow `PROJECT_RULES.md` and `CATALOG_SYNC.md`.
+and confirmed removals across every storefront. Nelli's clarified cadence is
+hourly for additions/removals and daily for a complete reconciliation of edits.
+Verify actual delivery for both checks. Follow `PROJECT_RULES.md` and `CATALOG_SYNC.md`.
 This applies to the future VK receiver and Avito adapter. Source export alone
 does not establish a working receiving integration.
 

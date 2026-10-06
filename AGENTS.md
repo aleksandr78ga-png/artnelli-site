@@ -7,7 +7,9 @@ Nelli's standing instruction of 2026-10-06 makes Telegram catalogue
 `nelli_leotards` the only primary source. Preserve automatic additions,
 confirmed deletions and edits of every product field/media for artnelli.com,
 Telegram Mini App, MAX and all future storefronts, including VK and Avito.
-Require a full content reconciliation at least daily; keep faster existing updates.
+Reconcile additions and confirmed deletions every hour. Fully reconcile edits of
+all product facts and media once daily. Verify actual delivery on every connected
+storefront; retain the existing faster bot-event path.
 The standing instruction authorizes routine source-driven synchronization.
 Keep other approval requirements from `PROJECT_RULES.md`.
 
