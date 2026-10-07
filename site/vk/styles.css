@@ -283,3 +283,19 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold-soft);outline-
 .gallery-nav[hidden]{display:none}.gallery-nav button{width:44px;height:40px;border:1px solid var(--line);border-radius:50%;background:transparent;font-size:1.2rem;color:var(--gold-soft);cursor:pointer}
 .catalog-tools{top:calc(49px + var(--safe-top))}
 .product-name,.detail-description{overflow-wrap:anywhere}
+
+.contact-sheet{width:min(100%,600px)}
+.contact-panel{padding:34px 20px calc(22px + var(--safe-bottom))}
+.contact-panel h2{max-width:440px;font-size:clamp(2rem,8vw,2.9rem)}
+.contact-intro,.contact-note{color:var(--muted);font-size:.8rem;line-height:1.55}
+.messenger-options{display:grid;gap:10px;margin:24px 0 16px}
+.messenger-options button{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px;width:100%;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--bg);text-align:left;cursor:pointer}
+.messenger-options button:hover{border-color:var(--gold)}
+.messenger-options strong{font-size:.96rem;color:var(--gold-soft)}
+.messenger-options span{font-size:.67rem;color:var(--muted)}
+.draft-label{display:block;margin:22px 0 8px;color:var(--muted);font-size:.72rem}
+.contact-draft{display:block;resize:vertical;min-height:130px;width:100%;max-height:260px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);padding:13px;font-size:.76rem;line-height:1.6}
+#copy-contact-draft{width:100%;margin-top:12px}
+.contact-status{min-height:1.5em;margin:12px 0 0;color:var(--gold-soft);font-size:.74rem;line-height:1.55}
+.messenger-options button:disabled,#copy-contact-draft:disabled{opacity:.45;cursor:default}
+@media(max-width:360px){.contact-panel{padding-inline:14px}.messenger-options button{padding:14px 12px}.messenger-options span{font-size:.61rem}}

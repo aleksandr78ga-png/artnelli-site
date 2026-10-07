@@ -1,6 +1,22 @@
 (() => {
   "use strict";
   const translations = {
+
+  "Где вам удобно общаться?": "Where would you like to chat?",
+  "Выберите мессенджер — откроется личная переписка с Нелли.": "Choose a messenger to open a private chat with Nelli.",
+  "Способ связи": "Contact method",
+  "Открыть переписку ↗": "Open chat ↗",
+  "В Telegram и WhatsApp текст подставится в сообщение. Для MAX скопируйте его и вставьте в переписку.": "Telegram and WhatsApp will prefill your message. For MAX, copy the text and paste it into the chat.",
+  "Ваше сообщение": "Your message",
+  "Скопировать текст": "Copy message",
+  "Закрыть выбор мессенджера": "Close messenger selection",
+  "Выберите желаемый месяц. Затем выберите Telegram, MAX или WhatsApp для личной переписки с Нелли.": "Choose a preferred month, then choose Telegram, MAX or WhatsApp for your private chat with Nelli.",
+  "Цена и наличие подтверждаются мастерской перед оформлением заказа. Выберите Telegram, MAX или WhatsApp — мы подготовим текст обращения с выбранной моделью.": "The atelier confirms price and availability before you order. Choose Telegram, MAX or WhatsApp — we will prepare a message about your selected design.",
+  "Здравствуйте, Нелли! Хочу задать вопрос.": "Hello, Nelli! I would like to ask a question.",
+  "Эта модель больше не доступна в каталоге. Выберите другую модель.": "This design is no longer in the catalogue. Please choose another design.",
+  "Не удалось скопировать автоматически. Выделите и скопируйте текст сообщения вручную.": "Automatic copying failed. Select and copy the message manually.",
+  "Текст скопирован. Вставьте его в переписку и отправьте Нелли.": "Message copied. Paste it into your chat and send it to Nelli.",
+  "Сообщение подготовлено. Отправьте его в открывшейся переписке.": "Your message is ready. Send it in the chat that opens.",
   "Категория моделей": "Category",
   "Аренда": "Rental",
   "Модели в аренду": "Designs for rent",

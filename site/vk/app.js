@@ -2,6 +2,8 @@
   "use strict";
 
   const TELEGRAM_PERSONAL = "https://t.me/nelli_leotard";
+  const WHATSAPP_PERSONAL = "https://wa.me/79612064782";
+  const MAX_PERSONAL = "https://max.ru/u/f9LHodD0cOK0PIWgluCibEoKcBgNOa2G40pS1_X4S-4VaCXbUtYCgfGuOiU";
   const TELEGRAM_CHANNEL = "https://t.me/nelli_leotards";
   const PAGE_SIZE = 18;
 
@@ -17,6 +19,8 @@
 
   let startOpened = false;
   let sheetHistory = false;
+  let contactHistory = false;
+  let contactContext = null;
   const { t, translatePage } = window.NELLI_I18N;
   let language = "ru";
   try { language = localStorage.getItem("nelliVkLanguage") || "ru"; } catch (_) {}
@@ -37,6 +41,9 @@
   const productDialog = document.getElementById("product-dialog");
   const productContent = document.getElementById("product-content");
   const orderDialog = document.getElementById("order-dialog");
+  const contactDialog = document.getElementById("contact-dialog");
+  const contactDraft = document.getElementById("contact-draft");
+  const contactStatus = document.getElementById("contact-status");
   const orderForm = document.getElementById("order-form");
   const orderMonths = document.getElementById("order-months");
   const orderStatus = document.getElementById("order-status");
@@ -179,7 +186,7 @@
 
   function openProduct(product) {
     state.activeProduct = product;
-    pushSheetHash(`#product=${product.id}`);
+    if (!productDialog.open) pushSheetHash(`#product=${product.id}`);
     const gallery = product.photos
       .map((photo, index) => `<img src="${escapeHtml(photoUrl(photo))}" alt="${escapeHtml(productName(product))} — ${t("фото")} ${index + 1}" loading="${index ? "lazy" : "eager"}">`)
       .join("");
@@ -202,7 +209,7 @@
         <p class="detail-price">${escapeHtml(offerPrice(product))}</p>
         ${product.prices?.length > 1 ? '<p class="detail-variants">Цены вариантов указаны в описании модели.</p>' : ''}
         <p class="detail-description">${escapeHtml(description)}</p>
-        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель появятся в сообщении Нелли. Нажмите «Отправить» в Telegram.</p>
+        <p class="detail-note">Цена и наличие подтверждаются мастерской перед оформлением заказа. Выберите Telegram, MAX или WhatsApp — мы подготовим текст обращения с выбранной моделью.</p>
         <div class="detail-actions">
           <button class="primary-button" type="button" data-order>${product.sold ? t("Подобрать похожую") : product.condition === "rental" ? t("Хочу взять в аренду") : t("Хочу эту модель")}</button>
           <button class="secondary-button" type="button" data-share>Поделиться моделью</button>
@@ -274,7 +281,7 @@
   }
 
   function onSheetClose() {
-    if (!productDialog.open && !orderDialog.open) {
+    if (!productDialog.open && !orderDialog.open && !contactDialog.open) {
       document.body.classList.remove("sheet-open");
       if (sheetHistory) { sheetHistory = false; history.back(); }
       else if (/^#(?:product=|order)/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
@@ -286,15 +293,74 @@
   function openExternal(value) {
     try {
       const url = new URL(value);
-      if (url.protocol !== 'https:' || !['t.me','artnelli.com'].includes(url.hostname)) return;
+      if (url.protocol !== 'https:' || !['t.me','artnelli.com','wa.me','max.ru'].includes(url.hostname)) return;
       window.open(url.href, '_blank', 'noopener,noreferrer');
     } catch (_) {}
   }
 
-  function openPersonalChat(text) {
-    const url = new URL(TELEGRAM_PERSONAL);
-    url.searchParams.set("text", text);
-    openTelegram(url.href);
+  function getContactMessage() {
+    if (contactContext?.type === 'product') {
+      const product = state.products.find(p => Number(p.id) === Number(contactContext.productId));
+      return product ? productInquiryMessage(product) : '';
+    }
+    return contactContext?.message || '';
+  }
+
+  function updateContactDraft() {
+    const message = getContactMessage();
+    contactDraft.value = message;
+    for (const button of contactDialog.querySelectorAll('[data-messenger],#copy-contact-draft')) button.disabled = !message;
+    if (!message) contactStatus.textContent = t('Эта модель больше не доступна в каталоге. Выберите другую модель.');
+    return message;
+  }
+
+  function openContact(context) {
+    contactContext = context;
+    contactStatus.textContent = '';
+    updateContactDraft();
+    if (!contactDialog.open) {
+      history.pushState(null, '', '#contact');
+      contactHistory = true;
+      contactDialog.showModal();
+    }
+    document.body.classList.add('sheet-open');
+    haptic();
+  }
+
+  async function copyContactDraft() {
+    const message = updateContactDraft();
+    if (!message) return false;
+    try {
+      await navigator.clipboard.writeText(message);
+    } catch (_) {
+      contactDraft.focus();
+      contactDraft.select();
+      let copied = false;
+      try { copied = document.execCommand('copy'); } catch (_) {}
+      if (!copied) {
+        contactStatus.textContent = t('Не удалось скопировать автоматически. Выделите и скопируйте текст сообщения вручную.');
+        return false;
+      }
+    }
+    contactStatus.textContent = t('Текст скопирован. Вставьте его в переписку и отправьте Нелли.');
+    return true;
+  }
+
+  function chooseMessenger(channel) {
+    const message = updateContactDraft();
+    if (!message) return;
+    const destinations = {telegram:TELEGRAM_PERSONAL, whatsapp:WHATSAPP_PERSONAL, max:MAX_PERSONAL};
+    if (!destinations[channel]) return;
+    const url = new URL(destinations[channel]);
+    if (channel === 'max') {
+      // Start copying in the click gesture; keep the visible draft for manual fallback.
+      void copyContactDraft();
+    } else {
+      url.searchParams.set('text', message);
+      contactStatus.textContent = t('Сообщение подготовлено. Отправьте его в открывшейся переписке.');
+    }
+    // Open synchronously so browsers can retain the user's click activation.
+    openExternal(url.href);
   }
 
   function productInquiryMessage(product) {
@@ -308,7 +374,7 @@
   }
 
   function openProductChat(product) {
-    openPersonalChat(productInquiryMessage(product));
+    openContact({type:"product", productId:product.id});
   }
 
   async function shareProduct(product) {
@@ -342,7 +408,7 @@
     event.preventDefault();
     if (!orderForm.reportValidity()) return;
     const data = new FormData(orderForm);
-    openPersonalChat(bookingMessage(data));
+    openContact({type:"booking", message:bookingMessage(data)});
   }
 
   function openStartProduct() {
@@ -355,6 +421,15 @@
     if (product) { startOpened = true; openProduct(product); }
   }
   window.addEventListener('popstate', () => {
+    if (contactHistory && location.hash !== '#contact') {
+      contactHistory = false;
+      if (contactDialog.open) contactDialog.close();
+      if (!productDialog.open && !orderDialog.open) {
+        document.body.classList.remove('sheet-open');
+        if (/^#(?:product=|order)/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
+      }
+      return;
+    }
     sheetHistory = false;
     const id = Number(/^#product=(-?\d+)$/.exec(location.hash)?.[1]);
     if (location.hash !== '#order' && orderDialog.open) orderDialog.close();
@@ -391,8 +466,16 @@
     });
   });
 
-  document.querySelectorAll("[data-telegram-link]").forEach((button) => {
-    button.addEventListener("click", () => openTelegram(button.dataset.telegramLink || TELEGRAM_CHANNEL));
+  document.getElementById('contact-nelli').addEventListener('click', () => {
+    openContact({type:'general', message:t('Здравствуйте, Нелли! Хочу задать вопрос.')});
+  });
+  contactDialog.querySelectorAll('[data-messenger]').forEach(button => {
+    button.addEventListener('click', () => chooseMessenger(button.dataset.messenger));
+  });
+  document.getElementById('copy-contact-draft').addEventListener('click', copyContactDraft);
+  contactDialog.addEventListener('close', () => {
+    if (contactHistory && location.hash === '#contact') history.back();
+    if (!productDialog.open && !orderDialog.open) document.body.classList.remove('sheet-open');
   });
 
   document.querySelectorAll("[data-external-link]").forEach((button) => {
@@ -441,6 +524,7 @@
       else if (refreshed) state.activeProduct = refreshed;
       else productDialog.close();
     }
+    if (contactDialog.open) updateContactDraft();
     openStartProduct();
   }
   window.addEventListener("nelli:live-data", onCatalogChange);
