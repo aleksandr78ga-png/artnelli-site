@@ -275,8 +275,6 @@ h1 em,h2 em{font-weight:500;color:var(--gold-soft)}
 .catalog-status{padding:18px 0;color:var(--muted);font-size:.85rem}
 .detail-variants{color:var(--gold-soft);font-size:.82rem}
 .detail-feedback{font-size:.8rem;color:var(--gold-soft);min-height:1.3em}
-.hero{min-height:min(530px,72svh)}
-.hero-video{object-position:center 44%}
 button:focus-visible,a:focus-visible{outline:2px solid var(--gold-soft);outline-offset:4px}
 @media(max-width:390px){.app-header{gap:7px;padding-left:12px;padding-right:12px}.channel-button{padding:9px 10px}.brand{gap:6px}.brand-mark{width:29px;height:29px}.brand strong{font-size:.68rem}.brand small{font-size:.57rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
