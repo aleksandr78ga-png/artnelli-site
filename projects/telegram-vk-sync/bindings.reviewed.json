@@ -35,5 +35,2023 @@
       "reviewScope": "identity_only"
     },
     "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5408:sale",
+    "ownerId": -57458681,
+    "itemId": 13939827,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5408",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-zefir-novy-57458681-13939827",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Зефир",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          79700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Зефир» Новый",
+        "priceText": "79 700 ₽",
+        "amountRub": 79700,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/a3v4EbeECSk.jpg",
+        "sha256": "26fc2169c28e393db36422137499f1eb91ad3af2a1b93b7eb37e29875eda0a71",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/506-photo_636-01-07-2026_20-08-51.webp",
+        "sha256": "f981b380f2e7486a392132ffbeb90b3461dadd477f4008e742cc76442920e072"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5316:sale",
+    "ownerId": -57458681,
+    "itemId": 13939826,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5316",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-izyaschno-krasny-novy-57458681-13939826",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Изящно красный",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          79700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Изящно красный» Новый",
+        "priceText": "79 700 ₽",
+        "amountRub": 79700,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/LdUqRasTXbI.jpg",
+        "sha256": "dce98395faa43eb62d5c0f7648faa660be7ff6930d44efd01def18da0a85d52e",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/492-photo_622-01-06-2026_14-31-36.webp",
+        "sha256": "3a8c144502dcb497bfe15b16cd143d0dfe26986f66ec19478c53c240d847cce2"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5298:sale",
+    "ownerId": -57458681,
+    "itemId": 13891526,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5298",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-ptichka-pevchaya-novy-57458681-13891526",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Птичка певчая",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          83700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Птичка певчая» Новый",
+        "priceText": "83 700 ₽",
+        "amountRub": 83700,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/FG4QDz8R04Y.jpg",
+        "sha256": "ebf293e87fb716ff3eb307b9e79f96ad845042a619f942e7aab8990b60f0047f",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/477-photo_607-29-05-2026_08-59-19.webp",
+        "sha256": "069ac59778b56a0cb84efd21a165f36892d25df56f6b7a8b0fef3b5887fc0731"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5278:sale",
+    "ownerId": -57458681,
+    "itemId": 13889936,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5278",
+      "targetUrl": "https://vk.ru/market/product/rost-135-145-sm-kraski-novy-57458681-13889936",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Краски",
+        "height": "135-145",
+        "condition": "new",
+        "prices": [
+          76500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 135-145 см. «Краски» Новый",
+        "priceText": "76 500 ₽",
+        "amountRub": 76500,
+        "heightFromTitle": "135-145",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/_RYGREOfWjQ.jpg",
+        "sha256": "ebdefa11123ce341572c74f17ceb9e8e07bdcc3110f9e4086c23b269b0c3f712",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/469-photo_599-27-05-2026_19-10-56.webp",
+        "sha256": "c22b18b5c137df07a1c62b5c7f6c70674d55b52402eed07ed4071e1f7455c381"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5124:sale",
+    "ownerId": -57458681,
+    "itemId": 13647877,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5124",
+      "targetUrl": "https://vk.ru/market/product/rost-145-160-sm-zolotoy-novy-57458681-13647877",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Золотой",
+        "height": "145-160",
+        "condition": "new",
+        "prices": [
+          82700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-160 см. «Золотой» Новый",
+        "priceText": "82 700 ₽",
+        "amountRub": 82700,
+        "heightFromTitle": "145-160",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/rPF4uoAD3rM.jpg",
+        "sha256": "87b2445c6922139f6941a93085f1dab60ef2ee3a2b1c4c24f2999fe938fca510",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/424-photo_539-10-04-2026_08-18-04.webp",
+        "sha256": "59d66554e736b860c2a1da2445fd4f9dae2b92d0efe6486feffe4c2e34a2cb74"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:298:sale",
+    "ownerId": -57458681,
+    "itemId": 13768300,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/298",
+      "targetUrl": "https://vk.ru/market/product/rost-140-160-sm-red-novy-57458681-13768300",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Red",
+        "height": "140-160",
+        "condition": "new",
+        "prices": [
+          49900
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 140-160 см. «Red» Новый",
+        "priceText": "49 900 ₽",
+        "amountRub": 49900,
+        "heightFromTitle": "140-160",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/RwJG1zWjsA8.jpg",
+        "sha256": "c4fcfb99142c21c4b360543605c36d67125be027c7c6abafb8be074909c69fa7",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/029-photo_38-30-09-2023_21-24-02.webp",
+        "sha256": "096d669986ddfaa7267e12b1ffc41040562255ce8ffaf8d7d172c9e5403d5e23"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:8:sale",
+    "ownerId": -57458681,
+    "itemId": 13768271,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/8",
+      "targetUrl": "https://vk.ru/market/product/rost-110-130-sm-monokhrom-novy-57458681-13768271",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Монохром",
+        "height": "110-130",
+        "condition": "new",
+        "prices": [
+          38900
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 110-130 см. «Монохром» Новый",
+        "priceText": "38 900 ₽",
+        "amountRub": 38900,
+        "heightFromTitle": "110-130",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/OLqKrN3_6Yw.jpg",
+        "sha256": "13ef0edff83bd7996a87f08d016467d464118f7e90b40d613232db4ac82adea1",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/001-photo_1-11-09-2023_23-32-45.webp",
+        "sha256": "1df25dd0b8c7ffe420814c28f300e6df410eaa22cef0f98e224f270eb874675b"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:2233:sale",
+    "ownerId": -57458681,
+    "itemId": 13637898,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/2233",
+      "targetUrl": "https://vk.ru/market/product/rost-130-145-sm-oriental-novy-57458681-13637898",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Oriental",
+        "height": "130-145",
+        "condition": "new",
+        "prices": [
+          74800
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 130-145 см. «Oriental» Новый",
+        "priceText": "74 800 ₽",
+        "amountRub": 74800,
+        "heightFromTitle": "130-145",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/aqIGC4sUTjQ.jpg",
+        "sha256": "5de7fbe34f9599709913c5a8bad2ada3da4a1973898c378ed672a2c4545ca4ad",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/080-photo_104-10-10-2024_18-33-53.webp",
+        "sha256": "a75671347d4fd05e92376b0b0b59fede1177160719dec4a3d7bd3e527febc3a7"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:1339:sale",
+    "ownerId": -57458681,
+    "itemId": 13637862,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/1339",
+      "targetUrl": "https://vk.ru/market/product/rost-130-140-sm-beloe-zoloto-novy-57458681-13637862",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Белое золото",
+        "height": "130-140",
+        "condition": "new",
+        "prices": [
+          84700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 130-140 см. “Белое золото”  Новый",
+        "priceText": "84 700 ₽",
+        "amountRub": 84700,
+        "heightFromTitle": "130-140",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/PNXknkbi1LY.jpg",
+        "sha256": "22a87a56ca7f081b131253997429752f626ba0dd45e167ef303d1d3d299f96a2",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/064-photo_80-17-05-2024_23-51-38.webp",
+        "sha256": "6a56c1e0c5c37dbba222cd6cbb260e5422be2d9333e2809e47f48d58342df7a3"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:30:sale",
+    "ownerId": -57458681,
+    "itemId": 13634020,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/30",
+      "targetUrl": "https://vk.ru/market/product/rost-160-170-sm-makhagoni-novy-57458681-13634020",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Махагони",
+        "height": "160-170",
+        "condition": "new",
+        "prices": [
+          87500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 160-170 см. «Махагони» Новый",
+        "priceText": "87 500 ₽",
+        "amountRub": 87500,
+        "heightFromTitle": "160-170",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/VjdJSJqnfH0.jpg",
+        "sha256": "ef459e0f7376f066998e976bd6f94e5cd3bc778754032bf036e8c2507e836012",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/005-photo_6-11-09-2023_23-46-57.webp",
+        "sha256": "ee09ee29789566b33b345added8db3fae81dd6c4e0fdb38b1b38bdbea4260ab8"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:66:sale",
+    "ownerId": -57458681,
+    "itemId": 13634014,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/66",
+      "targetUrl": "https://vk.ru/market/product/rost-140-160-sm-monokhrom-novy-57458681-13634014",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Монохром",
+        "height": "140-160",
+        "condition": "new",
+        "prices": [
+          46900
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 140-160 см. «Монохром»  Новый",
+        "priceText": "46 900 ₽",
+        "amountRub": 46900,
+        "heightFromTitle": "140-160",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/ZH39c6W7zjs.jpg",
+        "sha256": "67d2db653de29bd1e053669776bd24f2d181797e824d92ab1552c093b983e124",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/001-photo_1-11-09-2023_23-32-45.webp",
+        "sha256": "1df25dd0b8c7ffe420814c28f300e6df410eaa22cef0f98e224f270eb874675b"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:1136:sale",
+    "ownerId": -57458681,
+    "itemId": 13633999,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/1136",
+      "targetUrl": "https://vk.ru/market/product/rost-160-180-sm-novoe-platye-dlya-figurnogo-katania-coral-57458681-13633999",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Coral",
+        "height": "160-180",
+        "condition": "new",
+        "prices": [
+          55700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 160-180 см. Новое платье для фигурного катания «Coral»",
+        "priceText": "55 700 ₽",
+        "amountRub": 55700,
+        "heightFromTitle": "160-180",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/GcEx1G-q5Ow.jpg",
+        "sha256": "312dedf68843ff15a0e850c7afbb1e004af3d374cb309ef1113632fb5464d625",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/049-photo_65-11-04-2024_18-53-04.webp",
+        "sha256": "caf4057070bf403b7d44453b6d22776d0fc0917e132adf4516598f62cd3bbcba"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:3588:sale",
+    "ownerId": -57458681,
+    "itemId": 13633991,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/3588",
+      "targetUrl": "https://vk.ru/market/product/rost-150-160-sm-ognenny-novy-57458681-13633991",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Огненный",
+        "height": "150-160",
+        "condition": "new",
+        "prices": [
+          145000
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 150-160 см. «Огненный»  Новый",
+        "priceText": "145 000 ₽",
+        "amountRub": 145000,
+        "heightFromTitle": "150-160",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/ELftgN3asdQ.jpg",
+        "sha256": "a97443f686e8feedec4b400d9df4417e4fee486d02bf4c92e44dd2e26f226acf",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/218-photo_283-11-08-2025_14-26-42.webp",
+        "sha256": "aa411d547b05ca4c78c4839a7d4517a00516baadea7130a509350ebd677c568e"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:72:sale",
+    "ownerId": -57458681,
+    "itemId": 13633986,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/72",
+      "targetUrl": "https://vk.ru/market/product/rost-135-155-sm-chernomor-i-ptitsa-lebed-novy-57458681-13633986",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Черномор и Птица-Лебедь",
+        "height": "135-155",
+        "condition": "new",
+        "prices": [
+          55000
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 135-155 см. «Черномор и Птица-Лебедь» Новый",
+        "priceText": "55 000 ₽",
+        "amountRub": 55000,
+        "heightFromTitle": "135-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/fdR8Bs9fGpI.jpg",
+        "sha256": "f9f4c84cb65e77ababd8b7017822649aa0d12f09e41a9fee2eeab2b15fc35c16",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/010-photo_19-12-09-2023_23-07-01.webp",
+        "sha256": "1acc77489211f062d78462959d1d40196272fe1190dff68e7004f7b63e9773cd"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:60:sale",
+    "ownerId": -57458681,
+    "itemId": 13633976,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/60",
+      "targetUrl": "https://vk.ru/market/product/rost-130-145-sm-monokhrom-novy-57458681-13633976",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Монохром",
+        "height": "130-145",
+        "condition": "new",
+        "prices": [
+          41900
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 130-145 см. «Монохром» Новый",
+        "priceText": "41 900 ₽",
+        "amountRub": 41900,
+        "heightFromTitle": "130-145",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/iYtQFzKpfeM.jpg",
+        "sha256": "a251b75aa92bd3948a6fa2488ddbb6b4c87ad066634118d170feb01d6489d956",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/001-photo_1-11-09-2023_23-32-45.webp",
+        "sha256": "1df25dd0b8c7ffe420814c28f300e6df410eaa22cef0f98e224f270eb874675b"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5016:sale",
+    "ownerId": -57458681,
+    "itemId": 13630511,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5016",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-snezhnoe-velichie-novy-57458681-13630511",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Снежное Величие",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          88500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Снежное Величие» Новый",
+        "priceText": "88 500 ₽",
+        "amountRub": 88500,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/_hWL849HTkA.jpg",
+        "sha256": "314ccb49c7a00e09aaa27a8f93bda96e8befba86593818d1c5324516ba381c5a",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/410-photo_523-12-03-2026_15-32-01.webp",
+        "sha256": "86b2c4ca014346ca34aedf5d29d50d6ba5a1e7fc7e53077f4bc1dda04f36a375"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4796:sale",
+    "ownerId": -57458681,
+    "itemId": 13630028,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4796",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-fiesta-novy-57458681-13630028",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Фиеста",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          85600
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Фиеста» Новый",
+        "priceText": "85 600 ₽",
+        "amountRub": 85600,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/Zj3uin0-Lck.jpg",
+        "sha256": "77678d11b8fc9898d9512803fa2bff68b4f9f546600517f5dfd52e18670c671a",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/343-photo_451-04-02-2026_12-32-48.webp",
+        "sha256": "afabf65b7ab611c64d8e3c7ccd28cb5b1d7bfbfdc8f400ef53f296d3bd4237e1"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4751:sale",
+    "ownerId": -57458681,
+    "itemId": 13629977,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4751",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-krasny-vikhr-novy-57458681-13629977",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Красный вихрь",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          85500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Красный вихрь» Новый",
+        "priceText": "85 500 ₽",
+        "amountRub": 85500,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/s_A1NzifCw0.jpg",
+        "sha256": "017079593fe3c1e33a6dfb25ce192d1b5c668eb2acd3a592181f04f8720ca0a8",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/337-photo_436-29-01-2026_14-46-41.webp",
+        "sha256": "39c350ac7bf122e3463ba3f7ffdd79c5b117ab9ca9fb8f117c226bc844e8ecb2"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4592:sale",
+    "ownerId": -57458681,
+    "itemId": 13629686,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4592",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-safari-novy-57458681-13629686",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Сафари",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          82300
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Сафари» Новый",
+        "priceText": "82 300 ₽",
+        "amountRub": 82300,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/SBlsmUVgJ_4.jpg",
+        "sha256": "000d3ccabd1392a5cb09506766bd6b6c6cd015f00677176e34d9b58151635999",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/321-photo_420-26-12-2025_19-08-53.webp",
+        "sha256": "6d34e44dfa9f8e5e0f593b8428dd614f9d8d795351a86386e6e83cb64ec35d0e"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5549:sale",
+    "ownerId": -57458681,
+    "itemId": 13630434,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5549",
+      "targetUrl": "https://vk.ru/market/product/rost-145-160-sm-serebryanye-luchi-novy-57458681-13630434",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Серебряные Лучи",
+        "height": "145-160",
+        "condition": "new",
+        "prices": [
+          79900
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-160 см. «Серебряные Лучи» Новый",
+        "priceText": "79 900 ₽",
+        "amountRub": 79900,
+        "heightFromTitle": "145-160",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/aU5fBVxK3Sw.jpg",
+        "sha256": "cf507972dd1ba9eeae0f66b480e119113956b031861b5277cbe31531b8cde2cc",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/telegram-5549-01.jpg",
+        "sha256": "48b9df7767169fc5ae6effed687049c20d3c7ce684108231803f603564385042"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5153:sale",
+    "ownerId": -57458681,
+    "itemId": 13630458,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5153",
+      "targetUrl": "https://vk.ru/market/product/rost-145-160-sm-elegant-black-novy-57458681-13630458",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Elegant Black",
+        "height": "145-160",
+        "condition": "new",
+        "prices": [
+          78700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-160 см. «Elegant Black» Новый",
+        "priceText": "78 700 ₽",
+        "amountRub": 78700,
+        "heightFromTitle": "145-160",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/C-wt00NHO2A.jpg",
+        "sha256": "66a2dd0464f596efec57f9d283f548634dbe08b3035660f466b5e954b238e2d2",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/439-photo_554-10-04-2026_23-05-29.webp",
+        "sha256": "75ec2b2f8020cec86945326ef52703565a37bcb41156c89634387191db644c0c"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:3809:sale",
+    "ownerId": -57458681,
+    "itemId": 13629602,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/3809",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-irisy-novy-57458681-13629602",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Ирисы",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          78700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Ирисы» Новый",
+        "priceText": "78 700 ₽",
+        "amountRub": 78700,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/wKEhnhi3pzk.jpg",
+        "sha256": "514bfe854f79f33c50388a9a0faea6f65dddff0caa96569f97e6aad175fa3766",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/254-photo_331-09-09-2025_15-58-23.webp",
+        "sha256": "d02debc9cc11f5d3bd6968ae7b4aaf2cc41a92aafa0ef07dec55fd2435e587d3"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:3640:sale",
+    "ownerId": -57458681,
+    "itemId": 13629516,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/3640",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-zvezda-novy-57458681-13629516",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Звезда",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          78600
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Звезда» Новый",
+        "priceText": "78 600 ₽",
+        "amountRub": 78600,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/eL_xhCDjMuQ.jpg",
+        "sha256": "def7313f989bc8e08d6706d7148727d6005cb08718c4004a5e11248453534e32",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/228-photo_298-18-08-2025_18-16-48.webp",
+        "sha256": "b02ee98b855a2c1a22df10e6ed0626482f175c4f28eecceb92fe2c3cd1323870"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4918:sale",
+    "ownerId": -57458681,
+    "itemId": 13630379,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4918",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-nebesno-goluboy-novy-57458681-13630379",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Небесно голубой",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          78500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Небесно голубой» Новый",
+        "priceText": "78 500 ₽",
+        "amountRub": 78500,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/nM-g4hFcIsI.jpg",
+        "sha256": "b7f54fc997877501014158f4f8d17e2d0b264e1416a8ee2d5ea5e033926d69ee",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/383-photo_491-25-02-2026_12-27-59.webp",
+        "sha256": "2a1c687076c1549a5ab11cbfe866de39094ae46a0f304dde5e2a448272b6e469"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4270:sale",
+    "ownerId": -57458681,
+    "itemId": 13629644,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4270",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-pink-emerald-novy-57458681-13629644",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Pink-Emerald",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          78300
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Pink-Emerald» Новый",
+        "priceText": "78 300 ₽",
+        "amountRub": 78300,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/X0U3rTlwB2A.jpg",
+        "sha256": "5e72f6c87c176bce3b46a9fe2eddf2216196e47ba2a8a185e9d54f354d519e07",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/297-photo_396-02-11-2025_16-03-24.webp",
+        "sha256": "0cf4216965533a4b0e022ace439d1a2c60a005f47970023d9b6ecd4fb78ae5ba"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4893:sale",
+    "ownerId": -57458681,
+    "itemId": 13630294,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4893",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-happy-blue-novy-57458681-13630294",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Happy Blue",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          76800
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Happy Blue» Новый",
+        "priceText": "76 800 ₽",
+        "amountRub": 76800,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/xDJKB4FqXms.jpg",
+        "sha256": "727f6bf51d4f8e119ee23f0dc4bb99f3f852a47f7da7505ce6f595e5a729ec7b",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/375-photo_483-23-02-2026_18-36-12.webp",
+        "sha256": "f5a77f4dfca8ae488511b99290f392681d1a7f6c63fcb6e9e32f4fd20478b522"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4870:sale",
+    "ownerId": -57458681,
+    "itemId": 13630185,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4870",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-zolotaya-chernika-novy-57458681-13630185",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Золотая Черника",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          76700
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Золотая Черника» Новый",
+        "priceText": "76 700 ₽",
+        "amountRub": 76700,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/ZOi77Q10BSg.jpg",
+        "sha256": "89aec021f9745d53c6458076aecef6bd12e533d27fa4eec0b47ba565e37ebf67",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/359-photo_467-18-02-2026_12-35-58.webp",
+        "sha256": "deadb779a80abb8d28e5bd5a5c1d8e2ff960b813d6b3b6a71a812684c89dff37"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4836:sale",
+    "ownerId": -57458681,
+    "itemId": 13630148,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4836",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-sochny-novy-57458681-13630148",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Сочный",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          73500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Сочный» Новый",
+        "priceText": "73 500 ₽",
+        "amountRub": 73500,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/F47C0Db4ArU.jpg",
+        "sha256": "a7e11f7c4fdd8618b6af6565ca1732c26ac43fb12dad9dc175bf242742614484",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/351-photo_459-13-02-2026_16-17-14.webp",
+        "sha256": "41ce6bafa0d22b0180a987ad8ba13828d1af5da5ad3306fab7d49d84cacc6abf"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:82:sale",
+    "ownerId": -57458681,
+    "itemId": 13629030,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/82",
+      "targetUrl": "https://vk.ru/market/product/rost-140-155-sm-snezhnaya-koroleva-novy-57458681-13629030",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Снежная Королева",
+        "height": "140-155",
+        "condition": "new",
+        "prices": [
+          63500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 140-155 см. «Снежная Королева» Новый",
+        "priceText": "63 500 ₽",
+        "amountRub": 63500,
+        "heightFromTitle": "140-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/hnAFIFoNnZQ.jpg",
+        "sha256": "fac9da4a3876d97917f545a5347f8b06e4a9bb3b2df5d3a4f4226926386d8a4a",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/018-photo_27-12-09-2023_23-14-51.webp",
+        "sha256": "e4dd3a8376de0d509158b24beb5d921c979f592ac98c07e4f22e58f72683c585"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:1279:sale",
+    "ownerId": -57458681,
+    "itemId": 13629270,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/1279",
+      "targetUrl": "https://vk.ru/market/product/rost-140-155-sm-leto-novy-57458681-13629270",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Лето",
+        "height": "140-155",
+        "condition": "new",
+        "prices": [
+          59500
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 140-155 см. «Лето» Новый",
+        "priceText": "59 500 ₽",
+        "amountRub": 59500,
+        "heightFromTitle": "140-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/yvUUim0MJ7c.jpg",
+        "sha256": "889a23d491a5cd3380c7bbec434fb7f3a074ed4b1597602ad541e0f1659e31ee",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/053-photo_69-09-05-2024_20-08-02.webp",
+        "sha256": "30d40d7a5c21e3990cedc0d506f43d9abc73bb518c3a201ae141b10291b444cf"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:89:sale",
+    "ownerId": -57458681,
+    "itemId": 13629090,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/89",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-tsarevna-lebed-novy-57458681-13629090",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Царевна -лебедь",
+        "height": "145-155",
+        "condition": "new",
+        "prices": [
+          55000
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Царевна -лебедь» Новый",
+        "priceText": "55 000 ₽",
+        "amountRub": 55000,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/ahaATpZ8rtI.jpg",
+        "sha256": "59a479d2b4242d7e0140a5245131898a8221abc97baad6f3998a6aa87a1a9910",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/024-photo_33-12-09-2023_23-26-45.webp",
+        "sha256": "57b6298c2f754f42a72312765f7ec258d5ac1ca591d33f335668b840e1ff36e6"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:1297:sale",
+    "ownerId": -57458681,
+    "itemId": 13629323,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/1297",
+      "targetUrl": "https://vk.ru/market/product/rost-140-155-sm-redampfuchsia-novy-57458681-13629323",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Red&Fuchsia",
+        "height": "140-155",
+        "condition": "new",
+        "prices": [
+          54800
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 140-155 см. “Red&Fuchsia” Новый",
+        "priceText": "54 800 ₽",
+        "amountRub": 54800,
+        "heightFromTitle": "140-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/UuxOT0JvOpc.jpg",
+        "sha256": "930c2f2d2490538c412b8acf392d63c9a8de6b24efa31b9dea7901b1572bfc36",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/058-photo_74-14-05-2024_17-49-36.webp",
+        "sha256": "1e570a186969bb1e2275dacf018fbded191c4fd68ea2ef59b534b95653c163bc"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:1092:sale",
+    "ownerId": -57458681,
+    "itemId": 10266353,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/1092",
+      "targetUrl": "https://vk.ru/market/product/rost-160-180-sm-volcano-novy-57458681-10266353",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Volcano",
+        "height": "160-180",
+        "condition": "new",
+        "prices": [
+          89400
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 160-180 см. «Volcano» Новый",
+        "priceText": "89 400 ₽",
+        "amountRub": 89400,
+        "heightFromTitle": "160-180",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/5I82SCcxJwY.jpg",
+        "sha256": "6771e8a42a49dc4c11450913315411cfcc864565e42300cb1284dea1bf600e4d",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/043-photo_59-05-04-2024_07-42-54.webp",
+        "sha256": "aa6fd286667ff68de8fc5bd87446cc66c78c2e866512e965fe018027b21afdb6"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:4178:sale",
+    "ownerId": -57458681,
+    "itemId": 13768288,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/4178",
+      "targetUrl": "https://vk.ru/market/product/rost-125-135-sm-quotkhellouinquot-novy-57458681-13768288",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Купальник №4178",
+        "height": "125-135",
+        "condition": "new",
+        "prices": []
+      },
+      "targetFacts": {
+        "title": "Рост 125-135 см. \"Хэллоуин\" Новый",
+        "priceText": "бесплатно",
+        "amountRub": null,
+        "heightFromTitle": "125-135",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "height",
+        "condition",
+        "description_subject",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [
+        "name",
+        "price"
+      ],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/pzz8ZJyx5jQ.jpg",
+        "sha256": "e1a99175c2c01623222f05e83cff097721d338aacbb4abde1ee0732dfa1e9e33",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/287-photo_372-31-10-2025_12-03-22.webp",
+        "sha256": "65aea77eff1a59385da0ebc6a92e2b0d6a194c85029e0c6ca8b081c5d2c27e28"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:3062:sale",
+    "ownerId": -57458681,
+    "itemId": 13629428,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/3062",
+      "targetUrl": "https://vk.ru/market/product/rost-144-155-sm-karmin-novy-57458681-13629428",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Кармин",
+        "height": "144-155",
+        "condition": "new",
+        "prices": [
+          71800
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 144-155 см. “Кармин”  Новый",
+        "priceText": "68 500 ₽",
+        "amountRub": 68500,
+        "heightFromTitle": "144-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "height",
+        "condition",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [
+        "price"
+      ],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/cmbyJzF94ys.jpg",
+        "sha256": "60f86c6eddc8a7458cdd0b3de09155d31a22e7f44cd737e8b06150a64fed0f70",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/143-photo_200-08-04-2025_13-22-55.webp",
+        "sha256": "c6ddb0e65cae626b1854fa9aa5bda39e29f1ff8422ac8e7715f8abaef6fae429"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5491:sale",
+    "ownerId": -57458681,
+    "itemId": 13630247,
+    "confirmed": true,
+    "evidence": {
+      "method": "user_saved_listing_and_thumbnail_visual_review_with_catalogue_facts",
+      "observedAt": "2026-10-07T05:39:48.393858+00:00",
+      "sourceUrl": "https://t.me/nelli_leotards/5491",
+      "targetUrl": "https://vk.ru/market/product/rost-145-155-sm-elegantnaya-fuxia-novy-57458681-13630247",
+      "sourceCatalogueUrl": "https://artnelli.com/catalog-data.js",
+      "sourceCatalogueSha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+      "sourceFacts": {
+        "name": "Элегантная Фуксия",
+        "height": "145-160",
+        "condition": "new",
+        "prices": [
+          82900
+        ]
+      },
+      "targetFacts": {
+        "title": "Рост 145-155 см. «Элегантная Фуксия» Новый",
+        "priceText": "82 900 ₽",
+        "amountRub": 82900,
+        "heightFromTitle": "145-155",
+        "conditionFromTitle": "new"
+      },
+      "matchedFields": [
+        "name",
+        "condition",
+        "price",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [
+        "height"
+      ],
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "archiveSha256": "818c7bb385bdf7c97c0ff2c919c1db93400f77dcb5ee2a186911a26b593e2cd1",
+        "member": "Товары_files/wSQfSz9rO08.jpg",
+        "sha256": "10cdfb8e3e5f220d4ef4847a5bd392c4e743b605b7d82ab1d7e4af2c9dc20ce5",
+        "width": 75,
+        "height": 90
+      },
+      "sourceCover": {
+        "url": "https://artnelli.com/assets/catalog/telegram-5491-01.jpg",
+        "sha256": "0278418ea0de4f9fea0c614cb1dfb94497c1d83158598f6949947af1947140c2"
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_only"
+    },
+    "writeApproved": false
   }
 ]
