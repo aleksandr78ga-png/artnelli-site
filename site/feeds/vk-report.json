@@ -3,8 +3,8 @@
   "vk_sync_configured": false,
   "do_not_delete_missing_products": true,
   "source_count": 93,
-  "offer_count": 68,
-  "price_on_request_count": 22,
+  "offer_count": 69,
+  "price_on_request_count": 21,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
     {
@@ -70,11 +70,6 @@
     {
       "id": 3950,
       "name": "Golden branches",
-      "reason": "price_on_request"
-    },
-    {
-      "id": 3957,
-      "name": "Зеленые Ветви",
       "reason": "price_on_request"
     },
     {
@@ -205,6 +200,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "7d81b36a3d0772c16462085769612fa3627b3fc8f6d0763f544490981bb75981",
-  "generated_at": "2026-10-06T07:03:53+00:00"
+  "fingerprint": "096064a015cbe3c411230b5a6896edecf866cbb6bc1d7577278edac018d6b047",
+  "generated_at": "2026-10-07T05:50:14+00:00"
 }
