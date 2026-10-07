@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "source": "nelli_leotards",
+  "chatId": "-1001871308468",
+  "scope": "all-product-topics",
+  "sourceReadStartedAt": "2026-10-07T00:52:00.000Z",
+  "sourceLastReadAt": "2026-10-07T01:08:00.000Z",
+  "reportedAt": "2026-10-07T01:11:00.788Z",
+  "completeHourlyAudit": false,
+  "topics": [
+    {
+      "topicId": 1864,
+      "reachedStart": false,
+      "reachedEnd": true,
+      "renderedRecentRoots": [
+        5459,
+        5520,
+        5528,
+        5602,
+        5603,
+        5607,
+        5616,
+        5625,
+        5653,
+        5689,
+        5696,
+        5733,
+        5745
+      ]
+    },
+    {
+      "topicId": 14,
+      "reachedStart": false,
+      "reachedEnd": true,
+      "renderedRecentRoots": [
+        4797,
+        4836,
+        4870,
+        4893,
+        4918,
+        5016,
+        5133,
+        5298,
+        5316,
+        5408,
+        5680
+      ]
+    }
+  ],
+  "unreadOrIncompleteTopics": [
+    1864,
+    1865,
+    5098,
+    14,
+    2,
+    4,
+    16,
+    738
+  ],
+  "addedIds": [],
+  "newlyRemovedIds": [],
+  "additionsAndAbsencesUndetermined": true,
+  "historyCountersAdvanced": false,
+  "recordersInvoked": false,
+  "productChangesPublished": false,
+  "retainedHistoryAt": "2026-10-07T00:07:12.432Z",
+  "blocker": {
+    "kind": "telegram-web-history-load-stalled",
+    "operation": "load both boundaries of all eight product topics",
+    "recoveryAttempts": [
+      "fresh authorized Telegram Web tab",
+      "safe reload",
+      "topic navigation through the rendered forum list",
+      "incremental scroll and scrollbar drag",
+      "second existing authorized Telegram Web tab"
+    ],
+    "observed": "older history stopped at a recent cached fragment; navigation to uncached topics remained on the loading spinner",
+    "loginExpiryObserved": false,
+    "catalogAbsenceInferred": false
+  },
+  "verification": {
+    "mainCatalog": {
+      "count": 93,
+      "exactIds": true,
+      "sha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9"
+    },
+    "backup": {
+      "ghPagesExactSha": true,
+      "catalogSyncExactSha": true,
+      "sha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9"
+    },
+    "storefronts": {
+      "site": {
+        "httpLoaded": true,
+        "renderedCount": 93,
+        "exactIds": true
+      },
+      "telegramMiniApp": {
+        "httpLoaded": true,
+        "conditionCounts": {
+          "new": 47,
+          "used": 43,
+          "rental": 3
+        },
+        "sharedCatalogResource": "https://artnelli.com/catalog-data.js?v=20261006-auth-sync"
+      },
+      "max": {
+        "httpLoaded": true,
+        "conditionCounts": {
+          "new": 47,
+          "used": 43,
+          "rental": 3
+        },
+        "sharedCatalogResource": "https://artnelli.com/catalog-data.js?v=20261006-auth-sync"
+      }
+    }
+  },
+  "marketplaces": {
+    "vk": "source-export-only; receiving adapter unconfirmed",
+    "avito": "planned; not connected"
+  },
+  "recurringCheckPreserved": true,
+  "result": "partial source read; no deletion evidence accepted; last confirmed catalog retained"
+}
