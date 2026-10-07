@@ -7,13 +7,19 @@ const source=readFileSync(new URL('site/api/live-data.js',root),'utf8');
 test('shared loader applies successive edits, avoids duplicate renders and survives upstream errors',async()=>{
   let poll,pollDelay,reply={telegram:{ok:true,products:[{id:8,prices:[38900]}],statuses:[]}},fail=false,calls=0;
   const events=[],listeners={};const document={hidden:false,addEventListener(type,listener){listeners[type]=listener}};
-  const window={addEventListener(type,listener){listeners[type]=listener},dispatchEvent(event){events.push(event)}};
+  const window={NELLI_CATALOG:[{id:8}],addEventListener(type,listener){listeners[type]=listener},dispatchEvent(event){events.push(event)}};
   const context=vm.createContext({window,document,navigator:{onLine:true},AbortController,CustomEvent:class{constructor(type,{detail}){this.type=type;this.detail=detail}},
     setInterval(fn,delay){poll=fn;pollDelay=delay},setTimeout(){return 1},clearTimeout(){},fetch:async()=>{calls++;return {ok:!fail,json:async()=>reply}}});
   vm.runInContext(source,context);await new Promise(setImmediate);
   assert.equal(pollDelay,15000);assert.equal(typeof listeners.focus,'function');
   assert.equal(events.length,1);await poll();assert.equal(events.length,1);
   reply={telegram:{ok:true,products:[{id:8,prices:[41900]}],statuses:[]}};await poll();assert.equal(events.length,2);
+  reply={telegram:{ok:true,products:[
+    {id:8,prices:[41900]},
+    {id:5789,telegramTopicId:null,prices:[55000]},
+    {id:5790,telegramTopicId:5098,prices:[82700]},
+  ],statuses:[]}};await poll();
+  assert.deepEqual(window.NELLI_LIVE.telegram.products.map(product=>product.id),[8,5790]);
   fail=true;await poll();assert.equal(window.NELLI_LIVE.telegram.products[0].prices[0],41900);
   document.hidden=true;const previous=calls;await poll();assert.equal(calls,previous);
 });

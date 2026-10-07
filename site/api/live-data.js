@@ -1,5 +1,7 @@
 (() => {
   const endpoint = 'https://artnelli-leotards.aleksandr78ga.chatgpt.site/api/catalog';
+  const productTopicIds = new Set([1864, 1865, 5098, 14, 2, 4, 16, 738]);
+  const publishedIds = new Set((window.NELLI_CATALOG || []).map(product => Number(product.id)));
   let pending = false;
   let signature = null;
   async function refreshCatalog() {
@@ -13,8 +15,15 @@
       const payload = await response.json();
       if (payload?.telegram?.ok !== true || !Array.isArray(payload.telegram.products) ||
           !Array.isArray(payload.telegram.statuses)) throw new Error('Incomplete catalog');
-      window.NELLI_LIVE = {...window.NELLI_LIVE, ...payload};
-      const nextSignature = JSON.stringify(payload.telegram);
+      const telegram = {
+        ...payload.telegram,
+        products: payload.telegram.products.filter(product => {
+          const id = Number(product?.id);
+          return publishedIds.has(id) || productTopicIds.has(Number(product?.telegramTopicId));
+        }),
+      };
+      window.NELLI_LIVE = {...window.NELLI_LIVE, ...payload, telegram};
+      const nextSignature = JSON.stringify(telegram);
       if (nextSignature !== signature) {
         signature = nextSignature;
         window.dispatchEvent(new CustomEvent('nelli:live-data', {detail:window.NELLI_LIVE}));

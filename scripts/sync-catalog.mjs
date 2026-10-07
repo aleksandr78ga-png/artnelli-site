@@ -13,6 +13,7 @@ const siteDir = path.join(rootDir, "site");
 const catalogFile = path.join(siteDir, "catalog-data.js");
 const catalogAssetsDir = path.join(siteDir, "assets", "catalog");
 const tempDir = path.join(rootDir, ".catalog-sync-tmp");
+const productTopicIds = new Set([1864, 1865, 5098, 14, 2, 4, 16, 738]);
 const backendUrl = new URL(
   process.env.NELLI_CATALOG_BACKEND ||
     "https://artnelli-leotards.aleksandr78ga.chatgpt.site/",
@@ -258,6 +259,14 @@ async function main() {
   for (const incoming of telegram.products) {
     const id = Number(incoming?.id);
     if (!Number.isFinite(id) || incoming?.removed === true || removedIds.has(id)) {
+      continue;
+    }
+
+    // A public Telegram permalink does not carry forum-topic evidence. It may
+    // point at the service/general topic, which is explicitly outside the
+    // catalogue. Existing cards can still receive legacy edits without a
+    // topic ID, but a new card needs a bot-confirmed product topic.
+    if (!productById.has(id) && !productTopicIds.has(Number(incoming.telegramTopicId))) {
       continue;
     }
 
