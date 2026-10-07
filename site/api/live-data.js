@@ -27,7 +27,8 @@
     }
   }
   refreshCatalog();
-  setInterval(refreshCatalog, 60000);
+  setInterval(refreshCatalog, 15000);
   window.addEventListener('online', refreshCatalog);
+  window.addEventListener('focus', refreshCatalog);
   document.addEventListener('visibilitychange', refreshCatalog);
 })();
