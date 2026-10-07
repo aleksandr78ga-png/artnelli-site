@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2026-10-06 07:03">
+<yml_catalog date="2026-10-07 05:50">
   <shop>
     <name>Leotards by Nelli</name>
     <company>Leotards by Nelli</company>
@@ -701,6 +701,26 @@
 Обхват бёдер: 69-78 см
 Дуга тела: 123-133 см
 Подробности в исходном объявлении: https://t.me/nelli_leotards/3809</description>
+      </offer>
+      <offer id="artnelli-3957" available="true">
+        <url>https://artnelli.com/telegram/?product=3957</url>
+        <price>69500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/27d20bd005c01a7faf628c1c.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/f9f001e72483dd60dd0c730e.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/87edaa2f40a94219b2a28bb4.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/11b63984ffb7c423d506b549.jpg</picture>
+        <name>Б/у — Зеленые Ветви</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Зеленые Ветви
+Купальники б/у
+Рост: 160-180 см
+Обхват груди: 82-88 см
+Обхват талии: 66-72 см
+Обхват бёдер: 86-92 см
+Дуга тела: 144-154 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/1864/3957</description>
       </offer>
       <offer id="artnelli-4117" available="true">
         <url>https://artnelli.com/telegram/?product=4117</url>
