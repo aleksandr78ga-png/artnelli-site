@@ -1,0 +1,127 @@
+(() => {
+  "use strict";
+  const translations = {
+  "Категория моделей": "Category",
+  "Аренда": "Rental",
+  "Модели в аренду": "Designs for rent",
+  "Аренда · наличие уточнить": "Rental · ask about availability",
+  "Здравствуйте! Хочу взять эту модель в аренду.": "Hello! I would like to rent this design.",
+  "Хочу взять в аренду": "I want to rent this design",
+  "авторская мастерская": "designer atelier",
+  "Art Nelli — к началу": "Art Nelli — back to top",
+  "Telegram-канал": "Telegram channel",
+  "Арт-мастерская · ручная работа · Тюмень": "Designer atelier · handmade · Tyumen",
+  "Купальник как": "A leotard as",
+  "искусство.": "art.",
+  "Купальники-кутюр для художественной гимнастики — создаются под одну гимнастку, одну программу, одно незабываемое выступление.": "Couture rhythmic gymnastics leotards — created for one gymnast, one routine, one unforgettable performance.",
+  "Смотреть каталог": "Explore the collection",
+  "Преимущества": "Our strengths",
+  "Авторский дизайн": "Original design",
+  "Ручная работа": "Handmade",
+  "Доставка по миру": "Worldwide delivery",
+  "Из Telegram‑каталога Art Nelli": "From the Art Nelli Telegram collection",
+  "Новые модели": "New designs",
+  "Костюмы б/у": "Pre-owned costumes",
+  "Состояние моделей": "Condition",
+  "Новые": "New",
+  "Модели из мастерской": "From our atelier",
+  "Б/у": "Pre-owned",
+  "Костюмы в идеальном состоянии": "Costumes in excellent condition",
+  "Поиск по каталогу": "Search collection",
+  "Название или рост": "Name or height",
+  "Тип изделия": "Garment type",
+  "Все": "All",
+  "Купальники": "Leotards",
+  "Платья": "Dresses",
+  "Комбинезоны": "Unitards",
+  "Показать ещё": "Show more",
+  "По вашему запросу моделей не найдено.": "No designs match your search.",
+  "Индивидуальный пошив": "Custom orders",
+  "Создадим костюм под вашу музыку и образ": "A costume for your music and vision",
+  "Выберите желаемый месяц или слот. Нелли лично подтвердит возможность заказа в личной переписке.": "Choose a preferred month or slot. Nelli will personally confirm availability in a private chat.",
+  "Хочу записаться": "Request a slot",
+  "Как это работает": "How it works",
+  "От идеи до выхода на ковёр": "From your idea to the competition floor",
+  "Выбор": "Choose",
+  "Выберите модель или желаемый месяц/слот и перейдите в личную переписку с Нелли.": "Choose a design or preferred month/slot, then open a private chat with Nelli.",
+  "Подтверждение": "Confirm",
+  "Мастерская уточняет наличие, цену или свободное место на пошив.": "The atelier confirms availability, price or a custom-order slot.",
+  "Создание": "Create",
+  "Эскиз, мерки, ручная работа и бережная доставка.": "Sketches, measurements, handcrafting and careful delivery.",
+  "Нелли Гаркуша · Тюмень, Россия": "Nelli Garkusha · Tyumen, Russia",
+  "Служебные ссылки": "Information",
+  "Конфиденциальность": "Privacy",
+  "Условия использования": "Terms of use",
+  "Полный сайт": "Full website",
+  "Источник карточек —": "Collection source —",
+  "Telegram‑канал Art Nelli": "Art Nelli Telegram channel",
+  "Закрыть карточку": "Close design",
+  "Закрыть заявку": "Close request",
+  "Личная переписка с Нелли": "Private chat with Nelli",
+  "Выберите желаемый месяц или слот. Нелли лично подтвердит доступность в личном Telegram.": "Choose a preferred month or slot. Nelli will personally confirm availability in a private Telegram chat.",
+  "Желаемый месяц / слот": "Preferred month / slot",
+  "Выбор предварительный: свободное время подтверждает Нелли.": "This is a request: Nelli will confirm availability.",
+  "15 000 ₽ — оплата работы над эскизами": "15,000 RUB — payment for sketch design",
+  "Если заказ продолжается, сумма полностью входит в итоговую стоимость изделия. Если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.": "If the order proceeds, this payment is fully included in the final price. If the order is discontinued after the sketch work has been completed, this payment is non-refundable.",
+  "Я ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами.": "I have read and understand the terms of the 15,000 RUB payment for sketch design.",
+  "Цена по запросу": "Price on request",
+  "Параметры в карточке": "See measurements",
+  "Продано": "Sold",
+  "Б/у · наличие уточнить": "Pre-owned · ask about availability",
+  "Новая · наличие уточнить": "New · ask about availability",
+  "Открыть модель": "Open design",
+  "Рост": "Height",
+  "см": "cm",
+  "из": "of",
+  "ОГ": "Bust",
+  "ОТ": "Waist",
+  "ОБ": "Hips",
+  "Дуга": "Torso girth",
+  "платье": "dress",
+  "комбинезон": "unitard",
+  "купальник": "leotard",
+  "фото": "photo",
+  "Описание модели уточняется.": "Please ask for design details.",
+  "Работа мастерской · б/у": "Atelier design · pre-owned",
+  "Авторская модель Art Nelli": "Original Art Nelli design",
+  "Цена и наличие подтверждаются мастерской перед оформлением заказа. Название и ссылка на модель появятся в сообщении Нелли. Нажмите «Отправить» в Telegram.": "The atelier confirms price and availability before an order is placed. The design name and link will appear in your message to Nelli. Tap Send in Telegram.",
+  "Подобрать похожую": "Find a similar design",
+  "Хочу эту модель": "I want this design",
+  "Поделиться моделью": "Share design",
+  "Написать Нелли": "Contact Nelli",
+  "Каталог мастерской": "Atelier catalogue",
+  "Цены вариантов указаны в описании модели.": "Variant prices are listed in the description.",
+  "Оригинал в Telegram ↗": "Original Telegram post ↗",
+  "Доступность подтверждает Нелли": "Nelli confirms availability",
+  "Здравствуйте! Хочу подобрать похожую модель.": "Hello! I would like to find a similar design.",
+  "Здравствуйте! Хочу эту модель.": "Hello! I would like this design.",
+  "Модель": "Design",
+  "уточнить": "please confirm",
+  "Карточка модели": "Design page",
+  "Здравствуйте! Хочу записаться на индивидуальный пошив": "Hello! I would like to request a custom-order slot",
+  "Подтверждаю, что ознакомился(ась) и понимаю условия оплаты 15 000 ₽ за работу над эскизами: при продолжении заказа сумма входит в итоговую стоимость; если после выполненной работы над эскизами заказ прекращается, оплата не возвращается.": "I confirm that I have read and understand the terms of the 15,000 RUB payment for sketch design: if the order proceeds, the payment is included in the final price; if the order is discontinued after the sketch work has been completed, the payment is non-refundable.",
+  "Пожалуйста, подтвердите доступность слота.": "Please confirm slot availability."
+};
+  const originals = new WeakMap();
+  const attributes = new WeakMap();
+  const api = {
+    language: "ru",
+    t(text) { return api.language === "en" ? translations[text] || text : text; },
+    translatePage(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        if (node.parentElement?.closest("script,style,#catalog-grid,#catalog-count,#new-models-count,#used-models-count,#rental-models-count,#catalog-title,#order-months,.product-name,.detail-description")) continue;
+        const raw = originals.get(node) ?? node.textContent;
+        originals.set(node, raw);
+        node.textContent = raw.replace(raw.trim(), api.t(raw.trim()));
+      }
+      for (const element of root.querySelectorAll("[aria-label],[placeholder]")) {
+        let values = attributes.get(element);
+        if (!values) { values = {}; for (const key of ["aria-label", "placeholder"]) if (element.hasAttribute(key)) values[key] = element.getAttribute(key); attributes.set(element, values); }
+        for (const [key, value] of Object.entries(values)) element.setAttribute(key, api.t(value));
+      }
+    },
+  };
+  window.NELLI_I18N = api;
+})();
+
