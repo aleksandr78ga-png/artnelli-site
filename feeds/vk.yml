@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2026-10-07 05:50">
+<yml_catalog date="2026-10-07 07:15">
   <shop>
     <name>Leotards by Nelli</name>
     <company>Leotards by Nelli</company>
@@ -704,7 +704,7 @@
       </offer>
       <offer id="artnelli-3957" available="true">
         <url>https://artnelli.com/telegram/?product=3957</url>
-        <price>69500</price>
+        <price>55000</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://artnelli.com/feeds/vk-images/27d20bd005c01a7faf628c1c.jpg</picture>
@@ -1153,7 +1153,7 @@
         <price>82700</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://artnelli.com/feeds/vk-images/0d278da8334a05e10c65ea03.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/36c6353fac7ae63905a97a05.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/7e7cb35c87ec6b5bc44e458a.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/0d2ee1d8e10be6a50d708356.jpg</picture>
         <picture>https://artnelli.com/feeds/vk-images/7121fb026da33095e7019163.jpg</picture>
@@ -1170,7 +1170,7 @@
 Обхват талии: 59-65 см
 Обхват бёдер: 76-84 см
 Дуга тела: 128-137 см
-Подробности в исходном объявлении: https://t.me/nelli_leotards/5124</description>
+Подробности в исходном объявлении: https://t.me/nelli_leotards/5098/5124</description>
       </offer>
       <offer id="artnelli-5153" available="true">
         <url>https://artnelli.com/telegram/?product=5153</url>
