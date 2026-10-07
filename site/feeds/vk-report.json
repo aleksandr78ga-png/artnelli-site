@@ -181,7 +181,7 @@
     },
     {
       "id": 5706,
-      "image": "assets/catalog/telegram-5706-02.jpg",
+      "image": "assets/catalog/telegram-5706-02-4ebfc5e6ffbf.jpg",
       "reason": "ValueError: image_dimensions"
     },
     {
@@ -200,6 +200,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "02377c818535ce12c86ef09964a2e2648b4bbbd2e0b7188e65fae5d26b43cf71",
-  "generated_at": "2026-10-07T07:15:21+00:00"
+  "fingerprint": "d57953fa35a1a48fb44212c34e081637b1779e047a72853f4eb59e20ec418fdd",
+  "generated_at": "2026-10-07T23:33:55+00:00"
 }
