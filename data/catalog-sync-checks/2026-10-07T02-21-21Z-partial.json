@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "source": "nelli_leotards",
+  "chatId": "-1001871308468",
+  "scope": "all-product-topics",
+  "sourceReadStartedAt": "2026-10-07T01:58:03.000Z",
+  "sourceLastReadAt": "2026-10-07T02:16:41.000Z",
+  "reportedAt": "2026-10-07T02:21:21.000Z",
+  "completeHourlyAudit": false,
+  "topics": [
+    {
+      "topicId": 1864,
+      "reachedStart": false,
+      "reachedEnd": false,
+      "renderedRoots": [5459, 5520, 5528, 5602, 5603, 5607, 5616, 5625, 5653, 5689, 5696, 5733, 5745]
+    },
+    {
+      "topicId": 1865,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": [2130, 2840, 4206, 5726]
+    },
+    {
+      "topicId": 5098,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": [5124, 5153, 5491, 5549, 5576, 5661, 5706]
+    },
+    {
+      "topicId": 14,
+      "reachedStart": true,
+      "reachedEnd": false,
+      "renderedRoots": [60, 72, 82, 89, 1279, 1297, 1556, 2421, 3062, 3580]
+    },
+    {
+      "topicId": 2,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": [3, 5, 6, 8, 1339, 1558, 2233, 3155, 4178, 5278, 5471]
+    },
+    {
+      "topicId": 4,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": [7, 538, 1555, 2817, 3146, 3520]
+    },
+    {
+      "topicId": 16,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": [17, 20, 30, 66, 228, 298, 1092, 1557, 2464, 2468]
+    },
+    {
+      "topicId": 738,
+      "reachedStart": true,
+      "reachedEnd": true,
+      "renderedRoots": [1136, 1559, 1560]
+    }
+  ],
+  "fullyReadTopics": [1865, 5098, 2, 4, 16, 738],
+  "unreadOrIncompleteTopics": [1864, 14],
+  "addedIds": [],
+  "newlyRemovedIds": [],
+  "additionsAndAbsencesUndetermined": true,
+  "historyCountersAdvanced": false,
+  "recordersInvoked": false,
+  "productChangesPublished": false,
+  "retainedHistoryAt": "2026-10-07T00:07:12.432Z",
+  "blocker": {
+    "kind": "telegram-web-history-load-stalled",
+    "operation": "load both boundaries of all eight product topics",
+    "recoveryAttempts": [
+      "existing authorized Telegram Web tab",
+      "safe reload of the target group",
+      "topic navigation through the rendered forum list",
+      "repeated boundary scrolls",
+      "Go to bottom control",
+      "second existing authorized Telegram Web tab"
+    ],
+    "observed": "six topics reached both boundaries; topic 1864 exposed only the recent fragment and topic 14 stopped at message 3580 instead of loading its newer fragment",
+    "loginExpiryObserved": false,
+    "catalogAbsenceInferred": false
+  },
+  "verification": {
+    "apiCatalog": {
+      "generatedAt": "2026-10-07T02:20:00.430Z",
+      "count": 93,
+      "exactIds": true
+    },
+    "mainCatalog": {
+      "count": 93,
+      "exactIds": true,
+      "sha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9"
+    },
+    "backup": {
+      "ghPagesExactBlob": true,
+      "catalogSyncExactBlob": true,
+      "gitBlobSha": "bcd969e28ef18a7e3f1423d41ce188a18db3156c"
+    },
+    "storefronts": {
+      "site": {
+        "httpLoaded": true,
+        "renderedCount": 93,
+        "exactIds": true
+      },
+      "telegramMiniApp": {
+        "httpLoaded": true,
+        "conditionCounts": {"new": 47, "used": 43, "rental": 3},
+        "sharedCatalogResource": "../catalog-data.js?v=20261006-auth-sync"
+      },
+      "max": {
+        "httpLoaded": true,
+        "conditionCounts": {"new": 47, "used": 43, "rental": 3},
+        "sharedCatalogResource": "../catalog-data.js?v=20261006-auth-sync"
+      }
+    }
+  },
+  "marketplaces": {
+    "vk": "source-export-only; receiving adapter unconfirmed",
+    "avito": "planned; not connected"
+  },
+  "recurringCheckPreserved": true,
+  "result": "partial source read; no deletion evidence accepted; last confirmed catalog retained"
+}
