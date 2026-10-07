@@ -1,0 +1,1860 @@
+{
+  "schema": "vk_binding_candidates_review_v1",
+  "writesEnabled": false,
+  "applySupported": false,
+  "sourceReference": {
+    "url": "https://artnelli.com/catalog-data.js",
+    "sha256": "9b0a6ced3095eab46a9b8ca927f97f4ae2b96d619f3c7105764b051f12b190c9",
+    "productCount": 93,
+    "inspectedAt": "2026-10-07T05:23:20.222126+00:00",
+    "scope": "published_shared_catalogue",
+    "directTelegramRecheckPerformed": false
+  },
+  "targetReference": {
+    "attachment": "Товары.html",
+    "sha256": "5ce6d6fabeab7887e7e933e3e5d04a0dfd2e80edb83719d99062a649b4245106",
+    "listedCount": 44,
+    "rowCount": 44,
+    "scope": "list_rows_only"
+  },
+  "constraints": [
+    "No candidate is an approved identity binding.",
+    "Missing source items do not authorize deletion.",
+    "Price label бесплатно is not treated as on-request.",
+    "Existing reviewed bindings remain unchanged.",
+    "Missing thumbnails and full card details prevent final matching."
+  ],
+  "entries": [
+    {
+      "ownerId": -57458681,
+      "itemId": 13952962,
+      "status": "existing_identity_binding_source_absent_from_published_snapshot",
+      "titleObserved": "Рост 130-140 см. «Голубой» Новый",
+      "heightObserved": "130-140",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "61 500 ₽",
+      "candidates": [],
+      "historicalCandidatesNotCurrentAvailability": [
+        {
+          "id": 5426,
+          "name": "Голубой",
+          "height": "130-140",
+          "condition": "new",
+          "prices": [
+            61500
+          ],
+          "telegram": "https://t.me/nelli_leotards/5426"
+        }
+      ],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13939827,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Зефир» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "79 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5408:sale",
+          "factsObserved": {
+            "id": 5408,
+            "name": "Зефир",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              79700
+            ],
+            "telegram": "https://t.me/nelli_leotards/5408"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13939826,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Изящно красный» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "79 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5316:sale",
+          "factsObserved": {
+            "id": 5316,
+            "name": "Изящно красный",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              79700
+            ],
+            "telegram": "https://t.me/nelli_leotards/5316"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13891854,
+      "status": "no_current_text_candidate",
+      "titleObserved": "Рост 145-160 см. «Ноктюрн» Новый",
+      "heightObserved": "145-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "79 900 ₽",
+      "candidates": [],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13891526,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Птичка певчая» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "83 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5298:sale",
+          "factsObserved": {
+            "id": 5298,
+            "name": "Птичка певчая",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              83700
+            ],
+            "telegram": "https://t.me/nelli_leotards/5298"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13889936,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 135-145 см. «Краски» Новый",
+      "heightObserved": "135-145",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "76 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5278:sale",
+          "factsObserved": {
+            "id": 5278,
+            "name": "Краски",
+            "height": "135-145",
+            "condition": "new",
+            "prices": [
+              76500
+            ],
+            "telegram": "https://t.me/nelli_leotards/5278"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13886469,
+      "status": "no_current_text_candidate",
+      "titleObserved": "Рост 135-145 см. «Розовая Искра» Новый",
+      "heightObserved": "135-145",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "71 800 ₽",
+      "candidates": [],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13886457,
+      "status": "no_current_text_candidate",
+      "titleObserved": "Рост 135-150 см. «Звезда моя» Новый",
+      "heightObserved": "135-150",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "74 800 ₽",
+      "candidates": [],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13819815,
+      "status": "partial_text_candidates",
+      "titleObserved": "Рост 145-160 см. «Изумруд» Новый",
+      "heightObserved": "145-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "76 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5461:sale",
+          "factsObserved": {
+            "id": 5461,
+            "name": "Изумруд",
+            "height": "140-150",
+            "condition": "used",
+            "prices": [],
+            "telegram": "https://t.me/nelli_leotards/5461"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13675318,
+      "status": "no_current_text_candidate",
+      "titleObserved": "Рост 145-155 см. «Золотая Змея» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "79 500 ₽",
+      "candidates": [],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13647877,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-160 см. «Золотой» Новый",
+      "heightObserved": "145-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "82 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4573:sale",
+          "factsObserved": {
+            "id": 4573,
+            "name": "Золотой",
+            "height": "125-140",
+            "condition": "used",
+            "prices": [
+              49000
+            ],
+            "telegram": "https://t.me/nelli_leotards/4573"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:5124:sale",
+          "factsObserved": {
+            "id": 5124,
+            "name": "Золотой",
+            "height": "145-160",
+            "condition": "new",
+            "prices": [
+              82700
+            ],
+            "telegram": "https://t.me/nelli_leotards/5124"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13768300,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 140-160 см. «Red» Новый",
+      "heightObserved": "140-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "49 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:298:sale",
+          "factsObserved": {
+            "id": 298,
+            "name": "Red",
+            "height": "140-160",
+            "condition": "new",
+            "prices": [
+              49900
+            ],
+            "telegram": "https://t.me/nelli_leotards/298"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13768288,
+      "status": "partial_text_candidates",
+      "titleObserved": "Рост 125-135 см. \"Хэллоуин\" Новый",
+      "heightObserved": "125-135",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "бесплатно",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4178:sale",
+          "factsObserved": {
+            "id": 4178,
+            "name": "Купальник №4178",
+            "height": "125-135",
+            "condition": "new",
+            "prices": [],
+            "telegram": "https://t.me/nelli_leotards/4178"
+          },
+          "matchingTextFields": [
+            "height",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "name",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "description_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13768271,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 110-130 см. «Монохром» Новый",
+      "heightObserved": "110-130",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "38 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:8:sale",
+          "factsObserved": {
+            "id": 8,
+            "name": "Монохром",
+            "height": "110-130",
+            "condition": "new",
+            "prices": [
+              38900
+            ],
+            "telegram": "https://t.me/nelli_leotards/8"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:60:sale",
+          "factsObserved": {
+            "id": 60,
+            "name": "Монохром",
+            "height": "130-145",
+            "condition": "new",
+            "prices": [
+              41900
+            ],
+            "telegram": "https://t.me/nelli_leotards/60"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:66:sale",
+          "factsObserved": {
+            "id": 66,
+            "name": "Монохром",
+            "height": "140-160",
+            "condition": "new",
+            "prices": [
+              46900
+            ],
+            "telegram": "https://t.me/nelli_leotards/66"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:2347:sale",
+          "factsObserved": {
+            "id": 2347,
+            "name": "Монохром",
+            "height": "140-160",
+            "condition": "used",
+            "prices": [
+              38000
+            ],
+            "telegram": "https://t.me/nelli_leotards/2347"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13637898,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 130-145 см. «Oriental» Новый",
+      "heightObserved": "130-145",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "74 800 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:2233:sale",
+          "factsObserved": {
+            "id": 2233,
+            "name": "Oriental",
+            "height": "130-145",
+            "condition": "new",
+            "prices": [
+              74800
+            ],
+            "telegram": "https://t.me/nelli_leotards/2233"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13687621,
+      "status": "partial_text_candidates",
+      "titleObserved": "«Танец огня» Б/У, аренда",
+      "heightObserved": null,
+      "conditionFromTitle": "rental",
+      "priceTextObserved": "38 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5726:rent",
+          "factsObserved": {
+            "id": 5726,
+            "name": "Танец огня",
+            "height": "116-130",
+            "condition": "rental",
+            "prices": [
+              4500
+            ],
+            "telegram": "https://t.me/nelli_leotards/5726"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:5733:sale",
+          "factsObserved": {
+            "id": 5733,
+            "name": "Танец огня",
+            "height": "116-130",
+            "condition": "used",
+            "prices": [
+              39000
+            ],
+            "telegram": "https://t.me/nelli_leotards/5733"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13637862,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 130-140 см. “Белое золото”  Новый",
+      "heightObserved": "130-140",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "84 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:1339:sale",
+          "factsObserved": {
+            "id": 1339,
+            "name": "Белое золото",
+            "height": "130-140",
+            "condition": "new",
+            "prices": [
+              84700
+            ],
+            "telegram": "https://t.me/nelli_leotards/1339"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13634020,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 160-170 см. «Махагони» Новый",
+      "heightObserved": "160-170",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "87 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:30:sale",
+          "factsObserved": {
+            "id": 30,
+            "name": "Махагони",
+            "height": "160-170",
+            "condition": "new",
+            "prices": [
+              87500
+            ],
+            "telegram": "https://t.me/nelli_leotards/30"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13634014,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 140-160 см. «Монохром»  Новый",
+      "heightObserved": "140-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "46 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:8:sale",
+          "factsObserved": {
+            "id": 8,
+            "name": "Монохром",
+            "height": "110-130",
+            "condition": "new",
+            "prices": [
+              38900
+            ],
+            "telegram": "https://t.me/nelli_leotards/8"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:60:sale",
+          "factsObserved": {
+            "id": 60,
+            "name": "Монохром",
+            "height": "130-145",
+            "condition": "new",
+            "prices": [
+              41900
+            ],
+            "telegram": "https://t.me/nelli_leotards/60"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:66:sale",
+          "factsObserved": {
+            "id": 66,
+            "name": "Монохром",
+            "height": "140-160",
+            "condition": "new",
+            "prices": [
+              46900
+            ],
+            "telegram": "https://t.me/nelli_leotards/66"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:2347:sale",
+          "factsObserved": {
+            "id": 2347,
+            "name": "Монохром",
+            "height": "140-160",
+            "condition": "used",
+            "prices": [
+              38000
+            ],
+            "telegram": "https://t.me/nelli_leotards/2347"
+          },
+          "matchingTextFields": [
+            "name",
+            "height"
+          ],
+          "conflictingOrMissingTextFields": [
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13633999,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 160-180 см. Новое платье для фигурного катания «Coral»",
+      "heightObserved": "160-180",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "55 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:1136:sale",
+          "factsObserved": {
+            "id": 1136,
+            "name": "Coral",
+            "height": "160-180",
+            "condition": "new",
+            "prices": [
+              55700
+            ],
+            "telegram": "https://t.me/nelli_leotards/1136"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:4986:sale",
+          "factsObserved": {
+            "id": 4986,
+            "name": "Coral",
+            "height": "125-135",
+            "condition": "used",
+            "prices": [
+              85000
+            ],
+            "telegram": "https://t.me/nelli_leotards/4986"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13633991,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 150-160 см. «Огненный»  Новый",
+      "heightObserved": "150-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "145 000 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:3588:sale",
+          "factsObserved": {
+            "id": 3588,
+            "name": "Огненный",
+            "height": "150-160",
+            "condition": "new",
+            "prices": [
+              145000
+            ],
+            "telegram": "https://t.me/nelli_leotards/3588"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13633986,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 135-155 см. «Черномор и Птица-Лебедь» Новый",
+      "heightObserved": "135-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "55 000 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:72:sale",
+          "factsObserved": {
+            "id": 72,
+            "name": "Черномор и Птица-Лебедь",
+            "height": "135-155",
+            "condition": "new",
+            "prices": [
+              55000
+            ],
+            "telegram": "https://t.me/nelli_leotards/72"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13633976,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 130-145 см. «Монохром» Новый",
+      "heightObserved": "130-145",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "41 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:8:sale",
+          "factsObserved": {
+            "id": 8,
+            "name": "Монохром",
+            "height": "110-130",
+            "condition": "new",
+            "prices": [
+              38900
+            ],
+            "telegram": "https://t.me/nelli_leotards/8"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:60:sale",
+          "factsObserved": {
+            "id": 60,
+            "name": "Монохром",
+            "height": "130-145",
+            "condition": "new",
+            "prices": [
+              41900
+            ],
+            "telegram": "https://t.me/nelli_leotards/60"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:66:sale",
+          "factsObserved": {
+            "id": 66,
+            "name": "Монохром",
+            "height": "140-160",
+            "condition": "new",
+            "prices": [
+              46900
+            ],
+            "telegram": "https://t.me/nelli_leotards/66"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:2347:sale",
+          "factsObserved": {
+            "id": 2347,
+            "name": "Монохром",
+            "height": "140-160",
+            "condition": "used",
+            "prices": [
+              38000
+            ],
+            "telegram": "https://t.me/nelli_leotards/2347"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630511,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Снежное Величие» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "88 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5016:sale",
+          "factsObserved": {
+            "id": 5016,
+            "name": "Снежное Величие",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              88500
+            ],
+            "telegram": "https://t.me/nelli_leotards/5016"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630028,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Фиеста» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "85 600 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4796:sale",
+          "factsObserved": {
+            "id": 4796,
+            "name": "Фиеста",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              85600
+            ],
+            "telegram": "https://t.me/nelli_leotards/4796"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629977,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Красный вихрь» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "85 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4751:sale",
+          "factsObserved": {
+            "id": 4751,
+            "name": "Красный вихрь",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              85500
+            ],
+            "telegram": "https://t.me/nelli_leotards/4751"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630247,
+      "status": "partial_text_candidates",
+      "titleObserved": "Рост 145-155 см. «Элегантная Фуксия» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "82 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5491:sale",
+          "factsObserved": {
+            "id": 5491,
+            "name": "Элегантная Фуксия",
+            "height": "145-160",
+            "condition": "new",
+            "prices": [
+              82900
+            ],
+            "telegram": "https://t.me/nelli_leotards/5491"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629686,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Сафари» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "82 300 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4592:sale",
+          "factsObserved": {
+            "id": 4592,
+            "name": "Сафари",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              82300
+            ],
+            "telegram": "https://t.me/nelli_leotards/4592"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630434,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-160 см. «Серебряные Лучи» Новый",
+      "heightObserved": "145-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "79 900 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5549:sale",
+          "factsObserved": {
+            "id": 5549,
+            "name": "Серебряные Лучи",
+            "height": "145-160",
+            "condition": "new",
+            "prices": [
+              79900
+            ],
+            "telegram": "https://t.me/nelli_leotards/5549"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630458,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-160 см. «Elegant Black» Новый",
+      "heightObserved": "145-160",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "78 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:5153:sale",
+          "factsObserved": {
+            "id": 5153,
+            "name": "Elegant Black",
+            "height": "145-160",
+            "condition": "new",
+            "prices": [
+              78700
+            ],
+            "telegram": "https://t.me/nelli_leotards/5153"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629602,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Ирисы» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "78 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:3809:sale",
+          "factsObserved": {
+            "id": 3809,
+            "name": "Ирисы",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              78700
+            ],
+            "telegram": "https://t.me/nelli_leotards/3809"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629516,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Звезда» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "78 600 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:3640:sale",
+          "factsObserved": {
+            "id": 3640,
+            "name": "Звезда",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              78600
+            ],
+            "telegram": "https://t.me/nelli_leotards/3640"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630379,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Небесно голубой» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "78 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4918:sale",
+          "factsObserved": {
+            "id": 4918,
+            "name": "Небесно голубой",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              78500
+            ],
+            "telegram": "https://t.me/nelli_leotards/4918"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629644,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Pink-Emerald» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "78 300 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4270:sale",
+          "factsObserved": {
+            "id": 4270,
+            "name": "Pink-Emerald",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              78300
+            ],
+            "telegram": "https://t.me/nelli_leotards/4270"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630294,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Happy Blue» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "76 800 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4893:sale",
+          "factsObserved": {
+            "id": 4893,
+            "name": "Happy Blue",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              76800
+            ],
+            "telegram": "https://t.me/nelli_leotards/4893"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630185,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Золотая Черника» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "76 700 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4870:sale",
+          "factsObserved": {
+            "id": 4870,
+            "name": "Золотая Черника",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              76700
+            ],
+            "telegram": "https://t.me/nelli_leotards/4870"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13630148,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Сочный» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "73 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:4836:sale",
+          "factsObserved": {
+            "id": 4836,
+            "name": "Сочный",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              73500
+            ],
+            "telegram": "https://t.me/nelli_leotards/4836"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629428,
+      "status": "price_disagreement",
+      "titleObserved": "Рост 144-155 см. “Кармин”  Новый",
+      "heightObserved": "144-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "68 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:3062:sale",
+          "factsObserved": {
+            "id": 3062,
+            "name": "Кармин",
+            "height": "144-155",
+            "condition": "new",
+            "prices": [
+              71800
+            ],
+            "telegram": "https://t.me/nelli_leotards/3062"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629030,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 140-155 см. «Снежная Королева» Новый",
+      "heightObserved": "140-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "63 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:82:sale",
+          "factsObserved": {
+            "id": 82,
+            "name": "Снежная Королева",
+            "height": "140-155",
+            "condition": "new",
+            "prices": [
+              63500
+            ],
+            "telegram": "https://t.me/nelli_leotards/82"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629231,
+      "status": "partial_text_candidates",
+      "titleObserved": "Рост 140-150 см. «Синий» Новый",
+      "heightObserved": "140-150",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "59 800 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:2817:sale",
+          "factsObserved": {
+            "id": 2817,
+            "name": "Синий",
+            "height": "105-125",
+            "condition": "new",
+            "prices": [
+              33900
+            ],
+            "telegram": "https://t.me/nelli_leotards/2817"
+          },
+          "matchingTextFields": [
+            "name",
+            "condition"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        },
+        {
+          "sourceKey": "nelli_leotards:4779:sale",
+          "factsObserved": {
+            "id": 4779,
+            "name": "Синий",
+            "height": "150",
+            "condition": "used",
+            "prices": [],
+            "telegram": "https://t.me/nelli_leotards/4779"
+          },
+          "matchingTextFields": [
+            "name"
+          ],
+          "conflictingOrMissingTextFields": [
+            "height",
+            "condition",
+            "price"
+          ],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629270,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 140-155 см. «Лето» Новый",
+      "heightObserved": "140-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "59 500 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:1279:sale",
+          "factsObserved": {
+            "id": 1279,
+            "name": "Лето",
+            "height": "140-155",
+            "condition": "new",
+            "prices": [
+              59500
+            ],
+            "telegram": "https://t.me/nelli_leotards/1279"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629090,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 145-155 см. «Царевна -лебедь» Новый",
+      "heightObserved": "145-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "55 000 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:89:sale",
+          "factsObserved": {
+            "id": 89,
+            "name": "Царевна -лебедь",
+            "height": "145-155",
+            "condition": "new",
+            "prices": [
+              55000
+            ],
+            "telegram": "https://t.me/nelli_leotards/89"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 13629323,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 140-155 см. “Red&Fuchsia” Новый",
+      "heightObserved": "140-155",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "54 800 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:1297:sale",
+          "factsObserved": {
+            "id": 1297,
+            "name": "Red&Fuchsia",
+            "height": "140-155",
+            "condition": "new",
+            "prices": [
+              54800
+            ],
+            "telegram": "https://t.me/nelli_leotards/1297"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    },
+    {
+      "ownerId": -57458681,
+      "itemId": 10266353,
+      "status": "all_four_text_fields_agree",
+      "titleObserved": "Рост 160-180 см. «Volcano» Новый",
+      "heightObserved": "160-180",
+      "conditionFromTitle": "new",
+      "priceTextObserved": "89 400 ₽",
+      "candidates": [
+        {
+          "sourceKey": "nelli_leotards:1092:sale",
+          "factsObserved": {
+            "id": 1092,
+            "name": "Volcano",
+            "height": "160-180",
+            "condition": "new",
+            "prices": [
+              89400
+            ],
+            "telegram": "https://t.me/nelli_leotards/1092"
+          },
+          "matchingTextFields": [
+            "name",
+            "height",
+            "condition",
+            "price"
+          ],
+          "conflictingOrMissingTextFields": [],
+          "confirmed": false,
+          "photosVerified": false,
+          "lookupBasis": "name_search"
+        }
+      ],
+      "historicalCandidatesNotCurrentAvailability": [],
+      "confirmed": false,
+      "writeApproved": false
+    }
+  ]
+}
