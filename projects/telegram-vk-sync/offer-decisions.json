@@ -1,0 +1,40 @@
+{
+  "schema": "vk_source_offer_decisions_v1",
+  "writesEnabled": false,
+  "applySupported": false,
+  "sourceAuthority": {
+    "channel": "nelli_leotards",
+    "policy": "All storefront facts and separate sale/rental offers follow the primary catalogue.",
+    "ownerInstructionAt": "2026-10-07T10:43:06+05:00"
+  },
+  "decisions": [
+    {
+      "model": "Танец огня",
+      "existingTarget": {
+        "ownerId": -57458681,
+        "itemId": 13687621,
+        "sourceKey": "nelli_leotards:5726:rent",
+        "transactionType": "rent",
+        "observedSourceAmountRub": 4500,
+        "proposedAction": "update_existing_after_full_verification",
+        "preserveExistingLink": true
+      },
+      "separateOffer": {
+        "sourceKey": "nelli_leotards:5733:sale",
+        "transactionType": "sale",
+        "observedSourceAmountRub": 39000,
+        "targetItemId": null,
+        "proposedAction": "resolve_or_create_separate_target_after_full_verification",
+        "mustRecheckForExistingTargetBeforeCreation": true
+      },
+      "amountsAreEvidenceNotHardcodedSyncConfiguration": true,
+      "noSharedTargetIdBetweenSaleAndRental": true
+    }
+  ],
+  "preconditions": [
+    "Re-read current primary source.",
+    "Re-read full existing VK cards and confirm all target bindings.",
+    "Verify receiver, price-on-request handling, media updates and repeat without duplicates.",
+    "Honor user's prohibition on live changes before a fully verified solution."
+  ]
+}

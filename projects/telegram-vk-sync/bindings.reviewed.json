@@ -2053,5 +2053,60 @@
       "reviewScope": "identity_only"
     },
     "writeApproved": false
+  },
+  {
+    "sourceKey": "nelli_leotards:5726:rent",
+    "ownerId": -57458681,
+    "itemId": 13687621,
+    "confirmed": true,
+    "evidence": {
+      "method": "owner_source_policy_existing_rental_title_and_visual_review",
+      "observedAt": "2026-10-07T05:45:11.945Z",
+      "sourceUrl": "https://t.me/nelli_leotards/5726",
+      "targetUrl": "https://vk.ru/market/product/tanets-ognya-bu-arenda-57458681-13687621",
+      "sourceFacts": {
+        "id": 5726,
+        "name": "Танец огня",
+        "height": "116-130",
+        "condition": "rental",
+        "prices": [
+          4500
+        ],
+        "telegram": "https://t.me/nelli_leotards/5726"
+      },
+      "targetFacts": {
+        "title": "«Танец огня» Б/У, аренда",
+        "priceText": "38 500 ₽",
+        "amountRub": 38500,
+        "conditionFromTitle": "rental"
+      },
+      "matchedFields": [
+        "name",
+        "transaction_type_in_title",
+        "cover_photo"
+      ],
+      "conflictingOrMissingTextFields": [
+        "price",
+        "height",
+        "full_description",
+        "full_album"
+      ],
+      "ownerInstruction": "Все нужно делать так, как в основном каталоге и аренды, и продажи.",
+      "ownerInstructionAt": "2026-10-07T10:43:06+05:00",
+      "linkAssignmentBasis": "Keep the existing VK link for rental because the existing title explicitly says аренда; source price controls the proposed correction.",
+      "thumbnail": {
+        "userAttachmentId": "file_0000000024d8820a948d2816cd3d3eda",
+        "sha256": "2484be3c4a11807896c11508989ae4f20f6eb5895eb872154fb77282bbd7e518",
+        "width": 75,
+        "height": 90
+      },
+      "coverPhotoVerified": true,
+      "allTargetPhotosVerified": false,
+      "fullTargetDescriptionVerified": false,
+      "liveVkApiVerified": false,
+      "directTelegramRecheckPerformed": false,
+      "reviewScope": "identity_and_offer_assignment_only"
+    },
+    "writeApproved": false
   }
 ]

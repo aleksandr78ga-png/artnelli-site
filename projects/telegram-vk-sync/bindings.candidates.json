@@ -808,10 +808,11 @@
             "height",
             "price"
           ],
-          "confirmed": false,
+          "confirmed": true,
           "photosVerified": false,
           "lookupBasis": "name_search",
-          "coverPhotoVerified": true
+          "coverPhotoVerified": true,
+          "reviewScope": "identity_only"
         },
         {
           "sourceKey": "nelli_leotards:5733:sale",
@@ -836,7 +837,9 @@
           "confirmed": false,
           "photosVerified": false,
           "lookupBasis": "name_search",
-          "coverPhotoVerified": true
+          "coverPhotoVerified": true,
+          "rejectedForThisTargetOffer": true,
+          "rejectionReason": "The existing target link is assigned to the rental offer; sale must have its own target identity."
         }
       ],
       "historicalCandidatesNotCurrentAvailability": [],
@@ -855,8 +858,26 @@
           5733
         ]
       },
-      "reviewStatus": "same_model_sale_rental_mapping_unresolved",
-      "requiredCheck": "Confirm which offer the existing VK card represents: title mentions rent, displayed price 38500 does not match current rental 4500 or sale 39000. Do not choose by photo."
+      "reviewStatus": "rental_identity_recorded_sale_kept_separate",
+      "reviewedSourceKey": "nelli_leotards:5726:rent",
+      "offerResolution": {
+        "policy": "match_primary_catalogue_sale_and_rental_as_distinct_offers",
+        "existingVkItemAssignedTo": "nelli_leotards:5726:rent",
+        "basis": "Existing VK title explicitly identifies rental; preserve its link.",
+        "separateSaleSourceKey": "nelli_leotards:5733:sale",
+        "separateSaleTargetId": null,
+        "createSupported": false,
+        "sourcePricesObserved": {
+          "rentalRub": 4500,
+          "saleRub": 39000
+        },
+        "sourcePricesMustBeRefreshedBeforeAnyFutureApply": true
+      },
+      "remainingChecks": [
+        "Complete VK card fields and photo album",
+        "Current source facts and availability",
+        "Receiving integration end-to-end verification"
+      ]
     },
     {
       "ownerId": -57458681,
@@ -2524,8 +2545,10 @@
     "thumbnailsInspected": 44,
     "newReviewedIdentities": 36,
     "existingReviewedIdentitiesRetained": 1,
-    "offerAmbiguities": 1,
+    "offerAmbiguities": 0,
     "noMatchingCurrentModelIdentified": 6,
-    "sourceAbsentForExistingBinding": 1
+    "sourceAbsentForExistingBinding": 1,
+    "offerDecisionsResolvedByOwnerSourcePolicy": 1,
+    "reviewedIdentitiesTotal": 38
   }
 }
