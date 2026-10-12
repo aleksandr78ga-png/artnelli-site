@@ -192,6 +192,31 @@ async function downloadImage(remotePath, productId, photoIndex, existingNames, v
   }
 }
 
+async function downloadedPhotosMatchLocal(localPhotos, downloadedPhotos) {
+  if (localPhotos.length !== downloadedPhotos.length) return false;
+  for (let index = 0; index < localPhotos.length; index += 1) {
+    const localPath = localCatalogAsset(localPhotos[index]);
+    const downloadedPath = localCatalogAsset(downloadedPhotos[index]);
+    if (!localPath || !downloadedPath) return false;
+    const temporaryPath = path.join(tempDir, path.basename(downloadedPath));
+    const candidatePath = await fileExists(temporaryPath) ? temporaryPath : downloadedPath;
+    const [localBytes, downloadedBytes] = await Promise.all([
+      readFile(localPath),
+      readFile(candidatePath),
+    ]);
+    if (!localBytes.equals(downloadedBytes)) return false;
+  }
+  return true;
+}
+
+async function discardTemporaryPhotos(photos) {
+  await Promise.all(photos.map(async (photo) => {
+    const assetPath = localCatalogAsset(photo);
+    if (!assetPath) return;
+    await rm(path.join(tempDir, path.basename(assetPath)), { force: true });
+  }));
+}
+
 function normalizeProduct(product, photos) {
   return {
     ...product,
@@ -288,11 +313,23 @@ async function main() {
       if (incomingPhotos.length === 0) {
         throw new Error(`У товара ${id} нет фотографий`);
       }
-      photos = await Promise.all(
+      const downloadedPhotos = await Promise.all(
         incomingPhotos.map((photo, index) =>
           downloadImage(photo, id, index, existingNames, refreshRentalPhotos),
         ),
       );
+      // Telegram/CDN URLs can change after a text-only edit even when the
+      // album itself is byte-for-byte identical. Keep the stable local paths
+      // in that case while still recording the latest upstream source URLs.
+      if (
+        refreshRentalPhotos &&
+        hasLocalPhotos &&
+        await downloadedPhotosMatchLocal(photos, downloadedPhotos)
+      ) {
+        await discardTemporaryPhotos(downloadedPhotos);
+      } else {
+        photos = downloadedPhotos;
+      }
     }
 
     productById.set(
