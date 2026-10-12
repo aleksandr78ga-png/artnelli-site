@@ -3,8 +3,8 @@
   "vk_sync_configured": false,
   "do_not_delete_missing_products": true,
   "source_count": 93,
-  "offer_count": 69,
-  "price_on_request_count": 21,
+  "offer_count": 71,
+  "price_on_request_count": 19,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
     {
@@ -108,16 +108,6 @@
       "reason": "price_on_request"
     },
     {
-      "id": 5616,
-      "name": "Фиолетовый",
-      "reason": "price_on_request"
-    },
-    {
-      "id": 5625,
-      "name": "Коричневый",
-      "reason": "price_on_request"
-    },
-    {
       "id": 5653,
       "name": "Фуксия",
       "reason": "price_on_request"
@@ -165,6 +155,16 @@
       "reason": "ValueError: image_dimensions"
     },
     {
+      "id": 5616,
+      "image": "assets/catalog/telegram-5616-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5625,
+      "image": "assets/catalog/telegram-5625-02.jpg",
+      "reason": "ValueError: image_dimensions"
+    },
+    {
       "id": 5661,
       "image": "assets/catalog/telegram-5661-02.jpg",
       "reason": "ValueError: image_dimensions"
@@ -200,6 +200,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "d57953fa35a1a48fb44212c34e081637b1779e047a72853f4eb59e20ec418fdd",
-  "generated_at": "2026-10-07T23:33:55+00:00"
+  "fingerprint": "c8858332fc03ae0deb8173c2eea07374823c3057b92bf886f1b4e58494c9a347",
+  "generated_at": "2026-10-12T07:11:09+00:00"
 }
