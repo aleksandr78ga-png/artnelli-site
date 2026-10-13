@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2026-10-13 18:01">
+<yml_catalog date="2026-10-13 19:01">
   <shop>
     <name>Leotards by Nelli</name>
     <company>Leotards by Nelli</company>
@@ -1662,6 +1662,30 @@
 Обхват бёдер: 67-75 см
 Дуга тела: 114-124 см
 Подробности в исходном объявлении: https://t.me/nelli_leotards/2/5812</description>
+      </offer>
+      <offer id="artnelli-5821" available="true">
+        <url>https://artnelli.com/telegram/?product=5821</url>
+        <price>84300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://artnelli.com/feeds/vk-images/b086cc562fb5974fefbae7a7.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/9bfda6d7ed15d27b0f9f6e97.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e3083f0c053cadc97b04de44.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/c48e8e572b83b4e04599ba3b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/cae40889a62fe27f10c98639.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/0230e84fde86ce9432324d6b.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/7a4cad36362ba6bdccf6c651.jpg</picture>
+        <picture>https://artnelli.com/feeds/vk-images/e6e0519e5f0ba44da07812b5.jpg</picture>
+        <name>Тропический ритм</name>
+        <vendor>Leotards by Nelli</vendor>
+        <description>Тропический ритм
+Новые купальники
+Рост: 145-155 см
+Обхват груди: 68-78 см
+Обхват талии: 56-64 см
+Обхват бёдер: 70-80 см
+Дуга тела: 124-134 см
+Подробности в исходном объявлении: https://t.me/nelli_leotards/14/5821</description>
       </offer>
     </offers>
   </shop>
