@@ -2,8 +2,8 @@
   "scope": "source_export_only",
   "vk_sync_configured": false,
   "do_not_delete_missing_products": true,
-  "source_count": 94,
-  "offer_count": 72,
+  "source_count": 95,
+  "offer_count": 73,
   "price_on_request_count": 19,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
@@ -203,8 +203,13 @@
       "id": 5795,
       "image": "assets/catalog/telegram-5795-04.jpg",
       "reason": "ValueError: image_dimensions"
+    },
+    {
+      "id": 5812,
+      "image": "assets/catalog/telegram-5812-04.jpg",
+      "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "6bd922889e882635b24765500ce17a9c6fa8ea3ef955f74815e6ade6292c1926",
-  "generated_at": "2026-10-12T12:06:31+00:00"
+  "fingerprint": "4a1f5e59b97e0bba26befa0ecb167ed20cc1793daf222dc485d717f7c184dcff",
+  "generated_at": "2026-10-13T18:01:48+00:00"
 }
