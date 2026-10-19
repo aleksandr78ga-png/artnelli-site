@@ -2,8 +2,8 @@
   "scope": "source_export_only",
   "vk_sync_configured": false,
   "do_not_delete_missing_products": true,
-  "source_count": 92,
-  "offer_count": 70,
+  "source_count": 91,
+  "offer_count": 69,
   "price_on_request_count": 19,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
@@ -205,6 +205,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "fbfc34356dfcb0ab9ad4d1c3661008c6e4cb07fa95d3b8669b1c8e3918e0d365",
-  "generated_at": "2026-10-16T16:01:04+00:00"
+  "fingerprint": "085b0220a2e4cf29148ad79f0bf472715d01fa8beb6857825dbe4b29d9edd35b",
+  "generated_at": "2026-10-19T14:05:36+00:00"
 }
