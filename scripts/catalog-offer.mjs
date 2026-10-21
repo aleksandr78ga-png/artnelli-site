@@ -16,6 +16,40 @@ export function normalizeCatalogOffer(product) {
   };
 }
 
+// A Telegram message ID cannot change in place. Public album refreshes may
+// temporarily select another member as the representative message, so keep
+// the already confirmed canonical ID for an existing card. Likewise, do not
+// replace confirmed translations with regenerated fallbacks when the source
+// product facts themselves are unchanged.
+export function mergeCatalogOffer(existing, incoming) {
+  if (!existing) return incoming;
+  const sourceKeys = ['name', 'description', 'height', 'specs', 'prices', 'condition', 'type'];
+  const sourceUnchanged = sourceKeys.every((key) =>
+    JSON.stringify(existing[key]) === JSON.stringify(incoming[key]));
+  const representativeDrift = Number(incoming.telegramMessageId) > 0 &&
+    Number(incoming.telegramMessageId) !== Number(existing.id);
+  const saleSection = String(incoming.description || '').match(/(?:^|\n)\s*Sale\b[\s\S]*$/i)?.[0] || '';
+  const explicitEnglishName = representativeDrift
+    ? saleSection.match(/[“"«]([^”"»\n]+)[”"»]/)?.[1]?.trim()
+    : undefined;
+  const confirmedDescriptionEn = sourceUnchanged && existing.descriptionEn
+    ? (explicitEnglishName
+        ? existing.descriptionEn.replace(/([“"«])([^”"»\n]+)([”"»])/, `$1${explicitEnglishName}$3`)
+        : existing.descriptionEn)
+    : incoming.descriptionEn;
+  return {
+    ...existing,
+    ...incoming,
+    telegramMessageId: Number(existing.id) > 0
+      ? Number(existing.id)
+      : (existing.telegramMessageId ?? incoming.telegramMessageId),
+    ...(sourceUnchanged && (explicitEnglishName || existing.nameEn)
+      ? { nameEn: explicitEnglishName || existing.nameEn }
+      : {}),
+    ...(confirmedDescriptionEn ? { descriptionEn: confirmedDescriptionEn } : {}),
+  };
+}
+
 // Owner-supplied screenshots can establish an offer before its message ID is
 // available. Negative IDs belong to these local imports, never to Telegram.
 // Replace an import only when a single real rental post identifies the same

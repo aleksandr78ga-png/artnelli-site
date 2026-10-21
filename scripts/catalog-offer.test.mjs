@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged, catalogPriceValues } from './catalog-offer.mjs';
+import { normalizeCatalogOffer, reconcileImportedRentals, rentalPhotosChanged, catalogPriceValues, mergeCatalogOffer } from './catalog-offer.mjs';
 
 test('publisher validates ruble prices stated in thousands and keeps separate amounts',()=>{
   assert.deepEqual(catalogPriceValues('Стоимость 38 тысяч рублей'),[38000]);
@@ -51,6 +51,19 @@ test('new sales are unaffected; decorated rental heading is recognized', () => {
 
 test('confirmed rental topic determines the category even without a heading', () => {
   assert.equal(normalizeCatalogOffer({telegramTopicId:1865, condition:'new', description:'Купальник «Peach»'}).condition, 'rental');
+});
+
+test('public album refresh keeps the confirmed canonical ID and translations when source facts are unchanged', () => {
+  const description='Исходное объявление\nSale ❤️\nNew leotard “Snow Majesty”';
+  const existing={id:5016,telegramMessageId:5017,name:'Снежное Величие',nameEn:'Snezhnoe Velichie',description,descriptionEn:'For sale\nNew leotard “Snezhnoe Velichie”',height:'145-155',specs:{girth:'123-133'},prices:[88500],condition:'new',type:'leotard'};
+  const incoming={...existing,telegramMessageId:5017};
+  const merged=mergeCatalogOffer(existing,incoming);
+  assert.equal(merged.telegramMessageId,5016);
+  assert.equal(merged.nameEn,'Snow Majesty');
+  assert.equal(merged.descriptionEn,'For sale\nNew leotard “Snow Majesty”');
+  const edited={...incoming,description:'Отредактированное объявление',descriptionEn:'Updated English'};
+  assert.equal(mergeCatalogOffer(existing,edited).descriptionEn,'Updated English');
+  assert.equal(mergeCatalogOffer(existing,edited).telegramMessageId,5016);
 });
 
 test('real rental replaces its screenshot import; sale and ambiguous matches do not', () => {

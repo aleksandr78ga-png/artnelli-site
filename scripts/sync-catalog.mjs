@@ -1,4 +1,4 @@
-import { normalizeCatalogOffer, reconcileImportedRentals, catalogPhotosChanged, catalogPriceValues } from "./catalog-offer.mjs";
+import { normalizeCatalogOffer, reconcileImportedRentals, catalogPhotosChanged, catalogPriceValues, mergeCatalogOffer } from "./catalog-offer.mjs";
 import { confirmedRentalRemovalIds } from "./rental-history.mjs";
 import { confirmedCatalogRemovalIds } from "./catalog-history.mjs";
 import { createHash } from "node:crypto";
@@ -335,11 +335,10 @@ async function main() {
     productById.set(
       id,
       normalizeProduct(
-        {
-          ...(existing || {}),
+        mergeCatalogOffer(existing, {
           ...incoming,
           telegramPhotoSources: incoming.photos || [],
-        },
+        }),
         photos,
       ),
     );
