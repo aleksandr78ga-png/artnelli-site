@@ -92,6 +92,7 @@ async function refresh(manual = false) {
     const response = await fetch('/feeds/avito-source.json',{cache:'no-store',signal:AbortSignal.timeout(20000)});
     if (!response.ok) throw Error('Каталог недоступен');
     const next = validateFeed(await response.json());
+    const dataChanged = !feed || JSON.stringify(feed) !== JSON.stringify(next);
     const nextItems = makeItems(next);
     feed = next; items = nextItems;
     $('error').hidden = true;
@@ -102,7 +103,9 @@ async function refresh(manual = false) {
       const current = items.find(i => i.id === active.id);
       if (!current || current.fingerprint !== active.fingerprint) staleDetail();
     }
-    renderCards(); if (manual) toast('Данные каталога загружены');
+    // Preserve focused controls and scroll position on unchanged periodic reads.
+    if (dataChanged) renderCards();
+    if (manual) toast('Данные каталога загружены');
   } catch {
     $('error').hidden = false;
     $('error').textContent = feed ? 'Не удалось обновить каталог. Показана предыдущая версия; перенос приостановлен до успешного обновления.' : 'Не удалось загрузить каталог. Нажмите «Обновить каталог» через некоторое время.';
