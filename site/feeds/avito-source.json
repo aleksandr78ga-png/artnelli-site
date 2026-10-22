@@ -15,6 +15,7 @@
     {
       "id": "artnelli-tg-8-sale",
       "sourceId": 8,
+      "sourceDate": "2023-09-11",
       "fields": {
         "name": "Монохром",
         "type": "leotard",
@@ -64,6 +65,7 @@
     {
       "id": "artnelli-tg-30-sale",
       "sourceId": 30,
+      "sourceDate": "2023-09-11",
       "fields": {
         "name": "Махагони",
         "type": "leotard",
@@ -109,6 +111,7 @@
     {
       "id": "artnelli-tg-60-sale",
       "sourceId": 60,
+      "sourceDate": "2023-09-12",
       "fields": {
         "name": "Монохром",
         "type": "leotard",
@@ -162,6 +165,7 @@
     {
       "id": "artnelli-tg-66-sale",
       "sourceId": 66,
+      "sourceDate": "2023-09-12",
       "fields": {
         "name": "Монохром",
         "type": "leotard",
@@ -215,6 +219,7 @@
     {
       "id": "artnelli-tg-72-sale",
       "sourceId": 72,
+      "sourceDate": "2023-09-12",
       "fields": {
         "name": "Черномор и Птица-Лебедь",
         "type": "leotard",
@@ -280,6 +285,7 @@
     {
       "id": "artnelli-tg-82-sale",
       "sourceId": 82,
+      "sourceDate": "2023-09-12",
       "fields": {
         "name": "Снежная Королева",
         "type": "leotard",
@@ -337,6 +343,7 @@
     {
       "id": "artnelli-tg-89-sale",
       "sourceId": 89,
+      "sourceDate": "2023-09-12",
       "fields": {
         "name": "Царевна -лебедь",
         "type": "leotard",
@@ -390,6 +397,7 @@
     {
       "id": "artnelli-tg-298-sale",
       "sourceId": 298,
+      "sourceDate": "2023-09-30",
       "fields": {
         "name": "Red",
         "type": "leotard",
@@ -427,6 +435,7 @@
     {
       "id": "artnelli-tg-538-sale",
       "sourceId": 538,
+      "sourceDate": "2023-11-11",
       "fields": {
         "name": "Купальник №538",
         "type": "leotard",
@@ -474,6 +483,7 @@
     {
       "id": "artnelli-tg-1092-sale",
       "sourceId": 1092,
+      "sourceDate": "2024-04-05",
       "fields": {
         "name": "Volcano",
         "type": "leotard",
@@ -531,6 +541,7 @@
     {
       "id": "artnelli-tg-1136-sale",
       "sourceId": 1136,
+      "sourceDate": "2024-04-11",
       "fields": {
         "name": "Coral",
         "type": "dress",
@@ -582,6 +593,7 @@
     {
       "id": "artnelli-tg-1279-sale",
       "sourceId": 1279,
+      "sourceDate": "2024-05-09",
       "fields": {
         "name": "Лето",
         "type": "leotard",
@@ -635,6 +647,7 @@
     {
       "id": "artnelli-tg-1297-sale",
       "sourceId": 1297,
+      "sourceDate": "2024-05-14",
       "fields": {
         "name": "Red&Fuchsia",
         "type": "leotard",
@@ -692,6 +705,7 @@
     {
       "id": "artnelli-tg-1339-sale",
       "sourceId": 1339,
+      "sourceDate": "2024-05-17",
       "fields": {
         "name": "Белое золото",
         "type": "leotard",
@@ -741,6 +755,7 @@
     {
       "id": "artnelli-tg-2184-sale",
       "sourceId": 2184,
+      "sourceDate": "2024-10-08",
       "fields": {
         "name": "Купальник №2184",
         "type": "leotard",
@@ -800,6 +815,7 @@
     {
       "id": "artnelli-tg-2233-sale",
       "sourceId": 2233,
+      "sourceDate": "2024-10-10",
       "fields": {
         "name": "Oriental",
         "type": "leotard",
@@ -837,6 +853,7 @@
     {
       "id": "artnelli-tg-2347-sale",
       "sourceId": 2347,
+      "sourceDate": "2024-10-25",
       "fields": {
         "name": "Монохром",
         "type": "leotard",
@@ -878,6 +895,7 @@
     {
       "id": "artnelli-tg-2421-sale",
       "sourceId": 2421,
+      "sourceDate": "2024-11-07",
       "fields": {
         "name": "Red & Blue",
         "type": "leotard",
@@ -935,6 +953,7 @@
     {
       "id": "artnelli-tg-2454-sale",
       "sourceId": 2454,
+      "sourceDate": "2024-11-11",
       "fields": {
         "name": "Испания",
         "type": "leotard",
@@ -1008,6 +1027,7 @@
     {
       "id": "artnelli-tg-2499-sale",
       "sourceId": 2499,
+      "sourceDate": "2024-11-17",
       "fields": {
         "name": "Yellow gold",
         "type": "leotard",
@@ -1073,6 +1093,7 @@
     {
       "id": "artnelli-tg-2817-sale",
       "sourceId": 2817,
+      "sourceDate": "2025-03-08",
       "fields": {
         "name": "Синий",
         "type": "leotard",
@@ -1134,6 +1155,7 @@
     {
       "id": "artnelli-tg-2840-rental",
       "sourceId": 2840,
+      "sourceDate": "2025-03-09",
       "fields": {
         "name": "Yellow gold",
         "type": "leotard",
@@ -1201,6 +1223,7 @@
     {
       "id": "artnelli-tg-2883-sale",
       "sourceId": 2883,
+      "sourceDate": "2025-03-15",
       "fields": {
         "name": "Купальник №2883",
         "type": "leotard",
@@ -1266,6 +1289,7 @@
     {
       "id": "artnelli-tg-2892-sale",
       "sourceId": 2892,
+      "sourceDate": "2025-03-15",
       "fields": {
         "name": "мастерской",
         "type": "leotard",
@@ -1303,6 +1327,7 @@
     {
       "id": "artnelli-tg-2911-sale",
       "sourceId": 2911,
+      "sourceDate": "2025-03-15",
       "fields": {
         "name": "Купальник №2911",
         "type": "leotard",
@@ -1346,6 +1371,7 @@
     {
       "id": "artnelli-tg-2920-sale",
       "sourceId": 2920,
+      "sourceDate": "2025-03-15",
       "fields": {
         "name": "Купальник №2920",
         "type": "leotard",
@@ -1399,6 +1425,7 @@
     {
       "id": "artnelli-tg-3062-sale",
       "sourceId": 3062,
+      "sourceDate": "2025-04-08",
       "fields": {
         "name": "Кармин",
         "type": "leotard",
@@ -1468,6 +1495,7 @@
     {
       "id": "artnelli-tg-3146-sale",
       "sourceId": 3146,
+      "sourceDate": "2025-04-22",
       "fields": {
         "name": "Снегири",
         "type": "leotard",
@@ -1533,6 +1561,7 @@
     {
       "id": "artnelli-tg-3405-sale",
       "sourceId": 3405,
+      "sourceDate": "2025-06-19",
       "fields": {
         "name": "Звезды",
         "type": "leotard",
@@ -1598,6 +1627,7 @@
     {
       "id": "artnelli-tg-3456-sale",
       "sourceId": 3456,
+      "sourceDate": "2025-07-08",
       "fields": {
         "name": "Bright",
         "type": "leotard",
@@ -1659,6 +1689,7 @@
     {
       "id": "artnelli-tg-3465-sale",
       "sourceId": 3465,
+      "sourceDate": "2025-07-11",
       "fields": {
         "name": "Золушка",
         "type": "leotard",
@@ -1722,6 +1753,7 @@
     {
       "id": "artnelli-tg-3473-sale",
       "sourceId": 3473,
+      "sourceDate": "2025-07-11",
       "fields": {
         "name": "Сакура",
         "type": "leotard",
@@ -1789,6 +1821,7 @@
     {
       "id": "artnelli-tg-3548-sale",
       "sourceId": 3548,
+      "sourceDate": "2025-08-09",
       "fields": {
         "name": "Oriental lemon",
         "type": "leotard",
@@ -1850,6 +1883,7 @@
     {
       "id": "artnelli-tg-3568-sale",
       "sourceId": 3568,
+      "sourceDate": "2025-08-10",
       "fields": {
         "name": "Blue",
         "type": "leotard",
@@ -1913,6 +1947,7 @@
     {
       "id": "artnelli-tg-3580-sale",
       "sourceId": 3580,
+      "sourceDate": "2025-08-11",
       "fields": {
         "name": "Elegance",
         "type": "leotard",
@@ -1970,6 +2005,7 @@
     {
       "id": "artnelli-tg-3588-sale",
       "sourceId": 3588,
+      "sourceDate": "2025-08-11",
       "fields": {
         "name": "Огненный",
         "type": "jumpsuit",
@@ -2017,6 +2053,7 @@
     {
       "id": "artnelli-tg-3630-sale",
       "sourceId": 3630,
+      "sourceDate": "2025-08-18",
       "fields": {
         "name": "Купальник №3630",
         "type": "leotard",
@@ -2080,6 +2117,7 @@
     {
       "id": "artnelli-tg-3640-sale",
       "sourceId": 3640,
+      "sourceDate": "2025-08-18",
       "fields": {
         "name": "Звезда",
         "type": "leotard",
@@ -2117,6 +2155,7 @@
     {
       "id": "artnelli-tg-3649-sale",
       "sourceId": 3649,
+      "sourceDate": "2025-08-18",
       "fields": {
         "name": "Купальник №3649",
         "type": "leotard",
@@ -2180,6 +2219,7 @@
     {
       "id": "artnelli-tg-3707-sale",
       "sourceId": 3707,
+      "sourceDate": "2025-08-27",
       "fields": {
         "name": "Lilac",
         "type": "leotard",
@@ -2239,6 +2279,7 @@
     {
       "id": "artnelli-tg-3716-sale",
       "sourceId": 3716,
+      "sourceDate": "2025-08-27",
       "fields": {
         "name": "Нежность",
         "type": "leotard",
@@ -2298,6 +2339,7 @@
     {
       "id": "artnelli-tg-3759-sale",
       "sourceId": 3759,
+      "sourceDate": "2025-08-30",
       "fields": {
         "name": "Сиреневый",
         "type": "leotard",
@@ -2355,6 +2397,7 @@
     {
       "id": "artnelli-tg-3809-sale",
       "sourceId": 3809,
+      "sourceDate": "2025-09-09",
       "fields": {
         "name": "Ирисы",
         "type": "leotard",
@@ -2416,6 +2459,7 @@
     {
       "id": "artnelli-tg-3950-sale",
       "sourceId": 3950,
+      "sourceDate": "2025-10-03",
       "fields": {
         "name": "Golden branches",
         "type": "leotard",
@@ -2475,6 +2519,7 @@
     {
       "id": "artnelli-tg-3957-sale",
       "sourceId": 3957,
+      "sourceDate": "2025-10-03",
       "fields": {
         "name": "Зеленые Ветви",
         "type": "leotard",
@@ -2524,6 +2569,7 @@
     {
       "id": "artnelli-tg-4117-sale",
       "sourceId": 4117,
+      "sourceDate": "2025-10-23",
       "fields": {
         "name": "Green fantasy",
         "type": "leotard",
@@ -2585,6 +2631,7 @@
     {
       "id": "artnelli-tg-4126-sale",
       "sourceId": 4126,
+      "sourceDate": "2025-10-23",
       "fields": {
         "name": "Purple Fieria",
         "type": "leotard",
@@ -2650,6 +2697,7 @@
     {
       "id": "artnelli-tg-4159-sale",
       "sourceId": 4159,
+      "sourceDate": "2025-10-26",
       "fields": {
         "name": "Каролина",
         "type": "leotard",
@@ -2703,6 +2751,7 @@
     {
       "id": "artnelli-tg-4178-sale",
       "sourceId": 4178,
+      "sourceDate": "2025-10-31",
       "fields": {
         "name": "Купальник №4178",
         "type": "leotard",
@@ -2746,6 +2795,7 @@
     {
       "id": "artnelli-tg-4197-sale",
       "sourceId": 4197,
+      "sourceDate": "2025-10-31",
       "fields": {
         "name": "Ярко-красный",
         "type": "leotard",
@@ -2811,6 +2861,7 @@
     {
       "id": "artnelli-tg-4206-rental",
       "sourceId": 4206,
+      "sourceDate": "2025-10-31",
       "fields": {
         "name": "Ярко-красный",
         "type": "leotard",
@@ -2878,6 +2929,7 @@
     {
       "id": "artnelli-tg-4270-sale",
       "sourceId": 4270,
+      "sourceDate": "2025-11-02",
       "fields": {
         "name": "Pink-Emerald",
         "type": "leotard",
@@ -2943,6 +2995,7 @@
     {
       "id": "artnelli-tg-4564-sale",
       "sourceId": 4564,
+      "sourceDate": "2025-12-26",
       "fields": {
         "name": "Народный",
         "type": "leotard",
@@ -3008,6 +3061,7 @@
     {
       "id": "artnelli-tg-4573-sale",
       "sourceId": 4573,
+      "sourceDate": "2025-12-26",
       "fields": {
         "name": "Золотой",
         "type": "leotard",
@@ -3073,6 +3127,7 @@
     {
       "id": "artnelli-tg-4592-sale",
       "sourceId": 4592,
+      "sourceDate": "2025-12-26",
       "fields": {
         "name": "Сафари",
         "type": "leotard",
@@ -3138,6 +3193,7 @@
     {
       "id": "artnelli-tg-4751-sale",
       "sourceId": 4751,
+      "sourceDate": "2026-01-29",
       "fields": {
         "name": "Красный вихрь",
         "type": "leotard",
@@ -3191,6 +3247,7 @@
     {
       "id": "artnelli-tg-4779-sale",
       "sourceId": 4779,
+      "sourceDate": "2026-01-30",
       "fields": {
         "name": "Синий",
         "type": "leotard",
@@ -3230,6 +3287,7 @@
     {
       "id": "artnelli-tg-4796-sale",
       "sourceId": 4796,
+      "sourceDate": "2026-02-04",
       "fields": {
         "name": "Фиеста",
         "type": "leotard",
@@ -3295,6 +3353,7 @@
     {
       "id": "artnelli-tg-4836-sale",
       "sourceId": 4836,
+      "sourceDate": "2026-02-13",
       "fields": {
         "name": "Сочный",
         "type": "leotard",
@@ -3360,6 +3419,7 @@
     {
       "id": "artnelli-tg-4870-sale",
       "sourceId": 4870,
+      "sourceDate": "2026-02-18",
       "fields": {
         "name": "Золотая Черника",
         "type": "leotard",
@@ -3425,6 +3485,7 @@
     {
       "id": "artnelli-tg-4893-sale",
       "sourceId": 4893,
+      "sourceDate": "2026-02-23",
       "fields": {
         "name": "Happy Blue",
         "type": "leotard",
@@ -3490,6 +3551,7 @@
     {
       "id": "artnelli-tg-4918-sale",
       "sourceId": 4918,
+      "sourceDate": "2026-02-25",
       "fields": {
         "name": "Небесно голубой",
         "type": "leotard",
@@ -3555,6 +3617,7 @@
     {
       "id": "artnelli-tg-4986-sale",
       "sourceId": 4986,
+      "sourceDate": "2026-03-11",
       "fields": {
         "name": "Coral",
         "type": "leotard",
@@ -3620,6 +3683,7 @@
     {
       "id": "artnelli-tg-4995-sale",
       "sourceId": 4995,
+      "sourceDate": "2026-03-11",
       "fields": {
         "name": "Bright blue",
         "type": "leotard",
@@ -3685,6 +3749,7 @@
     {
       "id": "artnelli-tg-5006-sale",
       "sourceId": 5006,
+      "sourceDate": "2026-03-12",
       "fields": {
         "name": "Turquoise",
         "type": "leotard",
@@ -3732,6 +3797,7 @@
     {
       "id": "artnelli-tg-5016-sale",
       "sourceId": 5016,
+      "sourceDate": "2026-03-12",
       "fields": {
         "name": "Снежное Величие",
         "type": "leotard",
@@ -3797,6 +3863,7 @@
     {
       "id": "artnelli-tg-5124-sale",
       "sourceId": 5124,
+      "sourceDate": "2026-04-10",
       "fields": {
         "name": "Золотой",
         "type": "leotard",
@@ -3862,6 +3929,7 @@
     {
       "id": "artnelli-tg-5153-sale",
       "sourceId": 5153,
+      "sourceDate": "2026-04-10",
       "fields": {
         "name": "Elegant Black",
         "type": "leotard",
@@ -3919,6 +3987,7 @@
     {
       "id": "artnelli-tg-5169-sale",
       "sourceId": 5169,
+      "sourceDate": "2026-04-10",
       "fields": {
         "name": "Red Neon",
         "type": "leotard",
@@ -3982,6 +4051,7 @@
     {
       "id": "artnelli-tg-5278-sale",
       "sourceId": 5278,
+      "sourceDate": "2026-05-27",
       "fields": {
         "name": "Краски",
         "type": "leotard",
@@ -4047,6 +4117,7 @@
     {
       "id": "artnelli-tg-5298-sale",
       "sourceId": 5298,
+      "sourceDate": "2026-05-29",
       "fields": {
         "name": "Птичка певчая",
         "type": "leotard",
@@ -4112,6 +4183,7 @@
     {
       "id": "artnelli-tg-5461-sale",
       "sourceId": 5461,
+      "sourceDate": "2026-07-14",
       "fields": {
         "name": "Изумруд",
         "type": "leotard",
@@ -4171,6 +4243,7 @@
     {
       "id": "artnelli-tg-5471-sale",
       "sourceId": 5471,
+      "sourceDate": "2026-07-21",
       "fields": {
         "name": "Сияние звёзд",
         "type": "leotard",
@@ -4240,6 +4313,7 @@
     {
       "id": "artnelli-tg-5491-sale",
       "sourceId": 5491,
+      "sourceDate": "2026-07-23",
       "fields": {
         "name": "Элегантная Фуксия",
         "type": "leotard",
@@ -4317,6 +4391,7 @@
     {
       "id": "artnelli-tg-5520-sale",
       "sourceId": 5520,
+      "sourceDate": "2026-08-11",
       "fields": {
         "name": "гимнастки",
         "type": "leotard",
@@ -4389,6 +4464,7 @@
     {
       "id": "artnelli-tg-5528-sale",
       "sourceId": 5528,
+      "sourceDate": "2026-08-11",
       "fields": {
         "name": "гимнастки",
         "type": "leotard",
@@ -4468,6 +4544,7 @@
     {
       "id": "artnelli-tg-5549-sale",
       "sourceId": 5549,
+      "sourceDate": "2026-08-16",
       "fields": {
         "name": "Серебряные Лучи",
         "type": "leotard",
@@ -4545,6 +4622,7 @@
     {
       "id": "artnelli-tg-5576-sale",
       "sourceId": 5576,
+      "sourceDate": "2026-08-25",
       "fields": {
         "name": "Royal Regalia",
         "type": "leotard",
@@ -4622,6 +4700,7 @@
     {
       "id": "artnelli-tg-5607-sale",
       "sourceId": 5607,
+      "sourceDate": "2026-09-02",
       "fields": {
         "name": "Bright",
         "type": "leotard",
@@ -4701,6 +4780,7 @@
     {
       "id": "artnelli-tg-5616-sale",
       "sourceId": 5616,
+      "sourceDate": "2026-09-02",
       "fields": {
         "name": "Фиолетовый",
         "type": "leotard",
@@ -4778,6 +4858,7 @@
     {
       "id": "artnelli-tg-5625-sale",
       "sourceId": 5625,
+      "sourceDate": "2026-09-02",
       "fields": {
         "name": "Коричневый",
         "type": "leotard",
@@ -4855,6 +4936,7 @@
     {
       "id": "artnelli-tg-5653-sale",
       "sourceId": 5653,
+      "sourceDate": "2026-09-15",
       "fields": {
         "name": "Фуксия",
         "type": "leotard",
@@ -4929,6 +5011,7 @@
     {
       "id": "artnelli-tg-5680-sale",
       "sourceId": 5680,
+      "sourceDate": "2026-09-17",
       "fields": {
         "name": "Огненный рассвет",
         "type": "leotard",
@@ -5006,6 +5089,7 @@
     {
       "id": "artnelli-tg-5689-sale",
       "sourceId": 5689,
+      "sourceDate": "2026-09-17",
       "fields": {
         "name": "цвете ✨",
         "type": "leotard",
@@ -5073,6 +5157,7 @@
     {
       "id": "artnelli-tg-5696-sale",
       "sourceId": 5696,
+      "sourceDate": "2026-09-17",
       "fields": {
         "name": "Яркая зима",
         "type": "leotard",
@@ -5152,6 +5237,7 @@
     {
       "id": "artnelli-tg-5706-sale",
       "sourceId": 5706,
+      "sourceDate": "2026-09-18",
       "fields": {
         "name": "Крылья феникса",
         "type": "leotard",
@@ -5229,6 +5315,7 @@
     {
       "id": "artnelli-tg-5726-rental",
       "sourceId": 5726,
+      "sourceDate": "2026-09-22",
       "fields": {
         "name": "Танец огня",
         "type": "leotard",
@@ -5298,6 +5385,7 @@
     {
       "id": "artnelli-tg-5733-sale",
       "sourceId": 5733,
+      "sourceDate": "2026-09-22",
       "fields": {
         "name": "Танец огня",
         "type": "leotard",
@@ -5365,6 +5453,7 @@
     {
       "id": "artnelli-tg-5745-sale",
       "sourceId": 5745,
+      "sourceDate": "2026-09-24",
       "fields": {
         "name": "Fantasy neon",
         "type": "leotard",
@@ -5442,6 +5531,7 @@
     {
       "id": "artnelli-tg-5812-sale",
       "sourceId": 5812,
+      "sourceDate": "2026-10-13",
       "fields": {
         "name": "Лето красное",
         "type": "leotard",
@@ -5519,6 +5609,7 @@
     {
       "id": "artnelli-tg-5821-sale",
       "sourceId": 5821,
+      "sourceDate": "2026-10-13",
       "fields": {
         "name": "Тропический ритм",
         "type": "leotard",
