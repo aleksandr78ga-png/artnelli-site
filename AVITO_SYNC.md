@@ -4,8 +4,49 @@ Nelli authorised preparing and testing an Avito connection to the shared
 Telegram catalogue. She approved the Expanded subscription and a total budget
 of RUB 5,550 for the first 30 days (RUB 3,000 subscription plus RUB 2,550 views,
 at the prices shown in her account on 8 October). This is not permission for
-unlimited top-ups, paid promotions or a more expensive subscription. Activation
-and payment have **not** been confirmed.
+unlimited top-ups, paid promotions or a more expensive subscription. Payment
+and activation of a paid subscription have **not** been confirmed. Nelli later
+chose to test manual preparation before proceeding with a subscription.
+
+## Manual preparation page — 22 October 2026
+
+Nelli confirmed that she saved and activated the existing “Монохром” ad in her
+own browser without a payment request. This confirms that particular manual
+edit/reactivation, not free publication of all future ads or an API connection.
+She then asked to simplify this workflow as much as possible.
+
+`site/avito/` is a preparation page using only the existing
+`/feeds/avito-source.json`. It has search, copy buttons, a PNG/photo-and-text ZIP,
+optional user-controlled photo rotation, and browser-local completion marks.
+It does not access Avito, fill Avito forms, pay, activate or publish anything.
+Only public product data is served; user-supplied ad links and progress stay in
+localStorage and can be exported/imported as a local backup. This is a temporary
+manual workflow, not the final automatic receiving integration.
+
+- The one explicitly observed existing multi-size ad groups source IDs 8, 60,
+  and 66 for display only. These are three distinct source records. Other
+  identically named products are not merged. The used ID 2347 remains separate.
+  Missing/held members block transfer of the combined card for manual review.
+- Prices, measurements and source descriptions are retained. Request-only
+  prices are never copied as zero. Contacts/location/category warnings remain
+  visible; no global seller type or location is fabricated.
+- Images are downloaded from same-origin catalogue assets, checked against
+  the shared hash and converted to PNG without resizing. Only rotations
+  explicitly chosen by the user are applied. A partial failed download does
+  not produce a misleading complete archive.
+- Completion is a user assertion, not an Avito observation. Source fingerprints
+  detect changed product fields and photo content. Only confirmed source
+  tombstones produce manual removal-review tasks for previously marked cards.
+  No actual listing is removed. Marks do not automatically roam across devices.
+- The page refreshes the published feed every 15 seconds while visible and on
+  return. The feed itself is produced by the existing publisher; it is not a
+  fresh direct Telegram inspection on each page refresh.
+- A changed source or failed refresh disables transfer from an already open
+  card until the source is successfully reloaded. The last valid list is retained.
+
+Run `node --test scripts/avito-manual.test.mjs` for grouping, price, change/removal
+evidence, unsafe input and ZIP checks. Existing storefront routes and publisher
+remain unchanged.
 
 ## Implemented scope
 
