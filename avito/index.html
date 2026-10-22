@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a090b">
+  <meta name="description" content="Подготовка объявлений Art Nelli для ручного размещения на Авито.">
+  <title>Art Nelli — подготовка для Авито</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=20261022">
+  <script type="module" src="./app.mjs?v=20261022"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="https://artnelli.com/">ART NELLI <span>мастерская</span></a>
+    <a class="button" href="https://www.avito.ru/profile" target="_blank" rel="noopener noreferrer">Открыть Авито ↗</a>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Рабочая страница мастерской</p>
+      <h1>Объявления для Авито</h1>
+      <p>Выберите модель. Скопируйте текст, скачайте фото и сохраните объявление на Авито.</p>
+      <p class="muted">Данные поступают из общего каталога Telegram. Размещение и обновление на Авито — вручную.</p>
+    </section>
+    <div class="steps"><span><b>1</b> Выберите модель</span><span><b>2</b> Перенесите в Авито</span><span><b>3</b> Отметьте готовое</span></div>
+    <div class="toolbar">
+      <label class="search">Найти модель<input id="search" type="search" placeholder="Название, рост или номер карточки" autocomplete="off"></label>
+      <label>Показать<select id="filter"><option value="all">Все модели</option><option value="todo">Ещё не отмечены</option><option value="changed">Есть изменения</option><option value="done">Отмечены как готовые</option><option value="new">Новые купальники</option><option value="used">Б/у</option><option value="rental">Аренда</option><option value="review">Требуют внимания</option></select></label>
+      <button id="refresh" type="button">Обновить каталог</button>
+    </div>
+    <div class="status-line"><p id="count" aria-live="polite">Загрузка каталога…</p><p id="freshness" class="muted"></p></div>
+    <p id="error" class="notice" role="alert" hidden></p>
+    <section id="removals" class="notice" hidden></section>
+    <section id="cards" class="cards" aria-label="Модели для размещения"></section>
+    <details class="backup"><summary>Мои отметки и ссылки</summary><p>Отметки сохраняются только в этом браузере. Перед переходом на другой компьютер скачайте их и откройте там.</p><button id="export" type="button">Скачать отметки</button> <button id="import" type="button">Загрузить отметки</button><input id="import-file" type="file" accept=".json,application/json" hidden></details>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="dialog-top"><span class="eyebrow">Подготовка объявления</span><button id="close" type="button" aria-label="Закрыть карточку">Закрыть ×</button></div>
+    <div id="detail-content"></div>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>Для подготовки объявлений включите JavaScript в браузере.</noscript>
+</body>
+</html>
