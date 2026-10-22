@@ -11,6 +11,9 @@ to simplify that process. Paid subscription remains paused/unconfirmed.
 `/avito/` prepares text and photos from the common source, with local progress
 marks and change reminders. It performs no Avito account operations. Grouping
 IDs 8/60/66 reflects the one observed existing ad, not name-based matching.
+Nelli requested website-equivalent default card ordering and a photos-only
+download on 22 October. The ZIP contains all model photos without text files;
+text and prices remain available through the separate copy buttons.
 
 Intermediate data: `site/feeds/avito-source.json`. It is not an Avito import file.
 The source preparer runs within the existing site publisher, without Avito writes.

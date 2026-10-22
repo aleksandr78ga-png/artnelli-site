@@ -14,6 +14,14 @@ const product = (overrides={}) => ({id:42, name:'Модель', type:'leotard', 
 const imageInfo = new Map([['assets/catalog/model.jpg', {sha256:'original-photo'}]]);
 const prepare = (products, rest={}) => prepareSource({products, imageInfo, connection, ...rest});
 
+test('source dates preserve website ordering without changing product fingerprints', () => {
+  const a = prepareOffer(product({date:'2026-09-01'}),imageInfo);
+  const b = prepareOffer(product({date:'2026-10-22'}),imageInfo);
+  assert.equal(a.sourceDate,'2026-09-01');
+  assert.equal(b.sourceDate,'2026-10-22');
+  assert.equal(a.fingerprint,b.fingerprint);
+});
+
 test('price, description, dimensions and photos update the same source offer ID', () => {
   const a=prepareOffer(product(), imageInfo);
   const b=prepareOffer(product({name:'Другое имя',prices:[68500],description:'Цена 68 500 ₽',specs:{girth:'115–125'}}), imageInfo);

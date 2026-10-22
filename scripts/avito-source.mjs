@@ -105,7 +105,7 @@ export function prepareOffer(original, imageInfo) {
     telegram: p.telegram || '', telegramTopicId: p.telegramTopicId || null,
     observedMessageIds: [...new Set([p.id, ...(p.telegramMessageIds || [])])].sort((a,b) => a-b),
   };
-  return {id, sourceId: p.id, fields, fingerprint: fingerprint(fields),
+  return {id, sourceId: p.id, sourceDate: typeof p.date === 'string' ? p.date : '', fields, fingerprint: fingerprint(fields),
     status: problems.length ? 'needs_review' : 'ready_for_template',
     blockers: [...new Set(problems)]};
 }

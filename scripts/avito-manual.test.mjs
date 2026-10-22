@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {runInNewContext} from 'node:vm';
 import {makeItems, itemStatus, removalTasks, safeAvitoLink, imagePath, readRecords, validateFeed} from '../site/avito/model.mjs';
 import {zipBlob,crc32} from '../site/avito/zip.mjs';
 // Synthetic source fixtures: routine catalogue edits must not invalidate these tests.
@@ -17,6 +19,20 @@ const real = {schemaVersion:1,source:'nelli_leotards',scope:'source_preparation_
   offer(2347,'140-160',38000,'used'),offer(9000,'140-160',null),offer(9001,'140-160',4500,'rental'),
 ]};
 const clone = () => structuredClone(real);
+test('Cards match website condition/date/ID ordering without pinning or splitting the existing ad',() => {
+  const feed = clone();
+  feed.offers.forEach(o => {o.sourceDate = '2026-01-01';});
+  feed.offers.find(o => o.sourceId === 60).sourceDate = '2026-06-01';
+  feed.offers.push({...offer(100,'130-140',50000),sourceDate:'2026-07-01'});
+  feed.offers.push({...offer(99,'130-140',50000),sourceDate:'2026-07-01'});
+  feed.offers.find(o => o.sourceId === 2347).sourceDate = '2026-10-22';
+  const original = JSON.stringify(feed);
+  assert.deepEqual(makeItems(feed).map(i => i.id),[
+    'artnelli-tg-100-sale','artnelli-tg-99-sale','monochrome-existing-ad',
+    'artnelli-tg-9000-sale','artnelli-tg-2347-sale','artnelli-tg-9001-rental',
+  ]);
+  assert.equal(JSON.stringify(feed),original);
+});
 test('The existing multi-size ad retains all three Telegram records and price meanings',() => {
   const group = makeItems(real).find(i => i.group);
   assert.deepEqual(group.offers.map(o => o.sourceId),[8,60,66]);
@@ -69,4 +85,32 @@ test('ZIP has correct CRC, UTF-8 content and directory offsets',async () => {
   const centralOffset = end.getUint32(16,true);
   assert.equal(new DataView(zip.buffer,centralOffset).getUint32(0,true),0x02014b50);
   assert.equal(centralOffset+end.getUint32(12,true),zip.length-22);
+});
+
+test('The actual download handler exports every photo and no text or nested folders',async () => {
+  const source = await readFile(new URL('../site/avito/app.mjs',import.meta.url),'utf8');
+  const handler = source.slice(source.indexOf('async function downloadPack('),source.indexOf("$('search').addEventListener"));
+  const item = makeItems(real).find(i => i.group);
+  item.photos = [{url:'first'},{url:'second'},{url:'third'}];
+  const calls = []; let downloaded;
+  const context = {activeStale:false,items:[item],rotations:new Map([[1,90]]),Map,
+    $:() => ({hidden:true}),toast:() => {},zipBlob,
+    pngBytes:async (photo,angle) => {calls.push([photo.url,angle]); return new Uint8Array([1,2,3]);},
+    downloadBlob:(blob,name) => {downloaded={blob,name};},
+  };
+  runInNewContext(handler,context);
+  const control = {textContent:'Скачать все фотографии',disabled:false};
+  await context.downloadPack(item,control);
+  assert.deepEqual(calls,[['first',0],['second',90],['third',0]]);
+  assert.equal(downloaded.name,'ArtNelli-Photos-8-60-66.zip');
+  const bytes = new Uint8Array(await downloaded.blob.arrayBuffer());
+  const view = new DataView(bytes.buffer); const names = []; let offset = 0;
+  while (view.getUint32(offset,true) === 0x04034b50) {
+    const size = view.getUint32(offset+18,true), length = view.getUint16(offset+26,true), extra = view.getUint16(offset+28,true);
+    names.push(new TextDecoder().decode(bytes.slice(offset+30,offset+30+length)));
+    offset += 30+length+extra+size;
+  }
+  assert.deepEqual(names,['photo-01.png','photo-02.png','photo-03.png']);
+  assert.equal(control.textContent,'Скачать все фотографии');
+  assert.equal(control.disabled,false);
 });

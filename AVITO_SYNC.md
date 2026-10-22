@@ -16,7 +16,7 @@ edit/reactivation, not free publication of all future ads or an API connection.
 She then asked to simplify this workflow as much as possible.
 
 `site/avito/` is a preparation page using only the existing
-`/feeds/avito-source.json`. It has search, copy buttons, a PNG/photo-and-text ZIP,
+`/feeds/avito-source.json`. It has search, separate text copy buttons, a photos-only PNG ZIP,
 optional user-controlled photo rotation, and browser-local completion marks.
 It does not access Avito, fill Avito forms, pay, activate or publish anything.
 Only public product data is served; user-supplied ad links and progress stay in
@@ -34,6 +34,12 @@ manual workflow, not the final automatic receiving integration.
   the shared hash and converted to PNG without resizing. Only rotations
   explicitly chosen by the user are applied. A partial failed download does
   not produce a misleading complete archive.
+- Cards follow the website's default order: new, used, rental; newest source
+  date and ID first. `sourceDate` is display metadata outside the product
+  fingerprint, so this sorting change does not invalidate saved progress.
+  The observed multi-size ad appears at its first sorted member's position.
+- “Скачать все фотографии” downloads only numbered PNG files, directly inside
+  one ZIP. Title, description and price remain separate copy fields on the page.
 - Completion is a user assertion, not an Avito observation. Source fingerprints
   detect changed product fields and photo content. Only confirmed source
   tombstones produce manual removal-review tasks for previously marked cards.
