@@ -19,6 +19,10 @@ on:
       - "scripts/build-vk-feed.py"
       - "scripts/test-vk-feed.py"
       - "scripts/requirements-vk-feed.txt"
+      - "scripts/avito-source.mjs"
+      - "scripts/build-avito-source.mjs"
+      - "scripts/avito-source.test.mjs"
+      - "data/avito-connection.json"
       - "data/telegram-rental-history.json"
       - "data/telegram-catalog-history.json"
       - ".github/workflows/site.yml"
@@ -73,6 +77,12 @@ jobs:
 
       - name: Build VK source export (no VK connection)
         run: python scripts/build-vk-feed.py
+
+      - name: Prepare Avito source data (no Avito connection)
+        continue-on-error: true
+        run: |
+          node --test scripts/avito-source.test.mjs
+          node scripts/build-avito-source.mjs --require-checkpoint
 
       - name: Check live catalogue delivery
         env:

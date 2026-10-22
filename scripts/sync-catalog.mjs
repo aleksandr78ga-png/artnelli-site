@@ -379,6 +379,22 @@ async function main() {
     await writeFile(catalogFile, nextCatalogSource);
   }
 
+  // Ephemeral evidence for the Avito source preparer. Absence from a partial
+  // export must never become a removal. Bind upstream-confirmed tombstones to
+  // these exact catalogue bytes; this file is not published or committed.
+  try {
+    const checkpoint = path.join(rootDir, '.avito-source-input.json');
+    await writeFile(checkpoint + '.tmp', JSON.stringify({schemaVersion:1,
+      source:'shared-catalogue-publisher',
+      catalogSha256:createHash('sha256').update(nextCatalogSource).digest('hex'),
+      confirmedRemovedIds:[...removedIds].filter(id => Number.isSafeInteger(id) && id > 0).sort((a,b) => a-b),
+    }) + '\n');
+    await rename(checkpoint + '.tmp', checkpoint);
+  } catch (error) {
+    // An optional, unconnected marketplace must not stop existing storefronts.
+    console.warn('Avito source checkpoint deferred: ' + error.message);
+  }
+
   // /api/live-data.js is the shared live loader. Never replace it with an empty
   // static feed: all three clients must keep reading the Telegram webhook data.
 
