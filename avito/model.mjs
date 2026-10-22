@@ -51,12 +51,23 @@ export function sourceLink(offer) {
   return offer.sourceId > 0 ? `https://t.me/nelli_leotards/${offer.sourceId}` : 'https://t.me/nelli_leotards';
 }
 export function makeItems(feed) {
-  const offers = validateFeed(feed).offers;
+  // Same default order as the website: new, used, rental; newest date/ID first.
+  const rank = condition => condition === 'new' ? 0 : condition === 'used' ? 1 : 2;
+  const offers = [...validateFeed(feed).offers].sort((a,b) =>
+    rank(a.fields.condition) - rank(b.fields.condition) ||
+    String(b.sourceDate || '').localeCompare(String(a.sourceDate || '')) || b.sourceId - a.sourceId);
   const byId = new Map(offers.map(o => [o.id, o]));
   const grouped = MONOCHROME.map(id => byId.get(id)).filter(Boolean);
-  const remaining = offers.filter(o => !MONOCHROME.includes(o.id));
-  const items = remaining.map(o => makeItem([o]));
-  if (grouped.length) items.unshift(makeItem(grouped, true));
+  const items = [];
+  let groupAdded = false;
+  for (const offer of offers) {
+    if (!MONOCHROME.includes(offer.id)) items.push(makeItem([offer]));
+    else if (!groupAdded) {
+      // Keep the observed multi-size ad at its first member's website position.
+      items.push(makeItem(grouped, true));
+      groupAdded = true;
+    }
+  }
   return items;
 }
 function makeItem(offers, group = false) {

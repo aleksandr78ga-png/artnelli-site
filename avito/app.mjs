@@ -1,4 +1,4 @@
-import {STORE_KEY, makeItems, itemStatus, removalTasks, readRecords, imagePath, safeAvitoLink, sourceLink, validateFeed} from './model.mjs';
+import {STORE_KEY, makeItems, itemStatus, removalTasks, readRecords, imagePath, safeAvitoLink, sourceLink, validateFeed} from './model.mjs?v=20261022-3';
 import {zipBlob} from './zip.mjs';
 
 const $ = id => document.getElementById(id);
@@ -172,9 +172,9 @@ function showDetail(id) {
     box.append(frame,rotate); photos.append(box);
   });
   media.append(photos);
-  const download = button('Скачать фото и текст одним архивом',() => downloadPack(item,download),'primary download');
+  const download = button('Скачать все фотографии',() => downloadPack(item,download),'primary download');
   download.dataset.transfer = 'true'; download.disabled = item.blocked || !$('error').hidden;
-  media.append(download,el('p','Распакуйте ZIP. В Авито откройте папку photos и выберите все фото сразу: Ctrl+A. Фотографии сохраняются в PNG.','muted'));
+  media.append(download,el('p','Все фотографии этой модели в одном ZIP-архиве. Распакуйте его и выберите все фото при загрузке в Авито: Ctrl+A.','muted'));
   const finish = el('div',undefined,'finish');
   finish.append(el('h3','После сохранения на Авито'));
   const label = el('label','Ссылка на объявление — чтобы быстро открыть его снова'); label.htmlFor = 'ad-url';
@@ -225,19 +225,15 @@ async function downloadPack(item, control) {
   const original = control.textContent, currentRotations = new Map(rotations);
   control.disabled = true;
   try {
-    const files = [
-      {name:'01_title.txt',data:item.title}, {name:'02_description.txt',data:item.description},
-      {name:'03_price.txt',data:item.price === null ? priceLabel(item) : String(item.price)},
-      {name:'README.txt',data:`${item.title}\nПодготовлено: ${new Date().toLocaleString('ru-RU')}\n\n${item.offers.map(o => sourceLink(o)).join('\n')}\n\n${item.warnings.join('\n')}\n\nРаспакуйте архив. Скопируйте название, описание и цену в форму Авито. В папке photos выделите фотографии вместе (Ctrl+A). Проверьте категорию, контакты, город и наличие. Если объявление уже существует, редактируйте его, не создавайте дубль. Проверьте условия и стоимость перед подтверждением на Авито. Этот архив не подключает автоматическую синхронизацию.\n`},
-    ];
+    const files = [];
     for (let i=0;i<item.photos.length;i++) {
       control.textContent = `Готовим фото ${i+1} из ${item.photos.length}…`;
-      files.push({name:`photos/photo-${String(i+1).padStart(2,'0')}.png`,data:await pngBytes(item.photos[i],currentRotations.get(i) || 0)});
+      files.push({name:`photo-${String(i+1).padStart(2,'0')}.png`,data:await pngBytes(item.photos[i],currentRotations.get(i) || 0)});
     }
     if (activeStale || !items.some(x => x.id === item.id && x.fingerprint === item.fingerprint))
       throw Error('Каталог обновился во время подготовки. Откройте карточку заново.');
-    downloadBlob(zipBlob(files),`ArtNelli-Avito-${item.offers.map(o => o.sourceId).join('-')}.zip`);
-    toast('Архив готов. Распакуйте его и загрузите фото из папки photos.');
+    downloadBlob(zipBlob(files),`ArtNelli-Photos-${item.offers.map(o => o.sourceId).join('-')}.zip`);
+    toast('Все фотографии скачаны одним архивом. Распакуйте его перед загрузкой в Авито.');
   } catch (error) { toast(error.message || 'Не удалось подготовить архив. Попробуйте ещё раз.'); }
   finally { control.textContent = original; control.disabled = activeStale || item.blocked; }
 }
