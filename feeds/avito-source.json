@@ -5529,84 +5529,6 @@
       "blockers": []
     },
     {
-      "id": "artnelli-tg-5812-sale",
-      "sourceId": 5812,
-      "sourceDate": "2026-10-13",
-      "fields": {
-        "name": "Лето красное",
-        "type": "leotard",
-        "condition": "new",
-        "offerKind": "sale",
-        "description": "Продается ❤️\n 🌟Новый 🌟 Купальник для Художественной Гимнастики «Лето красное» ⠀\nРост 135-145 см\nОГ 63-72 см\nОТ 54-62 см\nОБ 67-75 см\nДуга тела 114-124 см\nСтоимость 73.500 рублей\n_______________________________________⠀ \nSale ❤️\n🌟New🌟 Leotard for rhythmic gymnastics\n“Beautiful Summer”\nFor height  135-145 cm\nChest 63-72 cm\nWaist 54-62 cm\nHips  64-75 cm\nGirth about 114-124 cm\nPrice  1.000 $\n\n#leotardsByNelli\n#rg #rgkup #rgleotards #rgymnastics",
-        "height": "135-145",
-        "specs": {
-          "chest": "63-72",
-          "waist": "54-62",
-          "hips": "67-75",
-          "girth": "114-124"
-        },
-        "price": {
-          "mode": "fixed",
-          "amount": 73500,
-          "currency": "RUB"
-        },
-        "photos": [
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-01.jpg",
-            "sha256": "3f8ab98f60b7c73bdb376ac87e8de11c5b3a50a37fa92c670b278585c42c82cd"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-02.jpg",
-            "sha256": "069bafd46c1249489a21a5e7d462b5e8264a9319e3b85204c203ff57a3c772fe"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-03.jpg",
-            "sha256": "bc758f9ae122a0c5617f236d1386ffc8036496811f89327510aefda04f4edd1a"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-04.jpg",
-            "sha256": "2e3d759323b116e0ca31d4d58463e0755fc8a4a9d994f847f14d9ae36a328c35"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-05.jpg",
-            "sha256": "0a0e446e495b8780a3c900c0b14ca0185591821ad0c29bd2274613eb4f127d87"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-06.jpg",
-            "sha256": "711d81b716a4abc9aab69996067b9856a8aaa59e5c9e86a0a4397b7dda1c4f0f"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-07.jpg",
-            "sha256": "01baff4deec4687b80a52183ce7a5bd926ec4e53500847ae487947f194f23de5"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-08.jpg",
-            "sha256": "ae286c176478cab89a821572d3b6094889026050302bfa58571e2ce697582cd8"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5812-09.jpg",
-            "sha256": "b4d7ae14679e329118b5ee9f19361459855e899665744436f612a7d11549fc43"
-          }
-        ],
-        "telegram": "https://t.me/nelli_leotards/2/5812",
-        "telegramTopicId": 2,
-        "observedMessageIds": [
-          5812,
-          5813,
-          5814,
-          5815,
-          5816,
-          5817,
-          5818,
-          5819,
-          5820
-        ]
-      },
-      "fingerprint": "b84991b029b665cd8a28311c7b89ff78c3a67c1eb8126d3bbb9ce796ef24b24c",
-      "status": "ready_for_template",
-      "blockers": []
-    },
-    {
       "id": "artnelli-tg-5821-sale",
       "sourceId": 5821,
       "sourceDate": "2026-10-13",
@@ -6452,6 +6374,10 @@
     },
     {
       "sourceId": 5802,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5812,
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
     {
