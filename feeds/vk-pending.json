@@ -1,6 +1,6 @@
 {
   "scope": "pending_receiver_mapping_not_a_vk_import_file",
-  "generated_at": "2026-11-05T05:54:32+00:00",
+  "generated_at": "2026-11-05T06:59:18+00:00",
   "offers": [
     {
       "id": "artnelli-538",
@@ -194,16 +194,6 @@
       "prices_rub": [],
       "url": "https://artnelli.com/telegram/?product=5653",
       "description": "Фуксия\nКупальники б/у\nРост: 130-140 см\nОбхват груди: 60-68 см\nОбхват талии: 50-56 см\nОбхват бёдер: 60-68 см\nДуга тела: 110-120 см\nПодробности в исходном объявлении: https://t.me/nelli_leotards/5653"
-    },
-    {
-      "id": "artnelli-5696",
-      "name": "Яркая зима",
-      "condition": "used",
-      "price_status": "price_on_request",
-      "price_label": "Цена по запросу",
-      "prices_rub": [],
-      "url": "https://artnelli.com/telegram/?product=5696",
-      "description": "Яркая зима\nКупальники б/у\nРост: 135-145 см\nОбхват груди: 63-72 см\nОбхват талии: 54-62 см\nОбхват бёдер: 64-75 см\nДуга тела: 114-124 см\nПодробности в исходном объявлении: https://t.me/nelli_leotards/5696"
     }
   ]
 }
