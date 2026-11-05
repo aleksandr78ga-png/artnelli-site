@@ -2801,7 +2801,7 @@
         "type": "leotard",
         "condition": "used",
         "offerKind": "sale",
-        "description": "Б/у, (аренда)\nКупальник для Художественной Гимнастики «Ярко-красный»\nРост 115-135 см\nОГ 58-64 см\nОТ 52-56 см\nОБ 58-65 см\nДуга тела 107-115 см\nСтоимость 34 500 рублей\n\nКупальник в мастерской +7(961)206-47-82\n_______________________________________⠀\nLeotard for rhythmic gymnastics “Bright red”\nFor height 115-135 cm\nChest 58-64 cm\nWaist 52-56 cm\nHips 58-65 cm\nGirth about 107-115 cm\nPrice 490 $",
+        "description": "Б/у, (аренда)\nКупальник для Художественной Гимнастики «Ярко-красный» \nРост 115-135 см\nОГ 58-64 см\nОТ 52-56 см\nОБ 58-65 см\nДуга тела 107-115 см\nСтоимость  28 500 рублей \n\nКупальник в мастерской +7(961)206-47-82 \n_______________________________________⠀ \nLeotard for rhythmic gymnastics “Bright red”\nFor height  115-135 cm\nChest 58-64 cm\nWaist 52-56 cm\nHips  58-65 cm\nGirth about 107-115 cm\nPrice  490 $",
         "height": "115-135",
         "specs": {
           "chest": "58-64",
@@ -2811,50 +2811,50 @@
         },
         "price": {
           "mode": "fixed",
-          "amount": 34500,
+          "amount": 28500,
           "currency": "RUB"
         },
         "photos": [
           {
-            "url": "https://artnelli.com/assets/catalog/289-photo_380-31-10-2025_22-38-04.webp",
-            "sha256": "3ad97a3a2a3ad9c33d1ed514177b22eca8f6c26e541dee53d5dd37a382dd2d6e"
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-01-86f4e1334250.jpg",
+            "sha256": "e969284164685bd87895a3825eef30a47d6dbc8a100901c29e5eaad17e0bf51e"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/290-photo_381-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-02-d4e8320da736.webp",
             "sha256": "36bd2d1b90099b6fed8647429254103393a3f1ceb1e77db1fbda377d945f3c85"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/291-photo_382-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-03-06aca9c3bf08.webp",
             "sha256": "a5a6c466091c4144fc908a8eeb3f997e7901090731a530682e6e00724f92b1b0"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/292-photo_383-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-04-42dada7b9906.webp",
             "sha256": "efe47dda31dc66ab46e2390e6dfe80bac46c021a2a7b44f3038000aa2a7ccbe4"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/293-photo_384-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-05-80ce7b5d0771.webp",
             "sha256": "d3ae7019bf7b8c0cd6783e9899cb3b31e84d69927831860f5af56420a545a42c"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/294-photo_385-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-06-00731f9b3dcd.webp",
             "sha256": "a384d463c7f58f22e33c528f9ebe3d21a2e62772b8bdcd8466a8b20adc06a85e"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/295-photo_386-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-07-a2a3c3358efa.webp",
             "sha256": "cc11fa9959e67e19431694b153f45e4efe33f3147a9bc86950dbeaa19d6c54c3"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/296-photo_387-31-10-2025_22-38-04.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-4197-08-4b1c5537afbe.webp",
             "sha256": "c6ed857d0d50ae2086689d9f2ac3ff3f81a5d90801ac096893f86a2a14e1cbe8"
           }
         ],
-        "telegram": "https://t.me/nelli_leotards/4197",
+        "telegram": "https://t.me/nelli_leotards/1864/4197",
         "telegramTopicId": 1864,
         "observedMessageIds": [
           4197
         ]
       },
-      "fingerprint": "4a2d548247659371ed421dcd2b9008251be4cbda51ebcb788c41c5f74231d160",
+      "fingerprint": "4d79b8268fb3d18c3173704a2c05c61c91b4f1adbaa48452e96e19d2df7b8ad0",
       "status": "ready_for_template",
       "blockers": []
     },
@@ -5155,86 +5155,6 @@
       "blockers": []
     },
     {
-      "id": "artnelli-tg-5696-sale",
-      "sourceId": 5696,
-      "sourceDate": "2026-09-17",
-      "fields": {
-        "name": "Яркая зима",
-        "type": "leotard",
-        "condition": "used",
-        "offerKind": "sale",
-        "description": "Продаётся б/у купальник для художественной гимнастики «Яркая зима» ✨\n\nРост 135–145 см\nМерки:\nОГ 63–72 см\nОТ 54–62 см\nОБ 64–75 см\nДуга тела 114–124 см\n\n 📍 Находится в Москве.\n\nПо всем вопросам обращайтесь:\n 📞 +7 925 791-24-21 @KolesnikovaYulia\nЮлия",
-        "height": "135-145",
-        "specs": {
-          "chest": "63-72",
-          "waist": "54-62",
-          "hips": "64-75",
-          "girth": "114-124"
-        },
-        "price": {
-          "mode": "on_request",
-          "amount": null,
-          "currency": null
-        },
-        "photos": [
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-01.jpg",
-            "sha256": "4317004a4cc612bf44c4862b6ba8fd9809cf89b0c48208313fea5192b387b639"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-02.jpg",
-            "sha256": "e1dfb29fda9231fdf84f6d7647870258aaae1fdac11221fa5c643cc40793b011"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-03.jpg",
-            "sha256": "36630984ad1b843b0fc923f1329ae4a8539a20f273facc3d80bcc24b029e70fb"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-04.jpg",
-            "sha256": "ed8b708f1e9611566bb26135552d15592bd25a723b98cc75c1cf1c5679b2354e"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-05.jpg",
-            "sha256": "def1e0a1eee06c056feb9ff78d8a8c5fd74f248055e42e4c960cb41f0faf56d7"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-06.jpg",
-            "sha256": "07e16d2d4824957e6a3a4443b8b6e0c723f7cb98e0fa7e18f00930a5e6f8a5b2"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-07.jpg",
-            "sha256": "f31695baa0c14f97d217fbf56ce87d59011f164117c90dd977386db15eff70f4"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-08.jpg",
-            "sha256": "c507256496ac32aae74b14bae9a874acadce8a606f4501b776f27cbee4e3fe62"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5696-09.jpg",
-            "sha256": "5e05ea2d4a233a3a0d3c806ed2774e1ef75c4fd18242afc93a6f1863fc3efbcb"
-          }
-        ],
-        "telegram": "https://t.me/nelli_leotards/5696",
-        "telegramTopicId": 1864,
-        "observedMessageIds": [
-          5696,
-          5697,
-          5698,
-          5699,
-          5700,
-          5701,
-          5702,
-          5703,
-          5704
-        ]
-      },
-      "fingerprint": "e234b7df8ec56656adae72966f4eeb4519094773b86a3a8f52075b4eaf1d8e19",
-      "status": "needs_review",
-      "blockers": [
-        "on_request_format_not_verified"
-      ]
-    },
-    {
       "id": "artnelli-tg-5706-sale",
       "sourceId": 5706,
       "sourceDate": "2026-09-18",
@@ -6172,6 +6092,10 @@
     },
     {
       "sourceId": 5695,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5696,
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
     {

@@ -2,9 +2,9 @@
   "scope": "source_export_only",
   "vk_sync_configured": false,
   "do_not_delete_missing_products": true,
-  "source_count": 91,
+  "source_count": 90,
   "offer_count": 69,
-  "price_on_request_count": 19,
+  "price_on_request_count": 18,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
     {
@@ -111,11 +111,6 @@
       "id": 5653,
       "name": "Фуксия",
       "reason": "price_on_request"
-    },
-    {
-      "id": 5696,
-      "name": "Яркая зима",
-      "reason": "price_on_request"
     }
   ],
   "image_warnings": [
@@ -210,6 +205,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "061226fcf202c986a45999ba30de4099341f1c068a0e8ea2301400e2699e1614",
-  "generated_at": "2026-11-05T05:54:32+00:00"
+  "fingerprint": "f051c9a692951638725098ae443c843ef63e2ce7a274dee590a47cfb50976b07",
+  "generated_at": "2026-11-05T06:59:18+00:00"
 }
