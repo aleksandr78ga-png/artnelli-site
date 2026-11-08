@@ -5007,84 +5007,6 @@
       "blockers": []
     },
     {
-      "id": "artnelli-tg-5680-sale",
-      "sourceId": 5680,
-      "sourceDate": "2026-09-17",
-      "fields": {
-        "name": "Огненный рассвет",
-        "type": "leotard",
-        "condition": "new",
-        "offerKind": "sale",
-        "description": "Продается ❤️\n 🌟 Новый 🌟 Купальник для Художественной Гимнастики « Огненный рассвет »\nРост 145-155 см\nОГ 68-78 см\nОТ 56-64 см\nОБ 70-80 см\nДуга тела 123-133 см\nСтоимость 83.500 рублей\n ____________________________\nSale ❤️\n 🌟 New 🌟 Leotard for rhythmic gymnastics\n“ Fiery Dawn ”\nFor height 145-155 cm\nChest 68-78 cm\nWaist 56-64 cm\nHips 70-80 cm\nGirth about 123-133 cm\nPrice 1.100$\n\n#leotardsByNelli\n#rg #rgkup #rgleotards",
-        "height": "145-155",
-        "specs": {
-          "chest": "68-78",
-          "waist": "56-64",
-          "hips": "70-80",
-          "girth": "123-133"
-        },
-        "price": {
-          "mode": "fixed",
-          "amount": 83500,
-          "currency": "RUB"
-        },
-        "photos": [
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-01.jpg",
-            "sha256": "1ea966933b3c582fd0406b98a172b6517544a11d41487b212a1fb2b3c1aece02"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-02.jpg",
-            "sha256": "bae2d389884ef2be219b72ba69e445cf8093ca08da65a73bc6d6ddf32b5ec72a"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-03.jpg",
-            "sha256": "3de672f36ed665b809374498da07748e7f5b0055e9ab8a4cb4a54a2c23908757"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-04.jpg",
-            "sha256": "0c20018c59f5f299d20a7186c7fee781f66ce5e88f67ed690227071ee374b55b"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-05.jpg",
-            "sha256": "2a2c96d57f3bf5306c8f1d3ad0b06ab132d1b2906fffb59f5b586541fb614a7f"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-06.jpg",
-            "sha256": "06690d46746ecfb78698448d0b6840d376e057094789661ffe073c6d54a6e7c6"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-07.jpg",
-            "sha256": "529c143d96f810b326a59cb42ce0c24c98d0e094db65062882462d341ca69de3"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-08.jpg",
-            "sha256": "a5ea3895e0e8602654c68b44762f027b55791dc357cc578e89284241c9d9bc92"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5680-09.jpg",
-            "sha256": "6f2c6d6a8477e40adf520766b3a5997d978b01e26fd5dc594bf2b04872b56317"
-          }
-        ],
-        "telegram": "https://t.me/nelli_leotards/5680",
-        "telegramTopicId": 14,
-        "observedMessageIds": [
-          5680,
-          5681,
-          5682,
-          5683,
-          5684,
-          5685,
-          5686,
-          5687,
-          5688
-        ]
-      },
-      "fingerprint": "f96b4e591799bf0582f6401239d0972cf3c082665d7755657071f06a18ea3362",
-      "status": "ready_for_template",
-      "blockers": []
-    },
-    {
       "id": "artnelli-tg-5689-sale",
       "sourceId": 5689,
       "sourceDate": "2026-09-17",
@@ -6037,6 +5959,10 @@
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
     {
+      "sourceId": 5680,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
       "sourceId": 5681,
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
@@ -6345,6 +6271,10 @@
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
     {
+      "sourceId": 5789,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
       "sourceId": 5795,
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
@@ -6474,6 +6404,22 @@
     },
     {
       "sourceId": 5867,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5878,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5879,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5880,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5884,
       "reason": "confirmed_by_shared_catalogue_publisher"
     }
   ]
