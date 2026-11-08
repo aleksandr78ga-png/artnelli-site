@@ -4942,7 +4942,7 @@
         "type": "leotard",
         "condition": "used",
         "offerKind": "sale",
-        "description": "Продаётся б/у купальник для художественной гимнастики «Фуксия»\n\nРост 130–140 см\n\nСшит по меркам:\nОГ 60–68 см\nОТ 50–56 см\nОБ 60–68 см\nДуга тела 110–120 см\n\nСтразы с ав эффектом австрийские,\n Stellux и немного Swarovski\n\n 📍 Находится в Иркутске.\n\nПо всем вопросам обращайтесь:\nТатьяна\n 📞 +7 902 767-15-79",
+        "description": "Продаётся б/у купальник для художественной гимнастики «Фуксия»\n\nРост 130–140 см\n\nСшит по меркам:\nОГ 60–68 см\nОТ 50–56 см\nОБ 60–68 см\nДуга тела 110–120 см\n\nСтразы с ав эффектом австрийские,\n Stellux и немного Swarovski\n\nСтоимость 49 тысяч рублей \n\n📍 Находится в Иркутске.\n\nПо всем вопросам обращайтесь:\nТатьяна\n📞 +7 902 767-15-79",
         "height": "130-140",
         "specs": {
           "chest": "60-68",
@@ -4951,9 +4951,9 @@
           "girth": "110-120"
         },
         "price": {
-          "mode": "on_request",
-          "amount": null,
-          "currency": null
+          "mode": "fixed",
+          "amount": 49000,
+          "currency": "RUB"
         },
         "photos": [
           {
@@ -4989,7 +4989,7 @@
             "sha256": "be8f82b6e36cc4f6b53d5893d6a9d27c044db3201a9781f06ce8fdd7ea61ad55"
           }
         ],
-        "telegram": "https://t.me/nelli_leotards/5653",
+        "telegram": "https://t.me/nelli_leotards/1864/5653",
         "telegramTopicId": 1864,
         "observedMessageIds": [
           5653,
@@ -5002,11 +5002,9 @@
           5660
         ]
       },
-      "fingerprint": "9faafc51c185340f15fe289be6e1b28e14496e5aabbb021584076dfc842ccf2e",
-      "status": "needs_review",
-      "blockers": [
-        "on_request_format_not_verified"
-      ]
+      "fingerprint": "0aac1a7e0578d4baa1ad426042ad4b3e772385a435aa4d5cefc88765134f8dc6",
+      "status": "ready_for_template",
+      "blockers": []
     },
     {
       "id": "artnelli-tg-5680-sale",
