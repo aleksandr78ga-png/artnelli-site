@@ -4,7 +4,7 @@
   "do_not_delete_missing_products": true,
   "source_count": 90,
   "offer_count": 69,
-  "price_on_request_count": 18,
+  "price_on_request_count": 17,
   "offer_variants_require_mapping_count": 1,
   "skipped": [
     {
@@ -110,7 +110,7 @@
     {
       "id": 5653,
       "name": "Фуксия",
-      "reason": "price_on_request"
+      "reason": "unverified_rub_price"
     }
   ],
   "image_warnings": [
@@ -205,6 +205,6 @@
       "reason": "ValueError: image_dimensions"
     }
   ],
-  "fingerprint": "f051c9a692951638725098ae443c843ef63e2ce7a274dee590a47cfb50976b07",
-  "generated_at": "2026-11-05T06:59:18+00:00"
+  "fingerprint": "67cf0421f64d575ea73d317bfac5e193aff139146a27a72f8e67c31f51bdbc54",
+  "generated_at": "2026-11-08T05:51:41+00:00"
 }
