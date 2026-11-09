@@ -5369,84 +5369,6 @@
       "blockers": []
     },
     {
-      "id": "artnelli-tg-5821-sale",
-      "sourceId": 5821,
-      "sourceDate": "2026-10-13",
-      "fields": {
-        "name": "Тропический ритм",
-        "type": "leotard",
-        "condition": "new",
-        "offerKind": "sale",
-        "description": "Забронирован\n\n 🌟Новый 🌟 Купальник для Художественной Гимнастики «Тропический ритм»\nРост 145-155 см\nОГ 68-78 см\nОТ 56-64 см\nОБ 70-80 см\nДуга тела 124-134 см\nСтоимость  84.300  рублей\n____________________________\nSale ❤️\n🌟New🌟 Leotard for rhythmic gymnastics\n“Tropical Rhythm”\nFor height  145-155 cm\nChest 68-78 cm\nWaist 56-64 cm\nHips  70-80 cm\nGirth about 124-134 cm\nPrice   1.200$\n\n#leotardsByNelli\n#rg #rgkup #rgleotards",
-        "height": "145-155",
-        "specs": {
-          "chest": "68-78",
-          "waist": "56-64",
-          "hips": "70-80",
-          "girth": "124-134"
-        },
-        "price": {
-          "mode": "fixed",
-          "amount": 84300,
-          "currency": "RUB"
-        },
-        "photos": [
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-01.jpg",
-            "sha256": "3d1264b4666e61e05331566d34093113995b0c82feb495a85ebac70ae03c95f7"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-02.jpg",
-            "sha256": "390787a5c9312fade538434c4a99215c1b3a2e29d5bc412d5783295a827e8b41"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-03.jpg",
-            "sha256": "d8020a7d91f956ce7729922c3d5049f52cc57f38c353303237109d43204a11d3"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-04.jpg",
-            "sha256": "056d182c06616b7fc501dbb41ffd3ec2ba3a42f019c19c4b69a8665c16555ec7"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-05.jpg",
-            "sha256": "2cf290801ad6dc2608392be4b35612c17ada0f241d8fdb52f235f9245641ffa5"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-06.jpg",
-            "sha256": "2d0344d9f573ebb913f45b484c530d61bd06eca169c7331a5c6c9cfcdc8df860"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-07.jpg",
-            "sha256": "f757f72d6a587c3556e4351584b18b4828133afcb4de1bd8b609bac588122a8e"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-08.jpg",
-            "sha256": "80c7c5fd7e882e1016270c2a279fce7232d902b63a1b2c691989091d53d5e2d0"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/telegram-5821-09.jpg",
-            "sha256": "f93edf4d030053b417522ce7c59c869d5c3cfbf8d81cf814450c393d9c2e59c6"
-          }
-        ],
-        "telegram": "https://t.me/nelli_leotards/14/5821",
-        "telegramTopicId": 14,
-        "observedMessageIds": [
-          5821,
-          5822,
-          5823,
-          5824,
-          5825,
-          5826,
-          5827,
-          5828,
-          5829
-        ]
-      },
-      "fingerprint": "1f5112567cfe0bf529dba98a90767baddbd227ac0d346c889e5e6183ad36de25",
-      "status": "ready_for_template",
-      "blockers": []
-    },
-    {
       "id": "artnelli-tg-5859-sale",
       "sourceId": 5859,
       "sourceDate": "2026-10-29",
@@ -6340,6 +6262,10 @@
     },
     {
       "sourceId": 5820,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5821,
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
     {
