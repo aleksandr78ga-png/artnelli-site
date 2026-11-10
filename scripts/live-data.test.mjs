@@ -4,6 +4,11 @@ import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
 const root=new URL('../',import.meta.url);
 const source=readFileSync(new URL('site/api/live-data.js',root),'utf8');
+const syncSource=readFileSync(new URL('scripts/sync-catalog.mjs',root),'utf8');
+test('catalog publisher reads the shared JSON endpoint directly',()=>{
+  assert.match(syncSource,/new URL\("\/api\/catalog", backendUrl\)/);
+  assert.doesNotMatch(syncSource,/new URL\("\/api\/live-data\.js", backendUrl\)/);
+});
 test('shared loader applies successive edits, avoids duplicate renders and survives upstream errors',async()=>{
   let poll,pollDelay,reply={telegram:{ok:true,products:[{id:8,prices:[38900]}],statuses:[]}},fail=false,calls=0;
   const events=[],listeners={};const document={hidden:false,addEventListener(type,listener){listeners[type]=listener}};

@@ -69,13 +69,14 @@ function extractJson(source, variableName) {
   throw new Error(`Значение ${marker} оборвано`);
 }
 
-async function fetchText(url) {
+async function fetchJson(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 60_000);
   try {
     const response = await fetch(url, {
       headers: {
-        accept: "application/javascript,text/plain;q=0.9,*/*;q=0.8",
+        accept: "application/json",
+        "cache-control": "no-cache",
         "user-agent": "Leotards-by-Nelli-catalog-sync/1.0",
       },
       signal: controller.signal,
@@ -83,7 +84,7 @@ async function fetchText(url) {
     if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`);
     }
-    return await response.text();
+    return await response.json();
   } finally {
     clearTimeout(timeout);
   }
@@ -242,10 +243,9 @@ async function main() {
     throw new Error("Локальный каталог повреждён");
   }
 
-  const liveUrl = new URL("/api/live-data.js", backendUrl);
+  const liveUrl = new URL("/api/catalog", backendUrl);
   liveUrl.searchParams.set("catalog_sync", String(Date.now()));
-  const liveSource = await fetchText(liveUrl);
-  const liveData = extractJson(liveSource, "NELLI_LIVE");
+  const liveData = await fetchJson(liveUrl);
   const telegram = liveData?.telegram;
   if (!telegram || telegram.ok !== true || !Array.isArray(telegram.products)) {
     throw new Error("Сервер синхронизации Telegram вернул неполные данные");
