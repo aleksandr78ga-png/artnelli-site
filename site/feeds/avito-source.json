@@ -3795,72 +3795,6 @@
       ]
     },
     {
-      "id": "artnelli-tg-5016-sale",
-      "sourceId": 5016,
-      "sourceDate": "2026-03-12",
-      "fields": {
-        "name": "Снежное Величие",
-        "type": "leotard",
-        "condition": "new",
-        "offerKind": "sale",
-        "description": "Продается ❤️\n 🌟 Новый 🌟 Купальник для Художественной Гимнастики «Снежное Величие»\nРост 145-155 см\nОГ 68-78 см\nОТ 56-64 см\nОБ 70-80 см\nДуга тела 123-133 см\nСтоимость 88.500 рублей\n ____________________________\nSale ❤️\n 🌟 New 🌟 Leotard for rhythmic gymnastics\n“Snow Majesty”\nFor height 145-155 cm\nChest 68-78 cm\nWaist 56-64 cm\nHips 70-80 cm\nGirth about 123-133 cm\nPrice 1.200$\n\n #АртМастерскаяНелли\n#leotardsByNelli\n#rg #rgkup #rgleotards",
-        "height": "145-155",
-        "specs": {
-          "chest": "68-78",
-          "waist": "56-64",
-          "hips": "70-80",
-          "girth": "123-133"
-        },
-        "price": {
-          "mode": "fixed",
-          "amount": 88500,
-          "currency": "RUB"
-        },
-        "photos": [
-          {
-            "url": "https://artnelli.com/assets/catalog/410-photo_523-12-03-2026_15-32-01.webp",
-            "sha256": "86b2c4ca014346ca34aedf5d29d50d6ba5a1e7fc7e53077f4bc1dda04f36a375"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/411-photo_524-12-03-2026_15-32-01.webp",
-            "sha256": "fe1b163ccf5c9c98b5f665d28a01366aa6cbe54acb1c22cefad147ad2d5b50d5"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/412-photo_525-12-03-2026_15-32-01.webp",
-            "sha256": "ac8088a36ca680450bcb8684b1a40f28fc5665576e6fec26d0f595e4408467b9"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/413-photo_526-12-03-2026_15-32-01.webp",
-            "sha256": "22a93fc4446e7357f9a17f1fee612fb575ed2418f5113117e8de3c238360a9f8"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/414-photo_527-12-03-2026_15-32-01.webp",
-            "sha256": "b629afee67d80ebe57eb276b6d8c83d49fde40b868bc4a998a499deca44ff228"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/415-photo_528-12-03-2026_15-32-01.webp",
-            "sha256": "e804340e5ebcc521af615049f75c322f2a925387251e3b3f06893d1ab0fef050"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/416-photo_529-12-03-2026_15-32-01.webp",
-            "sha256": "6f6e1eb7d6e6fce63050ce3dad63490c1df9461b81fb7b04315c89a6173aad51"
-          },
-          {
-            "url": "https://artnelli.com/assets/catalog/417-photo_530-12-03-2026_15-32-01.webp",
-            "sha256": "e0c3e75adf462443fd26b08d6d52e1297be7aa48f4ce2418ed6cddd513b4a1f6"
-          }
-        ],
-        "telegram": "https://t.me/nelli_leotards/5016",
-        "telegramTopicId": 14,
-        "observedMessageIds": [
-          5016
-        ]
-      },
-      "fingerprint": "a712096c85d3e926c3f22cb69aad8c1fe13704d184d2a94bdf7806fb2a79301c",
-      "status": "ready_for_template",
-      "blockers": []
-    },
-    {
       "id": "artnelli-tg-5124-sale",
       "sourceId": 5124,
       "sourceDate": "2026-04-10",
@@ -5482,6 +5416,10 @@
     },
     {
       "sourceId": 4880,
+      "reason": "confirmed_by_shared_catalogue_publisher"
+    },
+    {
+      "sourceId": 5016,
       "reason": "confirmed_by_shared_catalogue_publisher"
     },
     {
