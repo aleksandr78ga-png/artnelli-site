@@ -16,6 +16,31 @@ export function normalizeCatalogOffer(product) {
   };
 }
 
+function translationMatchesSourceFacts(text, product) {
+  const description = String(text || '');
+  const normalize = (value) => String(value ?? '')
+    .normalize('NFKC').toLowerCase().replace(/[–—]/g, '-')
+    .replace(/\bcm\b/g, '').replace(/\s+/g, '').trim();
+  const translatedValue = (label) =>
+    description.match(new RegExp(`^\\s*${label}\\s*:\\s*([^\\n]+)$`, 'imu'))?.[1];
+  const measurements = [
+    ['Height', product.height],
+    ['Chest', product.specs?.chest],
+    ['Waist', product.specs?.waist],
+    ['Hips', product.specs?.hips],
+    ['Body girth', product.specs?.girth],
+  ];
+  for (const [label, expected] of measurements) {
+    const translated = translatedValue(label);
+    if (expected && translated && normalize(translated) !== normalize(expected)) return false;
+  }
+  if (product.condition === 'used' && /\bnew\b/i.test(description) &&
+      !/\bpre-owned\b/i.test(description)) return false;
+  if (product.condition === 'new' && /\bpre-owned\b/i.test(description)) return false;
+  if (product.condition === 'rental' && /^\s*for sale\b/im.test(description)) return false;
+  return true;
+}
+
 // A Telegram message ID cannot change in place. Public album refreshes may
 // temporarily select another member as the representative message, so keep
 // the already confirmed canonical ID for an existing card. Likewise, do not
@@ -32,7 +57,9 @@ export function mergeCatalogOffer(existing, incoming) {
   const explicitEnglishName = representativeDrift
     ? saleSection.match(/[“"«]([^”"»\n]+)[”"»]/)?.[1]?.trim()
     : undefined;
-  const confirmedDescriptionEn = sourceUnchanged && existing.descriptionEn
+  const preserveExistingTranslation = sourceUnchanged && existing.descriptionEn &&
+    translationMatchesSourceFacts(existing.descriptionEn, incoming);
+  const confirmedDescriptionEn = preserveExistingTranslation
     ? (explicitEnglishName
         ? existing.descriptionEn.replace(/([“"«])([^”"»\n]+)([”"»])/, `$1${explicitEnglishName}$3`)
         : existing.descriptionEn)
@@ -43,7 +70,8 @@ export function mergeCatalogOffer(existing, incoming) {
     telegramMessageId: Number(existing.id) > 0
       ? Number(existing.id)
       : (existing.telegramMessageId ?? incoming.telegramMessageId),
-    ...(sourceUnchanged && (explicitEnglishName || existing.nameEn)
+    ...(sourceUnchanged && (explicitEnglishName ||
+        (preserveExistingTranslation && existing.nameEn))
       ? { nameEn: explicitEnglishName || existing.nameEn }
       : {}),
     ...(confirmedDescriptionEn ? { descriptionEn: confirmedDescriptionEn } : {}),
@@ -100,3 +128,4 @@ export function catalogPriceValues(text = '') {
   }
   return values;
 }
+

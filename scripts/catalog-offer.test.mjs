@@ -66,6 +66,15 @@ test('public album refresh keeps the confirmed canonical ID and translations whe
   assert.equal(mergeCatalogOffer(existing,edited).telegramMessageId,5016);
 });
 
+test('stale translated facts are refreshed even when source facts are unchanged', () => {
+  const source={id:3759,telegramMessageId:3759,name:'Сиреневый',description:'Продается Б/у',height:'165',specs:{chest:'80',waist:'65',hips:'85',girth:'142'},prices:[65000],condition:'used',type:'leotard'};
+  const existing={...source,nameEn:'Fiesta',descriptionEn:'For sale\nNew rhythmic gymnastics leotard “Fiesta”\nHeight: 145-155 cm\nChest: 68-78 cm'};
+  const incoming={...source,nameEn:'Lilac',descriptionEn:'For sale\nPre-owned rhythmic gymnastics leotard “Lilac”\nHeight: 165 cm\nChest: 80 cm\nWaist: 65 cm\nHips: 85 cm\nBody girth: 142 cm'};
+  const merged=mergeCatalogOffer(existing,incoming);
+  assert.equal(merged.nameEn,'Lilac');
+  assert.equal(merged.descriptionEn,incoming.descriptionEn);
+});
+
 test('real rental replaces its screenshot import; sale and ambiguous matches do not', () => {
   const imported = {id:-186501, name:'Peach', height:'105-125', specs:{chest:'54-64',waist:'48-56',hips:'54-64',girth:'102-112'}, condition:'rental', prices:[3500], sourceImport:'owner-screenshots-2026-09-28'};
   const sale = {...imported,id:2833,condition:'used',prices:[26700],sourceImport:undefined};
@@ -82,3 +91,4 @@ test('sale photo edits refresh too, while durable published assets need no dupli
   assert.equal(catalogPhotosChanged(existing,{condition:'new',photos:['/api/telegram-media/new']}),true);
   assert.equal(catalogPhotosChanged(existing,{photos:['https://artnelli.com/assets/catalog/a.webp']}),false);
 });
+
