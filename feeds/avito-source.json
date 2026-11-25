@@ -4057,7 +4057,7 @@
         "type": "leotard",
         "condition": "new",
         "offerKind": "sale",
-        "description": "Продается ❤️\n 🌟 Новый 🌟 Купальник для Художественной Гимнастики «Птичка певчая»\nРост 145-155 см\nОГ 68-78 см\nОТ 56-64 см\nОБ 70-80 см\nДуга тела 123-133 см\nСтоимость 83.700 рублей\n ____________________________\nSale ❤️\n 🌟 New 🌟 Leotard for rhythmic gymnastics\n“Songbird ”\nFor height 145-155 cm\nChest 68-78 cm\nWaist 56-64 cm\nHips 70-80 cm\nGirth about 123-133 cm\nPrice 1.100$\n\n#leotardsByNelli\n#rg #rgkup #rgleotards",
+        "description": "Продается ❤️\n 🌟Новый 🌟 Купальник для Художественной Гимнастики «Птичка певчая»\nРост 145-155 см\nОГ 68-78 см\nОТ 56-64 см\nОБ 70-80 см\nДуга тела 123-133 см\nСтоимость  83.700  рублей\n____________________________\nSale ❤️\n🌟New🌟 Leotard for rhythmic gymnastics\n“Songbird ”\nFor height  145-155 cm\nChest 68-78 cm\nWaist 56-64 cm\nHips  70-80 cm\nGirth about 123-133 cm\nPrice   1.100$\n\n#leotardsByNelli\n#rg #rgkup #rgleotards",
         "height": "145-155",
         "specs": {
           "chest": "68-78",
@@ -4072,45 +4072,45 @@
         },
         "photos": [
           {
-            "url": "https://artnelli.com/assets/catalog/477-photo_607-29-05-2026_08-59-19.webp",
-            "sha256": "069ac59778b56a0cb84efd21a165f36892d25df56f6b7a8b0fef3b5887fc0731"
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-01-55e32ac035ae.jpg",
+            "sha256": "c45780bd6576d4a9bd7380ad1bfe79ad567f0279002a83a112ba5298eb60a584"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/478-photo_608-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-02-ddd3cc0f2c11.webp",
             "sha256": "42093168527f41d57a2ee23aeb0051e731277b238cbaa0637dc68843adc58b41"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/479-photo_609-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-03-c9b032007384.webp",
             "sha256": "b6bed8fb712ba733c01165ba659ac80637e29f72e797dc561b7fd4be76cb97f5"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/480-photo_610-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-04-47e144ab55c8.webp",
             "sha256": "f821b11816bcf4e6c4d1d1b25ca0263f863f237ef02eb23a202243a912afa206"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/481-photo_611-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-05-83f38784120e.webp",
             "sha256": "9cb8108ee139d671ed66772486809f2c6fdf430ecab3cf34cf81f705986bd666"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/482-photo_612-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-06-f9bbe19e410e.webp",
             "sha256": "591a6518ab35f7e631f0f33910f70e2a997d18cc3419a402e3074f0c303f4dcd"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/483-photo_613-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-07-a8b90b68adae.webp",
             "sha256": "e2d741c616ae2b5a40823e843f745a8f9b0ff6ad968643ded5148a84e1757d7f"
           },
           {
-            "url": "https://artnelli.com/assets/catalog/484-photo_614-29-05-2026_08-59-19.webp",
+            "url": "https://artnelli.com/assets/catalog/telegram-5298-08-f16482073b63.webp",
             "sha256": "5174b73bfecd3c4ce3e33d9a93200f36ac7444583d43075e85377a0c3994c76d"
           }
         ],
-        "telegram": "https://t.me/nelli_leotards/5298",
+        "telegram": "https://t.me/nelli_leotards/14/5298",
         "telegramTopicId": 14,
         "observedMessageIds": [
           5298
         ]
       },
-      "fingerprint": "f742531cbdb06aa299ecff6c5c5f644ea5bc6e3bab6c66ec3acdc10f61946526",
+      "fingerprint": "9182d88afa6a88cb425218d34c9091278f00d08fc6ed83642b3f6611c525ce14",
       "status": "ready_for_template",
       "blockers": []
     },
